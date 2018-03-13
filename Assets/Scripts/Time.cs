@@ -11,7 +11,7 @@ public class Time {
     {
         if (hour >= 24 || min >= 60)
         {
-            throw new System.Exception("Bad time format: " + hour + " " + min);
+            throw new System.Exception("Bad time format: " + hour + ":" + min);
         }
         this.hour = hour;
         this.min = min;
@@ -37,9 +37,9 @@ public class Time {
         if (time.min + plus < 60) return new Time(time.hour, time.min + plus);
         else
         {
-            int addMins = (time.min + plus) % 60;
+            int newMins = (time.min + plus) % 60;
             int addHours = (time.min + plus) / 60;
-            return new Time((time.hour + addHours) % 24, time.min + addMins);
+            return new Time((time.hour + addHours) % 24, newMins);
         }
     }
 

@@ -7,18 +7,24 @@ public class Init : MonoBehaviour
 {
 
     private Graph graph;
+    private Dijkstra dijkstra;
 
     //public string path = @"C:\Users\alojz\Documents\UnityProjects\MHD\Assets\Bratislava\";
-    public string stopsFile = "zastavky";
-    public string linesFile = "linky";
-    public string city = "Bratislava";
+    public string stopsFile;
+    public string linesFile;
+    public string city;
 
     void Start()
     {
         //Debug.Log(Application.dataPath);
-        GraphCreator gc = new GraphCreator(Application.dataPath + "/" + city + "/", stopsFile, linesFile);
+        GraphCreator gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
         gc.makeGraph();
-        this.graph = gc.getGraph();
+        graph = gc.getGraph();
+
+        dijkstra = new Dijkstra(graph);
+
+        dijkstra.shortestPathsAmount(new Time(0,0), "B", "C", 4);
+
     }
     
 }

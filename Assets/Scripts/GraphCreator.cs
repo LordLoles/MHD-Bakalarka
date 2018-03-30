@@ -14,34 +14,73 @@ public class GraphCreator {
     {
         stops = System.IO.File.ReadAllLines(path + stopsFile + ".txt");
         lines = System.IO.File.ReadAllLines(path + linesFile + ".txt");
-        Debug.Log("pocet liniek1 = " + lines.Length / 5);
+        Debug.Log("pocet liniek = " + lines.Length / 5);
 
-        this.graph = new Graph(new List<Vertex>(), new List<Edge>());
+        this.graph = new Graph();
     }
 
-    private Vertex findVertex(string name)
-    {
-        foreach (Vertex v in graph.verteces)
-        {
-            if (v.name == name) return v;
-        }
-        throw new Exception("No such vertex:" + name);
-    }
-
-    private Vertex findVertexByWords(string[] words, int fromIndex)
+    private String makeName(string[] words, int fromIndex)
     {
         string name = "";
-        for (int i=fromIndex; i < words.Length; i++)
+        for (int i = fromIndex; i < words.Length; i++)
         {
             if (i != fromIndex) name += " ";
             name += words[i];
         }
-        return findVertex(name);
+        return name;
     }
 
-    private void makeEdges(string name, string line1, string line2)
+    private Vertex findVertex(string name, Time time)
     {
-        string[] distAndStops = line1.Split(new string[] { " | " }, StringSplitOptions.None);
+        foreach (Vertex v in graph.verteces) if (v.isThis(name, time)) return v;
+        throw new Exception("No such vertex: " + name);
+    }
+
+    private Vertex findVertexByWords(string[] words, int fromIndex, Time time)
+    {
+        string name = makeName(words, fromIndex);
+        return findVertex(name, time);
+    }
+
+    private bool existVertex(string[] name, int fromIndex, Time time)
+    {
+        try
+        {
+            findVertexByWords(name, 1, time);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
+    }
+
+    private Vertex makeVertexByWords(string[] words, int fromIndex, Time time)
+    {
+        string name = makeName(words, fromIndex);
+        return new Vertex(name, time);
+    }
+
+    private Vertex getVertex(string[] name, int fromIndex, Time time)
+    {
+        Vertex v;
+        if (existVertex(name, 1, time))
+        {
+            v = findVertexByWords(name, 1, time);
+            //Debug.Log("nasiel som vrchol " + v.ToString());
+        }
+        else
+        {
+            v = makeVertexByWords(name, 1, time);
+            //Debug.Log("pridavam vrchol " + v.ToString());
+            graph.addVertex(v);
+        }
+        return v;
+    }
+
+    private void makeVAndE(string name, string line1, string line2)
+    {
+        string[] distAndStops = line1.Split(new string[] {" | "}, StringSplitOptions.None);
         string[] times = line2.Split(' ');
         foreach (string time in times)
         {
@@ -53,31 +92,54 @@ public class GraphCreator {
 
                 Time fromT = Time.addToTime(origin, int.Parse(distAndStopFrom[0]));
                 Time toT = Time.addToTime(origin, int.Parse(distAndStopTo[0]));
-                Vertex fromV = findVertexByWords(distAndStopFrom, 1);
-                Vertex toV = findVertexByWords(distAndStopTo, 1);
+
+                Vertex fromV = getVertex(distAndStopFrom, 1, fromT);
+                Vertex toV = getVertex(distAndStopTo, 1, toT);
 
                 graph.edges.Add(new Edge(name, fromV, toV, fromT, toT));
             }
         }
     }
 
+    private void makeWaitingEdges()
+    {
+        foreach (KeyValuePair<string, List<Vertex>> pair in graph.allStops)
+        {
+            pair.Value.Sort(new VertecesComparator());
+            List<Vertex> list = pair.Value;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (i == list.Count-1) continue;
+                Edge e = new Edge(pair.Key, list[i], list[i + 1], list[i].time, list[i + 1].time);
+                e.setThisWaiting();
+                graph.edges.Add(e);
+            }
+        }
+    }
+
     public void makeGraph()
     {
+        /*
         // Make verteces
         foreach (string s in stops){
             graph.verteces.Add(new Vertex(s));
         }
-        Debug.Log("pocet zastavok = " + graph.verteces.Count);
-        // Make edges
+        // Make edges*/
         int i = 0;
         while (i < lines.Length)
         {
             string name = lines[i];
-            makeEdges(name, lines[i + 1], lines[i + 2]);
-            makeEdges(name, lines[i + 3], lines[i + 4]);
+            makeVAndE(name, lines[i + 1], lines[i + 2]);
+            makeVAndE(name, lines[i + 3], lines[i + 4]);
             i += 5;
         }
-        Debug.Log("pocet liniek2 = " + graph.edges.Count);
+
+        makeWaitingEdges();
+
+        Debug.Log("pocet zastavok/vrcholov = " + graph.verteces.Count);
+        Debug.Log("pocet hran grafu = " + graph.edges.Count);
+
+        //printGraph();
     }
 
     /*
@@ -88,5 +150,17 @@ public class GraphCreator {
     {
         return this.graph;
     }
-	
+
+    /*
+     * Debugging tool
+     */
+    private void printGraph()
+    {
+        Debug.Log("Verteces:");
+        foreach (Vertex v in graph.verteces) Debug.Log(v.ToString());
+        Debug.Log("Edges:");
+        foreach (Edge e in graph.edges) Debug.Log(e.ToString());
+    }
+
+
 }

@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿public class Time {
 
-public class Time {
-
-    int hour;
-    int min;
+    internal int hour;
+    internal int min;
 
     public Time(int hour, int min)
     {
@@ -75,7 +71,7 @@ public class Time {
     override
     public string ToString()
     {
-        return this.hour + ":" + this.min;
+        return this.hour.ToString("00") + ":" + this.min.ToString("00");
     }
 
 }

@@ -1,0 +1,40 @@
+\chapter{Algoritmy na grafoch}
+\label{kap:algoritmy}
+
+Táto kapitola obsahuje popisy algoritmov, ktoré sú aplikovateľné na grafové štruktúry a navyše využiteľné pri vyhľadávaní spojení hromadnej dopravy. Formálnu charakterizáciu algoritmu zväčša doprevádza i jeho voľnejšia interpretácia, ktorá má za účel uľahčiť porozumenie čitateľom, ktorí sa s daným algoritmom doposiaľ nestretli. Naviac, pri algoritmoch sú uvedené výhody, respektíve nedostatky, pri jeho použití na nami vytýčený cieľ. V hojnom počte budeme využívať definície z kapitoly \ref{kap:grafy}.
+
+\section{Najlacnejšie cesty v grafe}
+
+Pri vyhľadávaní spojení mestskou hromadnou dopravou sa zdá byť veľmi racionálne zaoberať sa nachádzaním najlacnejších ciest v grafikone MHD. Dovoľujeme si tak tvrdiť, pretože najväčší dôraz cestujúcich je kladený práve na čo najskorší príchod do požadovanej lokality. Pre úplnosť, cena cesty, ako je asi zrejmé, je súčet hodnôt hrán (respektíve vrcholov), ktoré daná cesta obsahuje. Z doposiaľ uvedeného vyplýva, že pri našich úvahách budeme používať ohodnotené grafy, kde pridelenou hodnotou bude čas medzi zastávkami. Navyše musíme hodnotiť i vrcholy grafu - zastávky, kde budeme prirátavať čas prestupu. Od tejto myšlienky však spočiatku upustíme a budeme sa jej venovať až neskôr. Nakoľko hranami v našom grafe sú linky MHD, sme nútení použiť orientovańe grafy.\newline
+
+Pri hľadaní najlacnejších ciest sa nám vynárajú rovno tri problémy, ktorých riešenia nám v mnohých ohľadoch môžu pomôcť pri zaoberaní sa otázkou vyhľadávania spojení MHD:
+
+\begin{enumerate}
+	\item Pre dané vrcholy $u, v$ nájsť cenu najlacnejšej cesty z $u$ do $v$.
+	\item Pre daný vrchol $v_{0}$ nájsť cenu najlacnejšej cesty z $v_{0}$ do každého vrcholu grafu.
+	\item Nájsť cenu najlacnejšej cesty z $u$ do $v$ pre všetky $u, v \in V$.
+\end{enumerate}
+
+\subsection{Dijkstrov algoritmus}
+
+Holandský informatik, po ktorom je tento algoritmus pomenovaný, dokázal, okrem iného, vyriešiť aj nami nastolený problém číslo dva. V jeho riešení je ale potrebné, aby boli ceny hrán grafu nezáporné reálne čísla. Algoritmus je navrhnutý tak, že dostane ako vstup graf $G = (V, E)$, počiatočný vrchol $v_{0}$ a čiastočnú hodnotiacu funkciu $h: V \times V \rightarrow R^{+}_{0}$. Túto fukciu $h$ zúplníme tak, že ak hrana $uv \notin E$, potom poloźíme $h(u,v) = \infty$. Ďalej predpokladáme, že $h(u,u) = 0$, funkciu $h$ je možné vypočítať v konštantnom čase $O(1)$ a že vrcholy sú na vstupe reprezentované celými číslami $1, 2, ..., k$, kde $k$ je počet vrcholov grafu. Nakoniec, výsledkom algoritmu bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná hodnota $D_{[v]}$, čo je cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do vrchola $v$. \newline
+
+\begin{algorithm} 
+  \caption{Dijkstrov algoritmus}
+  \label{dijkstra}
+  \begin{algorithmic}[1]
+   	 \State begin
+		\State S $\leftarrow$ \{v0\}
+		\State $D_{[v_{0}]}$ $\leftarrow$ 0
+		\State pre každý vrchol $v \in V \textbackslash$\{v0\}: $D_{[v]}$ $\leftarrow$ h($v_{0}$, v)
+		\State while S $\neq$ V do begin
+			\State vyber $w \in V \textbackslash$S taký, že hodnota $D_{[w]}$ je minimálna
+			\State S $\leftarrow$ S $\cup$ \{w\}
+			\State pre každý $v \in V  \textbackslash$S:
+				\State $D_{[v]}$ $\leftarrow$ min{$D_{[v]}$,$D_{[w]}$ + h(w, v)}
+		\State end
+	\State end
+  \end{algorithmic} 
+\end{algorithm}
+
+Uvedená implementácia dijkstrovho algoritmu je prevzatá od Pavla Ďuriša \cite[kapitola 2.2.1]{duris2009}\newline

@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+
+\bibitem{Diestel2000}
+Reinhard Diestel.
+\newblock Teória grafov, 2000.
+\newblock [Citované 2017-12-4] Dostupné z
+  \url{http://www.dcs.fmph.uniba.sk/~haviarova/uktg/#materialy}.
+
+\bibitem{even2011graph}
+Shimon Even.
+\newblock {\em Graph algorithms}.
+\newblock Cambridge University Press, 2011.
+
+\bibitem{katreniakova2014}
+Jana Katreniaková.
+\newblock Vizualizácia a kreslenie pekných grafov, 2014.
+\newblock [Citované 2017-12-4] Dostupné z
+  \url{http://sccg.sk/~ferko/VizualizaciaPreGrafikov.pdf}.
+
+\bibitem{kumari2010survey}
+S~Meena Kumari and N~Geethanjali.
+\newblock A survey on shortest path routing algorithms for public transport
+  travel.
+\newblock {\em Global Journal of Computer Science and Technology}, 9(5):73--75,
+  2010.
+
+\bibitem{novak2016}
+Jakub Novák.
+\newblock Dynamická navigácia osôb so spätnou väzbou v mestskej hromadnej
+  doprave.
+\newblock Bakalárska práca, Univerzita Komenského v Bratislave, 2016.
+
+\bibitem{santos2007k}
+Jos{\'e}~Luis Santos.
+\newblock k-shortest path algorithms.
+\newblock 2007.
+\newblock [Citované 2017-12-4] Dostupné z
+  \url{https://estudogeral.sib.uc.pt/jspui/bitstream/10316/11305/1/k-Shortest%20path%20algorithms.pdf}.
+
+\bibitem{duris2009}
+Pavol Ďuriš.
+\newblock {\em Tvorba efektívnych algoritmov}.
+\newblock Knižničné a edičné centrum FMFI UK, 2009.
+
+\end{thebibliography}

@@ -1,0 +1,17 @@
+\BOOKMARK [0][-]{chapter*.8}{\332vod}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Grafy}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Defin\355cia grafu}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Z\341kladn\351 pojmy t\375kaj\372ce sa grafov}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Typy grafov}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.2}{Vztahy medzi grafmi}{section.1.2}% 6
+\BOOKMARK [1][-]{section.1.3}{Cesty a cykly}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.4}{S\372vislost}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.5}{Kostry, stromy a lesy}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.6}{\227peci\341lne grafov\351 \235trukt\372ry}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.6.1}{Cesty a cykly pre orientovan\351 grafy}{section.1.6}% 11
+\BOOKMARK [0][-]{chapter.2}{Algoritmy na grafoch}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Najlacnej\235ie cesty v grafe}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.1.1}{Dijkstrov algoritmus}{section.2.1}% 14
+\BOOKMARK [0][-]{chapter.3}{Softv\351r}{}% 15
+\BOOKMARK [0][-]{chapter.4}{Implement\341cia}{}% 16
+\BOOKMARK [0][-]{chapter*.9}{Z\341ver}{}% 17

@@ -14,7 +14,6 @@ public class GraphCreator {
     {
         stops = System.IO.File.ReadAllLines(path + stopsFile + ".txt");
         lines = System.IO.File.ReadAllLines(path + linesFile + ".txt");
-        Debug.Log("pocet liniek = " + lines.Length / 5);
 
         this.graph = new Graph();
     }
@@ -80,11 +79,15 @@ public class GraphCreator {
 
     private void makeVAndE(string name, string line1, string line2)
     {
+        if (line1.Equals("")) return;
+
         string[] distAndStops = line1.Split(new string[] {" | "}, StringSplitOptions.None);
         string[] times = line2.Split(' ');
+
         foreach (string time in times)
         {
             Time origin = Time.makeTime(time);
+
             for (int j = 0; j < distAndStops.Length - 1; j++)
             {
                 string[] distAndStopFrom = distAndStops[j].Split(' ');
@@ -136,9 +139,7 @@ public class GraphCreator {
 
         makeWaitingEdges();
 
-        Debug.Log("pocet zastavok/vrcholov = " + graph.verteces.Count);
-        Debug.Log("pocet hran grafu = " + graph.edges.Count);
-
+        printAmounts();
         //printGraph();
     }
 
@@ -151,14 +152,26 @@ public class GraphCreator {
         return this.graph;
     }
 
+
     /*
      * Debugging tool
      */
-    private void printGraph()
+    public void printAmounts()
     {
-        Debug.Log("Verteces:");
+        Debug.Log("pocet liniek = " + lines.Length / 5);
+        Debug.Log("pocet zastavok = " + graph.allStops.Count);
+        Debug.Log("pocet vrcholov grafu = " + graph.verteces.Count);
+        Debug.Log("pocet hran grafu = " + graph.edges.Count);
+    }
+
+    /*
+     * Debugging tool
+     */
+    public void printGraph()
+    {  
+        Debug.Log("Vrcholy:");
         foreach (Vertex v in graph.verteces) Debug.Log(v.ToString());
-        Debug.Log("Edges:");
+        Debug.Log("Hrany:");
         foreach (Edge e in graph.edges) Debug.Log(e.ToString());
     }
 

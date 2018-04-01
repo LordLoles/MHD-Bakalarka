@@ -6,14 +6,12 @@ public class Dijkstra {
 
     private Graph graph;
     private Time now;
-    private int vertecesCount;
     private PathShowing pathShowing;
 
 
     public Dijkstra(Graph graph)
     {
         this.graph = graph;
-        vertecesCount = this.graph.verteces.Count;
         updateTime();
         updateVertecesValues();
 
@@ -35,7 +33,6 @@ public class Dijkstra {
         updateVertecesValues();
 
         List<Vertex> visited = new List<Vertex>();
-        visited.Add(start);
         start.parent = null;
         start.value = 0;
         List<Vertex> inScope = new List<Vertex>();
@@ -46,6 +43,8 @@ public class Dijkstra {
         {
             inScope.Sort(dc);
             Vertex now = peek(inScope);
+
+            if (now.neighbor.Contains(start)) break;
 
             if (!now.name.Equals(fin))
             {
@@ -76,7 +75,12 @@ public class Dijkstra {
     {
         if (v == null) return;
         printPath(v.parent);
-        pathShowing.printThis(v);
+        if (v.parent != null)
+        {
+            //two verteces has been found
+            //now we need to print the edge in between, if it isn't waiting
+            if (!v.toParent.waitingEdge) pathShowing.printThis(v.toParent);
+        }
     }
 
 
@@ -86,6 +90,7 @@ public class Dijkstra {
 
         int already = 0;
         List<Vertex> targets = graph.allStops[stop];
+
         foreach (Vertex v in targets)
         {
             if (v.value != int.MaxValue)

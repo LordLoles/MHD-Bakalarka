@@ -14,6 +14,7 @@ public class Init : MonoBehaviour
     public string linesFile;
     public string city;
 
+
     void Start()
     {
         //Debug.Log(Application.dataPath);
@@ -23,8 +24,16 @@ public class Init : MonoBehaviour
 
         dijkstra = new Dijkstra(graph);
 
-        dijkstra.shortestPathsAmount(new Time(0,0), "B", "C", 4);
+        //gc.printGraph();
 
     }
+
+
+    public void startSearching(string start, string fin)
+    {
+        Debug.Log("spustam dijkstru z " + start + " do " + fin);
+        dijkstra.shortestPathsAmount(new Time(0, 0), start, fin, 10);
+    }
     
+
 }

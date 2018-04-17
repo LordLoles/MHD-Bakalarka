@@ -6,13 +6,19 @@ public class Graph
     internal List<Edge> edges;
 
     internal SortedDictionary<string, List<Vertex>> allStops;
+    internal Dictionary<Vertex, List<Edge>> allEdges;
+    internal Dictionary<Vertex, List<Vertex>> neighbors;
+
 
     internal Graph()
     {
         verteces = new List<Vertex>();
         edges = new List<Edge>();
         allStops = new SortedDictionary<string, List<Vertex>>();
+        allEdges = new Dictionary<Vertex, List<Edge>>();
+        neighbors = new Dictionary<Vertex, List<Vertex>>();
     }
+
 
     /*
      * RET: List, where the verteces of this graph are deep-copied
@@ -24,6 +30,7 @@ public class Graph
         return target;
     }
 
+
     /*
      * Adds vertex to verteces list and to allStops dictionary
      */
@@ -34,10 +41,26 @@ public class Graph
         allStops[v.name].Add(v);
     }
 
+
+    /*
+     * Adds edge to edges list and to allEdges and neighbors dictionary
+     */
+    internal void addEdge(Edge e)
+    {
+        edges.Add(e);
+        Vertex v = e.fromV;
+        if (!allEdges.ContainsKey(v)) allEdges.Add(v, new List<Edge>());
+        if (!neighbors.ContainsKey(v)) neighbors.Add(v, new List<Vertex>());
+        allEdges[v].Add(e);
+        neighbors[v].Add(e.toV);
+    }
+
+
     internal Vertex clostestAfterTimeByVertex(Time time, Vertex vertex)
     {
         return clostestAfterTimeByName(time, vertex.name);
     }
+
 
     internal Vertex clostestAfterTimeByName(Time time, string name)
     {
@@ -49,5 +72,31 @@ public class Graph
         }
         throw new System.Exception("No vertex after that time");
     }
+
+
+    /*
+     * Returns list of incident edges to embedded vertex
+     */
+    public List<Edge> getIncidentEdges(Vertex from)
+    {
+        if (!allEdges.ContainsKey(from)) return new List<Edge>();
+        return allEdges[from];
+    }
+
+
+    /*
+     * Returns list of neighbors to embedded vertex
+     */
+    public List<Vertex> getNeighbors(Vertex from)
+    {
+        /*
+        List<Vertex> list = new List<Vertex>();
+        foreach (Edge e in getIncidentEdges(from)) list.Add(e.toV);
+        return list;
+        */
+        if (!neighbors.ContainsKey(from)) return new List<Vertex>();
+        return neighbors[from];
+    }
+
 
 }

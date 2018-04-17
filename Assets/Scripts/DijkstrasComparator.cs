@@ -10,6 +10,6 @@ public class DijkstrasComparator : IComparer<Vertex>
     {
         int ret = x.value.CompareTo(y.value);
         if (ret != 0) return ret;
-        else return x.name.CompareTo(y.name);
+        else return Time.CompareTo(y.time, x.time);
     }
 }

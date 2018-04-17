@@ -10,6 +10,8 @@ public class GraphCreator {
     private string[] stops;
     private string[] lines;
 
+    public int loaded = 0;
+
     public GraphCreator(string path, string stopsFile, string linesFile)
     {
         stops = System.IO.File.ReadAllLines(path + stopsFile + ".txt");
@@ -17,6 +19,7 @@ public class GraphCreator {
 
         this.graph = new Graph();
     }
+
 
     private String makeName(string[] words, int fromIndex)
     {
@@ -29,11 +32,14 @@ public class GraphCreator {
         return name;
     }
 
+
     private Vertex findVertex(string name, Time time)
     {
-        foreach (Vertex v in graph.verteces) if (v.isThis(name, time)) return v;
+        List<Vertex> list = graph.allStops[name];
+        foreach (Vertex v in graph.allStops[name]) if (time.isThis(v.time)) return v;
         throw new Exception("No such vertex: " + name);
     }
+
 
     private Vertex findVertexByWords(string[] words, int fromIndex, Time time)
     {
@@ -41,18 +47,15 @@ public class GraphCreator {
         return findVertex(name, time);
     }
 
-    private bool existVertex(string[] name, int fromIndex, Time time)
+
+    private bool existVertex(string[] words, int fromIndex, Time time)
     {
-        try
-        {
-            findVertexByWords(name, 1, time);
-            return true;
-        }
-        catch (Exception e)
-        {
-            return false;
-        }
+        string name = makeName(words, fromIndex);
+        if (!graph.allStops.ContainsKey(name)) return false;
+        foreach (Vertex v in graph.allStops[name]) if (time.isThis(v.time)) return true;
+        return false;
     }
+
 
     private Vertex makeVertexByWords(string[] words, int fromIndex, Time time)
     {
@@ -60,22 +63,22 @@ public class GraphCreator {
         return new Vertex(name, time);
     }
 
-    private Vertex getVertex(string[] name, int fromIndex, Time time)
+
+    private Vertex getVertex(string[] words, int fromIndex, Time time)
     {
         Vertex v;
-        if (existVertex(name, 1, time))
+        if (existVertex(words, fromIndex, time))
         {
-            v = findVertexByWords(name, 1, time);
-            //Debug.Log("nasiel som vrchol " + v.ToString());
+            v = findVertexByWords(words, 1, time);
         }
         else
         {
-            v = makeVertexByWords(name, 1, time);
-            //Debug.Log("pridavam vrchol " + v.ToString());
+            v = makeVertexByWords(words, 1, time);
             graph.addVertex(v);
         }
         return v;
     }
+
 
     private void makeVAndE(string name, string line1, string line2)
     {
@@ -88,6 +91,13 @@ public class GraphCreator {
         {
             Time origin = Time.makeTime(time);
 
+            //for debug
+            if (graph.edges.Count > 2000)
+            {
+                existVertex(distAndStops[0].Split(' '), 1, origin);
+            }
+            //for debug
+
             for (int j = 0; j < distAndStops.Length - 1; j++)
             {
                 string[] distAndStopFrom = distAndStops[j].Split(' ');
@@ -95,19 +105,35 @@ public class GraphCreator {
 
                 Time fromT = Time.addToTime(origin, int.Parse(distAndStopFrom[0]));
                 Time toT = Time.addToTime(origin, int.Parse(distAndStopTo[0]));
-
+                
                 Vertex fromV = getVertex(distAndStopFrom, 1, fromT);
                 Vertex toV = getVertex(distAndStopTo, 1, toT);
+                
+                /*
+                Vertex fromV = makeVertexByWords(distAndStopFrom, 1, fromT);
+                Vertex toV = makeVertexByWords(distAndStopTo, 1, toT);
+                graph.addVertex(fromV);
+                graph.addVertex(toV);
+                */
 
-                graph.edges.Add(new Edge(name, fromV, toV, fromT, toT));
+                graph.addEdge(new Edge(name, fromV, toV, fromT, toT));
             }
         }
     }
 
+
     private void makeWaitingEdges()
     {
+        int tillNow = 0;
+        int all = graph.allStops.Count;
+
         foreach (KeyValuePair<string, List<Vertex>> pair in graph.allStops)
         {
+
+            loaded = (int)(50 + ((100 * (float)tillNow / all) / 2));
+            Debug.Log(loaded + "%");
+            tillNow++;
+
             pair.Value.Sort(new VertecesComparator());
             List<Vertex> list = pair.Value;
             for (int i = 0; i < list.Count; i++)
@@ -115,37 +141,37 @@ public class GraphCreator {
                 if (i == list.Count-1) continue;
                 Edge e = new Edge(pair.Key, list[i], list[i + 1], list[i].time, list[i + 1].time);
                 e.setThisWaiting();
-                graph.edges.Add(e);
+                graph.addEdge(e);
             }
         }
     }
 
+
     public void makeGraph()
     {
-        /*
-        // Make verteces
-        foreach (string s in stops){
-            graph.verteces.Add(new Vertex(s));
-        }
-        // Make edges*/
         int i = 0;
         while (i < lines.Length)
         {
+            loaded = (int)((100 * ((float)i / lines.Length)) / 2);
+            Debug.Log(loaded + "%");
+
             string name = lines[i];
             makeVAndE(name, lines[i + 1], lines[i + 2]);
             makeVAndE(name, lines[i + 3], lines[i + 4]);
             i += 5;
         }
-
+        
         makeWaitingEdges();
+        loaded = 100;
 
         printAmounts();
         //printGraph();
     }
 
+
     /*
      * RET: Graph type of the current graph,
-     * that contains list of verteces anf list of edges
+     * that contains list of verteces and list of edges
      */
     public Graph getGraph()
     {
@@ -163,6 +189,7 @@ public class GraphCreator {
         Debug.Log("pocet vrcholov grafu = " + graph.verteces.Count);
         Debug.Log("pocet hran grafu = " + graph.edges.Count);
     }
+
 
     /*
      * Debugging tool

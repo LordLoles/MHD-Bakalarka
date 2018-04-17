@@ -68,6 +68,19 @@
         return (time.hour * 60) + time.min;
     }
 
+
+    public static int CompareTo(Time t1, Time t2)
+    {
+        return System.Math.Sign(differenceBetweenTimesMin(t2, t1));
+    }
+
+
+    public bool isThis(Time time)
+    {
+        return differenceBetweenTimesMin(this, time) == 0;
+    }
+
+
     override
     public string ToString()
     {

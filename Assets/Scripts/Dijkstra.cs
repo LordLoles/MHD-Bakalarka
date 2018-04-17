@@ -7,6 +7,7 @@ public class Dijkstra {
     private Graph graph;
     private Time now;
     private PathShowing pathShowing;
+    private int amountNow = 0;
 
 
     public Dijkstra(Graph graph)
@@ -44,14 +45,17 @@ public class Dijkstra {
             inScope.Sort(dc);
             Vertex now = peek(inScope);
 
-            if (now.neighbor.Contains(start)) break;
+            if (graph.getNeighbors(now).Contains(start)) break;
+
+            List<Vertex> neighbors = graph.getNeighbors(now);
+            List<Edge> incidentEdges = graph.getIncidentEdges(now);
 
             if (!now.name.Equals(fin))
             {
-                for (int i = 0; i < now.neighbor.Count; i++)
+                for (int i = 0; i < neighbors.Count; i++)
                 {
-                    Vertex v = now.neighbor[i];
-                    Edge e = now.incidentEdges[i];
+                    Vertex v = neighbors[i];
+                    Edge e = incidentEdges[i];
 
                     if (visited.Contains(v)) continue;
 
@@ -64,6 +68,11 @@ public class Dijkstra {
                         if (!inScope.Contains(v)) inScope.Add(v);
                     }
                 }
+            }
+            else
+            {
+                amountNow--;
+                if (amountNow == 0) return;
             }
 
             visited.Add(now);
@@ -127,6 +136,7 @@ public class Dijkstra {
 
     internal void shortestPathsAmount(Time time, string start, string fin, int amount)
     {
+        amountNow = amount;
         DijkstrasAlgorhitm(graph.clostestAfterTimeByName(time, start), fin);
         printPathsForStop(fin, amount);
     }

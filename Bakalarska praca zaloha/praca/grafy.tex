@@ -48,7 +48,7 @@ Nech $G = (V, E)$ a $G' = (V', E')$ sú grafy. Označíme $G\cap G' = (V\cap V',
 
 Nech $G = (V, E)$ je graf. Definujme \textit{cestu}, ako neprázdny graf $P = (V', E')$, ktorý je podgrafom $G$, tvaru $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, kde všetky $x_{i}$ sú navzájom rôzne. Neformálne povedané, cesta spája (pomocou hrán) dva vrcholy grafu $G$, pričom sa v nej použité vrcholy nesmú opakovať. Počet hrán cesty sa nazýva aj \textit{dĺžkou}. Pre zjednoduchšenie budeme cestu zapisovať ako $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$.\newline
 
-Majme graf $G = (V, E)$. Nech $P = (V', E')$ je cesta v $G$, $P = x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}, pričom k\geq 3$ a v grafe $G$ existuje hrana $x_{0}x_{k}$. Potom hovoríme, že graf $G$ obsahuje \textit{cyklus} alebo tiež \textit{kružnicu} $C$, kde $C$ je podgraf $G$ a platí $C = (V', E' \cup \{x_{0},x_{k}\})$. \newline
+Majme graf $G = (V, E)$. Nech $P = (V', E')$ je cesta v $G$, $P = x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}$, pričom $k\geq 3$ a v grafe $G$ existuje hrana $x_{0}x_{k}$. Potom hovoríme, že graf $G$ obsahuje \textit{cyklus} alebo tiež \textit{kružnicu} $C$, kde $C$ je podgraf $G$ a platí $C = (V', E' \cup \{x_{0},x_{k}\})$. \newline
 
 \textit{Sled} v grafe $G$ je názov pre neprázdnu striedavú postupnosť $v_{0}e_{0}v_{1}e_{1} ... e_{k-1}v_{k}$ vrcholov a hrán v G, pričom $e_{i} = v_{i}v_{i+1}$ pre všetky $i < k$. Sled teda, narozdiel od cesty, môže obsahovať rovnaké vrcholy viac krát. Preto sa dá povedať, že sled je cesta, v ktorej sa môžu vrcholy opakovať. Ale aj naopak: sled, v ktorom sú vrcholy navzájom rôzne, je cestou.\newline
 
@@ -78,6 +78,8 @@ Acyklický graf (to jest taký, ktorý neobsahuje cyklus), ktorý je navyše sú
 
 Graf, ktorého prvky sú ohodnotené číslom určujúcim cenu, prípadne výhodnosť prechodu cezeň, nazveme \textit{ohodnotený graf}. \textit{Hranovo ohodnotený graf} je graf s funkciou $w: E\rightarrow R$. Teda pre ľubovoľnú hranu $e$ existuje číslo $w(e)$, ktoré nazveme \textit{hodnotou hrany}, prípadne \textit{cenou hrany}.  Z praktického hľadiska je výhodné zadefinovať aj \textit{kladne hranovo ohodnotený graf}. A to je taký, že $w(e) > 0$ pre všetky hrany. \textit{Vrcholovo ohodnotený graf} je graf s funkciou $w: V\rightarrow R$. Teda pre ľubovoľný vrhol $v$ existuje číslo $w(v)$. \newline
 
-\textit{Orientovaný graf} je graf $G = (V, E)$, kde každý prvok $xy \in E$ vyjadruje usporiadanú dvojicu. Neformálne, ak je daná hrana $xy$, ale nie $yx$, existuje cesta dĺžky 1 z vrcholu $x$ do $y$, ale z vrcholu $y$ do $x$ takáto cesta nejestvuje.\newline
+\textit{Orientovaný graf} je dvojica $G = (V, E)$, kde každý prvok $xy \in E$ vyjadruje usporiadanú dvojicu. Neformálne, ak je daná hrana $xy$, ale nie $yx$, existuje cesta dĺžky 1 z vrcholu $x$ do $y$, ale z vrcholu $y$ do $x$ takáto cesta nejestvuje.\newline
+
+Rozdiel medzi orientovanými a neorientovanými grafmi je, ako názov napovedá v existencií orientácií hrán. Ak by sme túto skutočnosť chceli vyjadriť formálne, povedali by sme, že zatiaľ čo v neorientovanom grafe obsahuje množina $E$ dvojprvkové množiny, v orientovanom sa skladá z usporiadaných dvojíc.\newline
 
 \subsection{Cesty a cykly pre orientované grafy}

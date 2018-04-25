@@ -2,7 +2,7 @@
 
 public class Graph
 {
-    internal List<Vertex> verteces;
+    internal List<Vertex> verteces; //set
     internal List<Edge> edges;
 
     internal SortedDictionary<string, List<Vertex>> allStops;

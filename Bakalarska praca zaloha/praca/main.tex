@@ -6,9 +6,14 @@
 \usepackage{url}
 \usepackage[hidelinks,breaklinks]{hyperref}
 \usepackage[slovak]{babel} % vypnite pre prace v anglictine
-\usepackage{algorithm} 
-\usepackage{algpseudocode}
 \linespread{1.25} % hodnota 1.25 by mala zodpovedat 1.5 riadkovaniu
+
+\usepackage{float}
+\usepackage{newfloat}
+\DeclareFloatingEnvironment[name={algoritmus}]{algorithm}
+\usepackage{chngcntr}
+\counterwithout{algorithm}{chapter}
+\counterwithout{figure}{chapter}
 
 % -------------------
 % --- Definicia zakladnych pojmov

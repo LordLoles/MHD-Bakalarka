@@ -13,7 +13,7 @@ Ak uvažujeme vyhľadávanie najlacnejších ciest v grafe, musíme si najprv uv
 
 \subsection{Dijkstrov algoritmus}
 
-Holandský informatik, po ktorom je tento algoritmus pomenovaný, dokázal, okrem iného, vyriešiť aj nami nastolený problém. V jeho riešení je ale potrebné, aby boli ceny hrán grafu nezáporné reálne čísla, čo súhlasí s našou predstavou aplikovania algoritmu na grafikon MDH. Algoritmus je navrhnutý tak, že dostane ako vstup graf $G = (V, E)$, počiatočný vrchol $v_{0}$ a hodnotiacu funkciu $h: V \times V \rightarrow R^{+}_{0}$. Predpokladáme, že ak hrana $uv \notin E$, potom $h(u,v) = \infty$, ďalej, že $h(u,u) = 0$ a nakoniec, že funkciu $h$ je možné vypočítať v konštantnom čase $O(1)$. Máme taktiež jeden predpoklad na vrcholy grafu, a to, že sú reprezentované celými číslami $1, 2, ..., k$ (kde $k$ je počet vrcholov grafu). Nakoniec, výsledkom algoritmu bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná hodnota $D [v]$, čo je cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do vrchola $v$. \newline
+Holandský informatik, po ktorom je tento algoritmus pomenovaný, dokázal, okrem iného, vyriešiť aj nami nastolený problém. V jeho riešení je ale potrebné, aby boli ceny hrán grafu nezáporné reálne čísla, čo súhlasí s našou predstavou aplikovania algoritmu na grafikon MDH. Algoritmus je navrhnutý tak, že dostane ako vstup graf $G = (V, E)$, počiatočný vrchol $v_{0}$ a hodnotiacu funkciu $h: V \times V \rightarrow R^{+}_{0}$. Predpokladáme, že ak hrana $uv \notin E$, potom $h(u,v) = \infty$, ďalej, že $h(u,u) = 0$ a nakoniec, že funkciu $h$ je možné vypočítať v konštantnom čase $O(1)$. Máme taktiež jeden predpoklad na vrcholy grafu, a to, že sú reprezentované celými číslami $1, 2, ..., k$ (kde $k$ je počet vrcholov grafu). Nakoniec, výsledkom algoritmu bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná hodnota $D [v]$, čo je cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do vrchola $v$.\newline
 
 Tieto požiadavky, predpoklady, ba i vstup a výstup funkcie sú uvažované v horeuvedenom tvare len aby sme mohli predviesť implementáciu algoritmu od Pavla Ďuriša, ktorú možno nájsť aj v jeho knihe \cite[kapitola 2.2.1]{duris2009}.\newline
 
@@ -24,9 +24,7 @@ Tieto požiadavky, predpoklady, ba i vstup a výstup funkcie sú uvažované v h
   \centering
 \end{algorithm}
 
-Časová zložitosť dijkstrovho algoritmu je $O(|V|^{2})$, čo je dokázané spolu s korektnosťou algoritmu v už uvedenom zdroji od Pavla Ďuriša \cite[kapitola 2.2.1]{duris2009}.\newline
-
-Priebeh dijkstrovho algoritmu vysvetlíme na jednoduchom príklade.
+Časová zložitosť dijkstrovho algoritmu je $O(|V|^{2})$, čo je dokázané spolu s jeho korektnosťou v už uvedenom zdroji od Pavla Ďuriša \cite[kapitola 2.2.1]{duris2009}.\newline
 
 \begin{figure}[H]
   \centering{\includegraphics{./images/dijkstra_priklad.png}}
@@ -34,16 +32,65 @@ Priebeh dijkstrovho algoritmu vysvetlíme na jednoduchom príklade.
   \label{dijkstra_priklad}
 \end{figure}
 
-Majme orientovaný graf ako je zobrazený na obrázku ~\ref{dijkstra_priklad}. Našou úlohou je nájsť najkratšiu cestu z vrcholu $1$ do vrcholu $3$. Učiníme tak teda zapomoci dijkstrovho algoritmu. Čiže, najprv si vytvoríme pole, označme ho $D$, v ktorom si pre každý vrchol budeme pamätať hodnotu najkratšej cesty doň z vrcholu $1$. Na počiatku bude táto hodnota pre všetky vrhcoly nekonečno, respektíve nejaká jeho rozumná náhrada. My budeme uvažovať o nekonečne. Nastavíme $D [1] = 0$. Začíname teda s počiatočným vrcholom $1$. Zoberieme jeho všetkých zatiaľ nenavštívených susedov (vrcholy $2$ a $3$), a takto porovnáme hodnoty: pre vrchol $2$ zistíme či je jeho hodnota v poli $D$ (to jest nekonečno) menšia ako hodnota vrchola, z ktorého vychádzame, plus hodnota hrany (to jest 0 + 4). To ale nie je pravda, takže prepíšeme hodnotu $D [2]$ na $4$. Pre vrchol $3$ zasa porovnávame nekonečno s hodnotou $0+8$ alebo aj, ako je v algoritme ~\ref{Alg_Dijkstra} naznačené, minimum z týchto hodnôt zapíšeme do $D [3]$. Vrchol $1$ nemá viac susedov, takže ho označíme ako navštívený a pokročíme. Ďalším vrcholom v poradí bude ten s najmenšou hodnotou $D [i]$ spomedzi doposiaľ nenavštívených, čiže vrchol $2$. Ten má iba jedného ešte nenavštíveného suseda, a to vrchol $3$. Do $D [2]$ preto zapíšeme minimum z hodnôt $8$ a $4 + 3 = 7$. Vrchol $2$ je vybavený a označený za navštívený. Zostáva posledný vrchol - vrchol $3$. Väčšina implementácií dijkstrovho algoritmu pri dosiahnutý finálneho vrcholu končí v snahe urýchliť vyhľadávanie medzi dvoma vrcholmi. Ak vśak túto podmienku nezakomponujeme do nášho algoritmu, program zráta hodnoty najkratších ciest z daného vrcholu do všetkých ostatných vrcholov. V našom prípade nie je veľmi podstatné, ktorú variantu zvolíme, keďže algoritmus tak či tak vo vrchole $3$ skončí, nakoľko ten už nemá žiadne incidentné hrany a v grafe už nejestvujú ďalšie nenavštívené vrcholy. Dosiahli sme teda výsledok: najkratšie cesty z vrcholu $1$ sú uložené v poli $D$. Najkratšia cesta do vrcholu $1$ je $D [1] = 0$, do vrcholu $2$ je to $D [2] = 4$ a do vrchola $3$ je odpoveď $D [3] = 7$.\newline
+Priebeh dijkstrovho algoritmu vysvetlíme na jednoduchom príklade. Máme orientovaný graf ako je zobrazený na obrázku~\ref{dijkstra_priklad}. Našou úlohou je nájsť najkratšiu cestu z vrcholu $1$ do ostatných vrcholov. Učiníme tak teda zapomoci dijkstrovho algoritmu. Čiže, najprv si vytvoríme pole, označme ho $D$, v ktorom si pre každý vrchol budeme pamätať hodnotu doň najkratšej cesty z vrcholu $1$. Na počiatku bude táto hodnota pre všetky vrhcoly nekonečno, respektíve nejaká jeho rozumná náhrada. My budeme používať nekonečno. Nastavíme $D [1] = 0$. Začíname teda s počiatočným vrcholom $1$. Zoberieme jeho všetkých zatiaľ nenavštívených susedov (vrcholy $2$ a $3$), a porovnáme hodnoty takto: najprv pre vrchol $2$, zistíme či je jeho hodnota v poli $D$ (to jest nekonečno) menšia ako hodnota vrchola, z ktorého vychádzame, plus hodnota hrany (to jest 0 + 4). To ale nie je pravda, takže prepíšeme hodnotu $D [2]$ na $4$. Pre vrchol $3$ zasa porovnávame nekonečno s hodnotou $0+8$ alebo aj, ako je v algoritme~\ref{Alg_Dijkstra} naznačené, minimum z týchto dvoch hodnôt zapíšeme do $D [3]$. Vrchol $1$ nemá viac susedov, takže ho označíme ako navštívený a pokročíme. Ďalším vrcholom v poradí bude ten s najmenšou hodnotou $D [i]$ spomedzi doposiaľ nenavštívených, čiže vrchol $2$. Ten má iba jedného ešte nenavštíveného suseda, a to vrchol $3$. Do $D [2]$ preto zapíšeme minimum z hodnôt $8$ a $4 + 3$. Vrchol $2$ je týmto vybavený a označený za navštívený. Zostáva posledný vrchol - vrchol $3$. Väčšina implementácií dijkstrovho algoritmu pri dosiahnutý finálneho vrcholu končí v snahe urýchliť vyhľadávanie medzi dvoma vrcholmi. Ak vśak túto podmienku nezakomponujeme do nášho algoritmu, program zráta hodnoty najkratších ciest z daného vrcholu do všetkých ostatných vrcholov. V našom prípade nie je veľmi podstatné, ktorú variantu zvolíme, keďže algoritmus tak či tak vo vrchole $3$ skončí, nakoľko ten už nemá žiadne incidentné hrany a v grafe už nejestvujú ďalšie nenavštívené vrcholy. Dosiahli sme teda výsledok: najkratšie cesty z vrcholu $1$ sú uložené v poli $D$. Najkratšia cesta do vrcholu $1$ je $D [1] = 0$, do vrcholu $2$ je $D [2] = 4$ a pre vrchol $3$ je odpoveď $D [3] = 7$.\newline
 
-Týmto príkladom sme chceli jemne ozrejmiť postup pracovania algoritmu, keďže pre tých, čo sa s ním ešte nestretli, ho môže byť obtiažne z pseudokódu ~\ref{Alg_Dijkstra} vybadať.\newline
+Týmto príkladom sme chceli jemne ozrejmiť postup pracovania algoritmu, keďže pre tých, čo sa s ním ešte nestretli, ho môže byť dosť obtiažne z pseudokódu~\ref{Alg_Dijkstra} vybadať.\newline
 
-Keďže je našim cieľom nie ani tak zistiť cenu najlacnejšej cesty, ale skôr takéto cesty nájsť, dijkstrov algoritmus by sme potrebovali jemne modifikovať, a to tak, aby sme vedeli spätne zrekonštruovať nájdené cesty. Teda so znalosťou konečného vrchola by sme chceli vedieť vygenerovať postupnosť vrcholov, cez ktoré sme sa do finálneho vrchola dostali. Budeme si preto pamätať pri každom vrchole informáciu, z ktorého vrchola sme sa doň dostali.\newline
+Keďže je našim cieľom nie ani tak zistiť cenu najlacnejšej cesty, čo je hlavnou úlohou popísaného algoritmu, ale skôr takéto cesty nájsť, dijkstrov algoritmus by sme potrebovali jemne modifikovať, a to tak, aby sme vedeli spätne zrekonštruovať nájdené cesty. Teda so znalosťou konečného vrchola by sme chceli vedieť vygenerovať postupnosť vrcholov, cez ktoré sme sa do finálneho vrchola dostali. Budeme si preto pamätať pri každom vrchole informáciu, z ktorého vrchola sme sa doň dostali.\newline
 
 Dijkstrov algoritmus sa zdá byť najvhodnejším kandidátom pre účely našej práce. Jeho časová zložitosť je príjemná, implementácia nenánorčná a je dosť ľahké sa v nej orientovať, takže si ju budeme môcť poľahky modifikovať, prispôsobiť našim potrebám. Budeme teda schopný vypísať dodatočné informácie pre používaťeľov aplikácie, prípadne vyhľadávanie spresniť či rozšíriť podľa ich potrieb.\newline
 
+
 \subsection{Bellman - Fordov algoritmus}
+
+Ďalším algoritmom na výpočet najlacnejších ciest v grafe je Bellman - Frodov algoritmus. Hoci ako prvý prišiel s týmto riešením Alfonso Shimbel v roku 1955, algoritmus bol pomenovaný po Fordovi, ktorý ho publikoval v roku 1956, a po Bellmanovi, ktorého publikácia je z roku 1958. Ten istý algoritmus zverejnil aj Moore v roku 1957, a preto niekedy môžeme počuť aj o Bellman - Ford - Moorovom algoritme.\newline
+
+Samotný algoritmus, narozdiel od dijkstrovho, dokáže pracovať i so záporne ohodnotenými hranami. Avšak predpokladá sa, že graf neobsahuje záporne cykly, to jest cykly, ktorých celková cena má zápornú hodnotu. Ak by v grafe existoval aspoň jeden, mohli by sme po ňom prejsť ľubovoľne veľa krát, čím by sme ustavične znížovali najlacnejšiu cenu do viacerých vrcholov. Bellman - Fordov algoritmus je však navrhnutý tak, že zakaždým vykoná konečný počet krokov, takže i pri grafe obsahujúcom záporný cyklus skončí, nezacyklí sa, iba jeho výsledné hodnoty nebudú pravdivé. Navyše, mnohé implementácie zahŕňajú i detekciu takéhoto cyklu a pri jeho nájdení vyhlásia chybu. Naša implementácia takúto kontrolu obsahovať nebude, nakoľko nie je potrebná pre vysvetlenie funkcionality a fungovanie algoritmu.\newline
+
+Náš algoritmus predpokladá, že na vstupe dostane graf $G = (V, E)$ neobsahujúci záporné cykly, hodnotiacu funkciu $h: V \times V \rightarrow R$ a počiatočný vrchol $v_{0}$. Ďalšie predpoklady sú, ako u dijkstru, že ak $uv \notin E$, potom $h(u,v) = \infty$, taktiež $h(u,u) = 0$ a napokon, že funkciu $h$ je možné vypočítať v čase $O(1)$. Aby sa nám lahšie pracovalo, opäť povedzme, že vrcholy na vstupe musia byť reprezentované celými číslami $1, 2, ..., k$, kde $k$ je počet vrcholov grafu. Našim výsledkom bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do $v$, ozačená $D [v]$. Nasledovná implementácia je zostavená s pomocou knihy od Bannistera a Eppsteina \cite{bannister2012randomized}.\newline
+
+\begin{algorithm}[H]
+  \includegraphics[width=\linewidth]{./images/Alg_Bellman-Ford.png}
+  \caption{Bellman - Fordov algoritmus}
+  \label{Alg_Bellman-Ford}
+  \centering
+\end{algorithm}
+
+Časová zložitosť algoritmu je očividne $O(|V|\cdot |E|)$. Jeho korektnosť je možné nájsť napríklad v knihe \cite[kapitola 3.3.4]{bang2008digraphs}. Toto dielo navyše obsahuje aj implementáciu spomínaného drobného vylepšenia, a to zisťovanie prítomnosti záporného cyklu.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/bellman-ford_priklad.png}}
+  \caption{Orientovaný graf s ohodnotenými hranami}
+  \label{bellman-ford_priklad}
+\end{figure}
+
+Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je vstupným grafom algoritmu graf vyobrazený na obrázku~\ref{bellman-ford_priklad}. Naším cieľom bude nájsť najkratšiu cestu z vrcholu $1$ do ostatných vrcholov.
+
+\begin{table}[H]
+  \begin{center}
+    \caption{Priebeh algoritmu}
+    \label{priebeh_bellman-ford}
+    \begin{tabular}{ | c | c | c | c | c | }
+      \hline
+      iterácia & 1 & 2 & 3 & 4 \\
+      \hline
+      0 & 0 & $\infty$ & $\infty$ & $\infty$ \\
+      1 & 0 & 9 & \infty & 10 \\
+      2 & 0 & 9 & 12 & 10 \\
+      3 & 0 & 9 & 12 & 8 \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+V prípade Bellman - Fordovho algoritmu je nám opäť na obtiaž jeho strohá funkcionalita, a teda zisťovanie cien najlacnejších ciest, zatiaľ čo my žiadame poznať celú nájdenú cestu. Modifikácia kódu je ale jednoduchá, rovnaká ako pre dijkstru - pre kaźdý vrchol si navyše zapamätáme, z ktorého vrchola sme sa doň dostali.\newline
+
+Bellman - Fordov algoritmus má mnoho pozitív - aplikovateľnosť i na hrany so záporným ohodnotením. Jeho časová zložitosť je taktiež potešujúca a implementácia prehľadná. Avšak jeho funkčnosť i nad zápornými ohodnoteniami nám nijako nepomôže pri jeho aplikácií na grafikon hromadnej dopravy. Navyše, jeho časová zložitosť $O(|V|\cdot |E|)$ bude pri riešení nášho problému iba príťažou, nakoľko predpokladáme, že sieť liniek MHD bude obsahovať veľké množstvo hrán. Netreba však zabúdať, že algoritmus je pri iných problémoch široko využiteľný a výborný pre dobre zvolené dátové štruktúry.\newline
+
 
 \subsection{Floyd - Warshallov algoritmus}
 
+
 \subsection{Johnsonov algoritmus}
+
+\subsection{Zhrnutie}

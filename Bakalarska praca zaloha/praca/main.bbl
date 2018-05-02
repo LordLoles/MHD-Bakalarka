@@ -1,4 +1,20 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{bang2008digraphs}
+J{\o}rgen Bang-Jensen and Gregory~Z Gutin.
+\newblock {\em Digraphs: theory, algorithms and applications}.
+\newblock Springer Science \& Business Media, 2008.
+
+\bibitem{bannister2012randomized}
+Michael~J Bannister and David Eppstein.
+\newblock Randomized speedup of the bellman--ford algorithm.
+\newblock In {\em 2012 Proceedings of the Ninth Workshop on Analytic
+  Algorithmics and Combinatorics (ANALCO)}, pages 41--47. SIAM, 2012.
+
+\bibitem{bellman1958routing}
+Richard Bellman.
+\newblock On a routing problem.
+\newblock {\em Quarterly of applied mathematics}, 16(1):87--90, 1958.
 
 \bibitem{Diestel2000}
 Reinhard Diestel.

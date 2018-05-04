@@ -3,6 +3,40 @@
 
 Táto kapitola obsahuje popisy algoritmov, ktoré sú aplikovateľné na grafové štruktúry a navyše využiteľné pri vyhľadávaní spojení hromadnej dopravy. Formálnu charakterizáciu algoritmu zväčša doprevádza i jeho voľnejšia interpretácia, ktorá má za účel uľahčiť porozumenie čitateľom, ktorí sa s daným algoritmom doposiaľ nestretli. Naviac, pri algoritmoch sú uvedené výhody, respektíve nedostatky, pri jeho použití na nami vytýčený cieľ. V hojnom počte budeme využívať definície z kapitoly \ref{kap:grafy}.
 
+\section{Prechádzanie vrcholmi grafu}
+
+Stručne popíšeme základné algoritmy na prechádzanie vrholmi grafu. Tie však nie sú priveľmi využiteľné pri vyhľadávaní spojení MHD, môžu nám ale pomôcť k bezstarostnému prechádzaniu objemných súborov dát, ktoré bude sieť hromadnej dopravy isto obsahovať.
+
+\subsection{Prehľadávanie do šírky}
+
+Prehľadávanie do šírky alebo skrátene BFS (z anglického Breadth first search), dokáže pejsť cez všetky vrcholy grafu zapomoci fronty (alebo radu). Algoritmus si ukladá do nej ukladá susedov spracúvaných vrcholov, a tak prehľadá celý graf, pričom v každej iterácií prejde o jednu hranu viac vzdialené vrcholy od počiatočného.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/BFS_priklad.png}}
+  \caption{Príklad práce BFS na strome}
+  \label{BFS_priklad}
+\end{figure}
+
+
+\subsection{Prehľadávanie do hĺbky}
+
+Prehľadávanie do hĺbky, skrátene DFS (z anglického Depth-first search), prechádza cez vrcholy grafu len pomocou cyklu, prípadne rekurzie. Obvykle sa v algoritme na všetkých susedov vrchola zavolá postupne rekuzívne ten istý algoritmus prehľadávania.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/DFS_priklad.png}}
+  \caption{Príklad práce DFS na strome}
+  \label{DFS_priklad}
+\end{figure}
+
+
+\subsection{Zhrnutie}
+
+Nevyužijeme.
+Obvyklé pridávanie poľa navštívených do implementácií na predídenie zacyklenia.
+Nekonečné grafy.
+
+
+
 \section{Najlacnejšie cesty v grafe}
 
 Pri vyhľadávaní spojení mestskou hromadnou dopravou sa zdá byť veľmi racionálne zaoberať sa nachádzaním najlacnejších ciest v grafikone MHD. Dovoľujeme si tak tvrdiť, pretože najväčší dôraz cestujúcich je kladený práve na čo najskorší príchod do požadovanej lokality. Pre úplnosť ešte dodávame, že cena cesty, ako je asi zrejmé, je súčet hodnôt hrán (respektíve vrcholov), ktoré daná cesta obsahuje. Z doposiaľ uvedeného vyplýva, že pri našich úvahách budeme používať ohodnotené grafy, kde pridelenou hodnotou bude čas medzi zastávkami. Navyše musíme nejako ošetriť i vrcholy grafu - zastávky, keďže na nich zvyčajne čakáme na prestup na ďalší spoj. Od tejto myšlienky však spočiatku upustíme a budeme sa jej venovať až neskôr. A posledná úvaha - hranami v našom grafe sú linky MHD, sme preto nútení použiť orientované grafy.\newline
@@ -13,7 +47,7 @@ Ak uvažujeme vyhľadávanie najlacnejších ciest v grafe, musíme si najprv uv
 
 \subsection{Dijkstrov algoritmus}
 
-Holandský informatik, po ktorom je tento algoritmus pomenovaný, dokázal, okrem iného, vyriešiť aj nami nastolený problém. V jeho riešení je ale potrebné, aby boli ceny hrán grafu nezáporné reálne čísla, čo súhlasí s našou predstavou aplikovania algoritmu na grafikon MDH. Algoritmus je navrhnutý tak, že dostane ako vstup graf $G = (V, E)$, počiatočný vrchol $v_{0}$ a hodnotiacu funkciu $h: V \times V \rightarrow R^{+}_{0}$. Predpokladáme, že ak hrana $uv \notin E$, potom $h(u,v) = \infty$, ďalej, že $h(u,u) = 0$ a nakoniec, že funkciu $h$ je možné vypočítať v konštantnom čase $O(1)$. Máme taktiež jeden predpoklad na vrcholy grafu, a to, že sú reprezentované celými číslami $1, 2, ..., k$ (kde $k$ je počet vrcholov grafu). Nakoniec, výsledkom algoritmu bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná hodnota $D [v]$, čo je cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do vrchola $v$.\newline
+Holandský informatik, po ktorom je tento algoritmus pomenovaný, dokázal, okrem iného, vyriešiť aj nami nastolený problém. V jeho riešení je ale potrebné, aby boli ceny hrán grafu nezáporné reálne čísla, čo súhlasí s našou predstavou aplikovania algoritmu na grafikon MDH. Algoritmus je navrhnutý tak, že dostane ako vstup graf $G = (V, E)$, počiatočný vrchol $v_{0}$ a hodnotiacu funkciu $h: V \times V \rightarrow R^{+}_{0}$. Predpokladáme, že ak hrana $uv \notin E$, potom $h(u,v) = \infty$, ďalej, že $h(u,u) = 0$ a nakoniec, že funkciu $h$ je možné vypočítať v konštantnom čase $O(1)$. Máme taktiež jeden predpoklad na vrcholy grafu, a to, že sú reprezentované celými číslami $1, 2, ... , k$ (kde $k$ je počet vrcholov grafu). Nakoniec, výsledkom algoritmu bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná hodnota $D [v]$, čo je cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do vrchola $v$.\newline
 
 Tieto požiadavky, predpoklady, ba i vstup a výstup funkcie sú uvažované v horeuvedenom tvare len aby sme mohli predviesť implementáciu algoritmu od Pavla Ďuriša, ktorú možno nájsť aj v jeho knihe \cite[kapitola 2.2.1]{duris2009}.\newline
 
@@ -47,7 +81,7 @@ Dijkstrov algoritmus sa zdá byť najvhodnejším kandidátom pre účely našej
 
 Samotný algoritmus, narozdiel od dijkstrovho, dokáže pracovať i so záporne ohodnotenými hranami. Avšak predpokladá sa, že graf neobsahuje záporne cykly, to jest cykly, ktorých celková cena má zápornú hodnotu. Ak by v grafe existoval aspoň jeden, mohli by sme po ňom prejsť ľubovoľne veľa krát, čím by sme ustavične znížovali najlacnejšiu cenu do viacerých vrcholov. Bellman - Fordov algoritmus je však navrhnutý tak, že zakaždým vykoná konečný počet krokov, takže i pri grafe obsahujúcom záporný cyklus skončí, nezacyklí sa, iba jeho výsledné hodnoty nebudú pravdivé. Navyše, mnohé implementácie zahŕňajú i detekciu takéhoto cyklu a pri jeho nájdení vyhlásia chybu. Naša implementácia takúto kontrolu obsahovať nebude, nakoľko nie je potrebná pre vysvetlenie funkcionality a fungovanie algoritmu.\newline
 
-Náš algoritmus predpokladá, že na vstupe dostane graf $G = (V, E)$ neobsahujúci záporné cykly, hodnotiacu funkciu $h: V \times V \rightarrow R$ a počiatočný vrchol $v_{0}$. Ďalšie predpoklady sú, ako u dijkstru, že ak $uv \notin E$, potom $h(u,v) = \infty$, taktiež $h(u,u) = 0$ a napokon, že funkciu $h$ je možné vypočítať v čase $O(1)$. Aby sa nám lahšie pracovalo, opäť povedzme, že vrcholy na vstupe musia byť reprezentované celými číslami $1, 2, ..., k$, kde $k$ je počet vrcholov grafu. Našim výsledkom bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do $v$, ozačená $D [v]$. Nasledovná implementácia je zostavená s pomocou knihy od Bannistera a Eppsteina \cite{bannister2012randomized}.\newline
+Náš algoritmus predpokladá, že na vstupe dostane graf $G = (V, E)$ neobsahujúci záporné cykly, hodnotiacu funkciu $h: V \times V \rightarrow R$ a počiatočný vrchol $v_{0}$. Ďalšie predpoklady sú, ako u dijkstru, že ak $uv \notin E$, potom $h(u,v) = \infty$, taktiež $h(u,u) = 0$ a napokon, že funkciu $h$ je možné vypočítať v čase $O(1)$. Aby sa nám ľahšie pracovalo, opäť povedzme, že vrcholy na vstupe musia byť reprezentované celými číslami $1, 2, ... , n$, kde $n$ je počet vrcholov grafu. Našim výsledkom bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do $v$, ozačená $D [v]$. Nasledovná implementácia je zostavená s pomocou knihy od Bannistera a Eppsteina \cite{bannister2012randomized}.\newline
 
 \begin{algorithm}[H]
   \includegraphics[width=\linewidth]{./images/Alg_Bellman-Ford.png}
@@ -64,7 +98,7 @@ Náš algoritmus predpokladá, že na vstupe dostane graf $G = (V, E)$ neobsahuj
   \label{bellman-ford_priklad}
 \end{figure}
 
-Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je vstupným grafom algoritmu graf vyobrazený na obrázku~\ref{bellman-ford_priklad}. Naším cieľom bude nájsť najkratšiu cestu z vrcholu $1$ do ostatných vrcholov.
+Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je vstupným grafom algoritmu graf vyobrazený na obrázku~\ref{bellman-ford_priklad}. Naším cieľom bude nájsť najkratšiu cestu z vrcholu $1$ do ostatných vrcholov. Pod týmto popisom sa nachádza aj tabuľka (tabuľka~\ref{priebeh_bellman-ford}) ukazujúca kľúčové hodnoty počas vykonávania algoritmu na našom príklade. Iterácia číslo 0 zaznamenáva stav vrcholov po inicializácií a pred začatím vykonávania cyklu, preto má počiatočný vrchol v tomto momente hodnotu $D [1] = 0$ a všetky ostatné $D [j] = \infty$. Počas iterácie $i = 1$ sa ideme pozerať na všetky hrany v grafe. Tu zavisí od ich usporiadania, ktorá z nich sa vezme v akom poradí. V našom príklade, aby sme demonštrovali čo najviac možností, povedzme, že ako prvú určíme na porovnávanie hranu medzi vrcholmi $2$ a $3$. Keďže je ale hodnota $D[2]$ aj $D[3]$ rovná nekonečnu, zapíšeme do $D[3]$ opäť nekonečno. Nech je ďalšou hranou v poradí vyhodnocovania hrana medzi vrcholmi $1$ a $2$. Tu je už situácia príznačnejšia. Nakoľko poznáme hodnotu $D[1]$, môžeme zaznačiť, že $D[2] = 9$. Pozorné oko si isto všimne, čo by sa stalo, ak by boli vyhodnocovania týchto dvoch hrán v opačnom poradí. Totiž, v takom prípade by sme ihneď vedeli vypočitať i hodnotu $D[3]$. Pokračujme hranou medzi vrcholmi $1$ a $4$. Zisťujeme, že $D[4] = 10$. Hrana medzi vrcholmi $3$ a $4$ dovŕši prvú iteráciu algortmu. Tu sa ale nič nezmení, keďže porovnávame nekonečno s hodnotou $10$. V nasledujúcej iterácií $i = 2$ sa pre hrany spájajúce vrcholy $1, 2$ a $1, 4$ nestane nič zaujímavé. Pozrime sa teda na zvyšné hrany. Pre hranu medzi vrcholmi $2$ a $3$ sa upraví hodnota $D[3]$ na $12$ a následne sa pre poslednú hranu (medzi vrcholmi $3$ a $4$) vykoná porovnanie hodnôt ($D[4] = 10$) a $((D[3] = 12) + (-4))$. Po druhej iterácií sme už dospeli k optimálnemu riešeniu, čo ale náš algoritmus nemôže vedieť, a preto vykoná i poslednú, tretiu iteráciu. V nej sa ale už nič nezmení. Ak v dvoch stavoch po sebe nastala rovnaká situácia, repsektíve neprišlo k žiadnej zmene, je jasné, že algoritmus dosiahol výsledok. Ak by teda bola na pláne ešte ďalšia iterácia či nebodaj viac, môžeme vykonávanie programu ukončiť bez strachu pre nesprávny výsledok. Mnohé implementácie sú preto väčšinou doplnené o toto jemné vylepšenie. V našom príklade by nám však nepomohlo, keďže by program tak či tak zastavil po tretej iterácií.
 
 \begin{table}[H]
   \begin{center}
@@ -72,18 +106,18 @@ Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je 
     \label{priebeh_bellman-ford}
     \begin{tabular}{ | c | c | c | c | c | }
       \hline
-      iterácia & 1 & 2 & 3 & 4 \\
+      iterácia = i & D[1] & D[2] & D[3] & D[4] \\
       \hline
       0 & 0 & $\infty$ & $\infty$ & $\infty$ \\
-      1 & 0 & 9 & \infty & 10 \\
-      2 & 0 & 9 & 12 & 10 \\
+      1 & 0 & 9 & $\infty$ & 10 \\
+      2 & 0 & 9 & 12 & 8 \\
       3 & 0 & 9 & 12 & 8 \\
       \hline
     \end{tabular}
   \end{center}
 \end{table}
 
-V prípade Bellman - Fordovho algoritmu je nám opäť na obtiaž jeho strohá funkcionalita, a teda zisťovanie cien najlacnejších ciest, zatiaľ čo my žiadame poznať celú nájdenú cestu. Modifikácia kódu je ale jednoduchá, rovnaká ako pre dijkstru - pre kaźdý vrchol si navyše zapamätáme, z ktorého vrchola sme sa doň dostali.\newline
+V prípade Bellman - Fordovho algoritmu je nám opäť na obtiaž jeho strohá funkcionalita, a teda zisťovanie cien najlacnejších ciest, zatiaľ čo my žiadame poznať celú nájdenú cestu. Modifikácia kódu je ale jednoduchá, rovnaká ako pre dijkstru - pre kaźdý vrchol si navyše zapamätáme, z ktorého vrcholu sme sa doň dostali.\newline
 
 Bellman - Fordov algoritmus má mnoho pozitív - aplikovateľnosť i na hrany so záporným ohodnotením. Jeho časová zložitosť je taktiež potešujúca a implementácia prehľadná. Avšak jeho funkčnosť i nad zápornými ohodnoteniami nám nijako nepomôže pri jeho aplikácií na grafikon hromadnej dopravy. Navyše, jeho časová zložitosť $O(|V|\cdot |E|)$ bude pri riešení nášho problému iba príťažou, nakoľko predpokladáme, že sieť liniek MHD bude obsahovať veľké množstvo hrán. Netreba však zabúdať, že algoritmus je pri iných problémoch široko využiteľný a výborný pre dobre zvolené dátové štruktúry.\newline
 

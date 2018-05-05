@@ -1,11 +1,13 @@
 \chapter{Algoritmy na grafoch}
 \label{kap:algoritmy}
 
-Táto kapitola obsahuje popisy algoritmov, ktoré sú aplikovateľné na grafové štruktúry a navyše využiteľné pri vyhľadávaní spojení hromadnej dopravy. Formálnu charakterizáciu algoritmu zväčša doprevádza i jeho voľnejšia interpretácia, ktorá má za účel uľahčiť porozumenie čitateľom, ktorí sa s daným algoritmom doposiaľ nestretli. Naviac, pri algoritmoch sú uvedené výhody, respektíve nedostatky, pri jeho použití na nami vytýčený cieľ. V hojnom počte budeme využívať definície z kapitoly \ref{kap:grafy}.
+Táto kapitola obsahuje popisy algoritmov, ktoré sú aplikovateľné na grafové štruktúry a navyše využiteľné pri vyhľadávaní spojení hromadnej dopravy. Formálnu charakterizáciu algoritmu zväčša doprevádza i jeho voľnejšia interpretácia, ktorá má za účel uľahčiť porozumenie čitateľom, ktorí sa s daným algoritmom doposiaľ nestretli. Naviac, pri algoritmoch sú uvedené výhody, respektíve nedostatky, pri jeho použití na nami vytýčený cieľ. V hojnom počte budeme využívať definície z kapitoly \ref{kap:grafy}.\newline
+
 
 \section{Prechádzanie vrcholmi grafu}
 
-Stručne popíšeme základné algoritmy na prechádzanie vrholmi grafu. Tie však nie sú priveľmi využiteľné pri vyhľadávaní spojení MHD, môžu nám ale pomôcť k bezstarostnému prechádzaniu objemných súborov dát, ktoré bude sieť hromadnej dopravy isto obsahovať.
+Stručne popíšeme základné algoritmy na prechádzanie vrholmi grafu. Tie však nie sú priveľmi využiteľné pri vyhľadávaní spojení MHD, môžu nám ale pomôcť k bezstarostnému prechádzaniu objemných súborov dát, ktoré bude sieť hromadnej dopravy isto obsahovať.\newline
+
 
 \subsection{Prehľadávanie do šírky}
 
@@ -28,13 +30,14 @@ Prehľadávanie do hĺbky, skrátene DFS (z anglického Depth-first search), pre
   \label{DFS_priklad}
 \end{figure}
 
+Je vhodné poznamenať, že na pbrázku~\ref{DFS_priklad} je ukázané len jedno z možných poradí práce s vrcholmi. Samozrejme, vrcholy budú vždy navštívené vo vyobrazenom poradí, avšak práca s nimi môže byť vykonaná až tromi spôsobmi. Prvý z nich súhlasí s usporiadaním na obrázku a nazýva sa \textit{preorder}. Ďalšie dva sú \textit{inorder} a \textit{postorder}.\newline
+
 
 \subsection{Zhrnutie}
 
-Nevyužijeme.
-Obvyklé pridávanie poľa navštívených do implementácií na predídenie zacyklenia.
-Nekonečné grafy.
+Obi dva algoritmy majú očividnú lineárnu časovú zložitosť ($O(n)$), nakoľko sa pozrú na každý vrchol grafu práve raz.\newline
 
+Ako sme už spomínali, v týchto algoritmoch nevidíme potenciál pri ich využití na uskutočnenie nášho cieľa. Ich znalosť však môže byť veľmi prínosná pri prechádzaní štruktúr našich grafov.\newline
 
 
 \section{Najlacnejšie cesty v grafe}
@@ -44,6 +47,7 @@ Pri vyhľadávaní spojení mestskou hromadnou dopravou sa zdá byť veľmi raci
 Ak uvažujeme vyhľadávanie najlacnejších ciest v grafe, musíme si najprv uvedomiť, čo presne je našim cieľom. Výledok, ktorý chceme dosiahnuť ako výstp algoritmu, má byť najlacnejšia cesta z počiatočného bodu do koncového. Avšak znalosť problematiky algoritmov na grafových štruktúrach nám ponúka riešenia iného, koplexnejšieho problému s asymptoticky rovnakou časovou zložitosťou. Týmto problémom je vyhľadávanie najlacnejších ciest z počiatočného vrcholu do všetkých ostatných vrcholov. Ľahko nahliadnuť, že riešeim tohto problému dostaneme odpoveď aj na našu počiatočnú otázku.  Preto sa v nasledujúcej časti budeme zaoberať algoritmami riešiacimi túto úlohu.\newline
 
 Ľahko spozorovať, že by mohlo byť v určitých situáciách výhodné vypočítať ceny a nájsť najlacnejšie cesty pre všetky dvojice vrcholov. Hlavne, keď graf obsahuje malé množstvo vrcholov - zastávok. Mnoho miest má len malú sieť mestskej hromadnej dopravy, a teda by bolo rozumné vypočítať všetky potrebné údaje naraz na začiatku, a potom, pri prijímaní dotazu na vyhľadanie spojenia, jednoducho vypísať už vypočítanú odpoveď. Z tohto dôvodu uvedieme i algoritmy riešiace tento problém.\newline
+
 
 \subsection{Dijkstrov algoritmus}
 
@@ -75,17 +79,17 @@ Keďže je našim cieľom nie ani tak zistiť cenu najlacnejšej cesty, čo je h
 Dijkstrov algoritmus sa zdá byť najvhodnejším kandidátom pre účely našej práce. Jeho časová zložitosť je príjemná, implementácia nenánorčná a je dosť ľahké sa v nej orientovať, takže si ju budeme môcť poľahky modifikovať, prispôsobiť našim potrebám. Budeme teda schopný vypísať dodatočné informácie pre používaťeľov aplikácie, prípadne vyhľadávanie spresniť či rozšíriť podľa ich potrieb.\newline
 
 
-\subsection{Bellman - Fordov algoritmus}
+\subsection{Bellman\textendash Fordov algoritmus}
 
-Ďalším algoritmom na výpočet najlacnejších ciest v grafe je Bellman - Frodov algoritmus. Hoci ako prvý prišiel s týmto riešením Alfonso Shimbel v roku 1955, algoritmus bol pomenovaný po Fordovi, ktorý ho publikoval v roku 1956, a po Bellmanovi, ktorého publikácia je z roku 1958. Ten istý algoritmus zverejnil aj Moore v roku 1957, a preto niekedy môžeme počuť aj o Bellman - Ford - Moorovom algoritme.\newline
+Ďalším algoritmom na výpočet najlacnejších ciest v grafe je Bellman\textendash Frodov algoritmus. Hoci ako prvý prišiel s týmto riešením Alfonso Shimbel v roku 1955, algoritmus bol pomenovaný po Fordovi, ktorý ho publikoval v roku 1956 a po Bellmanovi, ktorého publikácia je z roku 1958. Ten istý algoritmus zverejnil i Moore v roku 1957, a preto niekedy môžeme počuť aj o Bellman\textendash Ford\textendash Moorovom algoritme.\newline
 
-Samotný algoritmus, narozdiel od dijkstrovho, dokáže pracovať i so záporne ohodnotenými hranami. Avšak predpokladá sa, že graf neobsahuje záporne cykly, to jest cykly, ktorých celková cena má zápornú hodnotu. Ak by v grafe existoval aspoň jeden, mohli by sme po ňom prejsť ľubovoľne veľa krát, čím by sme ustavične znížovali najlacnejšiu cenu do viacerých vrcholov. Bellman - Fordov algoritmus je však navrhnutý tak, že zakaždým vykoná konečný počet krokov, takže i pri grafe obsahujúcom záporný cyklus skončí, nezacyklí sa, iba jeho výsledné hodnoty nebudú pravdivé. Navyše, mnohé implementácie zahŕňajú i detekciu takéhoto cyklu a pri jeho nájdení vyhlásia chybu. Naša implementácia takúto kontrolu obsahovať nebude, nakoľko nie je potrebná pre vysvetlenie funkcionality a fungovanie algoritmu.\newline
+Samotný algoritmus, narozdiel od dijkstrovho, dokáže pracovať i so záporne ohodnotenými hranami. Avšak predpokladá sa, že graf neobsahuje záporne cykly, to jest cykly, ktorých celková cena má zápornú hodnotu. Ak by v grafe existoval aspoň jeden, mohli by sme po ňom prejsť ľubovoľne veľa krát, čím by sme ustavične znížovali najlacnejšiu cenu do viacerých vrcholov. Bellman\textendash Fordov algoritmus je však navrhnutý tak, že zakaždým vykoná konečný počet krokov, takže i pri grafe obsahujúcom záporný cyklus skončí, nezacyklí sa, iba jeho výsledné hodnoty nebudú pravdivé. Navyše, mnohé implementácie zahŕňajú i detekciu takéhoto cyklu a pri jeho nájdení vyhlásia chybu. Naša implementácia takúto kontrolu obsahovať nebude, nakoľko nie je potrebná pre vysvetlenie funkcionality a fungovanie algoritmu.\newline
 
 Náš algoritmus predpokladá, že na vstupe dostane graf $G = (V, E)$ neobsahujúci záporné cykly, hodnotiacu funkciu $h: V \times V \rightarrow R$ a počiatočný vrchol $v_{0}$. Ďalšie predpoklady sú, ako u dijkstru, že ak $uv \notin E$, potom $h(u,v) = \infty$, taktiež $h(u,u) = 0$ a napokon, že funkciu $h$ je možné vypočítať v čase $O(1)$. Aby sa nám ľahšie pracovalo, opäť povedzme, že vrcholy na vstupe musia byť reprezentované celými číslami $1, 2, ... , n$, kde $n$ je počet vrcholov grafu. Našim výsledkom bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do $v$, ozačená $D [v]$. Nasledovná implementácia je zostavená s pomocou knihy od Bannistera a Eppsteina \cite{bannister2012randomized}.\newline
 
 \begin{algorithm}[H]
   \includegraphics[width=\linewidth]{./images/Alg_Bellman-Ford.png}
-  \caption{Bellman - Fordov algoritmus}
+  \caption{Bellman\textendash Fordov algoritmus}
   \label{Alg_Bellman-Ford}
   \centering
 \end{algorithm}
@@ -98,7 +102,7 @@ Náš algoritmus predpokladá, že na vstupe dostane graf $G = (V, E)$ neobsahuj
   \label{bellman-ford_priklad}
 \end{figure}
 
-Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je vstupným grafom algoritmu graf vyobrazený na obrázku~\ref{bellman-ford_priklad}. Naším cieľom bude nájsť najkratšiu cestu z vrcholu $1$ do ostatných vrcholov. Pod týmto popisom sa nachádza aj tabuľka (tabuľka~\ref{priebeh_bellman-ford}) ukazujúca kľúčové hodnoty počas vykonávania algoritmu na našom príklade. Iterácia číslo 0 zaznamenáva stav vrcholov po inicializácií a pred začatím vykonávania cyklu, preto má počiatočný vrchol v tomto momente hodnotu $D [1] = 0$ a všetky ostatné $D [j] = \infty$. Počas iterácie $i = 1$ sa ideme pozerať na všetky hrany v grafe. Tu zavisí od ich usporiadania, ktorá z nich sa vezme v akom poradí. V našom príklade, aby sme demonštrovali čo najviac možností, povedzme, že ako prvú určíme na porovnávanie hranu medzi vrcholmi $2$ a $3$. Keďže je ale hodnota $D[2]$ aj $D[3]$ rovná nekonečnu, zapíšeme do $D[3]$ opäť nekonečno. Nech je ďalšou hranou v poradí vyhodnocovania hrana medzi vrcholmi $1$ a $2$. Tu je už situácia príznačnejšia. Nakoľko poznáme hodnotu $D[1]$, môžeme zaznačiť, že $D[2] = 9$. Pozorné oko si isto všimne, čo by sa stalo, ak by boli vyhodnocovania týchto dvoch hrán v opačnom poradí. Totiž, v takom prípade by sme ihneď vedeli vypočitať i hodnotu $D[3]$. Pokračujme hranou medzi vrcholmi $1$ a $4$. Zisťujeme, že $D[4] = 10$. Hrana medzi vrcholmi $3$ a $4$ dovŕši prvú iteráciu algortmu. Tu sa ale nič nezmení, keďže porovnávame nekonečno s hodnotou $10$. V nasledujúcej iterácií $i = 2$ sa pre hrany spájajúce vrcholy $1, 2$ a $1, 4$ nestane nič zaujímavé. Pozrime sa teda na zvyšné hrany. Pre hranu medzi vrcholmi $2$ a $3$ sa upraví hodnota $D[3]$ na $12$ a následne sa pre poslednú hranu (medzi vrcholmi $3$ a $4$) vykoná porovnanie hodnôt ($D[4] = 10$) a $((D[3] = 12) + (-4))$. Po druhej iterácií sme už dospeli k optimálnemu riešeniu, čo ale náš algoritmus nemôže vedieť, a preto vykoná i poslednú, tretiu iteráciu. V nej sa ale už nič nezmení. Ak v dvoch stavoch po sebe nastala rovnaká situácia, repsektíve neprišlo k žiadnej zmene, je jasné, že algoritmus dosiahol výsledok. Ak by teda bola na pláne ešte ďalšia iterácia či nebodaj viac, môžeme vykonávanie programu ukončiť bez strachu pre nesprávny výsledok. Mnohé implementácie sú preto väčšinou doplnené o toto jemné vylepšenie. V našom príklade by nám však nepomohlo, keďže by program tak či tak zastavil po tretej iterácií.
+Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je vstupným grafom algoritmu graf vyobrazený na obrázku~\ref{bellman-ford_priklad}. Naším cieľom bude nájsť najkratšiu cestu z vrcholu $1$ do ostatných vrcholov. Pod týmto popisom sa nachádza aj tabuľka (tabuľka~\ref{priebeh_bellman-ford}) ukazujúca kľúčové hodnoty počas vykonávania algoritmu na našom príklade. Iterácia číslo 0 zaznamenáva stav vrcholov po inicializácií a pred začatím vykonávania cyklu, preto má počiatočný vrchol v tomto momente hodnotu $D [1] = 0$ a všetky ostatné $D [j] = \infty$. Počas iterácie $i = 1$ sa ideme pozerať na všetky hrany v grafe. Tu zavisí od ich usporiadania, ktorá z nich sa vezme v akom poradí. V našom príklade, aby sme demonštrovali čo najviac možností, povedzme, že ako prvú určíme na porovnávanie hranu medzi vrcholmi $2$ a $3$. Keďže je ale hodnota $D[2]$ aj $D[3]$ rovná nekonečnu, zapíšeme do $D[3]$ opäť nekonečno. Nech je ďalšou hranou v poradí vyhodnocovania hrana medzi vrcholmi $1$ a $2$. Tu je už situácia príznačnejšia. Nakoľko poznáme hodnotu $D[1]$, môžeme zaznačiť, že $D[2] = 9$. Pozorné oko si isto všimne, čo by sa stalo, ak by boli vyhodnocovania týchto dvoch hrán v opačnom poradí. Totiž, v takom prípade by sme ihneď vedeli vypočitať i hodnotu $D[3]$. Pokračujme hranou medzi vrcholmi $1$ a $4$. Zisťujeme, že $D[4] = 10$. Hrana medzi vrcholmi $3$ a $4$ dovŕši prvú iteráciu algortmu. Tu sa ale nič nezmení, keďže porovnávame nekonečno s hodnotou $10$. V nasledujúcej iterácií $i = 2$ sa pre hrany spájajúce vrcholy $1, 2$ a $1, 4$ nestane nič zaujímavé. Pozrime sa teda na zvyšné hrany. Pre hranu medzi vrcholmi $2$ a $3$ sa upraví hodnota $D[3]$ na $12$ a následne sa pre poslednú hranu (medzi vrcholmi $3$ a $4$) vykoná porovnanie hodnôt ($D[4] = 10$) a $((D[3] = 12) + (-4))$. Po druhej iterácií sme už dospeli k optimálnemu riešeniu, čo ale náš algoritmus nemôže vedieť, a preto vykoná i poslednú, tretiu iteráciu. V nej sa ale už nič nezmení. Ak v dvoch stavoch po sebe nastala rovnaká situácia, repsektíve neprišlo k žiadnej zmene, je jasné, že algoritmus dosiahol výsledok. Ak by teda bola na pláne ešte ďalšia iterácia či nebodaj viac, môžeme vykonávanie programu ukončiť bez strachu pre nesprávny výsledok. Mnohé implementácie sú preto väčšinou doplnené o toto jemné vylepšenie. V našom príklade by nám však nepomohlo, keďže by program tak či tak zastavil po tretej iterácií.\newline
 
 \begin{table}[H]
   \begin{center}
@@ -117,12 +121,43 @@ Funkcionalitu algoritmu si opäť predvedieme na jednoduchom príklade. Nech je 
   \end{center}
 \end{table}
 
-V prípade Bellman - Fordovho algoritmu je nám opäť na obtiaž jeho strohá funkcionalita, a teda zisťovanie cien najlacnejších ciest, zatiaľ čo my žiadame poznať celú nájdenú cestu. Modifikácia kódu je ale jednoduchá, rovnaká ako pre dijkstru - pre kaźdý vrchol si navyše zapamätáme, z ktorého vrcholu sme sa doň dostali.\newline
+V prípade Bellman\textendash Fordovho algoritmu je nám opäť na obtiaž jeho strohá funkcionalita, a teda zisťovanie cien najlacnejších ciest, zatiaľ čo my žiadame poznať celú nájdenú cestu. Modifikácia kódu je ale jednoduchá, rovnaká ako pre dijkstru - pre kaźdý vrchol si navyše zapamätáme, z ktorého vrcholu sme sa doň dostali.\newline
 
-Bellman - Fordov algoritmus má mnoho pozitív - aplikovateľnosť i na hrany so záporným ohodnotením. Jeho časová zložitosť je taktiež potešujúca a implementácia prehľadná. Avšak jeho funkčnosť i nad zápornými ohodnoteniami nám nijako nepomôže pri jeho aplikácií na grafikon hromadnej dopravy. Navyše, jeho časová zložitosť $O(|V|\cdot |E|)$ bude pri riešení nášho problému iba príťažou, nakoľko predpokladáme, že sieť liniek MHD bude obsahovať veľké množstvo hrán. Netreba však zabúdať, že algoritmus je pri iných problémoch široko využiteľný a výborný pre dobre zvolené dátové štruktúry.\newline
+Bellman\textendash Fordov algoritmus má mnoho pozitív - aplikovateľnosť i na hrany so záporným ohodnotením. Jeho časová zložitosť je taktiež potešujúca a implementácia prehľadná. Avšak jeho funkčnosť i nad zápornými ohodnoteniami nám nijako nepomôže pri jeho aplikácií na grafikon hromadnej dopravy. Navyše, jeho časová zložitosť $O(|V|\cdot |E|)$ bude pri riešení nášho problému iba príťažou, nakoľko predpokladáme, že sieť liniek MHD bude obsahovať veľké množstvo hrán. Netreba však zabúdať, že algoritmus je pri iných problémoch široko využiteľný a výborný pre dobre zvolené dátové štruktúry.\newline
 
 
-\subsection{Floyd - Warshallov algoritmus}
+\subsection{Floyd\textendash Warshallov algoritmus}
+
+Posledným algortimom slúžiaci na hľadanie najlacnejších ceist, ktorý uvedieme, nesie názov Floyd\textendash Warshallov algoritmus. Opäť, ako v predošlom prípade, sa ale ani Floyd, ani Warshall nemôžu pýšiť prvenstvom. Predbehol ich Roy publikáciou z roku 1959, zatiaľ čo Floydova i Warshallova boli obe z roku 1962. Warshall dokonca v jeho práci nadväzuje na Kleeneho algoritmus z roku 1956. Finálna verzia, ktorú aj mi predvedieme, dostala svoju podobu až na konci roku 1962 zásluhou Ingermana. Vďaka mnohým publikáciám sa tento algoritmus nazýva rôznymi menami. My si ale vystačíme s jedným.
+
+Výsledok Floyd\textendash Warshallovho algoritmu sa značne odlišuje od predošlých dvoch. Zatiaľ čo tie spoľahlivo zistili hodnoty najlacnejších ciest z daného vrcholu do všetkých ostatných vrcholov, Floyd\textendash Warshallov ich vyráta z každého vrcholu do každého. Samozrejme, to by sme vedeli dosiahnuť aj použitím predošlých algoritmov na všetkych vrcholoch. Vyžadovalo by sa však mnoho réžie navyše a kód by sa pravepodobne priveľmi zneprehľadnil. Naopak, Floyd\textendash Warshallov algoritmus je na pohľad až príliš jednoduchý, no nesmierne účinný a očividne funkčný.
+
+Nami uvedená implementácia bude pracovať s maticami. Na vstupe dostane algoritmus graf $G = (V, E)$ bez záporných cyklov a incidenčnú maticu $W = (w_{ij})$. Maticu $W$ si vieme jednoducho zostrojiť z hodnotiacej funkcie takto: Nech sú ceny hrán hodnotené hodnotiacou funkciou $h: V \times V \rightarrow R$, kde, ako obvykle, $h(u,u) = 0$, $uv \notin E \implies h(u,v) = \infty$ a $h(u,v) \in O(1)$. Potom $w_{ij} = h(i,j)$ pre všetky $i, j$. Príklad takejto matice je vyobrazená na~\ref{C0}.
+
+\begin{algorithm}[H]
+  \includegraphics[width=\linewidth]{./images/Alg_Floyd-Warshall.png}
+  \caption{Floyd\textendash Washallov algoritmus}
+  \label{Alg_Floyd-Warshall}
+  \centering
+\end{algorithm}
+
+
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/floyd-washall_priklad.png}}
+  \caption{Orientovaný graf s ohodnotenými hranami}
+  \label{floyd-washall_priklad}
+\end{figure}
+
+\begin{equation}
+  C^{(0)} = W =
+  \begin{pmatrix}
+    0 & 9 & \infty & 10 \\
+    \infty & 0 & 3 & \infty \\
+    \infty & \infty & 0 & -4 \\
+    \infty & \infty & \infty & 0
+  \end{pmatrix}
+\end{equation}
 
 
 \subsection{Johnsonov algoritmus}

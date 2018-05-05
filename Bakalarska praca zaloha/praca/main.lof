@@ -1,7 +1,10 @@
 \select@language {slovak}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{9}{figure.2.1}
-\contentsline {figure}{\numberline {2}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{12}{figure.2.2}
+\contentsline {figure}{\numberline {1}{\ignorespaces Pr\IeC {\'\i }klad pr\IeC {\'a}ce BFS na strome}}{8}{figure.2.1}
+\contentsline {figure}{\numberline {2}{\ignorespaces Pr\IeC {\'\i }klad pr\IeC {\'a}ce DFS na strome}}{8}{figure.2.2}
+\contentsline {figure}{\numberline {3}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{11}{figure.2.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{14}{figure.2.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{17}{figure.2.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

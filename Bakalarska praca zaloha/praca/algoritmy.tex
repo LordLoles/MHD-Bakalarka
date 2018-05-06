@@ -11,7 +11,7 @@ Stručne popíšeme základné algoritmy na prechádzanie vrholmi grafu. Tie vš
 
 \subsection{Prehľadávanie do šírky}
 
-Prehľadávanie do šírky alebo skrátene BFS (z anglického Breadth first search), dokáže pejsť cez všetky vrcholy grafu zapomoci fronty (alebo radu). Algoritmus si ukladá do nej ukladá susedov spracúvaných vrcholov, a tak prehľadá celý graf, pričom v každej iterácií prejde o jednu hranu viac vzdialené vrcholy od počiatočného.\newline
+Prehľadávanie do šírky alebo skrátene BFS (z anglického Breadth-first search), dokáže pejsť cez všetky vrcholy grafu zapomoci fronty (alebo radu). Algoritmus si ukladá do nej ukladá susedov spracúvaných vrcholov, a tak prehľadá celý graf, pričom v každej iterácií prejde o jednu hranu viac vzdialené vrcholy od počiatočného.\newline
 
 \begin{figure}[H]
   \centering{\includegraphics{./images/BFS_priklad.png}}
@@ -130,9 +130,9 @@ Bellman\textendash Fordov algoritmus má mnoho pozitív - aplikovateľnosť i na
 
 Posledným algortimom slúžiaci na hľadanie najlacnejších ceist, ktorý uvedieme, nesie názov Floyd\textendash Warshallov algoritmus. Opäť, ako v predošlom prípade, sa ale ani Floyd, ani Warshall nemôžu pýšiť prvenstvom. Predbehol ich Roy publikáciou z roku 1959, zatiaľ čo Floydova i Warshallova boli obe z roku 1962. Warshall dokonca v jeho práci nadväzuje na Kleeneho algoritmus z roku 1956. Finálna verzia, ktorú aj mi predvedieme, dostala svoju podobu až na konci roku 1962 zásluhou Ingermana. Vďaka mnohým publikáciám sa tento algoritmus nazýva rôznymi menami. My si ale vystačíme s jedným.
 
-Výsledok Floyd\textendash Warshallovho algoritmu sa značne odlišuje od predošlých dvoch. Zatiaľ čo tie spoľahlivo zistili hodnoty najlacnejších ciest z daného vrcholu do všetkých ostatných vrcholov, Floyd\textendash Warshallov ich vyráta z každého vrcholu do každého. Samozrejme, to by sme vedeli dosiahnuť aj použitím predošlých algoritmov na všetkych vrcholoch. Vyžadovalo by sa však mnoho réžie navyše a kód by sa pravepodobne priveľmi zneprehľadnil. Naopak, Floyd\textendash Warshallov algoritmus je na pohľad až príliš jednoduchý, no nesmierne účinný a očividne funkčný.
+Výsledok Floyd\textendash Warshallovho algoritmu sa značne odlišuje od predošlých dvoch. Zatiaľ čo tie spoľahlivo zistili hodnoty najlacnejších ciest z daného vrcholu do všetkých ostatných vrcholov, Floyd\textendash Warshallov ich vyráta z každého vrcholu do každého. Samozrejme, to by sme vedeli dosiahnuť aj použitím predošlých algoritmov na všetkych vrcholoch. Vyžadovalo by sa však mnoho réžie navyše a kód by sa pravepodobne priveľmi zneprehľadnil. Naopak, Floyd\textendash Warshallov algoritmus je na pohľad až príliš jednoduchý, no nesmierne účinný.
 
-Nami uvedená implementácia bude pracovať s maticami. Na vstupe dostane algoritmus graf $G = (V, E)$ bez záporných cyklov a incidenčnú maticu $W = (w_{ij})$. Maticu $W$ si vieme jednoducho zostrojiť z hodnotiacej funkcie takto: Nech sú ceny hrán hodnotené hodnotiacou funkciou $h: V \times V \rightarrow R$, kde, ako obvykle, $h(u,u) = 0$, $uv \notin E \implies h(u,v) = \infty$ a $h(u,v) \in O(1)$. Potom $w_{ij} = h(i,j)$ pre všetky $i, j$. Príklad takejto matice je vyobrazená na~\ref{C0}.
+Nami uvedená implementácia bude pracovať s maticami. Na vstupe dostane algoritmus graf $G = (V, E)$ bez záporných cyklov a incidenčnú maticu $W = (w_{ij})$ rozmerov $|V|\times |V|$. Maticu $W$ si vieme jednoducho zostrojiť z hodnotiacej funkcie takto: Nech sú ceny hrán hodnotené hodnotiacou funkciou $h: V \times V \rightarrow R$, kde, ako obvykle, $h(u,u) = 0$, $uv \notin E \implies h(u,v) = \infty$ a $h(u,v) \in O(1)$. Potom $w_{ij} = h(i,j)$ pre všetky $i, j$. Príklad takejto matice $W$ je vyobrazený na \ref{C0}. Výsledkom algoritmu je posledná matica, a tou je matica $C^{(|V|)}$.\newline
 
 \begin{algorithm}[H]
   \includegraphics[width=\linewidth]{./images/Alg_Floyd-Warshall.png}
@@ -141,7 +141,7 @@ Nami uvedená implementácia bude pracovať s maticami. Na vstupe dostane algori
   \centering
 \end{algorithm}
 
-
+Ľahko nahliadnuť, že časová zložitosť Floyd\textendash Warshallovho algoritmu je $O(|V|^{3})$. Jeho korektnosť je taktiež pohľadom badateľná. Pre istotu pridávame možnosť overiť si naše tvrdenie v knihe od Pavla Ďuriša, odkiaľ pochádza aj implementácia algoritmu \cite[kapitola 2.2.2]{duris2009}.\newline
 
 \begin{figure}[H]
   \centering{\includegraphics{./images/floyd-washall_priklad.png}}
@@ -149,7 +149,10 @@ Nami uvedená implementácia bude pracovať s maticami. Na vstupe dostane algori
   \label{floyd-washall_priklad}
 \end{figure}
 
+Ako príklad nám poslúži ten istý graf ako v prípade Bellman\textendash Fordovho algoritmu. Avšak výpočet algoritmu by bol na popis pridlhý, preto uvedieme iba zopár vyhodnocovaní a zaujímavé idey, ktoré je vhodné si uvedomiť. Prvý cyklus algoritmu, pracujúci s premennou $k$, vytvorí zakaždým celú novú maticu $C^{(k)}$. Pre každý riadok a stĺpec (premenné $i$ a $j$)  tejto novovznikajúcej matice sa vykoná porovnanie, ktoré vypočíta hodnotu momentálneho prvku. Napríklad, ak by sme chceli zrátať hodnotu v matici $C^{(1)}$ na pozícií $i = 2, j = 2$, s ľahkosťou využijeme vzorec použitý v algoritme, a teda $c^{(1)}_{2,2} = MIN (c^{(0)}_{2,2}, c^{(0)}_{2,1} + c^{(0)}_{1,2})$, po dosadení $c^{(1)}_{2,2} = MIN (0, \infty + 9) = 0$. Lepším príkladom môže byť zmena hodnoty v po sebe nasledujúcich maticiach, ako napríklad $c^{(3)}_{2,4} = MIN (c^{(2)}_{2,4}, c^{(2)}_{2,3} + c^{(2)}_{3,4}) = MIN (\infty, 3 + (-4)) = -1$.\newline
+
 \begin{equation}
+  \label{C0}
   C^{(0)} = W =
   \begin{pmatrix}
     0 & 9 & \infty & 10 \\
@@ -159,7 +162,60 @@ Nami uvedená implementácia bude pracovať s maticami. Na vstupe dostane algori
   \end{pmatrix}
 \end{equation}
 
+\begin{equation}
+  \label{C1}
+  C^{(1)} =
+  \begin{pmatrix}
+    0 & 9 & \infty & 10 \\
+    \infty & 0 & 3 & \infty \\
+    \infty & \infty & 0 & -4 \\
+    \infty & \infty & \infty & 0
+  \end{pmatrix}
+\end{equation}
 
-\subsection{Johnsonov algoritmus}
+\begin{equation}
+  \label{C2}
+  C^{(2)} =
+  \begin{pmatrix}
+    0 & 9 & 12 & 10 \\
+    \infty & 0 & 3 & \infty \\
+    \infty & \infty & 0 & -4 \\
+    \infty & \infty & \infty & 0
+  \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+  \label{C3}
+  C^{(3)} =
+  \begin{pmatrix}
+    0 & 9 & 12 & 8 \\
+    \infty & 0 & 3 & -1 \\
+    \infty & \infty & 0 & -4 \\
+    \infty & \infty & \infty & 0
+  \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+  \label{C4}
+  C^{(4)} =
+  \begin{pmatrix}
+    0 & 9 & 12 & 8 \\
+    \infty & 0 & 3 & -1 \\
+    \infty & \infty & 0 & -4 \\
+    \infty & \infty & \infty & 0
+  \end{pmatrix}
+\end{equation}
+
+Opäť je namieste podotknúť, že nami požadované vylepšenie na poznanie i predchodcov s cieľom rekonštrukcie nájdených najlacnejších ciest treba pridať ešte ďalších $|V|$ matíc, ktoré si danú informáciu budú počas výpočtu ukladať. Ich definíciu je možné uzrieť v už menovanom zdroji \cite[kapitola 2.2.2]{duris2009}.\newline
+
+Taktiež je vhodné poznamenať, že pre väčšie vstupy má algoritmus potenciál skonzumovať príliš veľa pamäte. Preto je v takom prípade výhodné algoritmus upraviť tak, aby používal iba dve matice, nakoľko pri algoritme je potrebné držať referenciu len na momentálnu a predchádzajúcu maticu ($C^{(k)}$ a $C^{(k-1)}$). To isté možno tvrdiť aj o maticiach predchodcov.\newline
+
+Floyd\textendash Warshallov algoritmus je taktiež dobrým kandidátom pre riešenie nášho problému. Implementácia je opäť jednoduchá, časová zložitosť vítaná. Znovu ale, možnosť využitia algoritmu i na záporných hranách nie je pre nás nijako prínosná. Naviac, pri vyhľadávaní spojenia medzi dvomi zastávkami v grafikone MHD by bolo nutné vyrátať hodnoty najlacnejších ciest z každého vrcholu do všetkých vrcholov, čo môže trvať prdlho. Samozrejme, po skončení hľadania budú už nasledujúce dopyty uspokojené v konštantnom, resp. lineárnom (ak uvažujeme i rekonštrukcie ciest), čase.\newline
+
 
 \subsection{Zhrnutie}
+
+Všetky tri prezentované algoritmy sú vhodnými adeptami pri riešení problému vyhľadávaní spojení v grafikone MHD. Kaźdý z nich má svoje pozitíva, ale i nedostatky. Ktorí z algoritmov bude najvhodnejší, zavisí hlavne od dát, nad ktorými bude pracovať. Ako sme už spomínali, Bellman\textendash Fordov algoritmus bude mať výhodu pri grafoch obsahujúcimi menšie množstvo hrán, čo, žiaľ, nebude prípad liniek MHD. Floyd\textendash Warshallov algoritmus je zasa zostavený tak, aby vypočítal všetky najlacnejšie cesty. Preto bude jeho priebeh pri väčšich vstupoch neprimerane dlhý. Jeho využitie preto vidíme pri grafikonom MHD malých miest, kde sa vyrátajú vsetky potrebné hodnoty už pri inicializácií, najlepšie na druhom vlákne, aby mohol používateľ zadávať dopyt už počas výpočtu. Využitie algoritmu by bolo v tomto prípade priam žiadané, keďže ostatné dva algoritmy môžu svoje výpočty pri väčšine postupností dopytov opakovať, čo ich môže nažiadane zdržovať. A nakoniec, Dijkstrov algoritmus sa zdá byť najvšeobecnejší a najpoužiteľnejší pre ľubovoľné dáta.\newline
+
+Existujú aj iné, pokročilejšie algoritmy, ktoré sú schopné nájsť najlacejšie cesty v grafe. Zvyčajne však ide o kombináciu nami uvedených algoritmov, prípadne ich optimalizácia alebo nejaká rafinovaná modifikácia. Na predstavu poslúži Johnsonov algoritmus, ktorého výstup je rovnaký ako výsledok Floyd\textendash Warshallovho algoritmu, len jeho priebeh je iný - využíva kombináciu Dijkstrovho a Bellman\textendash Fordovho algoritmu, čím dosahuje na riedkych grafoch výsledok rýchlejšie. Spomínaným pokročilejším algoritmom sa však podrobnejšie v našej práci venovať nebudeme.\newline
+

@@ -3,6 +3,7 @@
 
 V tejto kapitole uvedieme zopár definícií týkajúcich sa grafov, opíšeme niektoré grafové štruktúry, prípadne zavedieme rôzne názvy, ktoré budeme v ďalších častiach práce potrebovať.
 
+
 \section{Definícia grafu}
 
 Začneme so základnou defínicou - s definovaním pojmu \textit{graf}. Tú prevezmeme od Reinharda Diestela \cite[kapitola 0.1]{Diestel2000}: \newline
@@ -12,6 +13,7 @@ Začneme so základnou defínicou - s definovaním pojmu \textit{graf}. Tú prev
 Vytvorený objekt by sa mal korektne nazývať \textit{neorientovaný graf}. Avšak my, ako aj mnohí iní, od tohto pomenovania upustíme a budeme pre jednoduchosť používať len pojem \textit{graf}.\newline
 
 Hranu $\{x, y\}$, kde $x,y\in V$, budeme zasa zvyčajne označovať aj ako $(x, y)$ alebo $xy$.
+
 
 \section{Základné pojmy týkajúce sa grafov}
 
@@ -25,6 +27,7 @@ Dva vrcholy $x, y \in V$ sú  \textit{susedné}, ak $xy$ je hrana v $G$.
 Dve hrany $e, f \in E; e \neq f$ sú  \textit{susedné}, ak majú spoločný vrchol.\newline
 
 \textit{Stupňom vrchola} $v \in V$ nazveme počet hrán incidentných s $v$. Alebo, inak povedané, je to počet vrcholov, ktoré sú susedné s vrcholm $v$.
+
 
 \subsection{Typy grafov}
 
@@ -40,9 +43,11 @@ Majme graf $G$. Ak každý jeho vrchol má rovnaký stupeň $k$, potom tento gra
 
 Nech $r\in N, r\geq 2$. Graf $G = (V, E)$ voláme \textit{r-partitný}, ak V umožňuje rozklad na r tried (partícií), a to takých, že každá hrana má svoje konce v rôznych triedach. Alebo inak, vrcholy v tej istej triede rozkladu so sebou nesmú susediť. 2-partitným grafom budeme vravieť \textit{bipartitné}. Ľahko si bipartitný graf predstaviť uvažujúc dve množiny vrcholov, pričom sa hrany grafu nachádzajú len a len medzi týmito množinami, nie v nich.
 
+
 \subsection{Vzťahy medzi grafmi}
 
 Nech $G = (V, E)$ a $G' = (V', E')$ sú grafy. Označíme $G\cap G' = (V\cap V', E\cap E')$ a $G\cup G' = (V\cup V', E\cup E')$. Ak prienik týchto dvoch grafov je prázdny graf $G\cap G' = \emptyset$, potom $G$ a $G'$ sú \textit{disjunktné}. Ak $V'\subseteq V$ a $E'\subseteq E$, potom hovoríme, že $G'$ je podgraf $G$ (alebo $G$ je nadgraf $G'$, či $G$ obsahuje $G'$) a píšeme $G'\subseteq G$.\newline
+
 
 \section{Cesty a cykly}
 
@@ -54,6 +59,7 @@ Majme graf $G = (V, E)$. Nech $P = (V', E')$ je cesta v $G$, $P = x_{0} x_{1}, x
 
 Sled, v ktorom sú hrany navzájom rôzne, sa nazýva \textit{ťah}.\newline
 
+
 \section{Súvislosť}
 
 Ak sú ľubovoľné dva vrcholy grafu $G$ spojené cestou, tento graf nazveme \textit{súvislým}. \newline
@@ -63,6 +69,7 @@ Ak sú ľubovoľné dva vrcholy grafu $G$ spojené cestou, tento graf nazveme \t
 Hrana $e \in E$ grafu $G$ sa volá \textit{most}, ak graf $G$ má menší počet komponentov v porovnaní s grafom $G$ bez hrany $e$. Čiže, po odstránení hrany z grafu pribudne práve jeden komponent.\newline
 
 Vrchol $v \in V$ grafu $G$ sa nazýva \textit{artikulácia}, ak počet komponentov grafu $G$ je menší ako ich počet po odstránení $v$ z grafu $G$. Teda, ak po odstránení vrchola z grafu pribudne aspoň jeden komponent.\newline
+
 
 \section{Kostry, stromy a lesy}
 
@@ -74,6 +81,7 @@ Acyklický graf (to jest taký, ktorý neobsahuje cyklus), ktorý je navyše sú
 
 \textit{Les} je acyklický graf. Takže každý jeho komponent je stromom.\newline
 
+
 \section{Špeciálne grafové štruktúry}
 
 Graf, ktorého prvky sú ohodnotené číslom určujúcim cenu, prípadne výhodnosť prechodu cezeň, nazveme \textit{ohodnotený graf}. \textit{Hranovo ohodnotený graf} je graf s funkciou $w: E\rightarrow R$. Teda pre ľubovoľnú hranu $e$ existuje číslo $w(e)$, ktoré nazveme \textit{hodnotou hrany}, prípadne \textit{cenou hrany}.  Z praktického hľadiska je výhodné zadefinovať aj \textit{kladne hranovo ohodnotený graf}. A to je taký, že $w(e) > 0$ pre všetky hrany. \textit{Vrcholovo ohodnotený graf} je graf s funkciou $w: V\rightarrow R$. Teda pre ľubovoľný vrhol $v$ existuje číslo $w(v)$. \newline
@@ -82,4 +90,7 @@ Graf, ktorého prvky sú ohodnotené číslom určujúcim cenu, prípadne výhod
 
 Rozdiel medzi orientovanými a neorientovanými grafmi je, ako názov napovedá v existencií orientácií hrán. Ak by sme túto skutočnosť chceli vyjadriť formálne, povedali by sme, že zatiaľ čo v neorientovanom grafe obsahuje množina $E$ dvojprvkové množiny, v orientovanom sa skladá z usporiadaných dvojíc.\newline
 
+
 \subsection{Cesty a cykly pre orientované grafy}
+
+

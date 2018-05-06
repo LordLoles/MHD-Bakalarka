@@ -33,11 +33,11 @@ Dve hrany $e, f \in E; e \neq f$ sú  \textit{susedné}, ak majú spoločný vrc
 
 Teraz uvedieme niektoré základné typy grafov.\newline
 
-\textit{Prázdny graf} je graf $G = (\emptyset, \emptyset)$. Označenie zjednoduchšíme na $G = \emptyset$ .\newline
+\textit{Prázdny graf} je graf $G = (\emptyset, \emptyset)$. Označenie zjednodušíme na $G = \emptyset$ .\newline
 
 Pojmom \textit{Triviálny graf} budeme označovať graf s rádom 0 alebo 1.\newline
 
-\textit{Kompletným grafom} nazveme taký graf, ktorého všetky vrcholy sú navzájom susedné. Uvažujme $n$ vrcholov, potom kompletný graf na týchto vrcholoch označíme $K_{n}$. Pre predstavu môže poslúžiť príiklad kompletného graf troch vrcholov $K_{3}$, čo je trojuholník.\newline
+\textit{Kompletným grafom} nazveme taký graf, ktorého všetky vrcholy sú navzájom susedné. Uvažujme $n$ vrcholov, potom kompletný graf na týchto vrcholoch označíme $K_{n}$. Na predstavu môže poslúžiť príklad kompletného grafu troch vrcholov $K_{3}$, čo je trojuholník.\newline
 
 Majme graf $G$. Ak každý jeho vrchol má rovnaký stupeň $k$, potom tento graf nazveme \textit{k-regulárnym}. V definícií môžeme upustiť od počtu vrcholov a nazvať vzniknutý objekt iba \textit{regulárnym}.\newline
 
@@ -51,9 +51,9 @@ Nech $G = (V, E)$ a $G' = (V', E')$ sú grafy. Označíme $G\cap G' = (V\cap V',
 
 \section{Cesty a cykly}
 
-Nech $G = (V, E)$ je graf. Definujme \textit{cestu}, ako neprázdny graf $P = (V', E')$, ktorý je podgrafom $G$, tvaru $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, kde všetky $x_{i}$ sú navzájom rôzne. Neformálne povedané, cesta spája (pomocou hrán) dva vrcholy grafu $G$, pričom sa v nej použité vrcholy nesmú opakovať. Počet hrán cesty sa nazýva aj \textit{dĺžkou}. Pre zjednoduchšenie budeme cestu zapisovať ako $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$.\newline
+Nech $G = (V, E)$ je graf. Definujme \textit{cestu} ako neprázdny graf $P = (V', E')$, ktorý je podgrafom $G$, tvaru $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, kde všetky $x_{i}$ sú navzájom rôzne. Neformálne povedané, cesta spája (pomocou hrán) dva vrcholy grafu $G$, pričom sa v nej použité vrcholy nesmú opakovať. Počet hrán cesty sa nazýva aj \textit{dĺžkou}. Pre zjednoduchšenie budeme cestu zapisovať ako $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$.\newline
 
-Majme graf $G = (V, E)$. Nech $P = (V', E')$ je cesta v $G$, $P = x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}$, pričom $k\geq 3$ a v grafe $G$ existuje hrana $x_{0}x_{k}$. Potom hovoríme, že graf $G$ obsahuje \textit{cyklus} alebo tiež \textit{kružnicu} $C$, kde $C$ je podgraf $G$ a platí $C = (V', E' \cup \{x_{0},x_{k}\})$. \newline
+Majme graf $G = (V, E)$. Nech $P = (V', E')$ je cesta v $G$, $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$, pričom $k\geq 3$ a v grafe $G$ existuje hrana $x_{0}x_{k}$. Potom hovoríme, že graf $G$ obsahuje \textit{cyklus} alebo tiež \textit{kružnicu} $C$, kde $C$ je podgraf $G$ a platí $C = (V', E' \cup \{x_{0},x_{k}\})$. \newline
 
 \textit{Sled} v grafe $G$ je názov pre neprázdnu striedavú postupnosť $v_{0}e_{0}v_{1}e_{1} ... e_{k-1}v_{k}$ vrcholov a hrán v G, pričom $e_{i} = v_{i}v_{i+1}$ pre všetky $i < k$. Sled teda, narozdiel od cesty, môže obsahovať rovnaké vrcholy viac krát. Preto sa dá povedať, že sled je cesta, v ktorej sa môžu vrcholy opakovať. Ale aj naopak: sled, v ktorom sú vrcholy navzájom rôzne, je cestou.\newline
 

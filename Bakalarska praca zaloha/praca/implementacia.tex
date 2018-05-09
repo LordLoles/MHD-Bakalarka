@@ -1,4 +1,52 @@
 \chapter[Implementácia]{Implementácia softvéru}
 \label{kap:implementacia}
 
-V tejto kapitole uvedieme, ako sme postupovali pri implementácií softvéru. Odhalíme, aké postupy, štruktúry či algoritmy sme zvolili, pričom popíšeme aj dôvody nášho výberu. Neuvádzame celý kód, ale len tie časti, ktoré sa nám zdali najviac zaujímavé a zodpovedajúce obsahu našej práce.
+V tejto kapitole uvedieme, ako sme postupovali pri implementácií softvéru. Odhalíme, aké postupy, štruktúry či algoritmy sme zvolili, pričom popíšeme aj dôvody nášho výberu. Neuvádzame celý kód, ale len tie časti, ktoré sa nám zdali najviac zaujímavé a zodpovedajúce obsahu našej práce.\newline
+
+
+\section{Prvé myšlienky}
+
+V prvom rade je zo všetkého najdôležitejšie ujasniť si, aké ciele má spĺňať naša implementácia. Treba si uvedomiť, čo chceme, aby náš program vedel robiť, jemne si načtrnúť, ako potrebné veci naprogramovať, ale tiež v akom poradí na nich pracovať.\newline
+
+Prvoradý a najpodstatnejší cieľ našej práce je dozaista vyhľadávač spojení v grafikone mestskej hromadnej dopravy. Teraz rozoberieme, čo všetko obnáša.\newline
+Nazačiatok budeme potrebovať vytvoriť, prípadne získať dáta, s ktorými budeme pracovať. Tie môžeme buď náhodne vygenerovať, pre vlastnú potrebu a testovanie aplikácie prevziať dáta z už existujúcej siete MHD, alebo si vytvoriť nejaké vlastné, sofistikované testovacie vstupy. Každá možnosť má svoje kladné i záporné stránky. Náhodné dáta otestujú algoritmy veľmi slušne, avšak môžu obsahovať rôzne anomálie a pravdepodobne ani zďaleka nebudú zobrazovať réalny tvar grafikonu MHD. Prevzaté dáta z existujúcich MHD tieto nedostatky znamenite riešia. Ich nevýhodou je ale ich použitie len na lokálne účely, nakoľko nemôžu byť publikované verejne. Vlastne vytvorené vstupy sú zasa výborné na testovanie okrajových prípadov, na nachádzanie a odstraňovanie chýb v programe, ako i na skúšanie programu pri malých zmenách v algoritme a pozorovaní očakávaných výsledkov. Naopak ale, postráda prítomnosť rozmerných dátových súborov, keďže ručné vytváranie objemných dát je časovo priveľmi náročne.\newline
+
+V našich mysliach teda leží otázka, aké dáta zvoliť ako vstup. Samozrejme najlepšie by bolo použiť všetky tri spomínané možnosti. My sa však uspokojíme iba s dvomi z nich. Pri vytváraní kódu bude veľmi vhodné využívať nami navrhnuté vstupy, ktoré otestujú práve vytváranú časť programu. Po vytvorení zdanlivo funkčnej aplikácie ju otestujeme na existujúcich dátach, pričom zistíme či je program dostatočne rýchly a či sú jeho výstupy uspokojivé v porovnaní s inými vyhľadávačmi spojení. Náhodne generované vstupy nebudeme používať, keďže s kombináciou predošlých dvoch zistíme všetky potrebné informácie o funkčnosti aplikácie.\newline
+
+Treba si tiež premyslieť, kde si budeme spomínané dáta uschovávať. Za uváženie stoja dve možnosti. Dáta držať v textovom súbore alebo ich načitať do nejakej databázy a z nej potom čerpať. Textová reprezentácia je všestranná, ľahko s ňou pracovať i meniť vstupné údaje. Jej načítanie môže ale spomaľovať chod našej aplikácie. Naproti tomu, databáza je rýchla na čítanie z nej, ale jej o niečo ťažšie vytváranie znepríjemňuje našu snahu o testovaní mnohých vlastných vtupov. My sme, nakoľko je to jednoduchšie, zvolili textovú reprezentáciu dát. Opäť, najvhodnejšie by bolo oba spôsoby skombinovať, a teda uschovávať údaje v textových súboroch a nejaký vybraný vstup mať uložený v databáze, preto je naše rozhodnutie zatiaľ dočasné.\newline
+
+Ďalším bodom, o ktorom radno pouvažovať, je reprezentácia týchto údajov. Pre začiatok volíme znova čo najjednoduchšiu možnosť: vrcholmi nami použivaného grafu budú zastávky MHD a hranami sa stanú linky jazdiace medzi nimi. Tu, keďže sme si vybrali takú jednoduchú alternatívu, nesmieme zabúdať na flexibilitu. Ak sa ukáže nejaký problém, netreba sa báť reprezentáciu údajov rozumne pozmeniť, aby sme si zbytočne nenarobili problémy, ktoré sa budú v neskorších častiach implementácie obtiažne odstraňovať.\newline
+
+Nasledujúcou zastávkou je vytvorenie objektov na reprezentáciu grafu. Už sme spomínali, že budeme pracovať s orientovanými grafmi. Sprvu si vystačíme s hodnotením hrán. Teraz presnejšie popíšeme objekty, ktoré si budú držať informácie vrcholoch, hranách i o celom grafe a budú tak reprezentovať uvedené grafové štruktúry. Riešenie je ale nateraz triviálne: Trieda vrcholu moc informácií nepotrebuje. Nech je jej premennou len názov zastávky. Trieda hrany bude vyžadovať referencie na dva vrcholy, keďźe sme tak hrany v prvej kapitole definovali \ref{kap:grafy}, a premennú predstavujúcu hodnotiacu funkciu. Táto implementácia sa jemne líši od našej definície hodnotiacej funkcie, avšak uvedeným spôsobom poľahky dosiahneme všetky predpoklady spomínanej funckie. Ak poznáme hranu, v konštantnom čase vieme zistiť jej hodnotenie, keďže len pristúpime k zodpovedajúcej premennej. Nakoniec, trieda grafu bude obsahovať dve polia reprezentujúce všetky hrany a všetky vrcholy v grafe.\newline
+
+V tejto chvíli je prvotne premyslená celá reprezentácia údajov a prichádza na rad výber vyhľadávacieho algoritmu. Rozdiely medzi uvedenými algoritmami sa nachádzajú na konci predošlej kapitoly \ref{vyhlad_alg_zhrnutie}. Z nich vychádzajúc sme usúdili, že najvhodnejšie bude implementovať Dijkstrov algoritmus. Naše úvahy vychádzali prevažne z nami vytýčených cieľov, a to funkcionalite programu na reálnych dátach, ktoré sú vo väčšine prípadov veľké zoskupenia údajov. Z tohto dôvodu je nevhodný ako Bellman\textendash Fordov, tak i Floyd\textendash Warshallov algoritmus.\newline Dijkstra navyśe spoľahlivo a rýchlo funguje aj na menšich vstupoch a pre jeho všestrannosť je najlepším kandidátom pre riešenie našich cieľov.\newline
+
+
+
+ukladanie vysledku, umoznenie jeho vypisu
+vyber programovacieho jazyka, preco ano, preco nie, preco nie iny?
+
+
+\section{Začiatočná implementácia}
+
+Po dôkladnom premyslení si všetkých potrebných zákutí
+
+zohnanie dat, testovacie vstupy
+implementacia reprezentacie udajov - graph maker
+preco bola zla?
+
+
+\section{Vylepšenie reprezentácie údajov}
+
+zmena udajov, ich popis
+dvojite vrcholy - kontrola
+preco je dobra
+
+
+\section{Implementácia vyhľadávacieho algoritmu}
+
+preco dijkstra a nie iny?
+jeho spojenie s grafom
+jeho vystup - je vo vrcholoch
+implementacia vypisu
+komparator - ako presne ma dijkstra vyhladavat?

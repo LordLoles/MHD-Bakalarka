@@ -214,6 +214,7 @@ Floyd\textendash Warshallov algoritmus je taktiež dobrým kandidátom pre rieš
 
 
 \subsection{Zhrnutie}
+\label{vyhlad_alg_zhrnutie}
 
 Všetky tri prezentované algoritmy sú vhodnými adeptami pri riešení problému vyhľadávaní spojení v grafikone MHD. Kaźdý z nich má svoje pozitíva, ale i nedostatky. Ktorí z algoritmov bude najvhodnejší, zavisí hlavne od dát, nad ktorými bude pracovať. Ako sme už spomínali, Bellman\textendash Fordov algoritmus bude mať výhodu pri grafoch obsahujúcimi menšie množstvo hrán, čo, žiaľ, nebude prípad liniek MHD. Floyd\textendash Warshallov algoritmus je zasa zostavený tak, aby vypočítal všetky najlacnejšie cesty. Preto bude jeho priebeh pri väčšich vstupoch neprimerane dlhý. Jeho využitie preto vidíme pri grafikonom MHD malých miest, kde sa vyrátajú vsetky potrebné hodnoty už pri inicializácií, najlepšie na druhom vlákne, aby mohol používateľ zadávať dopyt už počas výpočtu. Využitie algoritmu by bolo v tomto prípade priam žiadané, keďže ostatné dva algoritmy môžu svoje výpočty pri väčšine postupností dopytov opakovať, čo ich môže nažiadane zdržovať. A nakoniec, Dijkstrov algoritmus sa zdá byť najvšeobecnejší a najpoužiteľnejší pre ľubovoľné dáta.\newline
 

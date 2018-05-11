@@ -1,0 +1,18 @@
+"Nazov linky"
+"cas cesty od vyrazenia z pociatocnej zastavky" "Nazov zastavky" | ...				//cesta tam
+"cas vyrazenia z pociatocnej zastavky" "cas vyrazenia z pociatocnej zastavky" ...		//cesta tam
+"cas cesty od vyrazenia z pociatocnej zastavky" "Nazov zastavky" | ...				//cesta spat
+"cas vyrazenia z pociatocnej zastavky" "cas vyrazenia z pociatocnej zastavky" ...		//cesta spat
+"Nazov linky"
+...
+
+
+PRIKLAD
+1
+0 Stanica | 2 Ulica A | 5 Namestie C
+8:52 12:34 16:10 21:53
+0 Namestie C | 3 Ulica A | 5 Stanica
+9:22 12:50 16:31 21:59
+
+
+

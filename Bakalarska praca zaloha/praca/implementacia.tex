@@ -9,6 +9,7 @@ V tejto kapitole uvedieme, ako sme postupovali pri implementácií softvéru. Od
 V prvom rade je zo všetkého najdôležitejšie ujasniť si, aké ciele má spĺňať naša implementácia. Treba si uvedomiť, čo chceme, aby náš program vedel robiť, jemne si načtrnúť, ako potrebné veci naprogramovať, ale tiež v akom poradí na nich pracovať.\newline
 
 Prvoradý a najpodstatnejší cieľ našej práce je dozaista vyhľadávač spojení v grafikone mestskej hromadnej dopravy. Teraz rozoberieme, čo všetko obnáša.\newline
+
 Nazačiatok budeme potrebovať vytvoriť, prípadne získať dáta, s ktorými budeme pracovať. Tie môžeme buď náhodne vygenerovať, pre vlastnú potrebu a testovanie aplikácie prevziať dáta z už existujúcej siete MHD, alebo si vytvoriť nejaké vlastné, sofistikované testovacie vstupy. Každá možnosť má svoje kladné i záporné stránky. Náhodné dáta otestujú algoritmy veľmi slušne, avšak môžu obsahovať rôzne anomálie a pravdepodobne ani zďaleka nebudú zobrazovať réalny tvar grafikonu MHD. Prevzaté dáta z existujúcich MHD tieto nedostatky znamenite riešia. Ich nevýhodou je ale ich použitie len na lokálne účely, nakoľko nemôžu byť publikované verejne. Vlastne vytvorené vstupy sú zasa výborné na testovanie okrajových prípadov, na nachádzanie a odstraňovanie chýb v programe, ako i na skúšanie programu pri malých zmenách v algoritme a pozorovaní očakávaných výsledkov. Naopak ale, postráda prítomnosť rozmerných dátových súborov, keďže ručné vytváranie objemných dát je časovo priveľmi náročne.\newline
 
 V našich mysliach teda leží otázka, aké dáta zvoliť ako vstup. Samozrejme najlepšie by bolo použiť všetky tri spomínané možnosti. My sa však uspokojíme iba s dvomi z nich. Pri vytváraní kódu bude veľmi vhodné využívať nami navrhnuté vstupy, ktoré otestujú práve vytváranú časť programu. Po vytvorení zdanlivo funkčnej aplikácie ju otestujeme na existujúcich dátach, pričom zistíme či je program dostatočne rýchly a či sú jeho výstupy uspokojivé v porovnaní s inými vyhľadávačmi spojení. Náhodne generované vstupy nebudeme používať, keďže s kombináciou predošlých dvoch zistíme všetky potrebné informácie o funkčnosti aplikácie.\newline
@@ -17,28 +18,65 @@ Treba si tiež premyslieť, kde si budeme spomínané dáta uschovávať. Za uv�
 
 Ďalším bodom, o ktorom radno pouvažovať, je reprezentácia týchto údajov. Pre začiatok volíme znova čo najjednoduchšiu možnosť: vrcholmi nami použivaného grafu budú zastávky MHD a hranami sa stanú linky jazdiace medzi nimi. Tu, keďže sme si vybrali takú jednoduchú alternatívu, nesmieme zabúdať na flexibilitu. Ak sa ukáže nejaký problém, netreba sa báť reprezentáciu údajov rozumne pozmeniť, aby sme si zbytočne nenarobili problémy, ktoré sa budú v neskorších častiach implementácie obtiažne odstraňovať.\newline
 
-Nasledujúcou zastávkou je vytvorenie objektov na reprezentáciu grafu. Už sme spomínali, že budeme pracovať s orientovanými grafmi. Sprvu si vystačíme s hodnotením hrán. Teraz presnejšie popíšeme objekty, ktoré si budú držať informácie vrcholoch, hranách i o celom grafe a budú tak reprezentovať uvedené grafové štruktúry. Riešenie je ale nateraz triviálne: Trieda vrcholu moc informácií nepotrebuje. Nech je jej premennou len názov zastávky. Trieda hrany bude vyžadovať referencie na dva vrcholy, keďźe sme tak hrany v prvej kapitole definovali \ref{kap:grafy}, a premennú predstavujúcu hodnotiacu funkciu. Táto implementácia sa jemne líši od našej definície hodnotiacej funkcie, avšak uvedeným spôsobom poľahky dosiahneme všetky predpoklady spomínanej funckie. Ak poznáme hranu, v konštantnom čase vieme zistiť jej hodnotenie, keďže len pristúpime k zodpovedajúcej premennej. Nakoniec, trieda grafu bude obsahovať dve polia reprezentujúce všetky hrany a všetky vrcholy v grafe.\newline
+Nasledujúcou zastávkou je vytvorenie objektov na reprezentáciu grafu. Už sme spomínali, že budeme pracovať s orientovanými grafmi. Sprvu si vystačíme s hodnotením hrán. Teraz presnejšie popíšeme objekty, ktoré si budú držať informácie o vrcholoch, hranách i o celom grafe a budú tak reprezentovať uvedené grafové štruktúry. Riešenie je ale nateraz triviálne: Trieda vrcholu moc informácií nepotrebuje. Nech je jej premennou len názov zastávky. Trieda hrany bude vyžadovať referencie na dva vrcholy, keďźe sme tak hrany v prvej kapitole definovali \ref{kap:grafy}, a premennú predstavujúcu hodnotiacu funkciu. Táto implementácia sa jemne líši od našej definície hodnotiacej funkcie, avšak uvedeným spôsobom poľahky dosiahneme všetky predpoklady spomínanej funckie. Ak poznáme hranu, v konštantnom čase vieme zistiť jej hodnotenie, keďže len pristúpime k zodpovedajúcej premennej. Nakoniec, trieda grafu bude obsahovať dve polia reprezentujúce všetky hrany a všetky vrcholy v grafe.\newline
 
-V tejto chvíli je prvotne premyslená celá reprezentácia údajov a prichádza na rad výber vyhľadávacieho algoritmu. Rozdiely medzi uvedenými algoritmami sa nachádzajú na konci predošlej kapitoly \ref{vyhlad_alg_zhrnutie}. Z nich vychádzajúc sme usúdili, že najvhodnejšie bude implementovať Dijkstrov algoritmus. Naše úvahy vychádzali prevažne z nami vytýčených cieľov, a to funkcionalite programu na reálnych dátach, ktoré sú vo väčšine prípadov veľké zoskupenia údajov. Z tohto dôvodu je nevhodný ako Bellman\textendash Fordov, tak i Floyd\textendash Warshallov algoritmus.\newline Dijkstra navyśe spoľahlivo a rýchlo funguje aj na menšich vstupoch a pre jeho všestrannosť je najlepším kandidátom pre riešenie našich cieľov.\newline
+V tejto chvíli je prvotne premyslená celá reprezentácia údajov a prichádza na rad výber vyhľadávacieho algoritmu. Rozdiely medzi uvedenými algoritmami sa nachádzajú na konci predošlej kapitoly (\ref{vyhlad_alg_zhrnutie}). Z nich vychádzajúc sme usúdili, že najvhodnejšie bude implementovať Dijkstrov algoritmus. Naše úvahy vychádzali prevažne z nami vytýčených cieľov, a teda funkcionality programu na reálnych dátach, ktoré sú vo väčšine prípadov veľké zoskupenia údajov. Z tohto dôvodu je nevhodný ako Bellman\textendash Fordov, tak i Floyd\textendash Warshallov algoritmus. Dijkstra navyśe spoľahlivo a rýchlo funguje aj na menšich vstupoch a pre jeho všestrannosť je najlepším kandidátom pre riešenie našich cieľov.\newline
 
+V našom hypotetickom modeli už teda dokážeme zistiť výsledok vyhľadávania. Avšak musíme ešte ošetriť, kam sa želaný stav uloží, aby bolo jednoduché ho vypísať. A taktiež si treba rozmysileť, ako cheme výsledky vypisovať. Ako sme už spomínali v predchádzajúcej kapitole \ref{kap:algoritmy}, budeme používať implementáciu vyhľadávacieho algoritmu s pamätaním si predchádzajúcich vrcholov pre nájdené najlacnejšie cesty, aby sme boli schopný ich zrekonštruovať. Mohli by sme teda vytvoriť nové pole o veľkosti počtu vrcholov grafu, do ktorého si tieto referencie uložíme. My však použijeme rovnaký postup ako pri hodnotiacej funkcií, a teda do objektu vrchola pridáme premennú držiacu si referenciu na predchádzajúci vrchol. Toto riešenie ale nie je prívetivé, keďže objekt vrchola nemá čo do činenia s výsledok výhľadávania najlajcenejších ciest v grafe. Správne by bolo všetky vrcholy obaliť ďalším objektom s príznačným názvom a v ňom si držať túto informáciu. V našom prípade ale ide o celkovo nie až tak ťažký kód, preto je takéto jemné zneprehľadnenie akceptovataľné. Vďaka memorizácií predchodcu vrchola nám teda stačí pri výpise poznať cieľovú zastávku vyhľadávania a dokážeme poľahky vyhotoviť žiadanú cestu. Pre začiatok sa uspokojíme s výpisom do konzoly, čo nám postačí až do záverečných prác na aplikácií.\newline
 
+Zostávajúcemu cieľu, čo je implementácia vylepšenia, sme sa rozhodli venovať a premýšľať nad ním až po uskutočnení opísaného cieľa.\newline
 
-ukladanie vysledku, umoznenie jeho vypisu
-vyber programovacieho jazyka, preco ano, preco nie, preco nie iny?
+Po prejdeni si všetkých potrebných úvah nám ale stále zostáva jedna nezodpovedaná otázka. Musíme si vybrať programovací jazyk, prípadne prostredie, v ktorom naše myšlienky zrealizujeme. Znalosťou potrebných vecí na implementáciu nám ale výrazne pomôže pri našom výbere. Nakoľko budeme chcieť reprezentovať graf, jeho vrcholy i hrany, bude nanajvíš priaznivé zvoliť objektovo orientovaný jazyk. Na myseľ prichádza Java, C\#, Python, JavaScript. Ďalšim krítériom je, že v aplikácií budeme od používateľa požadovať vstupné parametre v podobe počiatočnej a koncovej zastávky. Budeme teda vytvárať nejaké okná, textové polia a tlačidlá. Tieto možnosti sú už predpripravené, spolu s mnohými inými, vo vývojom prostredí Unity. Ide o prostredie určené prevažne na vývoj počítačových hier, avšak pre naše účely je úlne dokonalé. Využijeme jeho možnosť programovania v jazyku C\# a hojne jeho grafické rozhranie.\newline
 
 
 \section{Začiatočná implementácia}
 
-Po dôkladnom premyslení si všetkých potrebných zákutí
+Po dôkladnom premyslení si všetkých potrebných detailov sme prešli k prvej implementácií. Samozrejme, nevyriešili sme ich všetky. Hneď, ako sme chceli vytvoriť prvý testový vstup, zistili sme, že sme si neujasnili, v akom formáte budeme dáta uschovávať. Ich formát je nepodstatný pre beh aplikácie, keďže si dáta v programe ihneď spracujeme na nami navrhnuté štruktúry. Stačí teda zvoliť ľubovoľný rozumný. Náš je demonštrovaný na obrázku \ref{Format_datoveho_suboru}.\newline
 
-zohnanie dat, testovacie vstupy
-implementacia reprezentacie udajov - graph maker
+\begin{figure}[H]
+  \centering{\includegraphics[width=\linewidth]{./images/Format_datoveho_suboru.png}}
+  \caption{Formát obsahu dátového súboru}
+  \label{Format_datoveho_suboru}
+\end{figure}
+
+Teraz môžeme smelo zbierať dáta. Vďaka stránke Bratislavského dopravného podniku sme si uložili dáta popisujúce mestskú hromadnú dopravu v Bratislave. Tie použijeme lokálne na testovanie aplikácie. Vytvorili sme aj pár vlastných vstupov. Na obrázku \ref{priklad_vstupu_1} uvádzame ich jednoduchý príklad. V ňom sme uvažovali o linke vyrážajúcej z A do C v časoch 0:1 a 0:5 so spiatočnou cestou iba z C do B v čase 0:8.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics[width=\linewidth]{./images/test2_priklad1.png}}
+  \caption{Príklad testového vstupu}
+  \label{priklad_vstupu_1}
+\end{figure}
+
+Nasleduje implementácia grafových štruktúr, ktorá je nateraz jednoduchá. Vhodné je poznamenať, že v našej implementácií vrchola, ktorú zachytáva obrázok \ref{1_Vertex} , si budeme pamätať hodnotu nejlacnejšej cesty do daného vrcholu, aby sme v Dijkstrovom algoritme nepotrebovali vytvárať pole čísel uchovávajúce jeho výsledky. Taktiež si budeme pamätať i referenciu na hranu, ktorá tento vrchol spája s jeho predchodcom, čo nám uľahčí budúcu prácu.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/1_Vertex.png}}
+  \caption{Prvá reprezentácia vrcholu}
+  \label{1_Vertex}
+\end{figure}
+
+Kód pre objekty hrany a grafu neobsahujú žiadne zmeny.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/1_Edge.png}}
+  \caption{Prvá reprezentácia hrany}
+  \label{1_Edge}
+\end{figure}
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/1_Graph.png}}
+  \caption{Prvá reprezentácia grafu}
+  \label{1_Graph}
+\end{figure}
+
+Pri vytváraní kódu bolo tiež potrebné rozobrať súbor s dátami a vytvoriť z nich horeuvedené objekty. Tento kód uvádzať nebudeme, nakoľko je dosť obsiahly a navyše neobsahuje žiadne relevantné informácie.\newline
+
 preco bola zla?
 
 
 \section{Vylepšenie reprezentácie údajov}
 
-zmena udajov, ich popis
+zmena reprezentacie grafu - casopriestor, jej popis
 dvojite vrcholy - kontrola
 preco je dobra
 

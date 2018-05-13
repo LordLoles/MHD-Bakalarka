@@ -50,7 +50,7 @@ Teraz môžeme smelo zbierať dáta. Vďaka stránke Bratislavského dopravného
 Nasleduje implementácia grafových štruktúr, ktorá je nateraz jednoduchá. Vhodné je poznamenať, že v našej implementácií vrchola, ktorú zachytáva obrázok \ref{1_Vertex} , si budeme pamätať hodnotu nejlacnejšej cesty do daného vrcholu, aby sme v Dijkstrovom algoritme nepotrebovali vytvárať pole čísel uchovávajúce jeho výsledky. Taktiež si budeme pamätať i referenciu na hranu, ktorá tento vrchol spája s jeho predchodcom, čo nám uľahčí budúcu prácu.\newline
 
 \begin{figure}[H]
-  \centering{\includegraphics{./images/1_Vertex.png}}
+  \centering{\includegraphics[width=0.7\linewidth]{./images/1_Vertex.png}}
   \caption{Prvá reprezentácia vrcholu}
   \label{1_Vertex}
 \end{figure}
@@ -58,13 +58,13 @@ Nasleduje implementácia grafových štruktúr, ktorá je nateraz jednoduchá. V
 Kód pre objekt hrany má ešte navyše pridané časy príchodu a odchodu linky z daných vrcholov. Inak objekty reprezentujúce hranu a graf neobsahujú žiadne zmeny.\newline
 
 \begin{figure}[H]
-  \centering{\includegraphics{./images/1_Edge.png}}
+  \centering{\includegraphics[width=0.7\linewidth]{./images/1_Edge.png}}
   \caption{Prvá reprezentácia hrany}
   \label{1_Edge}
 \end{figure}
 
 \begin{figure}[H]
-  \centering{\includegraphics{./images/1_Graph.png}}
+  \centering{\includegraphics[width=0.7\linewidth]{./images/1_Graph.png}}
   \caption{Prvá reprezentácia grafu}
   \label{1_Graph}
 \end{figure}
@@ -106,16 +106,21 @@ Výsledná odpoveď algoritmu bude uložená vo vrcholoch grafu. Ich hodnoty pre
 Vypisovanie cesty pre daný vrchol realizujeme pomocou rekurzie, čo nám zabezpečí správne poradie zastávok. Túto procedúru ukazuje obrázok \ref{PathShowing}. O samotný spôsob výpisu sa teda, ako je i zobrazené v kóde, stará iná trieda, tireda "PathShowing".\newline
 
 \begin{figure}[H]
-  \centering{\includegraphics[width=0.7\linewidth]{./images/3_PathShowing.png}}
+  \centering{\includegraphics{./images/3_PathShowing.png}}
   \caption{Kód starajúci sa o výpis cesty}
   \label{PathShowing}
 \end{figure}
 
-komparator - ako presne ma dijkstra vyhladavat?
-
 
 \section{Neefektívnosť vytvárania objektov}
 
-Do objektu grafu sme pridali rôzne slovníky, aby sme výrazne urýchlili ako vytváranie objektov, tak i algoritmus vyhľadávania.\newline
+Program, po implementácií všetkého doposiaľ opísaného, sa zdá byť funkčný. Na testovacích vstupoch je bezchybný. To však neznamená, źe funkčný naozaj je. Aplikáciu musíme, čo je aj cieľom práce, otestovať na veľkých, respektívne reálnych dátach. Po spustení na týchto dátach už ale program nepracuje tak, ako by sme očakávali. Aplikácia sa i po viac ako hodinovom čakaní nerozbieha. Využili sme preto možnosť krokovania kódu, čím sme zistili príčinu nášho problému - aplikácií trvá pridlho pretváranie dát z obrovského textového súboru na žiadané objekty. Po prezretí si kódu sme, naštastie, našli neefektívne časti, ktoré sme prerobili. Presnejšie, pri vytváraní vrcholov sme zakaždým kontrolovali či už vrchol s rovnakými údajmi náhodou neexistuje, a tak aby sme nevytvorili vrcholy nesúce rovnaké informácie. Na to sme, pri našej jednoduchej implementácií grafu, museli prejsť poľom vrcholov. Preto sme do objektu grafu popridávali rôzne slovníky, resp. hashovacie mapy, čím sa nám podarilo výrazne urýchliť vytváranie objektov. Slovníky sme dokonca využili i počas algoritmu vyhľadávania, takže aj on sa stal trocha rýchlejším. Modifikovaná implementácia grafu sa nachádza na obrázku \ref{4_Graph}.\newline
 
-dvojite vrcholy - kontrola
+\begin{figure}[H]
+  \centering{\includegraphics{./images/4_Graph.png}}
+  \caption{Vylepšená implementácia grafu}
+  \label{4_Graph}
+\end{figure}
+
+Vylepšenie objektu grafu zabezpečilo, že sa aplikácia načítava približne minútu. Boli sme ju teda schopný otestovať na reálnych dátach a výsledky boli pozitívne. Dĺžka načítavania je ale stále neprajná, hoci aplikácia by mohla byť stále využiteľná, napríklad keby sa spustila a nechala bežať na serveri a používatelia by sa skrz určitú webovú stránku spytovali aplikácie svoje otázky.\newline
+

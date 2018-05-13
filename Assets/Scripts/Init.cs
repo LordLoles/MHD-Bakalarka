@@ -26,7 +26,7 @@ public class Init : MonoBehaviour
 
         thread = new Thread(gc.makeGraph);
         thread.Priority = System.Threading.ThreadPriority.Highest;
-        
+        /*
         thread.Start();
 
         //gc.makeGraph();
@@ -34,16 +34,16 @@ public class Init : MonoBehaviour
         graph = gc.getGraph();
 
         dijkstra = new Dijkstra(graph);
-
+        */
     }
 
 
-    public void startSearching(string start, string fin)
+    public void startSearching(string start, string fin, Time time, int amount)
     {
         if (gc.loaded == 100)
         {
             Debug.Log("spustam dijkstru z " + start + " do " + fin);
-            dijkstra.shortestPathsAmount(new Time(0, 0), start, fin, 10);
+            dijkstra.shortestPathsAmount(time, start, fin, amount);
         }
         else
         {

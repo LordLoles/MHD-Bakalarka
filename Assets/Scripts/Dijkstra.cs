@@ -80,15 +80,19 @@ public class Dijkstra {
     }
 
     
-    private void printPath(Vertex v)
+    private void printPath(Vertex v, List<Edge> path)
     {
-        if (v == null) return;
-        printPath(v.parent);
+        if (v == null)
+        {
+            pathShowing.printPath(path);
+            return;
+        }
+        printPath(v.parent, path);
         if (v.parent != null)
         {
             //two verteces has been found
             //now we need to print the edge in between, if it isn't waiting
-            if (!v.toParent.waitingEdge) pathShowing.printThis(v.toParent);
+            if (!v.toParent.waitingEdge) path.Add(v.toParent);
         }
     }
 
@@ -104,9 +108,10 @@ public class Dijkstra {
         {
             if (v.value != int.MaxValue)
             {
+                List<Edge> path = new List<Edge>();
                 already++;
                 Debug.Log(already + ". moznost:");
-                printPath(v);
+                printPath(v, path);
                 if (amount == already) return;
             }
         }

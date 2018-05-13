@@ -50,6 +50,7 @@ Ak uvažujeme vyhľadávanie najlacnejších ciest v grafe, musíme si najprv uv
 
 
 \subsection{Dijkstrov algoritmus}
+\label{Dijkstra}
 
 Holandský informatik, po ktorom je tento algoritmus pomenovaný, dokázal, okrem iného, vyriešiť aj nami nastolený problém. V jeho riešení je ale potrebné, aby boli ceny hrán grafu nezáporné reálne čísla, čo súhlasí s našou predstavou aplikovania algoritmu na grafikon MDH. Algoritmus je navrhnutý tak, že dostane ako vstup graf $G = (V, E)$, počiatočný vrchol $v_{0}$ a hodnotiacu funkciu $h: V \times V \rightarrow R^{+}_{0}$. Predpokladáme, že ak hrana $uv \notin E$, potom $h(u,v) = \infty$, ďalej, že $h(u,u) = 0$ a nakoniec, že funkciu $h$ je možné vypočítať v konštantnom čase $O(1)$. Máme taktiež jeden predpoklad na vrcholy grafu, a to, že sú reprezentované celými číslami $1, 2, ... , k$ (kde $k$ je počet vrcholov grafu). Nakoniec, výsledkom algoritmu bude pole čísel $D$, v ktorom bude pre každý vrchol $v \in V$ vypočítaná hodnota $D [v]$, čo je cena najlacnejšej cesty z počiatočného vrchola $v_{0}$ do vrchola $v$.\newline
 

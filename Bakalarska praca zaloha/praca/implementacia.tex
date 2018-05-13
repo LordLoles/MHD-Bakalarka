@@ -55,7 +55,7 @@ Nasleduje implementácia grafových štruktúr, ktorá je nateraz jednoduchá. V
   \label{1_Vertex}
 \end{figure}
 
-Kód pre objekty hrany a grafu neobsahujú žiadne zmeny.\newline
+Kód pre objekt hrany má ešte navyše pridané časy príchodu a odchodu linky z daných vrcholov. Inak objekty reprezentujúce hranu a graf neobsahujú žiadne zmeny.\newline
 
 \begin{figure}[H]
   \centering{\includegraphics{./images/1_Edge.png}}
@@ -71,20 +71,51 @@ Kód pre objekty hrany a grafu neobsahujú žiadne zmeny.\newline
 
 Pri vytváraní kódu bolo tiež potrebné rozobrať súbor s dátami a vytvoriť z nich horeuvedené objekty. Tento kód uvádzať nebudeme, nakoľko je dosť obsiahly a navyše neobsahuje žiadne relevantné informácie.\newline
 
-preco bola zla?
+Ďalším krokom je implementácia vyhľadávacieho algoritmu. Tu však badáme komplikáciu. Medzi dvomi vrcholmi/zastávkami sa nachádza mnoho hrán reprezentujúcich všetky spojenia medzi nimi. Treba pomocou algoritmu zistiť, ktorú z týchto hrán vybrať. Najlepšie by bolo nejako vyberať hrany čo najskôr po udanom čase, od ktorého chceme vyhľadávať. To by však potrebovalo premnoho modifikácií algoritmu. My sme sa preto rozhodli riešiť tento problém zmenou reprezentácie údajov.\newline
 
 
 \section{Vylepšenie reprezentácie údajov}
 
-zmena reprezentacie grafu - casopriestor, jej popis
-dvojite vrcholy - kontrola
-preco je dobra
+Keďže nám predošlá reprezentácia údajov spôsobovala komplikácie pri vyhľadávaní, rozhodli sme sa ju prerobiť. Nejde o priveľmi signifikantnú zmenu, avšak jej dopad na vyhľadávanie bude nanajvýš uspokojujúci. Zmena je, že naše vrcholy nebudú reprezentovať len zastávku, ale aj čas, v ktorom sa niečo v tej zastávke deje. Napríklad pre linku idúcu zo zastávky $A$ do $B$ v čase $0:1$ s príchodom $0:6$ vytvoríme dva vrcholy, jeden s hodnotami $A$ a $0:1$ a druhý s údajmi $B$ a $0:6$, pričom uvažovaná hrana spája presne tieto dva vrcholy. Tým pádom budeme nútení vytvoriť veľa hrán navyše, a to hrany, na ktorých sa čaká na nejakej zástavke. My sme tieto hrany nazvali "čakacie". Napriklad ak by bol v poslednom príklade práve čas $0:0$, prvá hrany nášho cetovania medzi $A$ a $B$ by bola hrana spájajúca vrcholy $A$ v čase $0:0$ a $A$ v čase $0:1$. Uvedené rozšírenie možno vidieť na obrázku \ref{2_Vertex}.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/2_Vertex.png}}
+  \caption{Rozšírená reprezentácia vrchola}
+  \label{2_Vertex}
+\end{figure}
+
+Do objektu hrany sme zasiahli len minimálne: sme pridali jednu premennú hovoriacu či je daná hrana čakacia, čo nám pomôže pri výpise cesty, pretože budeme chcieť takéto hrany vylúčiť z výpisu.\newline
+
+Táto reprezentácia údajov vyzerá naozaj sľubne, keďže algoritmus vyhľadávnia na takto zostavenom grafe nebude potrebovať žiadne ďalšie úpravy.\newline
 
 
-\section{Implementácia vyhľadávacieho algoritmu}
+\section{Implementácia vyhľadávacieho algoritmu a výpis výsledku}
 
-preco dijkstra a nie iny?
-jeho spojenie s grafom
-jeho vystup - je vo vrcholoch
-implementacia vypisu
+Nasledujúcim bodom bolo teda implementovať vyhľadávací algoritmu na pripravenej grafovej štruktúre. Ako sme už spomínali, na tento účel využijeme Dijkstrov algoritmus. Jeho implementácia podľa podkapitoly \ref{Dijkstra} je nenáročná. Za zmienku ale stojí pýtať sa, ktorý vrchol, po zadaní požiadavky používateľom, zvolíme ako počiatočný. Odpoveď je ale prostá: nájdeme vrchol s daným názvom, ktorý je čo najskôr po zadanom čase používateľa. Druhou možnosťou by bolo vytvoriť nový vrchol sparametrami od používateľa a ten umiestniť do grafu. Implementácia by bola jednoduchšia, ale oveľa viac mätúca. Rozhodli sme sa preto pre prvú možnosť.\newline
+
+Opäť je vhodná chvíľa uvažovať. Ak bude náš graf rozsiahly, s čím musíme rátať, Dijkstrov algoritmus bude počítať veľmi dlho, než sa dopátra ku všetkým hodnotám. Rozmuné je teda do implementácie zapojiť i ukončenie procesu vyhľadávania v nejakom rozumnom stave. Ako sme spomínali pri opisovaní Dijkstrovho algoritmu \ref{Dijkstra}, mnoho implementácií končí po nájdený hodnoty najlacnejšej cesty pre zadaný konečný vrchol. My túto ideu v tejto chvíli aplikujeme, avšak jemne pozmenenú. Budeme si počas behu Dijkstrovho algoritmu počítať, koľko krát sme už prišli do finálneho vrchola a po určitom počte jeho návštev algoritmus ukončíme. Otázkou zostáva, aký bude tento počet návštev konečného vrchola. Ak bude priveľký, bude algoritmus trvať zbytočne dlho. Ak zasa malý, používateľ bude nespokojný. Navyše, v prípade opätovného vyhľadávnia na tých istých vstupnoch len s vyššou hondotou tohto čísla bude musieť algoritmus začínať vždy odznova. Bolo by teda rozumné, nechať používateľov samých navoliť toto číslo. Nateraz sme ale túto hodnotu napevno zadrôtovali na číslo $5$. Naša implementácia algoritmu je k nahliadnutiu na obrázku \ref{Dijkstra_obr}. Treba podotknúť, že niektoré použité premenné sú definované mimo procedúry a ich význam je možne zistiť buď z názvu, z kontextu, alebo z prezretia si väčšej časti kódu.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics[width=0.7\linewidth]{./images/3_DijkstrovAlg.png}}
+  \caption{Naša implementácia Dijkstrovho algoritmu}
+  \label{Dijsktra_obr}
+\end{figure}
+
+Výsledná odpoveď algoritmu bude uložená vo vrcholoch grafu. Ich hodnoty pre požadovanú zastávku nájdeme jednoducho podľa názvu, teda vezmeme všetky vrcholy s názvom, aký je požadovaný a zoradíme ich podľa času počnúc zadaným časom pre vyhľadávanie. Pre nejaký rozumný počet týchto vrcholov necháme zrekonštruovať a do konzoly vypísať nájdené cesty. Táto hodnota by teda nemala a ani nemôže presiahnuť hodnotu návštev finálneho vrchola z predošlého odseku, momentálne teda $5$, nakoľko pre ostatné vrcholy už výslednú hodnotu nepoznáme.\newline
+
+Vypisovanie cesty pre daný vrchol realizujeme pomocou rekurzie, čo nám zabezpečí správne poradie zastávok. Túto procedúru ukazuje obrázok \ref{PathShowing}. O samotný spôsob výpisu sa teda, ako je i zobrazené v kóde, stará iná trieda, tireda "PathShowing".\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics[width=0.7\linewidth]{./images/3_PathShowing.png}}
+  \caption{Kód starajúci sa o výpis cesty}
+  \label{PathShowing}
+\end{figure}
+
 komparator - ako presne ma dijkstra vyhladavat?
+
+
+\section{Neefektívnosť vytvárania objektov}
+
+Do objektu grafu sme pridali rôzne slovníky, aby sme výrazne urýchlili ako vytváranie objektov, tak i algoritmus vyhľadávania.\newline
+
+dvojite vrcholy - kontrola

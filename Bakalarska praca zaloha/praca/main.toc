@@ -25,5 +25,6 @@
 \contentsline {section}{\numberline {4.1}Prv\IeC {\'e} my\IeC {\v s}lienky}{21}{section.4.1}
 \contentsline {section}{\numberline {4.2}Za\IeC {\v c}iato\IeC {\v c}n\IeC {\'a} implement\IeC {\'a}cia}{24}{section.4.2}
 \contentsline {section}{\numberline {4.3}Vylep\IeC {\v s}enie reprezent\IeC {\'a}cie \IeC {\'u}dajov}{28}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implement\IeC {\'a}cia vyh\IeC {\v l}ad\IeC {\'a}vacieho algoritmu}{28}{section.4.4}
-\contentsline {chapter}{Z\IeC {\'a}ver}{29}{chapter*.9}
+\contentsline {section}{\numberline {4.4}Implement\IeC {\'a}cia vyh\IeC {\v l}ad\IeC {\'a}vacieho algoritmu a v\IeC {\'y}pis v\IeC {\'y}sledku}{30}{section.4.4}
+\contentsline {section}{\numberline {4.5}Neefekt\IeC {\'\i }vnos\IeC {\v t} vytv\IeC {\'a}rania objektov}{32}{section.4.5}
+\contentsline {chapter}{Z\IeC {\'a}ver}{33}{chapter*.9}

@@ -12,12 +12,12 @@ public class Dijkstra {
 
     public Dijkstra(Graph graph)
     {
+        GameObject init = GameObject.FindGameObjectWithTag("Init");
+        pathShowing = init.GetComponent<PathShowing>();
+
         this.graph = graph;
         updateTime();
         updateVertecesValues();
-
-        GameObject init = GameObject.FindGameObjectWithTag("Init");
-        pathShowing = init.GetComponent<PathShowing>();
     }
 
 
@@ -57,7 +57,10 @@ public class Dijkstra {
                     Vertex v = neighbors[i];
                     Edge e = incidentEdges[i];
 
+
                     if (visited.Contains(v)) continue;
+
+                    v.addAlternatePath(e);
 
                     int newValue = now.value + e.travellTime;
                     if (newValue < v.value)
@@ -80,20 +83,20 @@ public class Dijkstra {
     }
 
     
-    private void printPath(Vertex v, List<Edge> path)
+    private List<Edge> getPath(Vertex v, List<Edge> path)
     {
         if (v == null)
         {
-            pathShowing.printPath(path);
-            return;
+            return null;
         }
-        printPath(v.parent, path);
+        getPath(v.parent, path);
         if (v.parent != null)
         {
             //two verteces has been found
             //now we need to print the edge in between, if it isn't waiting
             if (!v.toParent.waitingEdge) path.Add(v.toParent);
         }
+        return path;
     }
 
 
@@ -110,8 +113,8 @@ public class Dijkstra {
             {
                 List<Edge> path = new List<Edge>();
                 already++;
-                Debug.Log(already + ". moznost:");
-                printPath(v, path);
+                //Debug.Log(already + ". moznost:");
+                pathShowing.printPath(getPath(v, path));
                 if (amount == already) return;
             }
         }
@@ -161,6 +164,7 @@ public class Dijkstra {
             v.parent = null;
             v.toParent = null;
         }
+        pathShowing.flush();
     }
 
 }

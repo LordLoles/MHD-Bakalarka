@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class GraphCreator {
-    
+public class GraphCreator{
+
     private Graph graph;
 
     private string[] stops;
@@ -131,7 +132,6 @@ public class GraphCreator {
         {
 
             loaded = (int)(50 + ((100 * (float)tillNow / all) / 2));
-            Debug.Log(loaded + "%");
             tillNow++;
 
             pair.Value.Sort(new VertecesComparator());
@@ -153,7 +153,6 @@ public class GraphCreator {
         while (i < lines.Length)
         {
             loaded = (int)((100 * ((float)i / lines.Length)) / 2);
-            Debug.Log(loaded + "%");
 
             string name = lines[i];
             makeVAndE(name, lines[i + 1], lines[i + 2]);

@@ -24,9 +24,9 @@ public class SearchButtonOnClick : MonoBehaviour
             string[] input = time.text.Split(':');
             return new Time(Int32.Parse(input[0]), Int32.Parse(input[1]));
         }
-        catch(Exception e)
+        catch(Exception)
         {
-            return new Time(System.DateTime.Now.Hour, System.DateTime.Now.Minute);
+            return new Time(DateTime.Now.Hour, DateTime.Now.Minute);
         }
     }
 

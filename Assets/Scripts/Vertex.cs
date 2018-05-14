@@ -8,12 +8,14 @@ public class Vertex
     internal int value; //for dijkstra's purpose
     internal Vertex parent; //for dijkstra's purpose
     internal Edge toParent; //for dijkstra's purpose
+    internal List<Edge> alternate; //for dijkstra's purpose
 
 
     public Vertex(string n, Time t)
     {
         name = n;
         time = t;
+        alternate = new List<Edge>();
     }
 
 
@@ -31,6 +33,12 @@ public class Vertex
     public string ToString()
     {
         return (name + " " + time.ToString());
+    }
+
+
+    public void addAlternatePath(Edge e)
+    {
+        if (!alternate.Contains(e)) alternate.Add(e);
     }
 
 

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Security.Permissions;
+using UnityEngine.UI;
 
 public class Init : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Init : MonoBehaviour
     public string stopsFile;
     public string linesFile;
     public string city;
+    public Text nacitavam;
 
 
     void Start()
@@ -26,7 +28,7 @@ public class Init : MonoBehaviour
 
         thread = new Thread(gc.makeGraph);
         thread.Priority = System.Threading.ThreadPriority.Highest;
-        /*
+        
         thread.Start();
 
         //gc.makeGraph();
@@ -34,7 +36,14 @@ public class Init : MonoBehaviour
         graph = gc.getGraph();
 
         dijkstra = new Dijkstra(graph);
-        */
+        
+    }
+
+
+    public void Update()
+    {
+        if (gc.loaded < 100) nacitavam.text = "Nacitavam \n" + gc.loaded.ToString() + " %";
+        else nacitavam.enabled = false;
     }
 
 
@@ -55,7 +64,11 @@ public class Init : MonoBehaviour
     [SecurityPermissionAttribute(SecurityAction.Demand, ControlThread = true)]
     public void OnApplicationQuit()
     {
-        thread.Abort();
+        try
+        {
+            thread.Abort();
+        }
+        catch (Exception e) { }
     }
 
 

@@ -8,12 +8,15 @@ public class Dijkstra {
     private Time now;
     private PathShowing pathShowing;
     private int amountNow = 0;
+    private PathMaker pathMaker;
 
 
-    public Dijkstra(Graph graph)
+    public Dijkstra(Graph graph, PathMaker pm)
     {
         GameObject init = GameObject.FindGameObjectWithTag("Init");
         pathShowing = init.GetComponent<PathShowing>();
+        pathMaker = pm;
+        pathShowing.pathMaker = pm;
 
         this.graph = graph;
         updateTime();
@@ -82,23 +85,6 @@ public class Dijkstra {
         }
     }
 
-    
-    private List<Edge> getPath(Vertex v, List<Edge> path)
-    {
-        if (v == null)
-        {
-            return null;
-        }
-        getPath(v.parent, path);
-        if (v.parent != null)
-        {
-            //two verteces has been found
-            //now we need to print the edge in between, if it isn't waiting
-            if (!v.toParent.waitingEdge) path.Add(v.toParent);
-        }
-        return path;
-    }
-
 
     private void printPathsForStop(string stop, int amount)
     {
@@ -111,10 +97,9 @@ public class Dijkstra {
         {
             if (v.value != int.MaxValue)
             {
-                List<Edge> path = new List<Edge>();
                 already++;
                 //Debug.Log(already + ". moznost:");
-                pathShowing.printPath(getPath(v, path));
+                pathShowing.printPath(pathMaker.makePath(v));
                 if (amount == already) return;
             }
         }

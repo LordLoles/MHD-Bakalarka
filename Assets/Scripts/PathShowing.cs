@@ -7,34 +7,42 @@ public class PathShowing : MonoBehaviour
     public GameObject panelObj;
     public GameObject canvas;
     
-    private int panelStep = -110;
-    private int start = -160;
+    private int panelStep = -120;
+    private int start = -170;
     private int now;
     private List<GameObject> panels;
+
+    internal PathMaker pathMaker;
+
+    //Memento
+    internal State state;
+    internal PathsMemory pathsMemory; //caretaker
 
 
     private void Awake()
     {
-        panels = new List<GameObject>();
-        now = start;
+        nextSearch();
         /*
         List<Edge> l = new List<Edge>();
         l.Add(new Edge("e", new Vertex("v1", new Time(0, 0)), new Vertex("v2", new Time(0, 5)), new Time(0, 0), new Time(0, 5)));
         l.Add(new Edge("e", new Vertex("v1", new Time(0, 0)), new Vertex("v2", new Time(0, 5)), new Time(0, 0), new Time(0, 5)));
         l.Add(new Edge("e", new Vertex("v1", new Time(0, 0)), new Vertex("v2", new Time(0, 5)), new Time(0, 0), new Time(0, 5)));
         l.Add(new Edge("e", new Vertex("v1", new Time(0, 0)), new Vertex("v2", new Time(0, 5)), new Time(0, 0), new Time(0, 5)));
+        printPath(l);
+        flush();
         printPath(l);*/
     }
 
     public void printPath(List<Edge> path)
     {
         //foreach (Edge e in path) Debug.Log(e.ToString());
+        state.paths.Add(path);
 
         GameObject panel = Instantiate(panelObj, canvas.transform);
         correctPanelPos(panel);
         panels.Add(panel);
         PanelManager panelManager = panel.GetComponent<PanelManager>();
-        panelManager.onStart(panel.GetComponent<ScrollRect>());
+        panelManager.onStart(panel.GetComponent<ScrollRect>(), this);
 
         for (int i = 0; i < path.Count; i++)
         {
@@ -69,9 +77,57 @@ public class PathShowing : MonoBehaviour
 
     public void flush()
     {
-        foreach (GameObject go in panels) GameObject.Destroy(go);
+        if (panels != null) foreach (GameObject go in panels) GameObject.Destroy(go);
         now = start;
+        state = new State();
         panels = new List<GameObject>();
+    }
+
+
+    public void nextSearch()
+    {
+        flush();
+        pathsMemory = new PathsMemory(this);
+        panels = new List<GameObject>();
+        now = start;
+    }
+
+
+    public void showAlternativePath(Vertex v)
+    {
+        Debug.Log("show alternative to " + v.ToString());
+        memorizeThis();
+        flush();
+
+        int i = 0;
+        foreach (Edge e in v.alternate)
+        {
+            if (i == 3) break;
+            List<Edge> path = pathMaker.makePath(e.fromV);
+            path.Add(e);
+            printPath(path);
+            i++;
+        }
+    }
+
+
+    public void setPathMaker(PathMaker pm)
+    {
+        pathMaker = pm;
+    }
+
+
+    public void memorizeThis()
+    {
+        pathsMemory.memorize(state);
+    }
+
+
+    public void redoLastState()
+    {
+        State lastState = pathsMemory.getLastState();
+        flush();
+        foreach (List<Edge> path in lastState.paths) printPath(path);
     }
 
 }

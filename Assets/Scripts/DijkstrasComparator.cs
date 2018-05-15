@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using UnityEditor;
-using System.Collections.Generic;
-using System;
+﻿using System.Collections.Generic;
 
 public class DijkstrasComparator : IComparer<Vertex>
 {

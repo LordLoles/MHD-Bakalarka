@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class AlternativePathBtn : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private StopObjectHolder soh;
+
+    public void OnClick()
+    {
+        soh = GetComponent<StopObjectHolder>();
+        soh.panelManager.pathShowing.showAlternativePath(soh.zastavka);
+    }
+
 }

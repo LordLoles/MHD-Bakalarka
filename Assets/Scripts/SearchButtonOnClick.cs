@@ -9,13 +9,16 @@ public class SearchButtonOnClick : MonoBehaviour
     public Text start;
     public Text fin;
     public Text time;
+    public Text amount;
+
 
     public void OnClick()
     {
         GameObject init = GameObject.FindGameObjectWithTag("Init");
         Init initScript = init.GetComponent<Init>();
-        initScript.startSearching(start.text, fin.text, getTime(), 3);
+        initScript.startSearching(start.text, fin.text, getTime(), getAmount());
     }
+
 
     private Time getTime()
     {
@@ -27,6 +30,19 @@ public class SearchButtonOnClick : MonoBehaviour
         catch(Exception)
         {
             return new Time(DateTime.Now.Hour, DateTime.Now.Minute);
+        }
+    }
+
+
+    private int getAmount()
+    {
+        try
+        {
+            return Int32.Parse(amount.text);
+        }
+        catch (Exception)
+        {
+            return 3;
         }
     }
 

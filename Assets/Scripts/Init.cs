@@ -13,6 +13,9 @@ public class Init : MonoBehaviour
     private Dijkstra dijkstra;
     private GraphCreator gc;
     private Thread thread;
+    private PathMaker pathMaker;
+    private PathShowing pathShowing;
+    private DataBaseChange dbc;
 
     //public string path = @"C:\Users\alojz\Documents\UnityProjects\MHD\Assets\Bratislava\";
     public string stopsFile;
@@ -23,26 +26,44 @@ public class Init : MonoBehaviour
 
     void Start()
     {
+        Screen.SetResolution(800, 860, false);
+
+        myStart();
+    }
+
+
+    public void myStart()
+    {
         //Debug.Log(Application.dataPath);
         gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
 
         thread = new Thread(gc.makeGraph);
         thread.Priority = System.Threading.ThreadPriority.Highest;
-        
+
         thread.Start();
 
         //gc.makeGraph();
 
         graph = gc.getGraph();
 
-        dijkstra = new Dijkstra(graph);
-        
+        pathMaker = new PathMaker(graph);
+        pathShowing = gameObject.GetComponent<PathShowing>();
+        dbc = gameObject.GetComponent<DataBaseChange>();
+        dbc.stopsFile = stopsFile;
+        dbc.cityName.text = city;
+        dbc.inputField.gameObject.SetActive(false);
+
+        dijkstra = new Dijkstra(graph, pathMaker);
     }
 
 
     public void Update()
     {
-        if (gc.loaded < 100) nacitavam.text = "Nacitavam \n" + gc.loaded.ToString() + " %";
+        if (gc.loaded < 100)
+        {
+            nacitavam.enabled = true;
+            nacitavam.text = "Načítavam \n" + gc.loaded.ToString() + " %";
+        }
         else nacitavam.enabled = false;
     }
 
@@ -51,6 +72,7 @@ public class Init : MonoBehaviour
     {
         if (gc.loaded == 100)
         {
+            pathShowing.nextSearch();
             Debug.Log("spustam dijkstru z " + start + " do " + fin);
             dijkstra.shortestPathsAmount(time, start, fin, amount);
         }

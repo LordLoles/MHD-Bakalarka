@@ -6,7 +6,7 @@ V tejto kapitole uvedieme zopár definícií týkajúcich sa grafov, opíšeme n
 
 \section{Definícia grafu}
 
-Začneme so základnou defínicou - s definovaním pojmu \textit{graf}. Tú prevezmeme od Reinharda Diestela \cite[kapitola 0.1]{Diestel2000}: \newline
+Začneme so základnou definícou - s definovaním pojmu \textit{graf}. Tú prevezmeme od Reinharda Diestela \cite[kapitola 0.1]{Diestel2000}: \newline
 
 \textit{Graf} je dvojica $G = (V, E)$ disjunktných množín, kde prvky $E$ sú dvojprvkové podmnožiny $V$. Prvky $V$ sú \textit{vrcholy} (prípadne \textit{uzly} alebo \textit{body}) grafu $G$, prvky $E$ sú jeho hrany. \newline
 
@@ -26,7 +26,7 @@ Budeme hovoriť, že vrchol $v$ je \textit{incidentný} s hranou $e$, ak $v \in 
 Dva vrcholy $x, y \in V$ sú  \textit{susedné}, ak $xy$ je hrana v $G$.
 Dve hrany $e, f \in E; e \neq f$ sú  \textit{susedné}, ak majú spoločný vrchol.\newline
 
-\textit{Stupňom vrchola} $v \in V$ nazveme počet hrán incidentných s $v$. Alebo, inak povedané, je to počet vrcholov, ktoré sú susedné s vrcholm $v$.
+\textit{Stupňom vrchola} $v \in V$ nazveme počet hrán incidentných s $v$. Alebo inak povedané, je to počet vrcholov, ktoré sú susedné s vrcholom $v$.
 
 
 \subsection{Typy grafov}
@@ -41,8 +41,6 @@ Pojmom \textit{Triviálny graf} budeme označovať graf s rádom 0 alebo 1.\newl
 
 Majme graf $G$. Ak každý jeho vrchol má rovnaký stupeň $k$, potom tento graf nazveme \textit{k-regulárnym}. V definícií môžeme upustiť od počtu vrcholov a nazvať vzniknutý objekt iba \textit{regulárnym}.\newline
 
-Nech $r\in N, r\geq 2$. Graf $G = (V, E)$ voláme \textit{r-partitný}, ak V umožňuje rozklad na r tried (partícií), a to takých, že každá hrana má svoje konce v rôznych triedach. Alebo inak, vrcholy v tej istej triede rozkladu so sebou nesmú susediť. 2-partitným grafom budeme vravieť \textit{bipartitné}. Ľahko si bipartitný graf predstaviť uvažujúc dve množiny vrcholov, pričom sa hrany grafu nachádzajú len a len medzi týmito množinami, nie v nich.
-
 
 \subsection{Vzťahy medzi grafmi}
 
@@ -51,11 +49,11 @@ Nech $G = (V, E)$ a $G' = (V', E')$ sú grafy. Označíme $G\cap G' = (V\cap V',
 
 \section{Cesty a cykly}
 
-Nech $G = (V, E)$ je graf. Definujme \textit{cestu} ako neprázdny graf $P = (V', E')$, ktorý je podgrafom $G$, tvaru $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, kde všetky $x_{i}$ sú navzájom rôzne. Neformálne povedané, cesta spája (pomocou hrán) dva vrcholy grafu $G$, pričom sa v nej použité vrcholy nesmú opakovať. Počet hrán cesty sa nazýva aj \textit{dĺžkou}. Pre zjednoduchšenie budeme cestu zapisovať ako $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$.\newline
+Nech $G = (V, E)$ je graf. Definujme \textit{cestu} ako neprázdny graf $P = (V', E')$, ktorý je podgrafom $G$, tvaru $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, kde všetky $x_{i}$ sú navzájom rôzne. Neformálne povedané, cesta spája (pomocou hrán) dva vrcholy grafu $G$, pričom sa v nej použité vrcholy nesmú opakovať. Počet hrán cesty sa nazýva aj \textit{dĺžkou}. Pre zjednodušenie budeme cestu zapisovať ako $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$.\newline
 
 Majme graf $G = (V, E)$. Nech $P = (V', E')$ je cesta v $G$, $P = x_{0} x_{1} x_{2} ... x_{k-1} x_{k}$, pričom $k\geq 2$ a v grafe $G$ existuje hrana $x_{0}x_{k}$. Potom hovoríme, že graf $G$ obsahuje \textit{cyklus} alebo tiež \textit{kružnicu} $C$, kde $C$ je podgraf $G$ a platí $C = (V', E' \cup \{x_{0},x_{k}\})$. \newline
 
-\textit{Sled} v grafe $G$ je názov pre neprázdnu striedavú postupnosť $v_{0}e_{0}v_{1}e_{1} ... e_{k-1}v_{k}$ vrcholov a hrán v G, pričom $e_{i} = v_{i}v_{i+1}$ pre všetky $i < k$. Sled teda, narozdiel od cesty, môže obsahovať rovnaké vrcholy viac krát. Preto sa dá povedať, že sled je cesta, v ktorej sa môžu vrcholy opakovať. Ale aj naopak: sled, v ktorom sú vrcholy navzájom rôzne, je cestou.\newline
+\textit{Sled} v grafe $G$ je názov pre neprázdnu striedavú postupnosť $v_{0}e_{0}v_{1}e_{1} ... e_{k-1}v_{k}$ vrcholov a hrán v G, pričom $e_{i} = v_{i}v_{i+1}$ pre všetky $i < k$. Sled teda, na rozdiel od cesty, môže obsahovať rovnaké vrcholy viac krát. Preto sa dá povedať, že sled je cesta, v ktorej sa môžu vrcholy opakovať. Ale aj naopak: sled, v ktorom sú vrcholy navzájom rôzne, je cestou.\newline
 
 Sled, v ktorom sú hrany navzájom rôzne, sa nazýva \textit{ťah}.\newline
 
@@ -73,11 +71,11 @@ Vrchol $v \in V$ grafu $G$ sa nazýva \textit{artikulácia}, ak počet komponent
 
 \section{Kostry, stromy a lesy}
 
-Nech $G = (V, E)$ je súvislý graf. \textit{Kostrou} grafu nazveme taký graf $G' = (V', E'), G'\subseteq G$, pre ktorý platí $V' = V$ a navyše medzi každými dovma vrcholmi existuje práve jedna cesta. Ak by sme grafu $G$ postupne odnímali hrany tak, aby sme nenarušili jeho súvislosť, tak po odstránení všetkých takýchto hrán by sme získali kostru grafu $G$. Z tejto konštrukčnej definície vyplýva, že všetky hrany v kostre grafu sú mostami. Je z nej taktiež zrejmé, že každá kostra grafu je súvislá.\newline
+Nech $G = (V, E)$ je súvislý graf. \textit{Kostrou} grafu nazveme taký graf $G' = (V', E'), G'\subseteq G$, pre ktorý platí $V' = V$ a navyše medzi každými dvoma vrcholmi existuje práve jedna cesta. Ak by sme grafu $G$ postupne odnímali hrany tak, aby sme nenarušili jeho súvislosť, tak po odstránení všetkých takýchto hrán by sme získali kostru grafu $G$. Z tejto konštrukčnej definície vyplýva, že všetky hrany v kostre grafu sú mostami. Je z nej taktiež zrejmé, že každá kostra grafu je súvislá.\newline
 
 \textit{Kostrový les} je taký graf $G$, pre ktorý platí, že každý z jeho komponentov je kostrou.\newline
 
-Acyklický graf (to jest taký, ktorý neobsahuje cyklus), ktorý je navyše súvislý, nazveme \textit{stromom}. Všetky vrcholy stromu so stupňom 1 sú jeho \textit{listy}. Je vhodné si povšimnúť, že, ako pri kostre, všetky hrani sú mostami. Taktiež je zaujímavé uvažovať o rozdiele medzi stromom a kostrou grafu. Možno nahliadnuť, že jediným rozdielom medzi nimi je, že strom je grafom, zakiaľ čo kostra je len podgrafom nejakého daného grafu.\newline
+Acyklický graf (to jest taký, ktorý neobsahuje cyklus), ktorý je navyše súvislý, nazveme \textit{stromom}. Všetky vrcholy stromu so stupňom 1 sú jeho \textit{listy}. Je vhodné si povšimnúť, že, ako pri kostre, všetky hrany sú mostami. Taktiež je zaujímavé uvažovať o rozdiele medzi stromom a kostrou grafu. Možno nahliadnuť, že jediným rozdielom medzi nimi je, že strom je grafom sám o sebe, zatiaľ čo o kostre hovoríme len v súvislosti v grafom, z ktorého vznikla.\newline
 
 \textit{Les} je acyklický graf. Takže každý jeho komponent je stromom.\newline
 
@@ -95,7 +93,7 @@ Rozdiel medzi orientovanými a neorientovanými grafmi je, ako názov napovedá 
 
 Definícia cesty i cyklu pre orientované grafy je rovnaká ako pre neorientované. Rozdiel je len v jej použití na orientovaných grafoch. Pre úplnosť ich ale v stručnej podobe uvádzame.\newline
 
-Nech $G = (V, E)$ je graf. Nech $P = (V', E'), P\cap G$, kde $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, pričom všetky $x_{i}$ sú po dvoch rôzne. Potom $P$ nazývame \textit{cestou} v grafe $G$. Ak $k\geq 3$ a vrcholy sú rôzne až na rovnosť $x_{0} = x_{k}$, potom nazveme $P$ \textit{cyklom}, prípadne \textit{kružnicou} \ref[kapitola 1.4]{bang2008digraphs}.
+Nech $G = (V, E)$ je graf. Nech $P = (V', E'), P\subseteq G$, kde $V' = \{x_{0}, x_{1}, ..., x_{k}\}$ a $E' = \{x_{0} x_{1}, x_{1} x_{2}, ..., x_{k-1} x_{k}\}$, pričom všetky $x_{i}$ sú po dvoch rôzne. Potom $P$ nazývame \textit{cestou} v grafe $G$. Ak $k\geq 3$ a vrcholy sú rôzne až na rovnosť $x_{0} = x_{k}$, potom nazveme $P$ \textit{cyklom}, prípadne \textit{kružnicou}. \cite[kapitola 1.4]{bang2008digraphs}
 
 
 

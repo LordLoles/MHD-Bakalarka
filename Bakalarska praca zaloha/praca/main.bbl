@@ -11,6 +11,14 @@ Michael~J Bannister and David Eppstein.
 \newblock In {\em 2012 Proceedings of the Ninth Workshop on Analytic
   Algorithmics and Combinatorics (ANALCO)}, pages 41--47. SIAM, 2012.
 
+\bibitem{bast2010fast}
+Hannah Bast, Erik Carlsson, Arno Eigenwillig, Robert Geisberger, Chris
+  Harrelson, Veselin Raychev, and Fabien Viger.
+\newblock Fast routing in very large public transportation networks using
+  transfer patterns.
+\newblock In {\em European Symposium on Algorithms}, pages 290--301. Springer,
+  2010.
+
 \bibitem{bellman1958routing}
 Richard Bellman.
 \newblock On a routing problem.
@@ -26,6 +34,12 @@ Reinhard Diestel.
 Shimon Even.
 \newblock {\em Graph algorithms}.
 \newblock Cambridge University Press, 2011.
+
+\bibitem{fan2004optimal}
+Wei Fan and Randy~B Machemehl.
+\newblock Optimal transit route network design problem: Algorithms,
+  implementations, and numerical results 6. performing organization code.
+\newblock 2004.
 
 \bibitem{katreniakova2014}
 Jana Katreniaková.

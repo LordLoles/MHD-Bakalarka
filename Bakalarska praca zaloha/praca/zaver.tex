@@ -2,30 +2,11 @@
 \addcontentsline{toc}{chapter}{Záver} % rucne pridanie do obsahu
 \markboth{Záver}{Záver} % vyriesenie hlaviciek
 
-Na záver už len odporúčania k samotnej kapitole Záver v bakalárskej
-práci podľa smernice \cite{smernica}:  \glqq{}V závere je potrebné v
-stručnosti zhrnúť dosiahnuté výsledky vo vzťahu k stanoveným
-cieľom. Rozsah záveru je minimálne dve strany. Záver ako kapitola sa
-nečísluje.\grqq{}
+V práci sme skúmali vlastnosti a popisovali algoritmy vhodné na vyhľadávanie spojení hromadnej dopravy. Zamerali sme sa na tri základné algoritmy, ktoré sme medzi sebou v mnohých ohľadoch porovnávali, vďaka čomu sme dokázali usúdiť, ktorý z nich bude najvhodnejším kandidátom na spomenuté vyhľadávanie. Porovnávali sme ich časovú zložitosť, ich použiteľnosť na malých i veľkých vstupoch, resp. na vstupoch s malým či veľkým počtom hrán. Najlepšie obstál Dijkstrov algoritmus, ktorý sa zdá byť najvšeobecnejší a najefektívnejší pri použití ľubovoľnej grafovej štruktúry. Samozrejme, ako sa spomína aj v \cite{bast2010fast}, existujú rôzne zložitejšie algoritmy, ktoré sú oveľa rýchlejšie na vyhľadávanie spojení MHD. Mnoho výskumov a návrhov komplikovanejších algoritmov zhrnuli a porovnali Fan a Machemehl v svojom diele \cite{fan2004optimal}.
 
-Všimnite si správne písanie slovenských úvodzoviek okolo
-predchádzajúceho citátu, ktoré sme dosiahli príkazmi \verb'\glqq' a
-\verb'\grqq'.
+So znalosťou Dijkstrovho algoritmu sme dokázali vytvoriť softvér, ktorý na poskytnutých dátach nájde najlacnejšie cesty medzi zadanými vrcholmi. Program si najprv z dát vytvorí grafovú štruktúru, s ktorou následne pracuje. Program je navrhnutý tak, že vďaka vstupu od požívateľa vo forme názvu počiatočnej a konečnej zastávky dokáže uskutočniť vyhľadávanie a následne vypísať vypočítané výsledky v prívetivej forme. Aplikáciu sme otestovali i na dátach Bratislavskej hromadnej dopravy, pričom nás prekvapila rýchlosť algoritmu, ktorému i pri tak obrovskom počte zastávok a liniek trvalo nájsť riešenie zakaždým menej ako sekundu. Samozrejme tomu prispieva prítomnosť ukončenia vyhľadávania, keď už riešenie obsahuje dostatočne veľa potrebných informácií.
 
-V informatických prácach niekedy býva záver kratší ako dve strany, ale
-stále by to mal byť rozumne dlhý text, v rozsahu aspoň jednej strany.
-Okrem dosiahnutých cieľov sa zvyknú rozoberať aj otvorené problémy a
-námety na ďalšiu prácu v oblasti.
+Navrhli sme a implementovali zobrazovanie alternatívnych trás do danej zastávky. Takéto vylepšenie zväčša iné implementácie podobného charakteru neposkytujú, a preto sme sa preň rozhodli.
 
-Abstrakt, úvod a záver práce obsahujú podobné informácie. Abstrakt je
-kratší text, ktorý má pomôcť čitateľovi sa rozhodnúť, či vôbec prácu
-chce čítať. Úvod má umožniť zorientovať sa v práci skôr než ju začne
-čítať a záver sumarizuje najdôležitejšie veci po tom, ako prácu
-prečítal, môže sa teda viac zamerať na detaily a využívať pojmy
-zavedené v práci.
-
-
-
-
-
+Na um nám prichádzajú i možné pokračovania práce. Napríklad by sa dalo spracovať i iné, pokročilejšie algoritmy a na základe ich spoločného porovnania vybrať lepší algoritmus ako Dijkstrov na vyhľadávanie spojení hromadnej dopravy. Ďalšou možnosťou je implementovať viacero algoritmov na vyhľadávanie a tie na základe rozumných meraní medzi sebou porovnávať. Taktiež by sa dalo implementovať iné použiteľné vylepšenia a zakomponovať ich do kódu našej aplikácie, prípadne zlepšiť či zefektívniť terajšie riešenie, napríklad sprehľadnením či vizuálnym vylepšením používateľského rozhrania.
 

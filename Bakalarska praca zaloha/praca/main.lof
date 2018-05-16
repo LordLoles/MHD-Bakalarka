@@ -7,20 +7,20 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{14}{figure.2.4}
 \contentsline {figure}{\numberline {5}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{17}{figure.2.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka spusten\IeC {\'e}ho programu}}{21}{figure.3.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{22}{figure.3.7}
-\contentsline {figure}{\numberline {8}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka vyh\IeC {\v l}ad\IeC {\'a}vania}}{23}{figure.3.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka alternat\IeC {\'\i }vnej cesty do zast\IeC {\'a}vky C}}{24}{figure.3.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Form\IeC {\'a}t d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru pre linky}}{25}{figure.3.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Zmena d\IeC {\'a}t, s ktor\IeC {\'y}mi m\IeC {\'a} program pracova\IeC {\v t}}}{25}{figure.3.11}
+\contentsline {figure}{\numberline {6}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka spusten\IeC {\'e}ho programu}}{20}{figure.3.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{21}{figure.3.7}
+\contentsline {figure}{\numberline {8}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka vyh\IeC {\v l}ad\IeC {\'a}vania}}{22}{figure.3.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka alternat\IeC {\'\i }vnej cesty do zast\IeC {\'a}vky C}}{22}{figure.3.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Form\IeC {\'a}t d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru pre linky}}{23}{figure.3.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Zmena d\IeC {\'a}t, s ktor\IeC {\'y}mi m\IeC {\'a} program pracova\IeC {\v t}}}{24}{figure.3.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12}{\ignorespaces Form\IeC {\'a}t obsahu d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru}}{29}{figure.4.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{30}{figure.4.13}
-\contentsline {figure}{\numberline {14}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia vrcholu}}{30}{figure.4.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia hrany}}{31}{figure.4.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia grafu}}{31}{figure.4.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Roz\IeC {\v s}\IeC {\'\i }ren\IeC {\'a} reprezent\IeC {\'a}cia vrchola}}{32}{figure.4.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Na\IeC {\v s}a implement\IeC {\'a}cia Dijkstrovho algoritmu}}{34}{figure.4.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces K\IeC {\'o}d staraj\IeC {\'u}ci sa o v\IeC {\'y}pis cesty}}{35}{figure.4.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Vylep\IeC {\v s}en\IeC {\'a} implement\IeC {\'a}cia grafu}}{36}{figure.4.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces Pr\IeC {\'\i }klad alternat\IeC {\'\i }vnej trasy}}{37}{figure.4.21}
+\contentsline {figure}{\numberline {12}{\ignorespaces Form\IeC {\'a}t obsahu d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru}}{28}{figure.4.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{29}{figure.4.13}
+\contentsline {figure}{\numberline {14}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia vrcholu}}{29}{figure.4.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia hrany}}{30}{figure.4.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia grafu}}{30}{figure.4.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Roz\IeC {\v s}\IeC {\'\i }ren\IeC {\'a} reprezent\IeC {\'a}cia vrchola}}{31}{figure.4.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Na\IeC {\v s}a implement\IeC {\'a}cia Dijkstrovho algoritmu}}{33}{figure.4.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces K\IeC {\'o}d staraj\IeC {\'u}ci sa o v\IeC {\'y}pis cesty}}{34}{figure.4.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Vylep\IeC {\v s}en\IeC {\'a} implement\IeC {\'a}cia grafu}}{35}{figure.4.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces Pr\IeC {\'\i }klad alternat\IeC {\'\i }vnej trasy}}{36}{figure.4.21}

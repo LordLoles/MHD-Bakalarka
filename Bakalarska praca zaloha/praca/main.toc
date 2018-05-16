@@ -21,10 +21,14 @@
 \contentsline {subsection}{\numberline {2.2.3}Floyd\textendash Warshallov algoritmus}{15}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Zhrnutie}{18}{subsection.2.2.4}
 \contentsline {chapter}{\numberline {3}Softv\IeC {\'e}r}{20}{chapter.3}
-\contentsline {chapter}{\numberline {4}Implement\IeC {\'a}cia}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Prv\IeC {\'e} my\IeC {\v s}lienky}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Za\IeC {\v c}iato\IeC {\v c}n\IeC {\'a} implement\IeC {\'a}cia}{24}{section.4.2}
-\contentsline {section}{\numberline {4.3}Vylep\IeC {\v s}enie reprezent\IeC {\'a}cie \IeC {\'u}dajov}{28}{section.4.3}
-\contentsline {section}{\numberline {4.4}Implement\IeC {\'a}cia vyh\IeC {\v l}ad\IeC {\'a}vacieho algoritmu a v\IeC {\'y}pis v\IeC {\'y}sledku}{30}{section.4.4}
-\contentsline {section}{\numberline {4.5}Neefekt\IeC {\'\i }vnos\IeC {\v t} vytv\IeC {\'a}rania objektov}{32}{section.4.5}
-\contentsline {chapter}{Z\IeC {\'a}ver}{33}{chapter*.9}
+\contentsline {section}{\numberline {3.1}Z\IeC {\'a}kladn\IeC {\'y} popis aplik\IeC {\'a}cie}{20}{section.3.1}
+\contentsline {section}{\numberline {3.2}Vyh\IeC {\v l}ad\IeC {\'a}vanie}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}D\IeC {\'a}tov\IeC {\'e} s\IeC {\'u}bory}{24}{section.3.3}
+\contentsline {chapter}{\numberline {4}Implement\IeC {\'a}cia}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Prv\IeC {\'e} my\IeC {\v s}lienky}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}Za\IeC {\v c}iato\IeC {\v c}n\IeC {\'a} implement\IeC {\'a}cia}{29}{section.4.2}
+\contentsline {section}{\numberline {4.3}Vylep\IeC {\v s}enie reprezent\IeC {\'a}cie \IeC {\'u}dajov}{32}{section.4.3}
+\contentsline {section}{\numberline {4.4}Implement\IeC {\'a}cia vyh\IeC {\v l}ad\IeC {\'a}vacieho algoritmu a v\IeC {\'y}pis v\IeC {\'y}sledku}{33}{section.4.4}
+\contentsline {section}{\numberline {4.5}Neefekt\IeC {\'\i }vnos\IeC {\v t} vytv\IeC {\'a}rania objektov}{35}{section.4.5}
+\contentsline {section}{\numberline {4.6}Vyh\IeC {\v l}ad\IeC {\'a}vanie alternat\IeC {\'\i }vnych ciest}{36}{section.4.6}
+\contentsline {chapter}{Z\IeC {\'a}ver}{39}{chapter*.9}

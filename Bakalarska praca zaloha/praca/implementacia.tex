@@ -124,3 +124,20 @@ Program, po implementácií všetkého doposiaľ opísaného, sa zdá byť funk�
 
 Vylepšenie objektu grafu zabezpečilo, že sa aplikácia načítava približne minútu. Boli sme ju teda schopný otestovať na reálnych dátach a výsledky boli pozitívne. Dĺžka načítavania je ale stále neprajná, hoci aplikácia by mohla byť stále využiteľná, napríklad keby sa spustila a nechala bežať na serveri a používatelia by sa skrz určitú webovú stránku spytovali aplikácie svoje otázky.\newline
 
+
+\section{Vyhľadávanie alternatívnych ciest}
+
+Posledným cieľom našej práce je implementácia nejakéh vylepšenia, ktoré obohatí náš program a urobí ho príťažlivejším. Rozhodli sme sa, že medzi funkcionalitu aplikácie pridáme možnosť zobrazenia alternatívnych ciest do, keďže ju postráda skoro každý iný vyhľadávací nástroj. Presnejšie, pri zobrazení výsledkou algoritmu bude pri každej zastávke možné zvoliť zobrazenie iných trás do tej istej zastávky s príchodom v tom istom čase.\newline 
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/dijkstra_priklad.png}}
+  \caption{Príklad alternatívnej trasy}
+  \label{alternativ_priklad}
+\end{figure}
+
+ Napríklad, pre graf zobrazený na \ref{alternativ_priklad} bude výsledok vyhľadávnia cesta z vrcholu $1$ do $3$ cez vrchol $2$, nakoľko je najkratšia. Ale pri vrchole $3$ v zobrazení výsledku bude napísané, že doň vedú aź dve cesty, nie len tá vypočítaná. Aplikácia bude schopná na žiadosť používateľa tieto alternatívne cesty vypísať a dokonca sa i navrátiť do pôvodného výsledného stavu.\newline
+
+Po dlhšom uvažovaní sme si uvedomili, že implementácia takéhoto vylepšenia nie je priveľmi náročná. Je ale nutné upraviť vyhľadávací algoritmus, čo ho, dúfame, príliš nezprehľadní. V prvom rade pridáme do triedy pre vrchol jedno pole hrán uchovávajúce si tie hrany, ktoré boli v Dijkstrovom algoritme skúšané ako kandidáti na najkratšiu cestu do tohto vrchola. Samozrejme, budú tam všetky - aj tie, ktorým sa nepodarilo, i tie, ktorým áno, lebo tie so zdarným porovnaním sa môžu neskôr prepísať inou, lepšou možnosťou. A ako sme už prezradili, úprava vo vyhľadávaciom algoritme tiež nebude markantná. V ňom nám stačí pred porovnaním pridať hranu do spomínaného poľa pre cieľový vrchol.\newline
+
+Implementácia vylepšenia sa naozaj nezdá byť signifikantná, jej účel je ale naozaj prínosný. Avšak nie je pravda, že jej naprogramovanie je také jednoduché. S touto implementáciu sa nám podarilo získať výsledky, ktoré, žiaľ, nevieme vypísať. Vo výpise sa ale nachádza tvrdý oriešok. Keďže najprv potrebujeme vypísať alternatívne cesty, potrebujeme nielen zmazať predošlý výpis výsledok, ale si aj zapamätať tento stav, keďže sa k nemu pravdepodobne bude chcieť používateľ vrátiť. Ďalej, ak si zvolíme zobraziť alternatívne cesty pre nejakú zastávku, možno si budeme chcieť opäť z vypísaného zvoliť alternatívnu cestu. Výpis by teda mal fungovať do ľubovoľnej hĺbky. Ako nádherné riešenie tohto problému sa nám ponúka použiť návrhový vzor \textit{Memento}, ktorého \textit{Caretaker} si bude postupne zapamätávať stavy a na žiadosť nám posledný zapamätaný stav poskytne a zároveň ho odstráni zo svojej pamäte. Na jeho pamäť zasa poslúži dátová štruktúra \textit{zásobník} a ukladané stavy budú reprezentované triedou so zoznamom zoznamou hrán. Implementácia \textit{Mementa} nám teda s prehľadom vyriešila všetky starosti.\newline
+

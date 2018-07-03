@@ -45,7 +45,7 @@ public class Dijkstra {
 
         while (inScope.Count > 0)
         {
-            inScope.Sort(dc);
+            inScope.Sort(dc);               //najdi min cez haldu (log n) - toto je v (n log n)
             Vertex now = peek(inScope);
 
             if (graph.getNeighbors(now).Contains(start)) break;

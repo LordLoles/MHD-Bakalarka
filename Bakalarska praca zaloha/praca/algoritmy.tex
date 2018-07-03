@@ -129,7 +129,7 @@ Bellman\textendash Fordov algoritmus má mnoho pozitív - aplikovateľnosť i na
 
 \subsection{Floyd\textendash Warshallov algoritmus}
 
-Posledným algoritmom slúžiaci na hľadanie najlacnejších ciest, ktorý uvedieme, nesie názov Floyd\textendash Warshallov algoritmus. Opäť, ako v predošlom prípade, sa ale ani Floyd, ani Warshall nemôžu pýšiť prvenstvom. Predbehol ich Roy publikáciou z roku 1959, zatiaľ čo Floydova i Warshallova boli obe z roku 1962. Warshall dokonca v jeho práci nadväzuje na Kleeneho algoritmus z roku 1956. Finálna verzia, ktorú aj my predvedieme, dostala svoju podobu až na konci roku 1962 zásluhou Ingermana. Vďaka mnohým publikáciám sa tento algoritmus nazýva rôznymi menami. My si ale vystačíme s jedným.
+Ďalším algoritmom slúžiacim na hľadanie najlacnejších ciest, ktorý uvedieme, nesie názov Floyd\textendash Warshallov algoritmus. Opäť, ako v predošlom prípade, sa ale ani Floyd, ani Warshall nemôžu pýšiť prvenstvom. Predbehol ich Roy publikáciou z roku 1959, zatiaľ čo Floydova i Warshallova boli obe z roku 1962. Warshall dokonca v jeho práci nadväzuje na Kleeneho algoritmus z roku 1956. Finálna verzia, ktorú aj my predvedieme, dostala svoju podobu až na konci roku 1962 zásluhou Ingermana. Vďaka mnohým publikáciám sa tento algoritmus nazýva rôznymi menami. My si ale vystačíme s jedným.
 
 Výsledok Floyd\textendash Warshallovho algoritmu sa značne odlišuje od predošlých dvoch. Zatiaľ čo tie spoľahlivo zistili hodnoty najlacnejších ciest z daného vrcholu do všetkých ostatných vrcholov, Floyd\textendash Warshallov ich vyráta pre všetky dvojice vrcholov. Samozrejme, to by sme vedeli dosiahnuť aj použitím predošlých algoritmov na všetkých vrcholoch. Vyžadovalo by sa však mnoho réžie navyše a kód by sa pravdepodobne priveľmi zneprehľadnil. Naopak, Floyd\textendash Warshallov algoritmus je na pohľad až príliš jednoduchý, no nesmierne účinný.\newline
 
@@ -211,13 +211,56 @@ Opäť je namieste podotknúť, že na nami požadované vylepšenie na poznanie
 
 Taktiež je vhodné poznamenať, že pre väčšie vstupy má algoritmus potenciál skonzumovať príliš veľa pamäte. Preto je v takom prípade výhodné algoritmus upraviť tak, aby používal iba dve matice, nakoľko pri algoritme je potrebné držať referenciu len na momentálnu a predchádzajúcu maticu ($C^{(k)}$ a $C^{(k-1)}$). To isté možno tvrdiť aj o maticiach predchodcov.\newline
 
-Floyd\textendash Warshallov algoritmus je taktiež dobrým kandidátom pre riešenie nášho problému. Implementácia je opäť jednoduchá, časová zložitosť vítaná. Znovu ale, možnosť využitia algoritmu i na záporných hranách nie je pre nás nijako prínosná. Naviac, pri vyhľadávaní spojenia medzi dvomi zastávkami v grafikone MHD by bolo nutné vyrátať hodnoty najlacnejších ciest z každého vrcholu do všetkých vrcholov, čo môže trvať pridlho. Samozrejme, po skončení hľadania budú už nasledujúce dopyty uspokojené v konštantnom, resp. lineárnom (ak uvažujeme i rekonštrukcie ciest), čase.\newline
+Floyd\textendash Warshallov algoritmus je taktiež dobrým kandidátom pre riešenie nášho problému. Implementácia je opäť jednoduchá, časová zložitosť vítaná. Znovu ale, možnosť využitia algoritmu i na záporných hranách nie je pre nás nijako prínosná. Naviac, pri vyhľadávaní spojenia medzi dvomi zastávkami v grafikone MHD by bolo nutné vyrátať hodnoty najlacnejších ciest z každého vrcholu do všetkých vrcholov, čo môže trvať pridlho. Samozrejme, po skončení hľadania budú už nasledujúce dopyty uspokojené v konštantnom, resp. lineárnom (ak uvažujeme i rekonštrukcie ciest) čase.\newline
 
 
 \subsection{Zhrnutie}
 \label{vyhlad_alg_zhrnutie}
 
-Všetky tri prezentované algoritmy sú vhodnými adeptami pri riešení problému vyhľadávaní spojení v grafikone MHD. Každý z nich má svoje pozitíva, ale i nedostatky. Ktorý z algoritmov bude najvhodnejší, závisí hlavne od dát, nad ktorými bude pracovať. Ako sme už spomínali, Bellman\textendash Fordov algoritmus bude mať výhodu pri grafoch obsahujúcich menšie množstvo hrán, čo, žiaľ, nebude prípad liniek MHD. Floyd\textendash Warshallov algoritmus je zasa zostavený tak, aby vypočítal všetky najlacnejšie cesty. Preto bude jeho priebeh pri väčších vstupoch neprimerane dlhý. Jeho využitie preto vidíme pri grafikonoch malých miest, kde sa vyrátajú všetky potrebné hodnoty už pri inicializácií, najlepšie na druhom vlákne, aby mohol používateľ zadávať dopyt už počas výpočtu. Využitie algoritmu by bolo v tomto prípade priam žiadané, keďže ostatné dva algoritmy môžu svoje výpočty pri dlhšej postupnosti dopytov opakovať, čo ich môže nežiadane zdržovať. A nakoniec, Dijkstrov algoritmus sa zdá byť najvšeobecnejší a najpoužiteľnejší pre ľubovoľné dáta. Neobsahuje žiadnu dodatočnú výhodu, ale takisto nemá ani žiadne nedostatky, ktoré by sme mu vedeli vytknúť.\newline
+Všetky tri prezentované algoritmy sú vhodnými adeptami pri riešení problému vyhľadávaní spojení v grafikone MHD. Každý z nich má svoje pozitíva, ale i nedostatky. Ktorý z algoritmov bude najvhodnejší, závisí hlavne od dát, nad ktorými bude pracovať. Ako sme už spomínali, Bellman\textendash Fordov algoritmus bude mať výhodu pri grafoch obsahujúcich menšie množstvo hrán, čo, žiaľ, nebude prípad liniek MHD. Floyd\textendash Warshallov algoritmus je zasa zostavený tak, aby vypočítal všetky najlacnejšie cesty. Preto bude jeho priebeh pri väčších vstupoch neprimerane dlhý. Jeho využitie preto vidíme pri grafikonoch malých miest, kde sa vyrátajú všetky potrebné hodnoty už pri inicializácií, najlepšie na druhom vlákne, aby mohol používateľ zadávať dopyt už počas výpočtu. Využitie algoritmu by bolo v tomto prípade priam žiadané, keďže ostatné dva algoritmy môžu svoje výpočty pri dlhšej postupnosti dopytov opakovať, čo ich môže zbytočne zdržovať. A nakoniec, Dijkstrov algoritmus sa zdá byť najvšeobecnejší a najpoužiteľnejší pre ľubovoľné dáta. Neobsahuje žiadnu dodatočnú výhodu, ale takisto nemá ani žiadne nedostatky, ktoré by sme mu vedeli vytknúť.\newline
 
 Existujú aj iné, pokročilejšie algoritmy, ktoré sú schopné nájsť najlacnejšie cesty v grafe. Zvyčajne však ide o kombináciu nami uvedených algoritmov, prípadne ich optimalizácia alebo nejaká dômyselná modifikácia. Na predstavu poslúži Johnsonov algoritmus, ktorého výstup je rovnaký ako výsledok Floyd\textendash Warshallovho algoritmu, len jeho priebeh je iný - využíva kombináciu Dijkstrovho a Bellman\textendash Fordovho algoritmu, čím dosahuje na riedkych grafoch výsledok rýchlejšie. Spomínaným pokročilejším algoritmom sa však podrobnejšie v našej práci venovať nebudeme.\newline
+
+
+\subsection{Vylepšenia a rozšírenia}
+
+V nasledujúcom uvedieme niektoré vylepšenia doposiaľ popísaných algoritmov. Tie ich budú schopné zrýchliť, pričom ale budú uvažovať nejaké obmedzenia, prípadne nebudú garantovať nájdenie najoptimálnejšieho riešenia.
+
+
+\subsubsection{Algoritmus A*}
+
+Vyhľadávací algoritmus A* je založený na princípe Dijkstrovho algoritmu. Prišiel s ním Nils Nilsson v roku 1964 a v roku 1967 ho Peter E. Hart vylepšil a o rok neskôr dokázal Bertram Raphael jeho optimálnosť, pričom zaviedol i pomenovanie A* (alebo aj $A star$).\newline
+
+Algoritmus dokáže vyhľadávať ceny najlacnejších ciest iba medzi počiatočným a konečným vrcholom. Navyše, algoritmus pracuje s heuristickou funkciou, čo môže zapríčiniť jemné zhoršenie v optimálnosti nájdených riešení.\newline
+
+Ako sme už spomínali, algoritmus sa veľmi podobá Dijkstrovmu. Rozdiel je ten, že pri vyberaní nasledujúceho vrcholu pre nadchádzajúcu iteráciu algoritmu berieme vrchol s najnižšou hodnotou $f(v)$, kde $v$ sú všetky relevantné vrcholy pre ďalšiu iteráciu. Funkcia $f(x) = g(x) + h(x)$ pre nejaký vrchol $x$, pričom funkcia $g(x)$ predstavuje cenu nájdenej najlacnejšej cesty od začiatočného vrcholu do vrcholu $x$ a funkcia $h(x)$ odhaduje cenu najlacnejšej cesty z vrcholu $x$ do koncového vrcholu. Funkcia $h(x)$ teda predstavuje spomínanú heuristickú funkciu. Navyše, táto heuristická funkcia nemôže nadhodnotiť cenu najlacnejšej cesty k cielu, inak by algoritmus mohol prehliadnuť najoptimálnejšie riešenie. Táto vlastnosť sa nazýva $prípustnosť$. Na porovnanie, ak uvažujeme graf, kde sú všetky hrany ohodnotené rovnako, Dijkstrov algoritmus bude prehľadávať graf do všetkých strán rovnomerne, zatiaľ čo A* algoritmus bude, vďaka heuristike, vyberať hrany, ktoré dospejú skorej ku koncovému vrcholu. Ako je vyobrazené na~\ref{AStar_vs_Dijkstra}, Dijkstrov algoritmus sa rozpína na všetky strany a algoritmus A* si ihneď vyberá vrchol najbližšie k cieľovému vrcholu. Zelenou farbou je znázornený počiatočný vrchol, modrou koncový. Žltou farbou sú vyobrazené algoritmom prejdené vrcholy, šedou tie naplánované a červenou nájdená cesta.\newline
+
+\begin{figure}[H]
+  \centering{\includegraphics{./images/3_AStar-Dijkstra.png}}
+  \caption{Porovnanie A* (vľavo) a Dijkstrovho algoritmu (vpravo)}
+  \label{AStar_vs_Dijkstra}
+\end{figure}
+
+Pri algoritme A* môže byť problémové určiť heuristickú funkciu. Zjavne, ak $h(x)=0$ pre všetky vrcholy, výber vrchola pre iteráciu algoritmu bude závisieť len od doposiaľ zistenej ceny cesty, a teda bude algoritmus prebiehať rovnako ako Dijkstrov algoritmus. Pre každú inú heuristickú funkciu, ktorá si ale zachová prípustnosť, je garantované zlepšenie v rýchlosti výpočtu algoritmu. Jednou z možností je zobrať Euklidovskú vzdialenosť (vzdialenosť vzdušnou čiarou) medzi uvažovaným a koncovým vrcholom. V našom prípade uvažujeme čas prepravenia sa medzi dvoma zastávkami, takže budeme musieť počítať i s rýchlosťou najrýchlejšieho spojenia, a tak zistili teoreticky najlepší čas cesty medzi nimi.
+
+Časová zložitosť algoritmu je $O(|E|)$.
+
+
+\subsubsection{Obojstranné vyhľadávanie}
+
+
+
+
+\subsubsection{Zhrnutie}
+
+Uvedené vylepšenia sú iba názorným príkladom vybraných algoritmov z pestrej škály rôznych vylepšení a následných modifikácií základných algoritmov určených na vyhľadávanie v grafikonoch. Existujú teda i rýchlejšie spôsoby zistenia najlacnejších ciest v grafov, a to prevažna pomocou predpočítania si rôznych hodnôt a údajov. Dobrým príkladom môže byť takzvaný "Highway-node routing"\cite{schultes2007dynamic} alebo jeden z jeho špeciálnych prípadov "Contraction hierarchies"\cite{geisberger2008contraction}.
+
+
+\subsection{Existujúce implementácie vyhľadávacích algoritmov}
+
+https://github.com/graphhopper/graphhopper/tree/master/core/src/main/java/com/graphhopper/routing
+https://stackoverflow.com/questions/14091279/algorithm-method-use-by-google-maps-for-finding-the-path-between-two-cities
+https://www.microsoft.com/en-us/research/publication/round-based-public-transit-routing/
+https://github.com/CanalTP/navitia/tree/dev/source/routing    - RAPTOR
+https://www.google.sk/search?q=public+transport+search+open+source+algorithm&ei=KZ47W_yoKNLIwALs06jwDg&start=10&sa=N&biw=1536&bih=759
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  16 MAY 2018 22:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  16 MAY 2018 22:39
 entering extended mode
 **./main.tex
 (main.tex
@@ -618,23 +618,30 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
+)
+(C:\Users\alojz\AppData\Roaming\MiKTeX\2.9\tex\latex\cmap\cmap.sty
+Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
+
+
+Package cmap Warning: fontenc already loaded - some fonts may be unprocessed.
+
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -697,7 +704,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 41.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -707,26 +714,27 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count124
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
- [1
+<<t1.cmap>> [1
 
 
-{C:/Users/alojz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] <images
-/zadanie.pdf, id=147, 597.23125pt x 845.1575pt>
+{C:/Users/alojz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]<<ot1.cmap>>
+<<oml.cmap>><<oms.cmap>><<omx.cmap>>
+[2] <images/zadanie.pdf, id=152, 597.23125pt x 845.1575pt>
 File: images/zadanie.pdf Graphic file (type pdf)
 
 <use images/zadanie.pdf>
-Package pdftex.def Info: images/zadanie.pdf used on input line 120.
+Package pdftex.def Info: images/zadanie.pdf used on input line 121.
 (pdftex.def)             Requested size: 485.1222pt x 686.52113pt.
 
-Overfull \hbox (4.82378pt too wide) in paragraph at lines 120--121
+Overfull \hbox (4.82378pt too wide) in paragraph at lines 121--122
 [] [] 
  []
 
@@ -734,7 +742,7 @@ Overfull \hbox (4.82378pt too wide) in paragraph at lines 120--121
 tifier (name{page.iii}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.141 \newpage
+l.142 \newpage
                [3
 
 ] [4] [5] (main.toc [6
@@ -940,7 +948,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-<./images/BFS_priklad.png, id=344, 337.26pt x 199.34476pt>
+<./images/BFS_priklad.png, id=349, 337.26pt x 199.34476pt>
 File: ./images/BFS_priklad.png Graphic file (type png)
 
 <use ./images/BFS_priklad.png>
@@ -964,7 +972,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-<./images/DFS_priklad.png, id=350, 337.26pt x 199.34476pt>
+<./images/DFS_priklad.png, id=355, 337.26pt x 199.34476pt>
 File: ./images/DFS_priklad.png Graphic file (type png)
 
 <use ./images/DFS_priklad.png>
@@ -1022,7 +1030,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<./images/Alg_Dijkstra.png, id=364, 672.111pt x 362.5545pt>
+<./images/Alg_Dijkstra.png, id=369, 672.111pt x 362.5545pt>
 File: ./images/Alg_Dijkstra.png Graphic file (type png)
 
 <use ./images/Alg_Dijkstra.png>
@@ -1042,7 +1050,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
                                                   \fi \fi 
 l.67 
       <./images/Alg_Dijkstra.png>]
-<./images/dijkstra_priklad.png, id=373, 284.262pt x 193.9245pt>
+<./images/dijkstra_priklad.png, id=378, 284.262pt x 193.9245pt>
 File: ./images/dijkstra_priklad.png Graphic file (type png)
 
 <use ./images/dijkstra_priklad.png>
@@ -1089,7 +1097,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-<./images/Alg_Bellman-Ford.png, id=387, 460.119pt x 188.50426pt>
+<./images/Alg_Bellman-Ford.png, id=392, 460.119pt x 188.50426pt>
 File: ./images/Alg_Bellman-Ford.png Graphic file (type png)
 
 <use ./images/Alg_Bellman-Ford.png>
@@ -1100,7 +1108,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
-<./images/bellman-ford_priklad.png, id=389, 248.127pt x 252.945pt>
+<./images/bellman-ford_priklad.png, id=394, 248.127pt x 252.945pt>
 File: ./images/bellman-ford_priklad.png Graphic file (type png)
 
 <use ./images/bellman-ford_priklad.png>
@@ -1150,7 +1158,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-<./images/Alg_Floyd-Warshall.png, id=410, 567.3195pt x 361.95226pt>
+<./images/Alg_Floyd-Warshall.png, id=415, 567.3195pt x 361.95226pt>
 File: ./images/Alg_Floyd-Warshall.png Graphic file (type png)
 
 <use ./images/Alg_Floyd-Warshall.png>
@@ -1169,7 +1177,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
                                                   \fi \fi 
 l.146 
        <./images/Alg_Floyd-Warshall.png>]
-<./images/floyd-washall_priklad.png, id=419, 248.127pt x 252.945pt>
+<./images/floyd-washall_priklad.png, id=424, 248.127pt x 252.945pt>
 File: ./images/floyd-washall_priklad.png Graphic file (type png)
 
 <use ./images/floyd-washall_priklad.png>
@@ -1219,7 +1227,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-<./images/ukazka_programu1.png, id=439, 479.99326pt x 541.42274pt>
+<./images/ukazka_programu1.png, id=444, 479.99326pt x 541.42274pt>
 File: ./images/ukazka_programu1.png Graphic file (type png)
 
 <use ./images/ukazka_programu1.png>
@@ -1278,7 +1286,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.37 
-     ] <./images/ukazka_programu2.png, id=452, 481.19775pt x 536.0025pt>
+     ] <./images/ukazka_programu2.png, id=457, 481.19775pt x 536.0025pt>
 File: ./images/ukazka_programu2.png Graphic file (type png)
 
 <use ./images/ukazka_programu2.png>
@@ -1289,7 +1297,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<./images/ukazka_programu2-alt.png, id=453, 451.6875pt x 217.41225pt>
+<./images/ukazka_programu2-alt.png, id=458, 451.6875pt x 217.41225pt>
 File: ./images/ukazka_programu2-alt.png Graphic file (type png)
 
 <use ./images/ukazka_programu2-alt.png>
@@ -1318,7 +1326,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<./images/Format_datoveho_suboru.png, id=461, 1098.504pt x 409.53pt>
+<./images/Format_datoveho_suboru.png, id=466, 1098.504pt x 409.53pt>
 File: ./images/Format_datoveho_suboru.png Graphic file (type png)
 
 <use ./images/Format_datoveho_suboru.png>
@@ -1330,7 +1338,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-<./images/ukazka_programu3.png, id=462, 222.8325pt x 80.09924pt>
+<./images/ukazka_programu3.png, id=467, 222.8325pt x 80.09924pt>
 File: ./images/ukazka_programu3.png Graphic file (type png)
 
 <use ./images/ukazka_programu3.png>
@@ -1341,7 +1349,7 @@ Package pdftex.def Info: ./images/ukazka_programu3.png used on input line 68.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.214 
+l.215 
        <./images/Format_datoveho_suboru.png>] (implementacia.tex [24pdfTeX warn
 ing (ext4): destination with the same identifier (name{figure.3.11}) has been a
 lready used, duplicate ignored
@@ -1440,7 +1448,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
-<./images/test2_priklad1.png, id=491, 416.15475pt x 192.72pt>
+<./images/test2_priklad1.png, id=496, 416.15475pt x 192.72pt>
 File: ./images/test2_priklad1.png Graphic file (type png)
 
 <use ./images/test2_priklad1.png>
@@ -1457,7 +1465,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<./images/1_Vertex.png, id=497, 463.13025pt x 282.45525pt>
+<./images/1_Vertex.png, id=502, 463.13025pt x 282.45525pt>
 File: ./images/1_Vertex.png Graphic file (type png)
 
 <use ./images/1_Vertex.png>
@@ -1468,7 +1476,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-<./images/1_Edge.png, id=498, 685.96275pt x 406.51875pt>
+<./images/1_Edge.png, id=503, 685.96275pt x 406.51875pt>
 File: ./images/1_Edge.png Graphic file (type png)
 
 <use ./images/1_Edge.png>
@@ -1487,7 +1495,7 @@ l.65
                                                   \fi \fi 
 l.65 
       <./images/test2_priklad1.png> <./images/1_Vertex.png>]
-<./images/1_Graph.png, id=505, 346.896pt x 251.7405pt>
+<./images/1_Graph.png, id=510, 346.896pt x 251.7405pt>
 File: ./images/1_Graph.png Graphic file (type png)
 
 <use ./images/1_Graph.png>
@@ -1521,7 +1529,7 @@ l.80
                                                   \fi \fi 
 l.80 
       <./images/1_Edge.png> <./images/1_Graph.png>]
-<./images/2_Vertex.png, id=513, 454.0965pt x 335.45325pt>
+<./images/2_Vertex.png, id=518, 454.0965pt x 335.45325pt>
 File: ./images/2_Vertex.png Graphic file (type png)
 
 <use ./images/2_Vertex.png>
@@ -1562,7 +1570,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<./images/3_DijkstrovAlg.png, id=521, 484.209pt x 852.786pt>
+<./images/3_DijkstrovAlg.png, id=526, 484.209pt x 852.786pt>
 File: ./images/3_DijkstrovAlg.png Graphic file (type png)
 
 <use ./images/3_DijkstrovAlg.png>
@@ -1584,7 +1592,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-<./images/3_PathShowing.png, id=533, 545.6385pt x 208.98074pt>
+<./images/3_PathShowing.png, id=538, 545.6385pt x 208.98074pt>
 File: ./images/3_PathShowing.png Graphic file (type png)
 
 <use ./images/3_PathShowing.png>
@@ -1601,7 +1609,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-<./images/4_Graph.png, id=535, 491.436pt x 351.714pt>
+<./images/4_Graph.png, id=540, 491.436pt x 351.714pt>
 File: ./images/4_Graph.png Graphic file (type png)
 
 <use ./images/4_Graph.png>
@@ -1671,25 +1679,25 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 265.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
  [40]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 265.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
  (main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 265.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 265.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: BDA31C590687F31B7D4D5A184560C054;2380.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 265.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
  ) 
 Here is how much of TeX's memory you used:
- 7861 strings out of 493323
- 111360 string characters out of 3139066
- 216961 words of memory out of 3000000
- 11108 multiletter control sequences out of 15000+200000
+ 7910 strings out of 493323
+ 112169 string characters out of 3139066
+ 217358 words of memory out of 3000000
+ 11122 multiletter control sequences out of 15000+200000
  17070 words of font info for 40 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,31p,2675b,458s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1711,9 +1719,9 @@ pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
  Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (50 pages, 942554 bytes).
+Output written on main.pdf (50 pages, 947580 bytes).
 PDF statistics:
- 1136 PDF objects out of 1200 (max. 8388607)
+ 1141 PDF objects out of 1200 (max. 8388607)
  133 named destinations out of 1000 (max. 500000)
- 375 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 395 words of extra memory for PDF output out of 10000 (max. 10000000)
 

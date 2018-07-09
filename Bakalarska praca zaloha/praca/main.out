@@ -19,15 +19,17 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{Bellman\205Fordov algoritmus}{section.2.2}% 19
 \BOOKMARK [2][-]{subsection.2.2.3}{Floyd\205Warshallov algoritmus}{section.2.2}% 20
 \BOOKMARK [2][-]{subsection.2.2.4}{Zhrnutie}{section.2.2}% 21
-\BOOKMARK [0][-]{chapter.3}{Softv\351r}{}% 22
-\BOOKMARK [1][-]{section.3.1}{Z\341kladn\375 popis aplik\341cie}{chapter.3}% 23
-\BOOKMARK [1][-]{section.3.2}{Vyhlad\341vanie}{chapter.3}% 24
-\BOOKMARK [1][-]{section.3.3}{D\341tov\351 s\372bory}{chapter.3}% 25
-\BOOKMARK [0][-]{chapter.4}{Implement\341cia}{}% 26
-\BOOKMARK [1][-]{section.4.1}{Prv\351 my\235lienky}{chapter.4}% 27
-\BOOKMARK [1][-]{section.4.2}{Zaciatocn\341 implement\341cia}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.3}{Vylep\235enie reprezent\341cie \372dajov}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.4}{Implement\341cia vyhlad\341vacieho algoritmu a v\375pis v\375sledku}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.5}{Neefekt\355vnost vytv\341rania objektov}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.6}{Vyhlad\341vanie alternat\355vnych ciest}{chapter.4}% 32
-\BOOKMARK [0][-]{chapter*.9}{Z\341ver}{}% 33
+\BOOKMARK [2][-]{subsection.2.2.5}{Vylep\235enia a roz\235\355renia}{section.2.2}% 22
+\BOOKMARK [2][-]{subsection.2.2.6}{Existuj\372ce implement\341cie vyhlad\341vac\355ch algoritmov}{section.2.2}% 23
+\BOOKMARK [0][-]{chapter.3}{Softv\351r}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Z\341kladn\375 popis aplik\341cie}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Vyhlad\341vanie}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.3}{D\341tov\351 s\372bory}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Implement\341cia}{}% 28
+\BOOKMARK [1][-]{section.4.1}{Prv\351 my\235lienky}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{Zaciatocn\341 implement\341cia}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{Vylep\235enie reprezent\341cie \372dajov}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{Implement\341cia vyhlad\341vacieho algoritmu a v\375pis v\375sledku}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.5}{Neefekt\355vnost vytv\341rania objektov}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.6}{Vyhlad\341vanie alternat\355vnych ciest}{chapter.4}% 34
+\BOOKMARK [0][-]{chapter*.13}{Z\341ver}{}% 35

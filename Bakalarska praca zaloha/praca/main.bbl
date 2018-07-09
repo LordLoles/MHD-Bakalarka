@@ -24,11 +24,22 @@ Richard Bellman.
 \newblock On a routing problem.
 \newblock {\em Quarterly of applied mathematics}, 16(1):87--90, 1958.
 
+\bibitem{delling2014round}
+Daniel Delling, Thomas Pajor, and Renato~F Werneck.
+\newblock Round-based public transit routing.
+\newblock {\em Transportation Science}, 49(3):591--604, 2014.
+
 \bibitem{Diestel2000}
 Reinhard Diestel.
 \newblock Teória grafov, 2000.
 \newblock [Citované 2017-12-4] Dostupné z
   \url{http://www.dcs.fmph.uniba.sk/~haviarova/uktg/#materialy}.
+
+\bibitem{duchovn2014path}
+Franti{\v{s}}ek Ducho{\v{n}}, Andrej Babinec, Martin Kajan, Peter Be{\v{n}}o,
+  Martin Florek, Tom{\'a}{\v{s}} Fico, and Ladislav Juri{\v{s}}ica.
+\newblock Path planning with modified a star algorithm for a mobile robot.
+\newblock {\em Procedia Engineering}, 96:59--69, 2014.
 
 \bibitem{even2011graph}
 Shimon Even.
@@ -40,6 +51,20 @@ Wei Fan and Randy~B Machemehl.
 \newblock Optimal transit route network design problem: Algorithms,
   implementations, and numerical results 6. performing organization code.
 \newblock 2004.
+
+\bibitem{geisberger2008contraction}
+Robert Geisberger, Peter Sanders, Dominik Schultes, and Daniel Delling.
+\newblock Contraction hierarchies: Faster and simpler hierarchical routing in
+  road networks.
+\newblock In {\em International Workshop on Experimental and Efficient
+  Algorithms}, pages 319--333. Springer, 2008.
+
+\bibitem{ikeda1994fast}
+Takahiro Ikeda, Min-Yao Hsu, Hiroshi Imai, Shigeki Nishimura, Hiroshi Shimoura,
+  Takeo Hashimoto, Kenji Tenmoku, and Kunihiko Mitoh.
+\newblock A fast algorithm for finding better routes by ai search techniques.
+\newblock In {\em Vehicle Navigation and Information Systems Conference, 1994.
+  Proceedings., 1994}, pages 291--296. IEEE, 1994.
 
 \bibitem{katreniakova2014}
 Jana Katreniaková.
@@ -54,6 +79,17 @@ S~Meena Kumari and N~Geethanjali.
 \newblock {\em Global Journal of Computer Science and Technology}, 9(5):73--75,
   2010.
 
+\bibitem{lester2005pathfinding}
+Patrick Lester.
+\newblock A* pathfinding for beginners.
+\newblock {\em online]. GameDev WebSite. http://www. gamedev.
+  net/reference/articles/article2003. asp (Acesso em 08/02/2009)}, 2005.
+
+\bibitem{merrifield2010heuristic}
+Timothy Merrifield.
+\newblock {\em Heuristic Route Search in Public Transportation Networks}.
+\newblock PhD thesis, University of Illinois at Chicago, 2010.
+
 \bibitem{novak2016}
 Jakub Novák.
 \newblock Dynamická navigácia osôb so spätnou väzbou v mestskej hromadnej
@@ -67,9 +103,20 @@ Jos{\'e}~Luis Santos.
 \newblock [Citované 2017-12-4] Dostupné z
   \url{https://estudogeral.sib.uc.pt/jspui/bitstream/10316/11305/1/k-Shortest%20path%20algorithms.pdf}.
 
+\bibitem{schultes2007dynamic}
+Dominik Schultes and Peter Sanders.
+\newblock Dynamic highway-node routing.
+\newblock In {\em International Workshop on Experimental and Efficient
+  Algorithms}, pages 66--79. Springer, 2007.
+
 \bibitem{duris2009}
 Pavol Ďuriš.
 \newblock {\em Tvorba efektívnych algoritmov}.
 \newblock Knižničné a edičné centrum FMFI UK, 2009.
+
+\bibitem{watkins2010explore}
+Kari~Edison Watkins, Brian Ferris, and G~Scott Rutherford.
+\newblock Explore: An attraction search tool for transit trip planning.
+\newblock {\em Journal of Public Transportation}, 13(4):6, 2010.
 
 \end{thebibliography}

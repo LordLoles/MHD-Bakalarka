@@ -79,7 +79,7 @@ Keďže je našim cieľom nie ani tak zistiť cenu najlacnejšej cesty, čo je h
 
 Dijkstrov algoritmus sa zdá byť najvhodnejším kandidátom pre účely našej práce. Jeho časová zložitosť je príjemná, implementácia nenáročná a je dosť ľahké sa v nej orientovať, takže si ju budeme môcť poľahky modifikovať, prispôsobiť našim potrebám. Budeme teda schopný vypísať dodatočné informácie pre používateľov aplikácie, prípadne vyhľadávanie spresniť či rozšíriť podľa ich potrieb.\newline
 
-\subsubsection{Vykepšenia}
+\subsubsection{Vylepšenia}
 
 
 
@@ -224,7 +224,7 @@ Floyd\textendash Warshallov algoritmus je taktiež dobrým kandidátom pre rieš
 
 Všetky tri prezentované algoritmy sú vhodnými adeptami pri riešení problému vyhľadávaní spojení v grafikone MHD. Každý z nich má svoje pozitíva, ale i nedostatky. Ktorý z algoritmov bude najvhodnejší, závisí hlavne od dát, nad ktorými bude pracovať. Ako sme už spomínali, Bellman\textendash Fordov algoritmus bude mať výhodu pri grafoch obsahujúcich menšie množstvo hrán, čo, žiaľ, nebude prípad liniek MHD. Floyd\textendash Warshallov algoritmus je zasa zostavený tak, aby vypočítal všetky najlacnejšie cesty. Preto bude jeho priebeh pri väčších vstupoch neprimerane dlhý. Jeho využitie preto vidíme pri grafikonoch malých miest, kde sa vyrátajú všetky potrebné hodnoty už pri inicializácií, najlepšie na druhom vlákne, aby mohol používateľ zadávať dopyt už počas výpočtu. Využitie algoritmu by bolo v tomto prípade priam žiadané, keďže ostatné dva algoritmy môžu svoje výpočty pri dlhšej postupnosti dopytov opakovať, čo ich môže zbytočne zdržovať. A nakoniec, Dijkstrov algoritmus sa zdá byť najvšeobecnejší a najpoužiteľnejší pre ľubovoľné dáta. Neobsahuje žiadnu dodatočnú výhodu, ale takisto nemá ani žiadne nedostatky, ktoré by sme mu vedeli vytknúť.\newline
 
-Existujú aj iné, pokročilejšie algoritmy, ktoré sú schopné nájsť najlacnejšie cesty v grafe. Zvyčajne však ide o kombináciu nami uvedených algoritmov, prípadne ich optimalizácia alebo nejaká dômyselná modifikácia. Na predstavu poslúži Johnsonov algoritmus, ktorého výstup je rovnaký ako výsledok Floyd\textendash Warshallovho algoritmu, len jeho priebeh je iný - využíva kombináciu Dijkstrovho a Bellman\textendash Fordovho algoritmu, čím dosahuje na riedkych grafoch výsledok rýchlejšie. Spomínaným pokročilejším algoritmom sa však podrobnejšie v našej práci venovať nebudeme.\newline
+Existujú aj iné, pokročilejšie algoritmy, ktoré sú schopné nájsť najlacnejšie cesty v grafe. Zvyčajne však ide o kombináciu nami uvedených algoritmov, prípadne ich optimalizácia alebo nejaká dômyselná modifikácia. Na predstavu poslúži Johnsonov algoritmus, ktorého výstup je rovnaký ako výsledok Floyd\textendash Warshallovho algoritmu, len jeho priebeh je iný - využíva kombináciu Dijkstrovho a Bellman\textendash Fordovho algoritmu, čím dosahuje na riedkych grafoch výsledok rýchlejšie. Takýmto algoritmom sa však v našej práci zaoberať nebudeme. Viac sa radšej zameriame na algoritmy prispôsobené na vyhľadávanie v grafikonoch.\newline
 
 
 \subsection{Vylepšenia a rozšírenia}
@@ -234,33 +234,33 @@ V nasledujúcom uvedieme niektoré vylepšenia doposiaľ popísaných algoritmov
 
 \subsubsection{Algoritmus A*}
 
-Vyhľadávací algoritmus A* je založený na princípe Dijkstrovho algoritmu. Prišiel s ním Nils Nilsson v roku 1964, v roku 1967 ho Peter E. Hart vylepšil a o rok neskôr dokázal Bertram Raphael jeho optimálnosť, pričom zaviedol i pomenovanie A* (alebo aj $A star$).\newline
+Vyhľadávací algoritmus A* je založený na princípe Dijkstrovho algoritmu. Prišiel s ním Nils Nilsson v roku 1964, v roku 1967 ho Peter E. Hart vylepšil a o rok neskôr dokázal Bertram Raphael jeho optimálnosť, pričom zaviedol i pomenovanie A* (alebo aj \textit{A star}).\newline
 
-Algoritmus dokáže vyhľadávať ceny najlacnejších ciest iba medzi počiatočným a konečným vrcholom. Navyše, algoritmus pracuje s heuristickou funkciou, čo môže zapríčiniť jemné zhoršenie v optimálnosti nájdených riešení.\newline
+Algoritmus dokáže vyhľadávať ceny najlacnejších ciest iba medzi počiatočným a koncovým vrcholom. Navyše, algoritmus pracuje s heuristickou funkciou, čo môže zapríčiniť jemné zhoršenie v optimálnosti nájdených riešení.\newline
 
-Ako sme už spomínali, algoritmus sa veľmi podobá Dijkstrovmu. Rozdiel je ten, že pri vyberaní nasledujúceho vrcholu pre nadchádzajúcu iteráciu algoritmu berieme vrchol s najnižšou hodnotou $f(v)$, kde $v$ sú všetky relevantné vrcholy pre ďalšiu iteráciu. Funkcia $f(x) = g(x) + h(x)$ pre nejaký vrchol $x$, pričom funkcia $g(x)$ predstavuje cenu nájdenej najlacnejšej cesty od začiatočného vrcholu do vrcholu $x$ a funkcia $h(x)$ odhaduje cenu najlacnejšej cesty z vrcholu $x$ do koncového vrcholu. Funkcia $h(x)$ teda predstavuje spomínanú heuristickú funkciu. Navyše, táto heuristická funkcia nemôže nadhodnotiť cenu najlacnejšej cesty k cielu, inak by algoritmus mohol prehliadnuť najoptimálnejšie riešenie. Táto vlastnosť sa nazýva \textit{prípustnosť}. Na porovnanie, ak uvažujeme graf, kde sú všetky hrany ohodnotené rovnako, Dijkstrov algoritmus bude prehľadávať graf do všetkých strán rovnomerne, zatiaľ čo A* algoritmus bude, vďaka heuristike, vyberať hrany, ktoré dospejú skorej ku koncovému vrcholu. Ako je vyobrazené na~\ref{AStar_vs_Dijkstra}, Dijkstrov algoritmus sa rozpína na všetky strany a algoritmus A* si ihneď vyberá vrchol najbližšie k cieľovému. Zelenou farbou je znázornený počiatočný vrchol, modrou koncový. Žltou farbou sú vyobrazené algoritmom prejdené vrcholy, šedou tie naplánované a červenou nájdená cesta.\newline
+Ako sme už spomínali, algoritmus sa veľmi podobá Dijkstrovmu. Rozdiel je ten, že pri vyberaní nasledujúceho vrcholu pre nadchádzajúcu iteráciu algoritmu berieme vrchol s najnižšou hodnotou $f(v)$, kde $v$ sú všetky relevantné vrcholy pre ďalšiu iteráciu. Funkcia $f(x) = g(x) + h(x)$ pre nejaký vrchol $x$, pričom funkcia $g(x)$ predstavuje cenu nájdenej najlacnejšej cesty od začiatočného vrcholu do vrcholu $x$ a funkcia $h(x)$ odhaduje cenu najlacnejšej cesty z vrcholu $x$ do koncového vrcholu. Funkcia $h(x)$ teda predstavuje spomínanú heuristickú funkciu. Navyše, táto heuristická funkcia nemôže nadhodnotiť cenu najlacnejšej cesty k cieľu, inak by algoritmus mohol prehliadnuť najoptimálnejšie riešenie. Táto vlastnosť sa nazýva \textit{prípustnosť}. Na porovnanie, ak uvažujeme graf, kde sú všetky hrany ohodnotené rovnako, Dijkstrov algoritmus bude prehľadávať graf do všetkých strán rovnomerne, zatiaľ čo A* algoritmus bude, vďaka heuristike, vyberať hrany, ktoré dospejú skorej ku koncovému vrcholu. Ako je vyobrazené na~\ref{AStar_vs_Dijkstra}, Dijkstrov algoritmus sa rozpína na všetky strany a algoritmus A* si ihneď vyberá vrchol najbližšie k cieľovému. Zelenou farbou je znázornený počiatočný vrchol, modrou koncový. Žltou farbou sú vyobrazené algoritmom prejdené vrcholy, šedou tie naplánované a červenou nájdená cesta.\newline
 
 \begin{figure}[H]
-  \centering{\includegraphics{./images/3_AStar-Dijkstra.png}}
+  \centering{\includegraphics[width=\linewidth]{./images/3_AStar-Dijkstra.png}}
   \caption{Porovnanie A* (vľavo) a Dijkstrovho algoritmu (vpravo) na mriežke}
   \label{AStar_vs_Dijkstra}
 \end{figure}
 
-Pri algoritme A* môže byť problémové stanoviť heuristickú funkciu. Zjavne, ak $h(x)=0$ pre všetky vrcholy $x$, výber vrchola pre iteráciu algoritmu bude závisieť len od doposiaľ zistenej ceny cesty $g(x)$, a teda bude prebiehať rovnako ako Dijkstrov algoritmus. Pre každú inú heuristickú funkciu, ktorá si ale zachová prípustnosť, je garantované zlepšenie v rýchlosti výpočtu algoritmu a aj zachovanie optimálnosti. Jednou z možností, ako nájsť dobrú heuristickú funkciu, je zobrať Euklidovskú vzdialenosť (vzdialenosť vzdušnou čiarou) medzi uvažovaným a koncovým vrcholom. V našom prípade uvažujeme čas prepravenia sa medzi dvoma zastávkami, takže budeme musieť počítať i s rýchlosťou najrýchlejšieho spojenia, a tak zistili teoreticky najlepší čas cesty medzi nimi.\newline
+Pri algoritme A* môže byť problémové stanoviť heuristickú funkciu. Zjavne, ak $h(x)=0$ pre všetky vrcholy $x$, výber vrchola pre iteráciu algoritmu bude závisieť len od doposiaľ zistenej ceny cesty $g(x)$, a teda bude prebiehať rovnako ako Dijkstrov algoritmus. Pre každú inú heuristickú funkciu, ktorá si ale zachová prípustnosť, je garantované zlepšenie v rýchlosti výpočtu algoritmu a aj zachovanie optimálnosti. Jednou z možností, ako nájsť dobrú heuristickú funkciu, je zobrať \textit{euklidovskú vzdialenosť} (vzdialenosť vzdušnou čiarou) medzi uvažovaným a koncovým vrcholom. V našom prípade uvažujeme čas prepravenia sa medzi dvoma zastávkami, takže budeme musieť počítať i s rýchlosťou najrýchlejšieho spojenia, a tak zistili teoreticky najlepší čas cesty medzi nimi.\newline
 
-Časová zložitosť algoritmu je $O(|E|)$. Alebo inak, výsledok vyhľadávania je strom. Označme $b$ jeho faktor vetvenia, teda primerný počet hrán vychádzajúci z vrchola a nech $d$ je jeho hĺbka. Potom časová zložitosť algoritmu je $O(b^{d})$. S týmyto úvahami môžeme doplniť i informáciu o časovej zložitosti Dijkstrovho algoritmu, ktorá je teda tiež $O(b^{d})$.\newline
+Časová zložitosť algoritmu je $O(|E|)$. Alebo inak, predstavme si výsledok vyhľadávania ako strom. Označme $b$ faktor vetvenia vzniknutého stromu, teda priemerný počet hrán vychádzajúci z vrchola a nech $d$ je jeho hĺbka. Potom časová zložitosť algoritmu je $O(b^{d})$. S týmito úvahami môžeme doplniť i informáciu o časovej zložitosti Dijkstrovho algoritmu, ktorá je teda tiež $O(b^{d})$.\newline
 
 
 \subsubsection{Obojstranné vyhľadávanie}
 
 Myšlienka obojsmerného vyhľadávania je jednoduchá. Napriek tomu s jej aplikáciou na Dijkstrovom algoritme prišiel až Ira Pohl v roku 1971. A s jej použitím na algoritme A* prišiel v roku 1994 Tetsuomi Ikeda.\newline
 
-Priebeh algoritmu bude teda nasledovný: Počiatočný a koncový vrchol, ktoré sú vstupnými údajmi algoritmu, sa spracujú a spustí sa na nich samotný vyhľadávací algoritmus dva krát. Prvý bude vyhľadávať od počiatočného, druhý bude spätne vyhľadávať od koncového vrcholu. Pri spätnom vyhľadávaní na orientovanom grafe je nutné brať v úvahu opačné smery hrán, lepšie povedané, ak $xy$ je hrana z $x$ do $y$, vyhľadávanie pobeží na hrane $yx$. Koniec algoritmu nastane, ak sa niektoré z dvoch hľadaní dostane do vrcholu, ktorý už opačné vyhľadávanie spracovalo.\newline
+Priebeh algoritmu bude teda nasledovný: Počiatočný a koncový vrchol, ktoré sú vstupnými údajmi algoritmu, sa spracujú a spustí sa na nich samotný vyhľadávací algoritmus dva krát. Prvý bude vyhľadávať od počiatočného, druhý bude spätne vyhľadávať od koncového vrcholu. Pri spätnom vyhľadávaní na orientovanom grafe je nutné brať v úvahu opačné smery hrán, lepšie povedané, ak $xy$ je hrana z $x$ do $y$, vyhľadávanie pobeží na pomyselnej hrane $yx$. Koniec algoritmu nastane, ak sa niektoré z dvoch hľadaní dostane do vrcholu, ktorý už opačné vyhľadávanie spracovalo.\newline
 
-Je zjavné, že popísaná myšlienka je aplikovateľná na obi dva algoritmy \textendash Dijkstrov i A*. Navyše, časová zložitosť je vo väčšine prípadov oveľa priaznivejšia. Nech $b$ je faktor vetvenia a $d$ hĺbka vzniknutého stromu, potom časová zložitosť oboch algoritmov bez zmeny je $O(b^{d})$, avšak časová zložitosť s implementovaným obojsmerným prehľadávaním je $O(2.(b^{d/2}))$. Počet algoritmom prejdených vrcholov je teda približne polovičný. Zjavne, ak je faktor vetvenia $b = 2$, nejde o nijaké zlepšenie. Avšak takáto situácia nastáva len pri naozaj riedkych grafoch. Pri iných je hodnota $b$ oveľa väčšia, preto je poskytnuté zlepšenie naozaj výhodné.\newline
+Je zjavné, že popísaná myšlienka je aplikovateľná na obi dva algoritmy \textendash Dijkstrov i A*. Navyše, časová zložitosť je vo väčšine prípadov oveľa priaznivejšia. Nech $b$ je faktor vetvenia a $d$ hĺbka vzniknutého stromu, potom časová zložitosť oboch algoritmov bez zmeny je $O(b^{d})$, avšak časová zložitosť s implementovaným obojsmerným prehľadávaním je $O(2.(b^{d/2}))$. Zjavne, ak je faktor vetvenia $b = 2$, nejde o nijaké zlepšenie. Avšak takáto situácia nastáva len pri naozaj riedkych grafoch. Pri iných je hodnota $b$ oveľa väčšia, preto je poskytnuté zlepšenie naozaj výhodné. Počet algoritmom prejdených vrcholov býva v priemere približne polovičný. \newline
 
 \begin{figure}[H]
-  \centering{\includegraphics{./images/3_obojstranne.png}}
+  \centering{\includegraphics[width=\linewidth]{./images/3_obojstranne.png}}
   \caption{Porovnanie obojsmerného Dijkstrovho algoritmu (vľavo) a jednosmerného (vpravo) na mriežke}
   \label{Bidiretional_Dijkstra}
 \end{figure}
@@ -268,9 +268,9 @@ Je zjavné, že popísaná myšlienka je aplikovateľná na obi dva algoritmy \t
 
 \subsubsection{Zhrnutie}
 
-Uvedené vylepšenia sú iba názorným príkladom vybraných algoritmov z pestrej škály rôznych vylepšení a následných modifikácií základných algoritmov určených na vyhľadávanie v grafikonoch. Existujú teda i rýchlejšie spôsoby zistenia najlacnejších ciest v grafoch, a to prevažne pomocou predpočítania si rôznych hodnôt a údajov. Dobrým príkladom môže byť takzvaný \textit{Highway-node routing}\cite{schultes2007dynamic} alebo jeden z jeho špeciálnych prípadov\textendash \textit{Contraction hierarchies}\cite{geisberger2008contraction}.\newline
+Uvedené vylepšenia sú iba názorným príkladom vybraných algoritmov z pestrej škály rôznych vylepšení a následných modifikácií základných algoritmov určených na vyhľadávanie v grafikonoch. Existujú teda i rýchlejšie spôsoby zistenia najlacnejších ciest v grafoch, a to prevažne pomocou predpočítania si rôznych hodnôt a údajov. Dobrým príkladom môže byť takzvaný \textit{Highway-node routing}\cite{schultes2007dynamic} alebo jeden z jeho špeciálnych prípadov \textendash \textit{Contraction hierarchies}\cite{geisberger2008contraction}.\newline
 
-Mnohé prístupy a spôsoby premýšľania nad problematikou vyhľadávania ciest zhŕňa dielo \cite{bast2010fast}. Množstvo výskumov, experimentov či porovnaní existujúcich implementácií uvádzajú vo svojom diele Fan a Machemehl \cite{fan2004optimal}.
+Viaceré prístupy a spôsoby premýšľania nad problematikou vyhľadávania ciest zhŕňa dielo z roku 2010 \cite{bast2010fast}. Množstvo výskumov, experimentov či porovnaní existujúcich implementácií uvádzajú vo svojom diele Fan a Machemehl \cite{fan2004optimal}.
 
 
 \subsection{Existujúce implementácie vyhľadávacích algoritmov}

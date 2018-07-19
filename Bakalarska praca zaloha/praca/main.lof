@@ -5,25 +5,25 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Pr\IeC {\'\i }klad pr\IeC {\'a}ce DFS na strome}}{8}{figure.2.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{11}{figure.2.3}
 \contentsline {figure}{\numberline {4}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{14}{figure.2.4}
-\contentsline {figure}{\numberline {5}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{17}{figure.2.5}
-\contentsline {figure}{\numberline {6}{\ignorespaces Porovnanie A* (v\IeC {\v l}avo) a Dijkstrovho algoritmu (vpravo) na mrie\IeC {\v z}ke}}{20}{figure.2.6}
-\contentsline {figure}{\numberline {7}{\ignorespaces Porovnanie obojsmern\IeC {\'e}ho Dijkstrovho algoritmu (v\IeC {\v l}avo) a jednosmern\IeC {\'e}ho (vpravo) na mrie\IeC {\v z}ke}}{22}{figure.2.7}
+\contentsline {figure}{\numberline {5}{\ignorespaces Orientovan\IeC {\'y} graf s ohodnoten\IeC {\'y}mi hranami}}{18}{figure.2.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Porovnanie A* (v\IeC {\v l}avo) a Dijkstrovho algoritmu (vpravo) na mrie\IeC {\v z}ke}}{21}{figure.2.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Porovnanie obojsmern\IeC {\'e}ho Dijkstrovho algoritmu (v\IeC {\v l}avo) a jednosmern\IeC {\'e}ho (vpravo) na mrie\IeC {\v z}ke}}{23}{figure.2.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka spusten\IeC {\'e}ho programu}}{24}{figure.3.8}
-\contentsline {figure}{\numberline {9}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{25}{figure.3.9}
-\contentsline {figure}{\numberline {10}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka vyh\IeC {\v l}ad\IeC {\'a}vania}}{26}{figure.3.10}
-\contentsline {figure}{\numberline {11}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka alternat\IeC {\'\i }vnej cesty do zast\IeC {\'a}vky C}}{26}{figure.3.11}
-\contentsline {figure}{\numberline {12}{\ignorespaces Form\IeC {\'a}t d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru pre linky}}{27}{figure.3.12}
-\contentsline {figure}{\numberline {13}{\ignorespaces Zmena d\IeC {\'a}t, s ktor\IeC {\'y}mi m\IeC {\'a} program pracova\IeC {\v t}}}{28}{figure.3.13}
+\contentsline {figure}{\numberline {8}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka spusten\IeC {\'e}ho programu}}{25}{figure.3.8}
+\contentsline {figure}{\numberline {9}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{26}{figure.3.9}
+\contentsline {figure}{\numberline {10}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka vyh\IeC {\v l}ad\IeC {\'a}vania}}{27}{figure.3.10}
+\contentsline {figure}{\numberline {11}{\ignorespaces Uk\IeC {\'a}\IeC {\v z}ka alternat\IeC {\'\i }vnej cesty do zast\IeC {\'a}vky C}}{27}{figure.3.11}
+\contentsline {figure}{\numberline {12}{\ignorespaces Form\IeC {\'a}t d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru pre linky}}{28}{figure.3.12}
+\contentsline {figure}{\numberline {13}{\ignorespaces Zmena d\IeC {\'a}t, s ktor\IeC {\'y}mi m\IeC {\'a} program pracova\IeC {\v t}}}{29}{figure.3.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {14}{\ignorespaces Form\IeC {\'a}t obsahu d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru}}{32}{figure.4.14}
-\contentsline {figure}{\numberline {15}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{33}{figure.4.15}
-\contentsline {figure}{\numberline {16}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia vrcholu}}{33}{figure.4.16}
-\contentsline {figure}{\numberline {17}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia hrany}}{34}{figure.4.17}
-\contentsline {figure}{\numberline {18}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia grafu}}{34}{figure.4.18}
-\contentsline {figure}{\numberline {19}{\ignorespaces Roz\IeC {\v s}\IeC {\'\i }ren\IeC {\'a} reprezent\IeC {\'a}cia vrchola}}{35}{figure.4.19}
-\contentsline {figure}{\numberline {20}{\ignorespaces Na\IeC {\v s}a implement\IeC {\'a}cia Dijkstrovho algoritmu}}{37}{figure.4.20}
-\contentsline {figure}{\numberline {21}{\ignorespaces K\IeC {\'o}d staraj\IeC {\'u}ci sa o v\IeC {\'y}pis cesty}}{38}{figure.4.21}
-\contentsline {figure}{\numberline {22}{\ignorespaces Vylep\IeC {\v s}en\IeC {\'a} implement\IeC {\'a}cia grafu}}{39}{figure.4.22}
-\contentsline {figure}{\numberline {23}{\ignorespaces Pr\IeC {\'\i }klad alternat\IeC {\'\i }vnej trasy}}{40}{figure.4.23}
-\contentsline {figure}{\numberline {24}{\ignorespaces Pr\IeC {\'\i }klad alternat\IeC {\'\i }vnych tr\IeC {\'a}s}}{41}{figure.4.24}
+\contentsline {figure}{\numberline {14}{\ignorespaces Form\IeC {\'a}t obsahu d\IeC {\'a}tov\IeC {\'e}ho s\IeC {\'u}boru}}{33}{figure.4.14}
+\contentsline {figure}{\numberline {15}{\ignorespaces Pr\IeC {\'\i }klad testov\IeC {\'e}ho vstupu}}{34}{figure.4.15}
+\contentsline {figure}{\numberline {16}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia vrcholu}}{34}{figure.4.16}
+\contentsline {figure}{\numberline {17}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia hrany}}{35}{figure.4.17}
+\contentsline {figure}{\numberline {18}{\ignorespaces Prv\IeC {\'a} reprezent\IeC {\'a}cia grafu}}{35}{figure.4.18}
+\contentsline {figure}{\numberline {19}{\ignorespaces Roz\IeC {\v s}\IeC {\'\i }ren\IeC {\'a} reprezent\IeC {\'a}cia vrchola}}{36}{figure.4.19}
+\contentsline {figure}{\numberline {20}{\ignorespaces Na\IeC {\v s}a implement\IeC {\'a}cia Dijkstrovho algoritmu}}{38}{figure.4.20}
+\contentsline {figure}{\numberline {21}{\ignorespaces K\IeC {\'o}d staraj\IeC {\'u}ci sa o v\IeC {\'y}pis cesty}}{39}{figure.4.21}
+\contentsline {figure}{\numberline {22}{\ignorespaces Vylep\IeC {\v s}en\IeC {\'a} implement\IeC {\'a}cia grafu}}{40}{figure.4.22}
+\contentsline {figure}{\numberline {23}{\ignorespaces Pr\IeC {\'\i }klad alternat\IeC {\'\i }vnej trasy}}{41}{figure.4.23}
+\contentsline {figure}{\numberline {24}{\ignorespaces Pr\IeC {\'\i }klad alternat\IeC {\'\i }vnych tr\IeC {\'a}s}}{42}{figure.4.24}

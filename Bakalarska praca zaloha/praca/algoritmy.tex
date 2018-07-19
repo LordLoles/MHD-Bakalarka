@@ -79,10 +79,17 @@ Keďže je našim cieľom nie ani tak zistiť cenu najlacnejšej cesty, čo je h
 
 Dijkstrov algoritmus sa zdá byť najvhodnejším kandidátom pre účely našej práce. Jeho časová zložitosť je príjemná, implementácia nenáročná a je dosť ľahké sa v nej orientovať, takže si ju budeme môcť poľahky modifikovať, prispôsobiť našim potrebám. Budeme teda schopný vypísať dodatočné informácie pre používateľov aplikácie, prípadne vyhľadávanie spresniť či rozšíriť podľa ich potrieb.\newline
 
-\subsubsection{Vylepšenia}
+
+\subsubsection{Vylepšenie pamätaním si susedov}
+
+Je dosť ľahké všimnúť si, že v momente Dijkstrovho algoritmu, keď máme vybraný vrchol, s ktorým chceme skontrolovať cenu cesty do ostatných vrcholov, nemusíme prechádzať cez všetky vrcholy, ale len cez tie, s ktorými daný vrchol susedí. Samozrejme, ak pracujeme na kompletnom grafe, zlepšenie bude nulové, navyše, počítanie susedov pre každý vrchol iba predĺži čas bežania algoritmu. Časová zložitosť Dijkstrovho algoritmu sa teda implementáciou tohto vylepšenia nezmení. Avšak ak budeme pracovať na grafoch, o ktorých vieme, že sú riedke, toto vylepšenie bude naozaj prínosné. Ostáva vyriešiť časovú zložitosť vypočítania susedov pre každý vrchol. Nakoľko sa ale tieto výsledky dajú predpočítať ešte pred spustením algoritmu, napríklad pri vytváraní grafu, časová zložitosť Dijkstrovho algoritmu bude stále rovnaká.\newline
+
+V našom prípade aplikácie algoritmu na nachádzanie najlacnejších ciest v grafikone sa teda toto vylepšenie stáva vynikajúcim, nakoľko graf liniek hromadnej dopravy zvykne byť veľmi riedky.\newline
 
 
+\subsubsection{Vylepšenie pridaním haldy}
 
+Dijkstrov algoritmus, ako sme ho popísali, sa ale v tejto podobe nevyužíva, nakoľko je známa lepšia, asymptoticky rýchlejšia implementácia. Problémom pôvodného algoritmu je vyhľadávanie minima v poli vrcholov, ktoré sa deje v každej iterácií algoritmu. Toto vyhľadávanie sa uskutočňuje v asymptotickom čase $O(|V|)$. Je však známe, že použitím dátovej štruktúry \textit{halda} sa problém dá riešiť v časovej zložitosti $O(\log_{}|V|)$. Implementácia s použitím haldy je preto rozšírenejšia ako pôvodná verzia. Keďže ale môže byť algoritmom aj tak spracovaná každá jedna hrana grafu, musí byť aj tento aspekt zahrnutý do časovej zložitosti algoritmu. Možno je vhodné podotkúť, že maximálny počet hrán je $|V|^{2}$ - medzi každými dvoma vrcholmi jedna, a tak časová zložitosť pôvodného algoritmu už zahŕňa možnosť prejdenia všetkými hranami. Celková časová zložitosť Dijkstrovho algoritmu s použitím haldy je teda $O((|V| + |E|)\log_{}|V|)$.\newline
 
 
 \subsection{Bellman\textendash Fordov algoritmus}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  9 JUL 2018 18:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  19 JUL 2018 21:46
 entering extended mode
 **./main.tex
 (main.tex
@@ -1083,16 +1083,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--81
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-[12]
+
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
@@ -1103,36 +1108,36 @@ File: ./images/Alg_Bellman-Ford.png Graphic file (type png)
 <use ./images/Alg_Bellman-Ford.png>
 Package pdftex.def Info: ./images/Alg_Bellman-Ford.png used on input line 97.
 (pdftex.def)             Requested size: 441.01773pt x 180.68588pt.
-
+ [13]
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
-<./images/bellman-ford_priklad.png, id=412, 248.127pt x 252.945pt>
+<./images/bellman-ford_priklad.png, id=417, 248.127pt x 252.945pt>
 File: ./images/bellman-ford_priklad.png Graphic file (type png)
 
 <use ./images/bellman-ford_priklad.png>
 Package pdftex.def Info: ./images/bellman-ford_priklad.png used on input line 1
 06.
 (pdftex.def)             Requested size: 248.12637pt x 252.94438pt.
- [13pdfTeX warning (ext4): destination with the same identifier (name{algorithm
-.2.2}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.110 
-       <./images/Alg_Bellman-Ford.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.2.4
-}) has been already used, duplicate ignored
+[14pdfTeX warning (ext4): destination with the same identifier (name{algorithm.
+2.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.112 
-       <./images/bellman-ford_priklad.png>]
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+2.4}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.112 
+       <./images/Alg_Bellman-Ford.png> <./images/bellman-ford_priklad.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
@@ -1142,18 +1147,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
 [15pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.140 
+l.133 
       ]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
@@ -1165,31 +1170,30 @@ File: ./images/Alg_Floyd-Warshall.png Graphic file (type png)
 Package pdftex.def Info: ./images/Alg_Floyd-Warshall.png used on input line 144
 .
 (pdftex.def)             Requested size: 441.01773pt x 281.37166pt.
-
+ [16]
 Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-[16pdfTeX warning (ext4): destination with the same identifier (name{algorithm.
-2.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.151 
-       <./images/Alg_Floyd-Warshall.png>]
-<./images/floyd-washall_priklad.png, id=442, 248.127pt x 252.945pt>
+<./images/floyd-washall_priklad.png, id=440, 248.127pt x 252.945pt>
 File: ./images/floyd-washall_priklad.png Graphic file (type png)
 
 <use ./images/floyd-washall_priklad.png>
 Package pdftex.def Info: ./images/floyd-washall_priklad.png used on input line 
 153.
 (pdftex.def)             Requested size: 248.12637pt x 252.94438pt.
+ [17pdfTeX warning (ext4): destination with the same identifier (name{algorithm
+.2.3}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.157 
+       <./images/Alg_Floyd-Warshall.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
  []
 
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.2.5
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1215,7 +1219,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
-[18]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
@@ -1235,7 +1239,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 241--242
 
  []
 
-[19] <./images/3_AStar-Dijkstra.png, id=464, 958.782pt x 395.076pt>
+[20] <./images/3_AStar-Dijkstra.png, id=468, 958.782pt x 395.076pt>
 File: ./images/3_AStar-Dijkstra.png Graphic file (type png)
 
 <use ./images/3_AStar-Dijkstra.png>
@@ -1251,7 +1255,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1272,13 +1276,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--261
 
  []
 
-<./images/3_obojstranne.png, id=470, 834.11626pt x 419.31656pt>
+<./images/3_obojstranne.png, id=475, 834.11626pt x 419.31656pt>
 File: ./images/3_obojstranne.png Graphic file (type png)
 
 <use ./images/3_obojstranne.png>
 Package pdftex.def Info: ./images/3_obojstranne.png used on input line 263.
 (pdftex.def)             Requested size: 441.01773pt x 221.70566pt.
- [21]
+ [22]
 Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
@@ -1298,7 +1302,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
-[22pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1325,14 +1329,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 286--213
 
  []
 
-(softver.tex [23]
+(softver.tex [24]
 Kapitola 3.
 
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-<./images/ukazka_programu1.png, id=510, 479.99326pt x 541.42274pt>
+<./images/ukazka_programu1.png, id=514, 479.99326pt x 541.42274pt>
 File: ./images/ukazka_programu1.png Graphic file (type png)
 
 <use ./images/ukazka_programu1.png>
@@ -1343,7 +1347,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
-[24
+[25
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3.8}) 
 has been already used, duplicate ignored
@@ -1385,13 +1389,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[25pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9
+[26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.37 
-     ] <./images/ukazka_programu2.png, id=522, 481.19775pt x 536.0025pt>
+     ] <./images/ukazka_programu2.png, id=526, 481.19775pt x 536.0025pt>
 File: ./images/ukazka_programu2.png Graphic file (type png)
 
 <use ./images/ukazka_programu2.png>
@@ -1402,7 +1406,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<./images/ukazka_programu2-alt.png, id=523, 451.6875pt x 217.41225pt>
+<./images/ukazka_programu2-alt.png, id=527, 451.6875pt x 217.41225pt>
 File: ./images/ukazka_programu2-alt.png Graphic file (type png)
 
 <use ./images/ukazka_programu2-alt.png>
@@ -1414,7 +1418,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
  []
 
-[26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
+[27pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1
 0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1431,7 +1435,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<./images/Format_datoveho_suboru.png, id=531, 1098.504pt x 409.53pt>
+<./images/Format_datoveho_suboru.png, id=536, 1098.504pt x 409.53pt>
 File: ./images/Format_datoveho_suboru.png Graphic file (type png)
 
 <use ./images/Format_datoveho_suboru.png>
@@ -1443,19 +1447,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-<./images/ukazka_programu3.png, id=532, 222.8325pt x 80.09924pt>
+<./images/ukazka_programu3.png, id=537, 222.8325pt x 80.09924pt>
 File: ./images/ukazka_programu3.png Graphic file (type png)
 
 <use ./images/ukazka_programu3.png>
 Package pdftex.def Info: ./images/ukazka_programu3.png used on input line 68.
 (pdftex.def)             Requested size: 222.83195pt x 80.09903pt.
-) [27pdfTeX warning (ext4): destination with the same identifier (name{figure.3
+) [28pdfTeX warning (ext4): destination with the same identifier (name{figure.3
 .12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.215 
-       <./images/Format_datoveho_suboru.png>] (implementacia.tex [28pdfTeX warn
+       <./images/Format_datoveho_suboru.png>] (implementacia.tex [29pdfTeX warn
 ing (ext4): destination with the same identifier (name{figure.3.13}) has been a
 lready used, duplicate ignored
 
@@ -1485,7 +1489,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[29
+[30
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
@@ -1507,7 +1511,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
 
-[30]
+[31]
 Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
@@ -1527,7 +1531,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
 
  []
 
-[31]
+[32]
 
 Package hyperref Warning: Composite letter `\textasciicaron+c'
 (hyperref)                not defined in PD1 encoding,
@@ -1553,13 +1557,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
-<./images/test2_priklad1.png, id=561, 416.15475pt x 192.72pt>
+<./images/test2_priklad1.png, id=565, 416.15475pt x 192.72pt>
 File: ./images/test2_priklad1.png Graphic file (type png)
 
 <use ./images/test2_priklad1.png>
 Package pdftex.def Info: ./images/test2_priklad1.png used on input line 45.
 (pdftex.def)             Requested size: 441.01773pt x 204.24692pt.
- [32pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1570,7 +1574,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<./images/1_Vertex.png, id=567, 463.13025pt x 282.45525pt>
+<./images/1_Vertex.png, id=572, 463.13025pt x 282.45525pt>
 File: ./images/1_Vertex.png Graphic file (type png)
 
 <use ./images/1_Vertex.png>
@@ -1581,13 +1585,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-<./images/1_Edge.png, id=568, 685.96275pt x 406.51875pt>
+<./images/1_Edge.png, id=573, 685.96275pt x 406.51875pt>
 File: ./images/1_Edge.png Graphic file (type png)
 
 <use ./images/1_Edge.png>
 Package pdftex.def Info: ./images/1_Edge.png used on input line 61.
 (pdftex.def)             Requested size: 308.71106pt x 182.95035pt.
- [33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [34pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1600,7 +1604,7 @@ l.65
                                                   \fi \fi 
 l.65 
       <./images/test2_priklad1.png> <./images/1_Vertex.png>]
-<./images/1_Graph.png, id=576, 346.896pt x 251.7405pt>
+<./images/1_Graph.png, id=580, 346.896pt x 251.7405pt>
 File: ./images/1_Graph.png Graphic file (type png)
 
 <use ./images/1_Graph.png>
@@ -1621,7 +1625,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
-[34pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1634,7 +1638,7 @@ l.80
                                                   \fi \fi 
 l.80 
       <./images/1_Edge.png> <./images/1_Graph.png>]
-<./images/2_Vertex.png, id=584, 454.0965pt x 335.45325pt>
+<./images/2_Vertex.png, id=588, 454.0965pt x 335.45325pt>
 File: ./images/2_Vertex.png Graphic file (type png)
 
 <use ./images/2_Vertex.png>
@@ -1660,7 +1664,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
 9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1668,25 +1672,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 l.95 
       <./images/2_Vertex.png>]
 
-LaTeX Warning: Reference `Dijkstra_obr' on page 36 undefined on input line 96.
+LaTeX Warning: Reference `Dijkstra_obr' on page 37 undefined on input line 96.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<./images/3_DijkstrovAlg.png, id=592, 484.209pt x 852.786pt>
+<./images/3_DijkstrovAlg.png, id=596, 484.209pt x 852.786pt>
 File: ./images/3_DijkstrovAlg.png Graphic file (type png)
 
 <use ./images/3_DijkstrovAlg.png>
 Package pdftex.def Info: ./images/3_DijkstrovAlg.png used on input line 99.
 (pdftex.def)             Requested size: 308.71106pt x 543.7122pt.
- [36]
+ [37]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1697,7 +1701,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-<./images/3_PathShowing.png, id=603, 545.6385pt x 208.98074pt>
+<./images/3_PathShowing.png, id=607, 545.6385pt x 208.98074pt>
 File: ./images/3_PathShowing.png Graphic file (type png)
 
 <use ./images/3_PathShowing.png>
@@ -1714,13 +1718,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-<./images/4_Graph.png, id=605, 491.436pt x 351.714pt>
+<./images/4_Graph.png, id=609, 491.436pt x 351.714pt>
 File: ./images/4_Graph.png Graphic file (type png)
 
 <use ./images/4_Graph.png>
 Package pdftex.def Info: ./images/4_Graph.png used on input line 120.
 (pdftex.def)             Requested size: 441.01773pt x 315.64343pt.
- [38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1741,11 +1745,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-File: ./images/dijkstra_priklad.png Graphic file (type png)
-<use ./images/dijkstra_priklad.png>
-Package pdftex.def Info: ./images/dijkstra_priklad.png used on input line 133.
+<./images/atl_trasy_priklad.png, id=616, 284.262pt x 193.9245pt>
+File: ./images/atl_trasy_priklad.png Graphic file (type png)
+
+<use ./images/atl_trasy_priklad.png>
+Package pdftex.def Info: ./images/atl_trasy_priklad.png used on input line 133.
+
 (pdftex.def)             Requested size: 284.26129pt x 193.92401pt.
- [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+ [40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1766,7 +1773,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
-<./images/alt_trasy_cas_zloz_obr.png, id=618, 672.111pt x 362.5545pt>
+<./images/alt_trasy_cas_zloz_obr.png, id=623, 672.111pt x 362.5545pt>
 File: ./images/alt_trasy_cas_zloz_obr.png Graphic file (type png)
 
 <use ./images/alt_trasy_cas_zloz_obr.png>
@@ -1778,13 +1785,13 @@ Overfull \hbox (231.09161pt too wide) in paragraph at lines 145--146
  [][] 
  []
 
-[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.149 
-      ]
+       <./images/atl_trasy_priklad.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
@@ -1794,7 +1801,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[42pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -1805,14 +1812,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
-) (zaver.tex [42]) [43
+) (zaver.tex [43]) [44
 
 ] (main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 36.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [44
+) [45
 
 
 
@@ -1824,7 +1831,7 @@ Underfull \hbox (badness 1515) in paragraph at lines 83--87
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
- [45]
+ [46]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
@@ -1835,13 +1842,16 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
  ) 
 Here is how much of TeX's memory you used:
- 7987 strings out of 493323
- 113652 string characters out of 3139066
- 217971 words of memory out of 3000000
- 11152 multiletter control sequences out of 15000+200000
+ 7993 strings out of 493323
+ 113819 string characters out of 3139066
+ 218971 words of memory out of 3000000
+ 11156 multiletter control sequences out of 15000+200000
  19819 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,31p,2675b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1866,9 +1876,9 @@ ublic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (55 pages, 1031499 bytes).
+Output written on main.pdf (56 pages, 1037038 bytes).
 PDF statistics:
- 1305 PDF objects out of 1440 (max. 8388607)
- 159 named destinations out of 1000 (max. 500000)
- 426 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1313 PDF objects out of 1440 (max. 8388607)
+ 160 named destinations out of 1000 (max. 500000)
+ 431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

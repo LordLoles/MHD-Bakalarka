@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using C5;
 
 public class Dijkstra {
 
@@ -36,18 +37,16 @@ public class Dijkstra {
     {
         updateVertecesValues();
 
-        List<Vertex> visited = new List<Vertex>();
+        Dictionary<Vertex, bool> visited = new Dictionary<Vertex, bool>();
         start.parent = null;
         start.value = 0;
-        List<Vertex> inScope = new List<Vertex>();
+        MinHeap<Vertex> inScope = new MinHeap<Vertex>(new DijkstrasComparator());
         inScope.Add(start);
-        DijkstrasComparator dc = new DijkstrasComparator();
 
-        while (inScope.Count > 0)
+        while (inScope.Count() > 0)
         {
-            inScope.Sort(dc);               //najdi min cez haldu (log n) - toto je v (n log n)
-            Vertex now = peek(inScope);
-
+            Vertex now = inScope.PopMin();
+            
             if (graph.getNeighbors(now).Contains(start)) break;
 
             List<Vertex> neighbors = graph.getNeighbors(now);
@@ -61,7 +60,7 @@ public class Dijkstra {
                     Edge e = incidentEdges[i];
 
 
-                    if (visited.Contains(v)) continue;
+                    if (visited.ContainsKey(v)) continue;
 
                     v.addAlternatePath(e);
 
@@ -71,7 +70,7 @@ public class Dijkstra {
                         v.value = newValue;
                         v.parent = now;
                         v.toParent = e;
-                        if (!inScope.Contains(v)) inScope.Add(v);
+                        inScope.Add(v);
                     }
                 }
             }
@@ -80,8 +79,7 @@ public class Dijkstra {
                 amountNow--;
                 if (amountNow == 0) return;
             }
-
-            visited.Add(now);
+            visited.Add(now, true);
         }
     }
 

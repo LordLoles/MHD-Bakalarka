@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  19 JUL 2018 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  26 JUL 2018 17:30
 entering extended mode
 **./main.tex
 (main.tex
@@ -842,6 +842,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--48
  []
 
 
+Overfull \hbox (38.0542pt too wide) in paragraph at lines 52--53
+\T1/cmr/m/n/12 Nech $\OML/cmm/m/it/12 G \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 V; 
+E\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 je graf. De-fi-nujme \T1/cmr/m/it/12 cestu \
+T1/cmr/m/n/12 ako ne-prázdnu strie-davú po-stup-nos´ $\OML/cmm/m/it/12 v[]e[]v[
+]e[]:::e[]v[]$\T1/cmr/m/n/12 ,
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 52--53
 
  []
@@ -921,12 +929,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
-[5]
+
 Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-) (algoritmy.tex [6]
+[5]) (algoritmy.tex [6]
 Kapitola 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -1088,28 +1096,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[12]
+
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--95
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
 
  []
 
-<./images/Alg_Bellman-Ford.png, id=410, 460.119pt x 188.50426pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+[13] <./images/Alg_Bellman-Ford.png, id=415, 460.119pt x 188.50426pt>
 File: ./images/Alg_Bellman-Ford.png Graphic file (type png)
 
 <use ./images/Alg_Bellman-Ford.png>
-Package pdftex.def Info: ./images/Alg_Bellman-Ford.png used on input line 97.
+Package pdftex.def Info: ./images/Alg_Bellman-Ford.png used on input line 104.
 (pdftex.def)             Requested size: 441.01773pt x 180.68588pt.
- [13]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
@@ -1118,10 +1136,10 @@ File: ./images/bellman-ford_priklad.png Graphic file (type png)
 
 <use ./images/bellman-ford_priklad.png>
 Package pdftex.def Info: ./images/bellman-ford_priklad.png used on input line 1
-06.
+13.
 (pdftex.def)             Requested size: 248.12637pt x 252.94438pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
@@ -1130,20 +1148,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.112 
+l.119 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 2.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.112 
+l.119 
        <./images/Alg_Bellman-Ford.png> <./images/bellman-ford_priklad.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
@@ -1152,44 +1165,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.133 
+l.138 
       ]
 Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 
  []
 
-<./images/Alg_Floyd-Warshall.png, id=433, 567.3195pt x 361.95226pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+
+ []
+
+<./images/Alg_Floyd-Warshall.png, id=434, 567.3195pt x 361.95226pt>
 File: ./images/Alg_Floyd-Warshall.png Graphic file (type png)
 
 <use ./images/Alg_Floyd-Warshall.png>
-Package pdftex.def Info: ./images/Alg_Floyd-Warshall.png used on input line 144
+Package pdftex.def Info: ./images/Alg_Floyd-Warshall.png used on input line 151
 .
 (pdftex.def)             Requested size: 441.01773pt x 281.37166pt.
  [16]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
-<./images/floyd-washall_priklad.png, id=440, 248.127pt x 252.945pt>
+<./images/floyd-washall_priklad.png, id=441, 248.127pt x 252.945pt>
 File: ./images/floyd-washall_priklad.png Graphic file (type png)
 
 <use ./images/floyd-washall_priklad.png>
 Package pdftex.def Info: ./images/floyd-washall_priklad.png used on input line 
-153.
+160.
 (pdftex.def)             Requested size: 248.12637pt x 252.94438pt.
  [17pdfTeX warning (ext4): destination with the same identifier (name{algorithm
 .2.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.157 
+l.164 
        <./images/Alg_Floyd-Warshall.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
@@ -1198,70 +1216,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 158--159
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.191 \end{equation}
+l.198 \end{equation}
                      <./images/floyd-washall_priklad.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-[20] <./images/3_AStar-Dijkstra.png, id=468, 958.782pt x 395.076pt>
+[20] <./images/3_AStar-Dijkstra.png, id=469, 958.782pt x 395.076pt>
 File: ./images/3_AStar-Dijkstra.png Graphic file (type png)
 
 <use ./images/3_AStar-Dijkstra.png>
-Package pdftex.def Info: ./images/3_AStar-Dijkstra.png used on input line 244.
+Package pdftex.def Info: ./images/3_AStar-Dijkstra.png used on input line 251.
 (pdftex.def)             Requested size: 441.01773pt x 181.73112pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--250
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
-
- []
-
-[21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.252 
-       <./images/3_AStar-Dijkstra.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
@@ -1271,28 +1273,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.2.6
+}) has been already used, duplicate ignored
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.259 
+       <./images/3_AStar-Dijkstra.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 263--264
 
  []
 
-<./images/3_obojstranne.png, id=475, 834.11626pt x 419.31656pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+
+ []
+
+<./images/3_obojstranne.png, id=476, 834.11626pt x 419.31656pt>
 File: ./images/3_obojstranne.png Graphic file (type png)
 
 <use ./images/3_obojstranne.png>
-Package pdftex.def Info: ./images/3_obojstranne.png used on input line 263.
+Package pdftex.def Info: ./images/3_obojstranne.png used on input line 270.
 (pdftex.def)             Requested size: 441.01773pt x 221.70566pt.
  [22]
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
-
- []
-
-
-Package hyperref Warning: Composite letter `\textasciicaron+l'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 276.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
@@ -1307,25 +1315,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.281 
-       <./images/3_obojstranne.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+l.285 \subsection
+                 {ExistujÃºce implementÃ¡cie vyhÄ¾adÃ¡vacÃ­ch algoritmov} <./im
+ages/3_obojstranne.png>]
+
+Package hyperref Warning: Composite letter `\textasciicaron+l'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 285.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--284
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
 [][][]\T1/cmr/m/n/10 Napríkald https://stackoverflow.com/questions/14091279/alg
 orithm-method-use-by-google-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 286--213
+Underfull \hbox (badness 10000) in paragraph at lines 295--213
 
  []
 
@@ -1336,7 +1361,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-<./images/ukazka_programu1.png, id=514, 479.99326pt x 541.42274pt>
+<./images/ukazka_programu1.png, id=515, 479.99326pt x 541.42274pt>
 File: ./images/ukazka_programu1.png Graphic file (type png)
 
 <use ./images/ukazka_programu1.png>
@@ -1395,7 +1420,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.37 
-     ] <./images/ukazka_programu2.png, id=526, 481.19775pt x 536.0025pt>
+     ] <./images/ukazka_programu2.png, id=527, 481.19775pt x 536.0025pt>
 File: ./images/ukazka_programu2.png Graphic file (type png)
 
 <use ./images/ukazka_programu2.png>
@@ -1406,7 +1431,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<./images/ukazka_programu2-alt.png, id=527, 451.6875pt x 217.41225pt>
+<./images/ukazka_programu2-alt.png, id=528, 451.6875pt x 217.41225pt>
 File: ./images/ukazka_programu2-alt.png Graphic file (type png)
 
 <use ./images/ukazka_programu2-alt.png>
@@ -1435,7 +1460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<./images/Format_datoveho_suboru.png, id=536, 1098.504pt x 409.53pt>
+<./images/Format_datoveho_suboru.png, id=537, 1098.504pt x 409.53pt>
 File: ./images/Format_datoveho_suboru.png Graphic file (type png)
 
 <use ./images/Format_datoveho_suboru.png>
@@ -1447,7 +1472,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
-<./images/ukazka_programu3.png, id=537, 222.8325pt x 80.09924pt>
+<./images/ukazka_programu3.png, id=538, 222.8325pt x 80.09924pt>
 File: ./images/ukazka_programu3.png Graphic file (type png)
 
 <use ./images/ukazka_programu3.png>
@@ -1557,7 +1582,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
-<./images/test2_priklad1.png, id=565, 416.15475pt x 192.72pt>
+<./images/test2_priklad1.png, id=566, 416.15475pt x 192.72pt>
 File: ./images/test2_priklad1.png Graphic file (type png)
 
 <use ./images/test2_priklad1.png>
@@ -1574,7 +1599,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<./images/1_Vertex.png, id=572, 463.13025pt x 282.45525pt>
+<./images/1_Vertex.png, id=573, 463.13025pt x 282.45525pt>
 File: ./images/1_Vertex.png Graphic file (type png)
 
 <use ./images/1_Vertex.png>
@@ -1585,7 +1610,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-<./images/1_Edge.png, id=573, 685.96275pt x 406.51875pt>
+<./images/1_Edge.png, id=574, 685.96275pt x 406.51875pt>
 File: ./images/1_Edge.png Graphic file (type png)
 
 <use ./images/1_Edge.png>
@@ -1604,7 +1629,7 @@ l.65
                                                   \fi \fi 
 l.65 
       <./images/test2_priklad1.png> <./images/1_Vertex.png>]
-<./images/1_Graph.png, id=580, 346.896pt x 251.7405pt>
+<./images/1_Graph.png, id=581, 346.896pt x 251.7405pt>
 File: ./images/1_Graph.png Graphic file (type png)
 
 <use ./images/1_Graph.png>
@@ -1638,7 +1663,7 @@ l.80
                                                   \fi \fi 
 l.80 
       <./images/1_Edge.png> <./images/1_Graph.png>]
-<./images/2_Vertex.png, id=588, 454.0965pt x 335.45325pt>
+<./images/2_Vertex.png, id=589, 454.0965pt x 335.45325pt>
 File: ./images/2_Vertex.png Graphic file (type png)
 
 <use ./images/2_Vertex.png>
@@ -1671,43 +1696,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
                                                   \fi \fi 
 l.95 
       <./images/2_Vertex.png>]
-
-LaTeX Warning: Reference `Dijkstra_obr' on page 37 undefined on input line 96.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<./images/3_DijkstrovAlg.png, id=596, 484.209pt x 852.786pt>
+<./images/3_DijkstrovAlg.png, id=598, 611.886pt x 902.1705pt>
 File: ./images/3_DijkstrovAlg.png Graphic file (type png)
 
 <use ./images/3_DijkstrovAlg.png>
 Package pdftex.def Info: ./images/3_DijkstrovAlg.png used on input line 99.
-(pdftex.def)             Requested size: 308.71106pt x 543.7122pt.
+(pdftex.def)             Requested size: 308.71106pt x 455.17264pt.
  [37]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
-[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
-0}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.105 
-       <./images/3_DijkstrovAlg.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-<./images/3_PathShowing.png, id=607, 545.6385pt x 208.98074pt>
+<./images/3_PathShowing.png, id=604, 545.6385pt x 208.98074pt>
 File: ./images/3_PathShowing.png Graphic file (type png)
 
 <use ./images/3_PathShowing.png>
 Package pdftex.def Info: ./images/3_PathShowing.png used on input line 109.
 (pdftex.def)             Requested size: 441.01773pt x 168.91313pt.
+ [38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+20}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.112 \end{figure}
+                   <./images/3_DijkstrovAlg.png>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+t'
 (hyperref)                not defined in PD1 encoding,
@@ -1718,7 +1739,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 
  []
 
-<./images/4_Graph.png, id=609, 491.436pt x 351.714pt>
+<./images/4_Graph.png, id=611, 491.436pt x 351.714pt>
 File: ./images/4_Graph.png Graphic file (type png)
 
 <use ./images/4_Graph.png>
@@ -1745,7 +1766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-<./images/atl_trasy_priklad.png, id=616, 284.262pt x 193.9245pt>
+<./images/atl_trasy_priklad.png, id=618, 284.262pt x 193.9245pt>
 File: ./images/atl_trasy_priklad.png Graphic file (type png)
 
 <use ./images/atl_trasy_priklad.png>
@@ -1773,20 +1794,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
-<./images/alt_trasy_cas_zloz_obr.png, id=623, 672.111pt x 362.5545pt>
+<./images/alt_trasy_cas_zloz_obr.png, id=625, 363.759pt x 362.5545pt>
 File: ./images/alt_trasy_cas_zloz_obr.png Graphic file (type png)
 
 <use ./images/alt_trasy_cas_zloz_obr.png>
 Package pdftex.def Info: ./images/alt_trasy_cas_zloz_obr.png used on input line
  145.
-(pdftex.def)             Requested size: 672.10934pt x 362.55362pt.
-
-Overfull \hbox (231.09161pt too wide) in paragraph at lines 145--146
- [][] 
- []
-
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
-3}) has been already used, duplicate ignored
+(pdftex.def)             Requested size: 363.75812pt x 362.55362pt.
+ [41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
+23}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1837,21 +1853,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 00B2FA032773ED1921F61BC0C058347A;2584.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: 47ED4CC7081A9BC07E9FD95D7D7A860D;2584.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
  ) 
 Here is how much of TeX's memory you used:
  7993 strings out of 493323
- 113819 string characters out of 3139066
+ 113817 string characters out of 3139066
  218971 words of memory out of 3000000
- 11156 multiletter control sequences out of 15000+200000
+ 11155 multiletter control sequences out of 15000+200000
  19819 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,31p,2675b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1876,9 +1885,9 @@ ublic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (56 pages, 1037038 bytes).
+Output written on main.pdf (56 pages, 1043483 bytes).
 PDF statistics:
- 1313 PDF objects out of 1440 (max. 8388607)
- 160 named destinations out of 1000 (max. 500000)
+ 1315 PDF objects out of 1440 (max. 8388607)
+ 161 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -22,7 +22,7 @@ Prehľadávanie do šírky alebo skrátene BFS (z anglického Breadth-first sear
 
 \subsection{Prehľadávanie do hĺbky}
 
-Prehľadávanie do hĺbky, skrátene DFS (z anglického Depth-first search), prechádza cez vrcholy grafu len pomocou cyklu, prípadne rekurzie. Obvykle sa v algoritme na všetkých susedov vrchola zavolá postupne rekuzívne ten istý algoritmus prehľadávania.\newline
+Prehľadávanie do hĺbky, skrátene DFS (z anglického Depth-first search), prechádza taktiež cez všetky vrcholy grafu. Obvykle sa v algoritme na všetkých susedov vrchola zavolá postupne rekuzívne ten istý algoritmus prehľadávania.\newline
 
 \begin{figure}[H]
   \centering{\includegraphics{./images/DFS_priklad.png}}
@@ -275,7 +275,9 @@ Je zjavné, že popísaná myšlienka je aplikovateľná na obi dva algoritmy \t
 
 \subsubsection{Zhrnutie}
 
-Uvedené vylepšenia sú iba názorným príkladom vybraných algoritmov z pestrej škály rôznych vylepšení a následných modifikácií základných algoritmov určených na vyhľadávanie v grafikonoch. Existujú teda i rýchlejšie spôsoby zistenia najlacnejších ciest v grafoch, a to prevažne pomocou predpočítania si rôznych hodnôt a údajov. Dobrým príkladom môže byť takzvaný \textit{Highway-node routing}\cite{schultes2007dynamic} alebo jeden z jeho špeciálnych prípadov \textendash \textit{Contraction hierarchies}\cite{geisberger2008contraction}.\newline
+Obi dve vylepšenia prinášajú zefektívnenie vyhľadávania oproti základným algoritmom, ktoré sme poskytli v predošlej sekcií. Avšak naše myšlienky smerujú k vytvoreniu aplikácie, ktorá nebude využívať pripojenie k internetu, a teda nebude vedieť zistiť vzdialenosť vzdušnou čiarou medzi dvomi zastávkami. Algoritmus A* preto nebude pre nás vhodnou voľbou. A zas, pridanie obojstranného vyhľadávania by iba jemne zrýchlilo aplikáciu za cenu znáročnenia a zneprehľadnenia kódu. My sa preto uspokojíme so schopnosťami Dijkstrovho algoritmu.\newline
+
+Uvedené vylepšenia sú iba názorným príkladom vybraných algoritmov z pestrej škály rôznych vylepšení a následných modifikácií základných algoritmov určených na vyhľadávanie v grafikonoch. Existujú teda i rýchlejšie spôsoby zistenia najlacnejších ciest v grafoch, a to prevažne pomocou predpočítania si rôznych hodnôt a údajov. Dobrým príkladom môže byť takzvaný \textit{Highway-node routing}\cite{schultes2007dynamic} alebo jeden z jeho špeciálnych prípadov \textendash \textit{Contraction hierarchies}\cite{geisberger2008contraction}. Hlavnou myšlienkou týchto úvah je vytvorenie hierarchie z liniek tak, že najefektívnejšie v zmysle dopravenia sa do cieľa budú v jednej skupine, menej efektívne v ďalšej, a tak až po okrajové linky mesta. Algoritmus sa potom snaží vyberať linky s čo najväčšou efektívnosťou.\newline
 
 Viaceré prístupy a spôsoby premýšľania nad problematikou vyhľadávania ciest zhŕňa dielo z roku 2010 \cite{bast2010fast}. Množstvo výskumov, experimentov či porovnaní existujúcich implementácií uvádzajú vo svojom diele Fan a Machemehl \cite{fan2004optimal}.
 
@@ -288,6 +290,6 @@ Dobrým príklad preto môže byť program \textit{graphhopper}\footnote{dostupn
 
 Zaujímavým môže byť aj vyhľadávač spojení \textit{Explorer} \cite{watkins2010explore}. Ten implementuje Dijkstrov algoritmus, avšak využíva mnohé predpočítania aby zefektívnil svoje výpočty.\newline
 
-Možnosť vyhľadávania a plánovania ciest poskytuje aj spoločnosť \textit{Google}. Podľa neoficiálnych vyjadrení a domnienok\footnote{Napríkald https://stackoverflow.com/questions/14091279/algorithm-method-use-by-google-maps-for-finding-the-path-between-two-cities} používa ich implementácia na zistenie najkratších ciest spôsob \textit{Contraction hierarchies} s množstvom prepočítavania a iných úprav. Ten istý prístup používa i projekt \textit{OSRM}\footnote{Dostupný na: http://project-osrm.org/}.\newline
+Možnosť vyhľadávania a plánovania ciest poskytuje aj spoločnosť \textit{Google}. Samozrejme, neexistujú oficiálne vyjadrenia, ale podľa mnohých domnienok\footnote{Napríkald https://stackoverflow.com/questions/14091279/algorithm-method-use-by-google-maps-for-finding-the-path-between-two-cities} používa ich implementácia na zistenie najkratších ciest spôsob \textit{Contraction hierarchies} s množstvom predpočítavania a iných úprav. Ten istý prístup používa i projekt \textit{OSRM}\footnote{Dostupný na: http://project-osrm.org/}.\newline
 
 Iným pohľadom na problematiku je algoritmus \textit{RAPTOR}\cite{delling2014round}, ktorý nepoužíva princíp Dijkstrovho algoritmu. Na jeho základe je postavený program \textit{navitia}\footnote{Dostupný na: https://github.com/CanalTP/navitia}.\newline

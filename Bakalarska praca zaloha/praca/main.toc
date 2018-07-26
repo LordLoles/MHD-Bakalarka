@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {1.2}Z\IeC {\'a}kladn\IeC {\'e} pojmy t\IeC {\'y}kaj\IeC {\'u}ce sa grafov}{2}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Typy grafov}{3}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Vz\IeC {\v t}ahy medzi grafmi}{3}{subsection.1.2.2}
-\contentsline {section}{\numberline {1.3}Cesty a cykly}{4}{section.1.3}
+\contentsline {section}{\numberline {1.3}Cesty a cykly}{3}{section.1.3}
 \contentsline {section}{\numberline {1.4}S\IeC {\'u}vislos\IeC {\v t}}{4}{section.1.4}
 \contentsline {section}{\numberline {1.5}Kostry, stromy a lesy}{5}{section.1.5}
 \contentsline {section}{\numberline {1.6}\IeC {\v S}peci\IeC {\'a}lne grafov\IeC {\'e} \IeC {\v s}trukt\IeC {\'u}ry}{5}{section.1.6}
@@ -17,15 +17,16 @@
 \contentsline {subsection}{\numberline {2.1.3}Zhrnutie}{9}{subsection.2.1.3}
 \contentsline {section}{\numberline {2.2}Najlacnej\IeC {\v s}ie cesty v grafe}{9}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Dijkstrov algoritmus}{10}{subsection.2.2.1}
-\contentsline {subsubsection}{Vylep\IeC {\v s}enie pridan\IeC {\'\i }m haldy}{12}{section*.9}
+\contentsline {subsubsection}{Vylep\IeC {\v s}enie pam\IeC {\"a}tan\IeC {\'\i }m si susedov}{12}{section*.9}
+\contentsline {subsubsection}{Vylep\IeC {\v s}enie pridan\IeC {\'\i }m haldy}{13}{section*.10}
 \contentsline {subsection}{\numberline {2.2.2}Bellman\textendash Fordov algoritmus}{13}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Floyd\textendash Warshallov algoritmus}{16}{subsection.2.2.3}
 \contentsline {subsection}{\numberline {2.2.4}Zhrnutie}{19}{subsection.2.2.4}
 \contentsline {subsection}{\numberline {2.2.5}Vylep\IeC {\v s}enia a roz\IeC {\v s}\IeC {\'\i }renia}{20}{subsection.2.2.5}
-\contentsline {subsubsection}{Algoritmus A*}{20}{section*.10}
-\contentsline {subsubsection}{Obojstrann\IeC {\'e} vyh\IeC {\v l}ad\IeC {\'a}vanie}{22}{section*.11}
-\contentsline {subsubsection}{Zhrnutie}{23}{section*.12}
-\contentsline {subsection}{\numberline {2.2.6}Existuj\IeC {\'u}ce implement\IeC {\'a}cie vyh\IeC {\v l}ad\IeC {\'a}vac\IeC {\'\i }ch algoritmov}{23}{subsection.2.2.6}
+\contentsline {subsubsection}{Algoritmus A*}{20}{section*.11}
+\contentsline {subsubsection}{Obojstrann\IeC {\'e} vyh\IeC {\v l}ad\IeC {\'a}vanie}{22}{section*.12}
+\contentsline {subsubsection}{Zhrnutie}{23}{section*.13}
+\contentsline {subsection}{\numberline {2.2.6}Existuj\IeC {\'u}ce implement\IeC {\'a}cie vyh\IeC {\v l}ad\IeC {\'a}vac\IeC {\'\i }ch algoritmov}{24}{subsection.2.2.6}
 \contentsline {chapter}{\numberline {3}Softv\IeC {\'e}r}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}Z\IeC {\'a}kladn\IeC {\'y} popis aplik\IeC {\'a}cie}{25}{section.3.1}
 \contentsline {section}{\numberline {3.2}Vyh\IeC {\v l}ad\IeC {\'a}vanie}{26}{section.3.2}
@@ -37,4 +38,4 @@
 \contentsline {section}{\numberline {4.4}Implement\IeC {\'a}cia vyh\IeC {\v l}ad\IeC {\'a}vacieho algoritmu a v\IeC {\'y}pis v\IeC {\'y}sledku}{37}{section.4.4}
 \contentsline {section}{\numberline {4.5}Neefekt\IeC {\'\i }vnos\IeC {\v t} vytv\IeC {\'a}rania objektov}{39}{section.4.5}
 \contentsline {section}{\numberline {4.6}Vyh\IeC {\v l}ad\IeC {\'a}vanie alternat\IeC {\'\i }vnych ciest}{40}{section.4.6}
-\contentsline {chapter}{Z\IeC {\'a}ver}{44}{chapter*.13}
+\contentsline {chapter}{Z\IeC {\'a}ver}{44}{chapter*.14}

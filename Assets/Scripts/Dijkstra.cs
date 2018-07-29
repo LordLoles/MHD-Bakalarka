@@ -23,12 +23,15 @@ public class Dijkstra {
         updateVertecesValues();
     }
 
-
-    private Vertex peek(List<Vertex> vs)
+    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, bool incTransers, MinHeap<Vertex> inScope)
     {
-        Vertex v = vs[0];
-        vs.RemoveAt(0);
-        return v;
+        target.value = newValue;
+        if (incTransers) transfers++;
+        target.transfers = transfers;
+        target.parent = toTarget.fromV;
+        target.toParent = toTarget;
+
+        inScope.Add(target);
     }
 
 
@@ -39,14 +42,13 @@ public class Dijkstra {
         Dictionary<Vertex, bool> visited = new Dictionary<Vertex, bool>();
         start.parent = null;
         start.value = 0;
-        MinHeap<Vertex> inScope = new MinHeap<Vertex>(new DijkstrasComparator());
+        DijkstrasComparator dc = new DijkstrasComparator();
+        MinHeap<Vertex> inScope = new MinHeap<Vertex>(dc);
         inScope.Add(start);
 
         while (inScope.Count() > 0)
         {
             Vertex now = inScope.PopMin();
-            
-            if (graph.getNeighbors(now).Contains(start)) break;
 
             List<Vertex> neighbors = graph.getNeighbors(now);
             List<Edge> incidentEdges = graph.getIncidentEdges(now);
@@ -58,19 +60,29 @@ public class Dijkstra {
                     Vertex v = neighbors[i];
                     Edge e = incidentEdges[i];
 
-
+                    if (v.isThis(start)) break;
                     if (visited.ContainsKey(v)) continue;
 
                     v.addAlternatePath(e);
 
                     int newValue = now.value + e.travellTime;
+
+                    bool incTransfers = (((now.toParent == null) || (now.toParent.name.CompareTo(e.name) != 0)) 
+                        && (!e.waitingEdge));
+
                     if (newValue < v.value)
+                        updateVertex(v, e, newValue, now.transfers, incTransfers, inScope);
+                    else if (newValue == v.value)
                     {
-                        v.value = newValue;
-                        v.parent = now;
-                        v.toParent = e;
-                        inScope.Add(v);
+                        int newTransfers = now.transfers;
+                        if (incTransfers) newTransfers++;
+
+                        if (newTransfers < v.transfers)
+                            updateVertex(v, e, newValue, newTransfers, false, inScope);
+                        else if ((newTransfers == v.transfers) && v.parent.time.CompareTo(now.time) == 1)
+                            updateVertex(v, e, newValue, newTransfers, false, inScope);
                     }
+                    
                 }
             }
             else
@@ -143,6 +155,7 @@ public class Dijkstra {
         foreach (Vertex v in graph.verteces)
         {
             v.value = int.MaxValue;
+            v.transfers = 0;
             v.parent = null;
             v.toParent = null;
         }

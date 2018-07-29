@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  26 JUL 2018 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  29 JUL 2018 21:59
 entering extended mode
 **./main.tex
 (main.tex
@@ -1700,12 +1700,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<./images/3_DijkstrovAlg.png, id=598, 611.886pt x 902.1705pt>
+<./images/3_DijkstrovAlg.png, id=598, 759.43726pt x 967.2135pt>
 File: ./images/3_DijkstrovAlg.png Graphic file (type png)
 
 <use ./images/3_DijkstrovAlg.png>
 Package pdftex.def Info: ./images/3_DijkstrovAlg.png used on input line 99.
-(pdftex.def)             Requested size: 308.71106pt x 455.17264pt.
+(pdftex.def)             Requested size: 308.71106pt x 393.1804pt.
  [37]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
@@ -1727,8 +1727,8 @@ Package pdftex.def Info: ./images/3_PathShowing.png used on input line 109.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.112 \end{figure}
-                   <./images/3_DijkstrovAlg.png>]
+l.113 
+       <./images/3_DijkstrovAlg.png>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+t'
 (hyperref)                not defined in PD1 encoding,
@@ -1885,7 +1885,7 @@ ublic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (56 pages, 1043483 bytes).
+Output written on main.pdf (56 pages, 1061448 bytes).
 PDF statistics:
  1315 PDF objects out of 1440 (max. 8388607)
  161 named destinations out of 1000 (max. 500000)

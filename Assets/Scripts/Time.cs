@@ -69,9 +69,15 @@
     }
 
 
-    public static int CompareTo(Time t1, Time t2)
+    public static int Compare(Time t1, Time t2)
     {
         return System.Math.Sign(differenceBetweenTimesMin(t2, t1));
+    }
+
+
+    public int CompareTo(Time t2)
+    {
+        return Compare(this, t2);
     }
 
 

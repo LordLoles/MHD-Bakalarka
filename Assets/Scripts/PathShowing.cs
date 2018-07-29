@@ -11,6 +11,7 @@ public class PathShowing : MonoBehaviour
     private int start = -170;
     private int now;
     private List<GameObject> panels;
+    private int amount;
 
     internal PathMaker pathMaker;
 
@@ -102,7 +103,7 @@ public class PathShowing : MonoBehaviour
         int i = 0;
         foreach (Edge e in v.alternate)
         {
-            if (i == 3) break;
+            if (i == amount) break;
             List<Edge> path = pathMaker.makePath(e.fromV);
             path.Add(e);
             printPath(path);
@@ -129,5 +130,8 @@ public class PathShowing : MonoBehaviour
         flush();
         foreach (List<Edge> path in lastState.paths) printPath(path);
     }
+
+
+    public void setAmountOfPaths(int amount) { this.amount = amount; }
 
 }

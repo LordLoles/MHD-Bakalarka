@@ -74,6 +74,7 @@ public class Init : MonoBehaviour
         {
             pathShowing.nextSearch();
             Debug.Log("spustam dijkstru z " + start + " do " + fin);
+            pathShowing.setAmountOfPaths(amount);
             dijkstra.shortestPathsAmount(time, start, fin, amount);
         }
         else

@@ -7,6 +7,10 @@ public class DijkstrasComparator : IComparer<Vertex>
     {
         int ret = x.value.CompareTo(y.value);
         if (ret != 0) return ret;
-        else return Time.CompareTo(y.time, x.time);
+
+        ret = x.transfers.CompareTo(y.transfers);
+        if (ret != 0) return ret;
+
+        else return y.time.CompareTo(x.time);
     }
 }

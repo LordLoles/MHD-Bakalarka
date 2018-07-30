@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  29 JUL 2018 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  30 JUL 2018 21:38
 entering extended mode
 **./main.tex
 (main.tex
@@ -1310,14 +1310,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 280--281
 
  []
 
-[23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.285 \subsection
-                 {Existuj√∫ce implement√°cie vyhƒæad√°vac√≠ch algoritmov} <./im
-ages/3_obojstranne.png>]
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
@@ -1326,6 +1318,18 @@ Package hyperref Warning: Composite letter `\textasciicaron+l'
 
 Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
+ []
+
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.2.7
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.288 
+       <./images/3_obojstranne.png>]
+Overfull \hbox (2.62794pt too wide) in paragraph at lines 289--290
+[]\T1/cmr/m/n/12 Dobr˝m prÌ-klad preto mÙ∫e by¥ prog-ram \T1/cmr/m/it/12 graph-
+hop-per\T1/cmr/m/n/12 [[]], ktor˝ im-ple-men-tuje Dijks-
  []
 
 
@@ -1340,7 +1344,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--292
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 293--293
-[][][]\T1/cmr/m/n/10 NaprÌkald https://stackoverflow.com/questions/14091279/alg
+[][][]\T1/cmr/m/n/10 NaprÌklad https://stackoverflow.com/questions/14091279/alg
 orithm-method-use-by-google-
  []
 
@@ -1716,26 +1720,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-<./images/3_PathShowing.png, id=604, 545.6385pt x 208.98074pt>
-File: ./images/3_PathShowing.png Graphic file (type png)
-
-<use ./images/3_PathShowing.png>
-Package pdftex.def Info: ./images/3_PathShowing.png used on input line 109.
-(pdftex.def)             Requested size: 441.01773pt x 168.91313pt.
- [38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-20}) has been already used, duplicate ignored
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+0}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.113 
-       <./images/3_DijkstrovAlg.png>]
+l.108 V
+       ypisovanie cesty pre dan√Ω vrchol realizujeme pomocou rekurzie, ƒço n...
+ <./images/3_DijkstrovAlg.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+<./images/3_PathShowing.png, id=609, 545.6385pt x 208.98074pt>
+File: ./images/3_PathShowing.png Graphic file (type png)
+
+<use ./images/3_PathShowing.png>
+Package pdftex.def Info: ./images/3_PathShowing.png used on input line 111.
+(pdftex.def)             Requested size: 441.01773pt x 168.91313pt.
+
 
 Package hyperref Warning: Composite letter `\textasciicaron+t'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 115.
+(hyperref)                removing `\textasciicaron' on input line 117.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
 
@@ -1743,26 +1753,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--118
 File: ./images/4_Graph.png Graphic file (type png)
 
 <use ./images/4_Graph.png>
-Package pdftex.def Info: ./images/4_Graph.png used on input line 120.
+Package pdftex.def Info: ./images/4_Graph.png used on input line 122.
 (pdftex.def)             Requested size: 441.01773pt x 315.64343pt.
  [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 
+l.126 
        <./images/3_PathShowing.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 125--126
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
 Package hyperref Warning: Composite letter `\textasciicaron+l'
 (hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 128.
+(hyperref)                removing `\textasciicaron' on input line 130.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
@@ -1770,7 +1780,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 File: ./images/atl_trasy_priklad.png Graphic file (type png)
 
 <use ./images/atl_trasy_priklad.png>
-Package pdftex.def Info: ./images/atl_trasy_priklad.png used on input line 133.
+Package pdftex.def Info: ./images/atl_trasy_priklad.png used on input line 135.
 
 (pdftex.def)             Requested size: 284.26129pt x 193.92401pt.
  [40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
@@ -1778,13 +1788,8 @@ Package pdftex.def Info: ./images/atl_trasy_priklad.png used on input line 133.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.137 
+l.139 
        <./images/4_Graph.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
@@ -1794,26 +1799,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
 <./images/alt_trasy_cas_zloz_obr.png, id=625, 363.759pt x 362.5545pt>
 File: ./images/alt_trasy_cas_zloz_obr.png Graphic file (type png)
 
 <use ./images/alt_trasy_cas_zloz_obr.png>
 Package pdftex.def Info: ./images/alt_trasy_cas_zloz_obr.png used on input line
- 145.
+ 147.
 (pdftex.def)             Requested size: 363.75812pt x 362.55362pt.
  [41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
 23}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.149 
+l.151 
        <./images/atl_trasy_priklad.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
 
@@ -1822,16 +1832,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.153 
+l.155 
        <./images/alt_trasy_cas_zloz_obr.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 ) (zaver.tex [43]) [44
 
 ] (main.bbl
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 36.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 35.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
@@ -1840,7 +1850,7 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 
 
 ]
-Underfull \hbox (badness 1515) in paragraph at lines 83--87
+Underfull \hbox (badness 1515) in paragraph at lines 98--102
 []\T1/cmr/m/n/12 Patrick Les-ter.  A* path-fin-ding for be-gin-ners.  \T1/cmr/m
 /it/12 on-line]. Ga-me-Dev Web-
  []
@@ -1857,10 +1867,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
  ) 
 Here is how much of TeX's memory you used:
- 7993 strings out of 493323
- 113817 string characters out of 3139066
- 218971 words of memory out of 3000000
- 11155 multiletter control sequences out of 15000+200000
+ 7996 strings out of 493323
+ 113849 string characters out of 3139066
+ 219065 words of memory out of 3000000
+ 11158 multiletter control sequences out of 15000+200000
  19819 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,31p,2675b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1885,9 +1895,9 @@ ublic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
 fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (56 pages, 1061448 bytes).
+Output written on main.pdf (56 pages, 1059548 bytes).
 PDF statistics:
- 1315 PDF objects out of 1440 (max. 8388607)
+ 1309 PDF objects out of 1440 (max. 8388607)
  161 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

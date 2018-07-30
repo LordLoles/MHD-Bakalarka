@@ -101,14 +101,25 @@ public class PathShowing : MonoBehaviour
         flush();
 
         int i = 0;
+
+        List<List<Edge>> altAll = new List<List<Edge>>();
+
         foreach (Edge e in v.alternate)
         {
             if (i == amount) break;
             List<Edge> path = pathMaker.makePath(e.fromV);
             path.Add(e);
-            printPath(path);
+            altAll.Add(path);
             i++;
         }
+
+        altAll.Sort(new AltPathComparator());
+
+        foreach (List<Edge> path in altAll)
+        {
+            printPath(path);
+        }
+
     }
 
 

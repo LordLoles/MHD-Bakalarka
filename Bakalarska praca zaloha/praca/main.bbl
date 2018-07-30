@@ -29,11 +29,21 @@ Daniel Delling, Thomas Pajor, and Renato~F Werneck.
 \newblock Round-based public transit routing.
 \newblock {\em Transportation Science}, 49(3):591--604, 2014.
 
+\bibitem{OSRM}
+Mapbox Dennis~Luxen.
+\newblock Osrm.
+\newblock Dostupné na \url{http://project-osrm.org/}.
+
 \bibitem{Diestel2000}
 Reinhard Diestel.
 \newblock Teória grafov, 2000.
 \newblock [Citované 2017-12-4] Dostupné z
   \url{http://www.dcs.fmph.uniba.sk/~haviarova/uktg/#materialy}.
+
+\bibitem{navitia}
+Kisio Digital.
+\newblock navitia.
+\newblock Dostupné na \url{https://github.com/CanalTP/navitia}.
 
 \bibitem{duchovn2014path}
 Franti{\v{s}}ek Ducho{\v{n}}, Andrej Babinec, Martin Kajan, Peter Be{\v{n}}o,
@@ -58,6 +68,11 @@ Robert Geisberger, Peter Sanders, Dominik Schultes, and Daniel Delling.
   road networks.
 \newblock In {\em International Workshop on Experimental and Efficient
   Algorithms}, pages 319--333. Springer, 2008.
+
+\bibitem{graphhopper}
+GraphHopper GmbH.
+\newblock Graphhopper.
+\newblock Dostupné na \url{https://github.com/graphhopper/graphhopper}.
 
 \bibitem{ikeda1994fast}
 Takahiro Ikeda, Min-Yao Hsu, Hiroshi Imai, Shigeki Nishimura, Hiroshi Shimoura,

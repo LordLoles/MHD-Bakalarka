@@ -20,13 +20,12 @@ public class Dijkstra {
 
         this.graph = graph;
         updateTime();
-        updateVertecesValues();
+        resetVertecesValues();
     }
 
-    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, bool incTransers, MinHeap<Vertex> inScope)
+    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, MinHeap<Vertex> inScope)
     {
         target.value = newValue;
-        if (incTransers) transfers++;
         target.transfers = transfers;
         target.parent = toTarget.fromV;
         target.toParent = toTarget;
@@ -37,7 +36,7 @@ public class Dijkstra {
 
     private void DijkstrasAlgorhitm(Vertex start, string fin)
     {
-        updateVertecesValues();
+        resetVertecesValues();
 
         Dictionary<Vertex, bool> visited = new Dictionary<Vertex, bool>();
         start.parent = null;
@@ -67,20 +66,21 @@ public class Dijkstra {
 
                     int newValue = now.value + e.travellTime;
 
-                    bool incTransfers = (((now.toParent == null) || (now.toParent.name.CompareTo(e.name) != 0)) 
+                    bool incTransfers = (((now.toParent == null) || (!now.toParent.name.Equals(e.name))) 
                         && (!e.waitingEdge));
 
+                    int newTransfers = now.transfers;
+                    if (incTransfers) newTransfers++;
+
                     if (newValue < v.value)
-                        updateVertex(v, e, newValue, now.transfers, incTransfers, inScope);
+                        updateVertex(v, e, newValue, now.transfers, inScope);
                     else if (newValue == v.value)
                     {
-                        int newTransfers = now.transfers;
-                        if (incTransfers) newTransfers++;
 
                         if (newTransfers < v.transfers)
-                            updateVertex(v, e, newValue, newTransfers, false, inScope);
+                            updateVertex(v, e, newValue, newTransfers, inScope);
                         else if ((newTransfers == v.transfers) && v.parent.time.CompareTo(now.time) == 1)
-                            updateVertex(v, e, newValue, newTransfers, false, inScope);
+                            updateVertex(v, e, newValue, newTransfers, inScope);
                     }
                     
                 }
@@ -150,7 +150,7 @@ public class Dijkstra {
     }
 
 
-    private void updateVertecesValues()
+    private void resetVertecesValues()
     {
         foreach (Vertex v in graph.verteces)
         {

@@ -100,7 +100,8 @@ public class Dijkstra {
         if (amount == 0) throw new System.Exception("This is how I print 0 stops!");
 
         int already = 0;
-        List<Vertex> targets = graph.allStops[stop];
+        List<Vertex> targets = new List<Vertex>(graph.allStops[stop]);
+        targets.Sort(new DijkstrasComparator());
 
         foreach (Vertex v in targets)
         {

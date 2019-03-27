@@ -5,7 +5,7 @@ public class Graph
     internal List<Vertex> verteces; //set
     internal List<Edge> edges;
 
-    internal SortedDictionary<string, List<Vertex>> allStops;
+    internal SortedDictionary<string, HashSet<Vertex>> allStops;
     internal Dictionary<Vertex, List<Edge>> allEdges;
     internal Dictionary<Vertex, List<Vertex>> neighbors;
 
@@ -14,7 +14,7 @@ public class Graph
     {
         verteces = new List<Vertex>();
         edges = new List<Edge>();
-        allStops = new SortedDictionary<string, List<Vertex>>();
+        allStops = new SortedDictionary<string, HashSet<Vertex>>();
         allEdges = new Dictionary<Vertex, List<Edge>>();
         neighbors = new Dictionary<Vertex, List<Vertex>>();
     }
@@ -37,13 +37,13 @@ public class Graph
     internal void addVertex(Vertex v)
     {
         verteces.Add(v);
-        if (!allStops.ContainsKey(v.name)) allStops.Add(v.name, new List<Vertex>());
+        if (!allStops.ContainsKey(v.name)) allStops.Add(v.name, new HashSet<Vertex>());
         allStops[v.name].Add(v);
     }
 
 
     /*
-     * Adds edge to edges list and to allEdges and neighbors dictionary
+     * Adds edge to edges HashSet and to allEdges and neighbors dictionary
      */
     internal void addEdge(Edge e)
     {
@@ -64,7 +64,7 @@ public class Graph
 
     internal Vertex clostestAfterTimeByName(Time time, string name)
     {
-        List<Vertex> stops = allStops[name];
+        List<Vertex> stops = new List<Vertex>(allStops[name]);
         stops.Sort(new VertecesComparator());
         foreach (Vertex v in stops)
         {

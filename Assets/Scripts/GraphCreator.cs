@@ -36,7 +36,7 @@ public class GraphCreator{
 
     private Vertex findVertex(string name, Time time)
     {
-        List<Vertex> list = graph.allStops[name];
+        HashSet<Vertex> list = graph.allStops[name];
         foreach (Vertex v in graph.allStops[name]) if (time.isThis(v.time)) return v;
         throw new Exception("No such vertex: " + name);
     }
@@ -103,7 +103,7 @@ public class GraphCreator{
             {
                 string[] distAndStopFrom = distAndStops[j].Split(' ');
                 string[] distAndStopTo = distAndStops[j+1].Split(' ');
-
+                
                 Time fromT = Time.addToTime(origin, int.Parse(distAndStopFrom[0]));
                 Time toT = Time.addToTime(origin, int.Parse(distAndStopTo[0]));
                 
@@ -128,14 +128,14 @@ public class GraphCreator{
         int tillNow = 0;
         int all = graph.allStops.Count;
 
-        foreach (KeyValuePair<string, List<Vertex>> pair in graph.allStops)
-        {
+        foreach (KeyValuePair<string, HashSet<Vertex>> pair in graph.allStops)
+        { 
+            List<Vertex> list = new List<Vertex>(pair.Value);
 
             loaded = (int)(50 + ((100 * (float)tillNow / all) / 2));
             tillNow++;
 
-            pair.Value.Sort(new VertecesComparator());
-            List<Vertex> list = pair.Value;
+            list.Sort(new VertecesComparator());
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == list.Count-1) continue;

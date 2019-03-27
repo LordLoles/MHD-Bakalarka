@@ -7,6 +7,29 @@ public class TEST_HEAP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        /*
+        Dictionary<Vertex, Vertex> d = new Dictionary<Vertex, Vertex>();
+        Vertex v = new Vertex("a", new Time(4, 20));
+        d.Add(v, v);
+        Vertex v2 = new Vertex("a", new Time(4, 20));
+        Debug.Log(d.ContainsKey(v));
+        Debug.Log(d.ContainsKey(v2));*/
+
+
+        /*
+        HashSet<Vertex> h = new HashSet<Vertex>();
+        Vertex v = new Vertex("a", new Time(4, 21));
+        Vertex v2 = new Vertex("a", new Time(4, 20));
+        h.Add(v);
+        h.Add(v2);
+
+        List<Vertex> l = new List<Vertex>(h);
+        Debug.Log(l.Count);
+        foreach (Vertex v3 in l) Debug.Log(v3.name + " " + v3.time.ToString());
+        l.Sort(new VertecesComparator());
+        foreach (Vertex v3 in l) Debug.Log(v3.name + " " + v3.time.ToString());*/
+
+        /*
         MinHeap<int> h = new MinHeap<int>(Comparer<int>.Default);
         h.Add(0);
         Debug.Log(h.Count());
@@ -44,6 +67,6 @@ public class TEST_HEAP : MonoBehaviour {
 
         Debug.Log(h.PopMin());
         Debug.Log(h.PopMin());
-
+        */
     }
 }

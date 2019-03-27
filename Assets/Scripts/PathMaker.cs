@@ -30,7 +30,7 @@ public class PathMaker {
          if (v.parent != null)
          {
              //two verteces has been found
-             //now we need to print the edge in between, if it isn't waiting
+             //now we need to print the edge in between, unless it isn't waiting
              if (!v.toParent.waitingEdge) path.Add(v.toParent);
          }
          return path;

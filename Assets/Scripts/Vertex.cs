@@ -4,6 +4,7 @@ public class Vertex
 {
     internal string name;
     internal Time time;
+    internal bool loaded;
     
     internal int value; //for dijkstra's purpose
     internal int transfers; //for dijkstra's purpose
@@ -16,6 +17,7 @@ public class Vertex
     {
         name = n;
         time = t;
+        loaded = false;
         alternate = new List<Edge>();
     }
 

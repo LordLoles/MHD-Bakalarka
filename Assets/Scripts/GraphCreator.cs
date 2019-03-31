@@ -92,12 +92,12 @@ public class GraphCreator{
         {
             Time origin = Time.makeTime(time);
 
-            //for debug
+            /*//for debug ->
             if (graph.edges.Count > 2000)
             {
                 existVertex(distAndStops[0].Split(' '), 1, origin);
             }
-            //for debug
+            // <- for debug*/
 
             for (int j = 0; j < distAndStops.Length - 1; j++)
             {
@@ -109,15 +109,16 @@ public class GraphCreator{
                 
                 Vertex fromV = getVertex(distAndStopFrom, 1, fromT);
                 Vertex toV = getVertex(distAndStopTo, 1, toT);
-                
+
                 /*
                 Vertex fromV = makeVertexByWords(distAndStopFrom, 1, fromT);
                 Vertex toV = makeVertexByWords(distAndStopTo, 1, toT);
                 graph.addVertex(fromV);
                 graph.addVertex(toV);
                 */
-
+                
                 graph.addEdge(new Edge(name, fromV, toV, fromT, toT));
+                fromV.loaded = true;
             }
         }
     }

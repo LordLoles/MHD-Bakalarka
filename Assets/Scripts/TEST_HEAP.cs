@@ -7,6 +7,13 @@ public class TEST_HEAP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        Time t1 = new Time(0, 5);
+        Time t2 = new Time(0, 6);
+        Time t3 = new Time(0, 6);
+        Debug.Log(t1.CompareTo(t2));
+        Debug.Log(t2.CompareTo(t1));
+        Debug.Log(t2.CompareTo(t3));
+
         /*
         Dictionary<Vertex, Vertex> d = new Dictionary<Vertex, Vertex>();
         Vertex v = new Vertex("a", new Time(4, 20));

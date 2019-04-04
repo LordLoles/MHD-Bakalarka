@@ -37,10 +37,11 @@ public class Init : MonoBehaviour
         //Debug.Log(Application.dataPath);
         gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
 
+        /*
         thread = new Thread(gc.makeGraph);
         thread.Priority = System.Threading.ThreadPriority.Highest;
 
-        thread.Start();
+        thread.Start();*/
 
         //gc.makeGraph();
 
@@ -53,10 +54,10 @@ public class Init : MonoBehaviour
         dbc.cityName.text = city;
         dbc.inputField.gameObject.SetActive(false);
 
-        dijkstra = new Dijkstra(graph, pathMaker);
+        dijkstra = new Dijkstra(graph, pathMaker, gc);
     }
 
-
+    /*
     public void Update()
     {
         if (gc.loaded < 100)
@@ -65,11 +66,12 @@ public class Init : MonoBehaviour
             nacitavam.text = "Načítavam \n" + gc.loaded.ToString() + " %";
         }
         else nacitavam.enabled = false;
-    }
+    }*/
 
 
     public void startSearching(string start, string fin, Time time, int amount)
     {
+        /*
         if (gc.loaded == 100)
         {
             pathShowing.nextSearch();
@@ -80,7 +82,13 @@ public class Init : MonoBehaviour
         else
         {
             Debug.Log("mam " + gc.loaded + "%");
-        }
+        }*/
+
+        pathShowing.nextSearch();
+        Debug.Log("spustam dijkstru z " + start + " do " + fin);
+        pathShowing.setAmountOfPaths(amount);
+        gc.makeGraph(time);
+        dijkstra.shortestPathsAmount(time, start, fin, amount);
     }
 
 

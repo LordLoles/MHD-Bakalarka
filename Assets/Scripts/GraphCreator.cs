@@ -13,6 +13,9 @@ public class GraphCreator{
 
     public int loaded = 0;
 
+    private int minsToLoad = 60;
+    private Time lastlyLoaded;
+
     public GraphCreator(string path, string stopsFile, string linesFile)
     {
         stops = System.IO.File.ReadAllLines(path + stopsFile + ".txt");
@@ -81,16 +84,20 @@ public class GraphCreator{
     }
 
 
-    private void makeVAndE(string name, string line1, string line2)
+    private void makeVAndE(string name, string line1, string line2, Time fromTime)
     {
         if (line1.Equals("")) return;
 
         string[] distAndStops = line1.Split(new string[] {" | "}, StringSplitOptions.None);
         string[] times = line2.Split(' ');
+        Time endTime = Time.addToTime(fromTime, minsToLoad);
 
         foreach (string time in times)
         {
+            
             Time origin = Time.makeTime(time);
+
+            if (origin.CompareTo(endTime) == 1) return;
 
             /*//for debug ->
             if (graph.edges.Count > 2000)
@@ -147,8 +154,12 @@ public class GraphCreator{
         }
     }
 
+    public void nextLoad()
+    {
+        makeGraph(lastlyLoaded);
+    }
 
-    public void makeGraph()
+    public void makeGraph(Time fromTime)
     {
         int i = 0;
         while (i < lines.Length)
@@ -156,14 +167,15 @@ public class GraphCreator{
             loaded = (int)((100 * ((float)i / lines.Length)) / 2);
 
             string name = lines[i];
-            makeVAndE(name, lines[i + 1], lines[i + 2]);
-            makeVAndE(name, lines[i + 3], lines[i + 4]);
+            makeVAndE(name, lines[i + 1], lines[i + 2], fromTime);
+            makeVAndE(name, lines[i + 3], lines[i + 4], fromTime);
             i += 5;
         }
         
         makeWaitingEdges();
         loaded = 100;
 
+        lastlyLoaded = Time.addToTime(fromTime, minsToLoad);
         printAmounts();
         //printGraph();
     }

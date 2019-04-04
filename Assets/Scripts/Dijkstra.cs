@@ -9,15 +9,17 @@ public class Dijkstra {
     private PathShowing pathShowing;
     private int amountNow = 0;
     private PathMaker pathMaker;
+    private GraphCreator gc;
 
 
-    public Dijkstra(Graph graph, PathMaker pm)
+    public Dijkstra(Graph graph, PathMaker pm, GraphCreator gc)
     {
         GameObject init = GameObject.FindGameObjectWithTag("Init");
         pathShowing = init.GetComponent<PathShowing>();
         pathMaker = pm;
         pathShowing.pathMaker = pm;
 
+        this.gc = gc;
         this.graph = graph;
         updateTime();
         resetVertecesValues();
@@ -59,6 +61,7 @@ public class Dijkstra {
                     Vertex v = neighbors[i];
                     Edge e = incidentEdges[i];
 
+                    if (!v.loaded) gc.nextLoad();
                     if (v.isThis(start)) break;
                     if (visited.ContainsKey(v)) continue;
 

@@ -9,6 +9,8 @@ public class Graph
     internal Dictionary<Vertex, List<Edge>> allEdges;
     internal Dictionary<Vertex, List<Vertex>> neighbors;
 
+    internal int longestEdge;
+
 
     internal Graph()
     {
@@ -17,6 +19,7 @@ public class Graph
         allStops = new SortedDictionary<string, HashSet<Vertex>>();
         allEdges = new Dictionary<Vertex, List<Edge>>();
         neighbors = new Dictionary<Vertex, List<Vertex>>();
+        longestEdge = -1;
     }
 
 
@@ -53,6 +56,7 @@ public class Graph
         if (!neighbors.ContainsKey(v)) neighbors.Add(v, new List<Vertex>());
         allEdges[v].Add(e);
         neighbors[v].Add(e.toV);
+        if (e.travellTime > longestEdge) longestEdge = e.travellTime;
     }
 
 
@@ -68,7 +72,7 @@ public class Graph
         stops.Sort(new VertecesComparator());
         foreach (Vertex v in stops)
         {
-            if (time.hour <= v.time.hour && time.min <= v.time.min) return v;
+            if (!(time.CompareTo(v.time) == 1)) return v;
         }
         throw new System.Exception("No vertex after that time");
     }

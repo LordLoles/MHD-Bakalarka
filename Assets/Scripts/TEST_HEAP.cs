@@ -7,12 +7,34 @@ public class TEST_HEAP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        /*
         Time t1 = new Time(0, 5);
         Time t2 = new Time(0, 6);
         Time t3 = new Time(0, 6);
-        Debug.Log(t1.CompareTo(t2));
-        Debug.Log(t2.CompareTo(t1));
-        Debug.Log(t2.CompareTo(t3));
+        Time t4 = new Time(0, 1);
+        Time t5 = new Time(0, 10);
+        Debug.Log(t1.CompareTo(t2)); // (0, 5) (0, 6) = -1
+        Debug.Log(t2.CompareTo(t1)); // (0, 6) (0, 5) = 1
+        Debug.Log(t2.CompareTo(t3)); // (0, 6) (0, 6) = 0
+
+
+        Debug.Log(t1.isBetween(t4, t2));
+        Debug.Log(t4.isBetween(t4, t2));
+        Debug.Log(t2.isBetween(t4, t2));
+        Debug.Log(t5.isBetween(t4, t2));*/
+
+        /*
+        GraphCreator gc = new GraphCreator(Application.dataPath + "/Data/" + "Bratislava" + "/", "zastavky", "linky");
+        Graph graph = gc.getGraph();
+        Time start = new Time(16, 10);
+        gc.makeGraph(start);
+        Dijkstra dijkstra = new Dijkstra(graph, new PathMaker(graph), gc);
+        dijkstra.shortestPathsAmount(start, "Zoo", "Patronka", 3);
+
+        List<Vertex> targets = new List<Vertex>(graph.allStops["Patronka"]);
+        targets.Sort(new DijkstrasComparator());
+
+        Debug.Log("fin");*/
 
         /*
         Dictionary<Vertex, Vertex> d = new Dictionary<Vertex, Vertex>();

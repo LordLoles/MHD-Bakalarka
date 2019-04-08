@@ -61,7 +61,10 @@ public class Dijkstra {
                     Vertex v = neighbors[i];
                     Edge e = incidentEdges[i];
 
-                    if (!v.loaded) gc.nextLoad();
+                    if (gc.needToLoad(v.time))
+                    {
+                        gc.nextLoad();
+                    }
                     if (v.isThis(start)) break;
                     if (visited.ContainsKey(v)) continue;
 

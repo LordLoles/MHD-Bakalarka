@@ -39,6 +39,16 @@
         }
     }
 
+
+    /*
+     * IN: amounth of minutes to add
+     * RET: this time increased by that amounth of minutes
+     */
+    public Time addToTime(int plus)
+    {
+        return addToTime(this, plus);
+    }
+
     /*
      * IN: two times t1, t2
      * RET: new time with value t2 - t1
@@ -84,6 +94,12 @@
     public bool isThis(Time time)
     {
         return differenceBetweenTimesMin(this, time) == 0;
+    }
+
+
+    public bool isBetween(Time fromTime, Time endTime)
+    {
+        return (!(CompareTo(fromTime) == -1)) && (CompareTo(endTime) == -1);
     }
 
 

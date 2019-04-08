@@ -13,7 +13,7 @@ public class GraphCreator{
 
     public int loaded = 0;
 
-    private int minsToLoad = 60;
+    private int minsToLoad = 120;
     private Time lastlyLoaded;
 
     public GraphCreator(string path, string stopsFile, string linesFile)
@@ -97,7 +97,7 @@ public class GraphCreator{
             
             Time origin = Time.makeTime(time);
 
-            if (origin.CompareTo(endTime) == 1) return;
+            if (!origin.isBetween(fromTime, endTime)) continue;
 
             /*//for debug ->
             if (graph.edges.Count > 2000)
@@ -125,16 +125,17 @@ public class GraphCreator{
                 */
                 
                 graph.addEdge(new Edge(name, fromV, toV, fromT, toT));
-                fromV.loaded = true;
+                //fromV.loaded = true;
             }
         }
     }
 
 
-    private void makeWaitingEdges()
+    private void makeWaitingEdges(Time fromTime)
     {
         int tillNow = 0;
         int all = graph.allStops.Count;
+        Time endTime = Time.addToTime(fromTime, minsToLoad);
 
         foreach (KeyValuePair<string, HashSet<Vertex>> pair in graph.allStops)
         { 
@@ -147,17 +148,33 @@ public class GraphCreator{
             for (int i = 0; i < list.Count; i++)
             {
                 if (i == list.Count-1) continue;
-                Edge e = new Edge(pair.Key, list[i], list[i + 1], list[i].time, list[i + 1].time);
+                Vertex fromV = list[i];
+                Vertex toV = list[i + 1];
+                if (!fromV.time.isBetween(fromTime, endTime)) continue;
+
+                Edge e = new Edge(pair.Key, fromV, toV, fromV.time, toV.time);
                 e.setThisWaiting();
                 graph.addEdge(e);
             }
         }
     }
 
+    /*
+     * IN: Time to check
+     * RET: True, if (stop with) that time has chance to be not fully loaded
+     */
+    public bool needToLoad(Time t)
+    {
+        return t.addToTime(graph.longestEdge).CompareTo(lastlyLoaded) == 1;
+    }
+
+
     public void nextLoad()
     {
+        //Debug.Log("Next Load");
         makeGraph(lastlyLoaded);
     }
+
 
     public void makeGraph(Time fromTime)
     {
@@ -172,17 +189,17 @@ public class GraphCreator{
             i += 5;
         }
         
-        makeWaitingEdges();
+        makeWaitingEdges(fromTime);
         loaded = 100;
 
         lastlyLoaded = Time.addToTime(fromTime, minsToLoad);
-        printAmounts();
+        //printAmounts();
         //printGraph();
     }
 
 
     /*
-     * RET: Graph type of the current graph,
+     * RET: Graph (type) of the current graph,
      * that contains list of verteces and list of edges
      */
     public Graph getGraph()

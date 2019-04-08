@@ -35,7 +35,6 @@ public class Init : MonoBehaviour
     public void myStart()
     {
         //Debug.Log(Application.dataPath);
-        gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
 
         /*
         thread = new Thread(gc.makeGraph);
@@ -45,7 +44,6 @@ public class Init : MonoBehaviour
 
         //gc.makeGraph();
 
-        graph = gc.getGraph();
 
         pathMaker = new PathMaker(graph);
         pathShowing = gameObject.GetComponent<PathShowing>();
@@ -54,7 +52,6 @@ public class Init : MonoBehaviour
         dbc.cityName.text = city;
         dbc.inputField.gameObject.SetActive(false);
 
-        dijkstra = new Dijkstra(graph, pathMaker, gc);
     }
 
     /*
@@ -84,10 +81,27 @@ public class Init : MonoBehaviour
             Debug.Log("mam " + gc.loaded + "%");
         }*/
 
-        pathShowing.nextSearch();
-        Debug.Log("spustam dijkstru z " + start + " do " + fin);
-        pathShowing.setAmountOfPaths(amount);
+        gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
         gc.makeGraph(time);
+        graph = gc.getGraph();
+        dijkstra = new Dijkstra(graph, pathMaker, gc);
+
+        pathShowing.nextSearch();
+        pathShowing.setAmountOfPaths(amount);
+
+        int i = 0;
+        int tries = 3;
+        while (!graph.allStops.ContainsKey(start) || !graph.allStops.ContainsKey(fin))
+        {
+            i++;
+            gc.nextLoad();
+            if (i == tries)
+            {
+                throw new Exception("No stop with that name!");
+            }
+        }
+
+        Debug.Log("spustam dijkstru z " + start + " do " + fin);
         dijkstra.shortestPathsAmount(time, start, fin, amount);
     }
 

@@ -8,6 +8,7 @@ public class Graph
     internal SortedDictionary<string, HashSet<Vertex>> allStops;
     internal Dictionary<Vertex, List<Edge>> allEdges;
     internal Dictionary<Vertex, List<Vertex>> neighbors;
+    internal Dictionary<Vertex, List<Edge>> toThisVertex;
 
     internal int longestEdge;
 
@@ -19,6 +20,7 @@ public class Graph
         allStops = new SortedDictionary<string, HashSet<Vertex>>();
         allEdges = new Dictionary<Vertex, List<Edge>>();
         neighbors = new Dictionary<Vertex, List<Vertex>>();
+        toThisVertex = new Dictionary<Vertex, List<Edge>>();
         longestEdge = -1;
     }
 
@@ -52,10 +54,13 @@ public class Graph
     {
         edges.Add(e);
         Vertex v = e.fromV;
+        Vertex to = e.toV;
         if (!allEdges.ContainsKey(v)) allEdges.Add(v, new List<Edge>());
         if (!neighbors.ContainsKey(v)) neighbors.Add(v, new List<Vertex>());
+        if (!toThisVertex.ContainsKey(to)) toThisVertex.Add(to, new List<Edge>());
         allEdges[v].Add(e);
-        neighbors[v].Add(e.toV);
+        neighbors[v].Add(to);
+        toThisVertex[to].Add(e);
         if (e.travellTime > longestEdge) longestEdge = e.travellTime;
     }
 
@@ -100,6 +105,16 @@ public class Graph
         */
         if (!neighbors.ContainsKey(from)) return new List<Vertex>();
         return neighbors[from];
+    }
+
+
+    /*
+     * Returns list of edges from embedded vertex.
+     */
+    public List<Edge> getEdgesToVertex(Vertex to)
+    {
+        if (!toThisVertex.ContainsKey(to)) return new List<Edge>();
+        return toThisVertex[to];
     }
 
 

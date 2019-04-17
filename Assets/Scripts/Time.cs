@@ -28,13 +28,13 @@
      * IN: time and amounth of minutes to add
      * RET: time increased by that amounth of minutes
      */
-    public static Time addToTime(Time time, int plus)
+    public static Time addToTime(Time time, int plusMin)
     {
-        if (time.min + plus < 60) return new Time(time.hour, time.min + plus);
+        if (time.min + plusMin < 60) return new Time(time.hour, time.min + plusMin);
         else
         {
-            int newMins = (time.min + plus) % 60;
-            int addHours = (time.min + plus) / 60;
+            int newMins = (time.min + plusMin) % 60;
+            int addHours = (time.min + plusMin) / 60;
             return new Time((time.hour + addHours) % 24, newMins);
         }
     }

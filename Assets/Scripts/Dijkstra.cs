@@ -61,7 +61,7 @@ public class Dijkstra {
                     Vertex v = neighbors[i];
                     Edge e = incidentEdges[i];
 
-                    if (gc.needToLoad(v.time))
+                    while (gc.needToLoad(v.time))
                     {
                         gc.nextLoad();
                     }

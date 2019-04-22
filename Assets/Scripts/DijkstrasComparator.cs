@@ -11,6 +11,8 @@ public class DijkstrasComparator : IComparer<Vertex>
         ret = x.transfers.CompareTo(y.transfers);
         if (ret != 0) return ret;
 
-        else return x.time.CompareTo(y.time);
+        if (x.pathStart == null || y.pathStart == null) return 0;
+
+        return x.pathStart.time.CompareTo(y.pathStart.time);
     }
 }

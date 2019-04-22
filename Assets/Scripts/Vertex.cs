@@ -4,13 +4,14 @@ public class Vertex
 {
     internal string name;
     internal Time time;
-    //internal bool loaded;
     
     internal int value; //for dijkstra's purpose
     internal int transfers; //for dijkstra's purpose
     internal Vertex parent; //for dijkstra's purpose
     internal Edge toParent; //for dijkstra's purpose
-    internal List<Edge> alternate; //for dijkstra's purpose
+    internal HashSet<Edge> alternate; //for dijkstra's purpose
+    internal Vertex pathStart; //for dijkstra's purpose
+    internal Edge lastWaiting; //for dijkstra's purpose
 
 
     public Vertex(string n, Time t)
@@ -23,7 +24,9 @@ public class Vertex
         transfers = 0;
         parent = null;
         toParent = null;
-        alternate = new List<Edge>();
+        alternate = new HashSet<Edge>();
+        pathStart = null;
+        lastWaiting = null;
     }
 
 

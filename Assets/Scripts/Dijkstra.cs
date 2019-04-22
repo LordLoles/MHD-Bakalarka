@@ -25,13 +25,20 @@ public class Dijkstra {
         resetVertecesValues();
     }
 
-    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, MinHeap<Vertex> inScope)
+
+    private void updateVertexNoAdd(Vertex target, Edge toTarget, int newValue, int transfers, Vertex pathStart)
     {
         target.value = newValue;
         target.transfers = transfers;
         target.parent = toTarget.fromV;
         target.toParent = toTarget;
+        target.pathStart = pathStart;
+    }
+    
 
+    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, MinHeap<Vertex> inScope, Vertex pathStart)
+    {
+        updateVertexNoAdd(target, toTarget, newValue, transfers, pathStart);
         inScope.Add(target);
     }
 
@@ -40,9 +47,9 @@ public class Dijkstra {
     {
         resetVertecesValues();
 
+        startVertexSettings(start);
+
         Dictionary<Vertex, bool> visited = new Dictionary<Vertex, bool>();
-        start.parent = null;
-        start.value = 0;
         DijkstrasComparator dc = new DijkstrasComparator();
         MinHeap<Vertex> inScope = new MinHeap<Vertex>(dc);
         inScope.Add(start);
@@ -53,6 +60,11 @@ public class Dijkstra {
 
             List<Vertex> neighbors = graph.getNeighbors(now);
             List<Edge> incidentEdges = graph.getIncidentEdges(now);
+
+            if (now.name.Equals(start.name) && now != start)
+            {
+                updateVertexNoAdd(now, now.lastWaiting, now.value, 0, now);
+            }
 
             if (!now.name.Equals(fin))
             {
@@ -65,6 +77,7 @@ public class Dijkstra {
                     {
                         gc.nextLoad();
                     }
+                    if (e.waitingEdge) e.toV.lastWaiting = e;
                     if (v.isThis(start)) break;
                     if (visited.ContainsKey(v)) continue;
 
@@ -78,17 +91,11 @@ public class Dijkstra {
                     int newTransfers = now.transfers;
                     if (incTransfers) newTransfers++;
 
-                    if (newValue < v.value)
-                        updateVertex(v, e, newValue, now.transfers, inScope);
-                    else if (newValue == v.value)
-                    {
-
-                        if (newTransfers < v.transfers)
-                            updateVertex(v, e, newValue, newTransfers, inScope);
-                        else if ((newTransfers == v.transfers) && v.parent.time.CompareTo(now.time) == 1)
-                            updateVertex(v, e, newValue, newTransfers, inScope);
-                    }
-                    
+                    if ((newValue < v.value) 
+                        || ((newValue == v.value) && (newTransfers < v.transfers)) 
+                        //|| ((newTransfers == v.transfers) && v.parent.time.CompareTo(now.time) == 1)
+                        )
+                            updateVertex(v, e, newValue, newTransfers, inScope, now.pathStart);
                 }
             }
             else
@@ -151,9 +158,56 @@ public class Dijkstra {
     }
 
 
+    private void reversedDijkstrasAlgorhitm(string start, string fin)
+    {
+        List<Vertex> targets = new List<Vertex>(graph.allStops[fin]);
+        DijkstrasComparator dc = new DijkstrasComparator();
+        targets.Sort(dc);
+
+        foreach (Vertex startV in targets)
+        {
+            if (startV.value == int.MaxValue) break;
+
+            MinHeap<Vertex> inScope = new MinHeap<Vertex>(dc);
+            inScope.Add(startV);
+
+
+            while (inScope.Count() > 0)
+            {
+                Vertex now = inScope.PopMin();
+
+                List<Edge> incidentEdges = graph.getEdgesToVertex(now);
+
+                if (now.name.Equals(start)) break;
+
+                for (int i = 0; i < incidentEdges.Count; i++)
+                {
+                    Edge e = incidentEdges[i];
+                    Vertex v = e.fromV;
+
+
+                }
+
+            }
+
+        }
+        
+    }
+
+
     internal void updateTime()
     {
         now = new Time(System.DateTime.Now.Hour, System.DateTime.Now.Minute);
+    }
+
+
+    private void startVertexSettings(Vertex start)
+    {
+        start.parent = null;
+        start.value = 0;
+        start.pathStart = start;
+        //start.lastWaiting = new Edge(start.name, start, start, start.time, start.time);
+        //start.lastWaiting.setThisWaiting();
     }
 
 
@@ -165,6 +219,8 @@ public class Dijkstra {
             v.transfers = 0;
             v.parent = null;
             v.toParent = null;
+            v.pathStart = null;
+            v.lastWaiting = null;
         }
         pathShowing.flush();
     }

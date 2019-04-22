@@ -93,7 +93,7 @@ Táto reprezentácia údajov vyzerá naozaj sľubne, keďže algoritmus vyhľad�
 
 Nasledujúcim bodom bolo teda implementovať vyhľadávací algoritmus na pripravenej grafovej štruktúre. Ako sme už spomínali, na tento účel využijeme Dijkstrov algoritmus. Jeho implementácia podľa podkapitoly \ref{Dijkstra} je nenáročná. Za zmienku ale stojí pýtať sa, ktorý vrchol, po zadaní požiadavky používateľom, zvolíme ako počiatočný. Odpoveď je ale prostá: nájdeme vrchol s daným názvom, ktorý je čo najskôr po zadanom čase používateľa. Druhou možnosťou by bolo vytvoriť nový vrchol s parametrami od používateľa a ten umiestniť do grafu. Implementácia by bola jednoduchšia, ale oveľa viac mätúca. Rozhodli sme sa preto pre prvú možnosť.\newline
 
-Opäť je vhodná chvíľa uvažovať. Ak bude náš graf rozsiahly, s čím musíme rátať, Dijkstrov algoritmus bude počítať veľmi dlho, než sa dopátra ku všetkým hodnotám. Rozumné je teda do implementácie zapojiť i ukončenie procesu vyhľadávania v nejakom rozumnom stave. Ako sme spomínali pri opisovaní Dijkstrovho algoritmu (\ref{Dijkstra}), mnoho implementácií končí po nájdený hodnoty najlacnejšej cesty pre zadaný konečný vrchol. My túto ideu v tejto chvíli aplikujeme, avšak jemne pozmenenú. Budeme si počas behu Dijkstrovho algoritmu počítať, koľko krát sme už prišli do finálneho vrchola a po určitom počte jeho návštev algoritmus ukončíme. Môžeme tak spraviť vďaka zmenenej štruktúre dát, keďže konečných vrcholov náš graf obsahuje viac, každý s inou hodnotou času. Otázkou zostáva, aký bude spomínaný počet návštev konečného vrchola. Ak bude priveľký, bude algoritmus bežať zbytočne dlho. Ak zasa malý, používateľ bude nespokojný pre nízky počet výsledkov. Navyše, v prípade opätovného vyhľadávania na tých istých vstupoch len s vyššou hodnotou tohto čísla bude musieť algoritmus začínať vždy odznova. Bolo by teda rozumné, nechať používateľov samých navoliť toto číslo. Nateraz sme ale túto hodnotu napevno zadrôtovali na číslo $3$. Naša implementácia algoritmu je k nahliadnutiu na obrázku \ref{Dijsktra_obr2}. Treba podotknúť, že niektoré použité premenné sú definované mimo procedúry a ich význam je preto možné zistiť buď z názvu, z kontextu, alebo z prezretia si väčšej časti kódu.\newline
+Opäť je vhodná chvíľa uvažovať. Ak bude náš graf rozsiahly, s čím musíme rátať, Dijkstrov algoritmus bude počítať veľmi dlho, než sa dopátra ku všetkým hodnotám. Rozumné je teda do implementácie zapojiť i ukončenie procesu vyhľadávania v nejakom rozumnom stave. Ako sme spomínali pri opisovaní Dijkstrovho algoritmu (\ref{Dijkstra}), mnoho implementácií končí po nájdení hodnoty najlacnejšej cesty pre zadaný konečný vrchol. My túto ideu v tejto chvíli aplikujeme, avšak jemne pozmenenú. Budeme si počas behu Dijkstrovho algoritmu počítať, koľko krát sme už prišli do finálneho vrchola a po určitom počte jeho návštev algoritmus ukončíme. Môžeme tak spraviť vďaka zmenenej štruktúre dát, keďže konečných vrcholov náš graf obsahuje viac, každý s inou hodnotou času. Otázkou zostáva, aký bude spomínaný počet návštev konečného vrchola. Ak bude priveľký, bude algoritmus bežať zbytočne dlho. Ak zasa malý, používateľ bude nespokojný pre nízky počet výsledkov. Navyše, v prípade opätovného vyhľadávania na tých istých vstupoch len s vyššou hodnotou tohto čísla bude musieť algoritmus začínať vždy odznova. Bolo by teda rozumné, nechať používateľov samých navoliť toto číslo. Nateraz sme ale túto hodnotu napevno zadrôtovali na číslo $3$. Naša implementácia algoritmu je k nahliadnutiu na obrázku \ref{Dijsktra_obr2}. Treba podotknúť, že niektoré použité premenné sú definované mimo procedúry a ich význam je preto možné zistiť buď z názvu, z kontextu, alebo z prezretia si väčšej časti kódu.\newline
 
 \begin{figure}[H]
   \centering{\includegraphics[width=0.7\linewidth]{./images/3_DijkstrovAlg.png}}
@@ -101,9 +101,9 @@ Opäť je vhodná chvíľa uvažovať. Ak bude náš graf rozsiahly, s čím mus
   \label{Dijsktra_obr2}
 \end{figure}
 
-Čitateľa možno zaskočí veľké množstvo podmienok v algoritme pri testovaní či je daná hrana lepším kandidátom na najkratšiu cestu. Vysvetlenie tejto skutočnosti súvisí s kritériami vyhľadávania, teda s určovaním, ktoré linky sú výhodnejšie ako ostatné. Samozrejme, najviac smerodajným kritériom je čas príchodu do požadovanej zastávky. Ak sa však tieto časy rovnajú pre viacero ciest, vyberá sa trasa s menším počtom prestupov. A ak by sa rovnal i počet prestupov, zvolí sa linka s neskorším časom odchodu.\newline
+Čitateľa možno zaskočí pridlhá podmienka v algoritme pri testovaní či je daná hrana lepším kandidátom na najkratšiu cestu. Vysvetlenie tejto skutočnosti súvisí s kritériami vyhľadávania, teda s určovaním, ktoré linky sú výhodnejšie ako ostatné. Týmto kritériám sa budeme venovať hneď v nasledujúcej podkapitole \ref{sec:kriteria}.\newline
 
-Výsledná odpoveď algoritmu bude uložená vo vrcholoch grafu. Ich hodnoty pre požadovanú zastávku nájdeme jednoducho podľa názvu, teda vezmeme všetky vrcholy s názvom, aký je požadovaný a zoradíme ich podľa času počnúc zadaným časom pre vyhľadávanie. Pre nejaký rozumný počet týchto vrcholov necháme zrekonštruovať a do konzoly vypísať nájdené cesty. Táto hodnota by teda nemala a ani nemôže presiahnuť hodnotu návštev finálneho vrchola z predošlého odseku, momentálne teda $3$, nakoľko pre ostatné vrcholy už výslednú hodnotu nepoznáme.\newline
+Výsledná odpoveď algoritmu bude uložená vo vrcholoch grafu. Ich hodnoty pre požadovanú zastávku nájdeme jednoducho podľa názvu, teda vezmeme všetky vrcholy s názvom, aký je požadovaný a zoradíme ich opäť podľa spomínaných kritérií, ktoré uvádzame v nadchádzajúcej podkapitole \ref{sec:kriteria}. Pre nejaký rozumný počet týchto vrcholov necháme zrekonštruovať a do konzoly vypísať nájdené cesty. Táto hodnota by teda nemala a ani nemôže presiahnuť hodnotu návštev finálneho vrchola z predošlého odseku, momentálne teda $3$, nakoľko pre ostatné vrcholy už výslednú hodnotu nepoznáme.\newline
 
 Vypisovanie cesty pre daný vrchol realizujeme pomocou rekurzie, čo nám zabezpečí správne poradie zastávok. Túto procedúru ukazuje obrázok \ref{PathShowing}. O samotný spôsob výpisu sa teda, ako je i zobrazené v kóde, stará iná trieda, trieda "PathShowing".\newline
 
@@ -114,17 +114,45 @@ Vypisovanie cesty pre daný vrchol realizujeme pomocou rekurzie, čo nám zabezp
 \end{figure}
 
 
-\section{Rátanie počtu prestupov}
+\section{Kritéria vyhľadávania Dijkstrovho algoritmu}
+\label{sec:kriteria}
+
+Veľkou otázkou ostáva, akou stratégiou budeme medzi sebou vrcholy porovnávať a vyberať spomedzi nich tie, ktoré sú vhodnejšie pre vytváranú cestu. Samozrejme, najviac smerodajným kritériom je čas príchodu do požadovanej zastávky. Ak sa však tieto časy rovnajú pre viacero ciest, náš algoritmus vyberá trasu s čo najmenším počtom prestupov. A ak by sa rovnal i počet prestupov, zvolí sa linka s neskorším časom odchodu so začínajúcej zastávky.\newline
+
+O naplnenie popísaných kritérií sa stará v prevažnej miere trieda \textit{DijkstrasComparator}, ktorej kód je vyobrazený na \ref{DijsktrasCmp}.
+
+\begin{figure}[H]
+  \centering{\includegraphics[width=0.7\linewidth]{./images/3_DijkstrasCmp.png}}
+  \caption{Spôsob porovnávania vrcholov pri Dijkstrovom algoritme}
+  \label{DijsktrasCmp}
+\end{figure}
+
+
+\subsection{Čas príchodu do požadovanej zastávky}
+
+Tomuto kritériu nebude venovať priveľkú pozornosť, keďže ide presne o hodnotu, s ktorou pracuje klasický Dijkstrov algoritmus. Lepšie povedané, dĺžky hrán, s ktorými Dijkstrov algoritmus počíta, majú u nás hodnotu času cesty medzi danými zastávkami, a teda najkratšia cesta vyrátaná Dijkstrovým algoritmom, bude v našom prevedení zastávka s najskorším časom príchodu.\newline
+
+Dôkaz, že výsledné časy príchodov sú správne, preto nie je nutný. Stačí sa vďaka uvedenej redukcií odkázať na dôkaz z Dijkstrovho algoritmu \ref{Dijkstra}.\newline
+
+\subsection{Rátanie počtu prestupov}
 
 Počet prestupov program ráta počas Dijkstrovho algoritmu. Správne hodnoty počtu prestupov zabezpečuje jedna podmienka, ktorá, ak sú názvy liniek rôzne (a sú naplnené iné okrajové prípady), zaznamená, že identifikátor počtu prestupov pre daný vrchol má byť inkrementovaný. V algoritme vyobrazenom na \ref{Dijsktra_obr2} je táto premenná nazvaná \textit{incTransfers}. Zmena počtu prestupov, ak je teda touto premennou zaznačená, sa uskutoční pri aktualizácií údajov vrchola v Dijkstrovom algoritme.\newline
 
 Ostáva dokázať, že takto vypočítaná hodnota počtu prestupov je naozaj správna. Dôkaz je však pomocou metódy matematickej indukcie vzhľadom na kroky Dijkstrovho algoritmu jednoduchý.\newline
 
-Na začiatku sa spracúva počiatočný vrchol. Ten má nastavený počet prestupov na hodnotu 0, čo je aj spŕavne.\newline
+Na začiatku sa spracúva počiatočný vrchol. Ten má nastavený počet prestupov na hodnotu 0, čo je aj správne.\newline
 
 Ak máme už spracovanú nejakú množinu vrcholov, z indukčného predpokladu majú všetky vrcholy tejto množiny správne hodnoty počtu prestupov. Ideme spracovať ďalší vrchol. Dijkstrov algoritmus vyberie ten s najkratšou cestou z počiatočného vrchola, označme ho $v_{0}$. Pozrime sa bližšie na hranu spájajúcu vybraný vrchol s vrcholom z doposiaľ spracovanej množiny vrcholov (tento vrchol označme $v_{1}$). Táto hrana symbolizuje linku s nejakým názvom, označme ju $e_{0}$. Ak je táto linka čakacia, pochopiteľne, počet prestupov zostane nezmenený. Ďalej sa pozrime na hranu smerujúcu do vrcholu $v_{1}$, ktorú zvolil Dijkstrov algoritmus. Názov tejto hrany porovnáme s názvom $e_{0}$. Ak sú rovnaké, je zrejmé, že neprestupujeme a počet prestupov sa opäť meniť nebude. Ak sú rôzne, počet prestupov bude vo vrchole $v_{0}$ o jedna väčší, než vo vrchole $v_{1}$, nakoľko z indukčného predpokladu platí, že vrchol $v_{1}$ už obsahuje správnu hodnotu počtu prestupov. Ostáva ošetriť prípad, že vrchol $v_{1}$ je počiatočný, keďže v tomto prípade nejestvuje hrana smerujúca do tohto vrcholu , ktorej existenciu sme počas dôkazu vyžadovali. Tu si môžeme vybrať či budeme za prestup považovať i prvé nastúpenie do linky. Náš výber však výsledok tohto dôkazu neovplyvní. V našom algoritme sa v uvažovanom prípade počet prestupov navýši.\newline
 
 Naozaj, takýmto spôsobom dosiahneme správne hodnoty počtu prestupov pre všetky vrcholy, ktoré prejdú výpočtom Dijkstrovho algoritmu.\newline
+
+\subsection{Zisťovanie začínajúcej zastávky}
+
+Ak by sme vedeli zistiť začínajúci vrchol vytváranej cesty pre spracúvaný vrchol Dijkstrovým algoritmom, mohli by sme vykonať i porovnanie na základe času odchodu z prvej zastávky. Presnejšie, pre každý spracovaný vrchol si chceme pamätať, v ktorom čase nám stačí z počiatočnej zastávky vyraziť, aby sme sa doň vedeli dostať.\newline
+
+Dôkaz tohto tvrdenia je však ešte jednoduchší a konkrétnejší ako predošlý dôkaz o počte prestupov, a preto len stručne popíšeme jeho hlavnú ideu. Ak pri behu algoritmu narazíme na vrchol s názvom počiatočnej zastávky, v jeho premennej značiacej začínajúcu zastávku cesty si zapamätáme neho samého. Inak si pri aktualizácií vrchola v Dijkstrovom algoritme zmeníme hodnotu tejto premennej na hodnotu tej istej premennej pre vrchol, z ktorého doň vchádzame. \newline
+
+Takýmto spôsobom zistíme, z ktorého z počiatočných vrcholov smeruje do ľubovoľného vrchola nájdená najlacnejšia cesta.\newline
 
 
 \section{Neefektívnosť vytvárania objektov}

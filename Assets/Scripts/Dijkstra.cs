@@ -85,15 +85,15 @@ public class Dijkstra {
 
                     int newValue = now.value + e.travellTime;
 
-                    bool incTransfers = (((now.toParent == null) || (!now.toParent.name.Equals(e.name))) 
-                        && (!e.waitingEdge));
+                    bool incTransfers = ((now.toParent == null) || (!now.toParent.name.Equals(e.name))) 
+                        && (!e.waitingEdge);
 
                     int newTransfers = now.transfers;
                     if (incTransfers) newTransfers++;
 
                     if ((newValue < v.value) 
                         || ((newValue == v.value) && (newTransfers < v.transfers)) 
-                        //|| ((newTransfers == v.transfers) && v.parent.time.CompareTo(now.time) == 1)
+                        || ((newValue == v.value) && (newTransfers == v.transfers) && (v.parent.pathStart.time.CompareTo(v.pathStart.time) == 1))
                         )
                             updateVertex(v, e, newValue, newTransfers, inScope, now.pathStart);
                 }

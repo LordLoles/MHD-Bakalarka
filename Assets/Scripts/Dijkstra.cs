@@ -176,13 +176,13 @@ public class Dijkstra {
             {
                 Vertex now = inScope.PopMin();
 
-                List<Edge> incidentEdges = graph.getEdgesToVertex(now);
+                List<Edge> edgesToVertexNow = graph.getEdgesToVertex(now);
 
                 if (now.name.Equals(start)) break;
 
-                for (int i = 0; i < incidentEdges.Count; i++)
+                for (int i = 0; i < edgesToVertexNow.Count; i++)
                 {
-                    Edge e = incidentEdges[i];
+                    Edge e = edgesToVertexNow[i];
                     Vertex v = e.fromV;
 
 

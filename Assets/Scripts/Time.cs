@@ -1,7 +1,11 @@
-﻿public class Time {
+﻿using System;
+
+public class Time {
 
     internal int hour;
     internal int min;
+
+    internal const int minsInDay = 1440;
 
     public Time(int hour, int min)
     {
@@ -69,6 +73,7 @@
         return Time.TimeToMinutes(t2) - Time.TimeToMinutes(t1);
     }
 
+
     /*
      * IN: Time type object
      * RET: time in minutes
@@ -79,9 +84,32 @@
     }
 
 
+    /*
+     * RET: time in minutes
+     */
+    public int toMinutes()
+    {
+        return TimeToMinutes(this);
+    }
+
+
+    /*
+     * IN: two times t1, t2
+     * RET: the closer time from t2 to t1 in minutes 
+     */
+    public static int differenceBetweenTimesMinCloser(Time t1, Time t2)
+    {
+        int minsToAdd1 = minsInDay - TimeToMinutes(t1);
+        int minsToAdd2 = minsInDay - TimeToMinutes(t2);
+        int first = Math.Abs(differenceBetweenTimesMin(addToTime(t1, minsToAdd1), addToTime(t2, minsToAdd1)));
+        int second = Math.Abs(differenceBetweenTimesMin(addToTime(t1, minsToAdd2), addToTime(t2, minsToAdd2)));
+        return Math.Min(first, second);
+    }
+
+
     public static int Compare(Time t1, Time t2)
     {
-        return System.Math.Sign(differenceBetweenTimesMin(t2, t1));
+        return Math.Sign(differenceBetweenTimesMin(t2, t1));
     }
 
 

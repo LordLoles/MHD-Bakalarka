@@ -7,6 +7,8 @@ public class TEST_HEAP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        Debug.Log(Time.differenceBetweenTimesMinCloser(new Time(22,0), new Time(2,0)));
+
         /*
         Time t1 = new Time(0, 5);
         Time t2 = new Time(0, 6);

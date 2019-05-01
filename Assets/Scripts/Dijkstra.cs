@@ -26,19 +26,20 @@ public class Dijkstra {
     }
 
 
-    private void updateVertexNoAdd(Vertex target, Edge toTarget, int newValue, int transfers, Vertex pathStart)
+    private void updateVertexNoAdd(Vertex target, Edge toTarget, int newValue, int transfers, Vertex pathStart, int sections)
     {
         target.value = newValue;
         target.transfers = transfers;
         target.parent = toTarget.fromV;
         target.toParent = toTarget;
         target.pathStart = pathStart;
+        target.sections = sections;
     }
     
 
-    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, MinHeap<Vertex> inScope, Vertex pathStart)
+    private void updateVertex(Vertex target, Edge toTarget, int newValue, int transfers, MinHeap<Vertex> inScope, Vertex pathStart, int sections)
     {
-        updateVertexNoAdd(target, toTarget, newValue, transfers, pathStart);
+        updateVertexNoAdd(target, toTarget, newValue, transfers, pathStart, sections);
         inScope.Add(target);
     }
 
@@ -63,7 +64,7 @@ public class Dijkstra {
 
             if (now.name.Equals(start.name) && now != start)
             {
-                updateVertexNoAdd(now, now.lastWaiting, now.value, 0, now);
+                updateVertexNoAdd(now, now.lastWaiting, now.value, 0, now, 0);
             }
 
             if (!now.name.Equals(fin))
@@ -89,13 +90,17 @@ public class Dijkstra {
                         && (!e.waitingEdge);
 
                     int newTransfers = now.transfers;
-                    if (incTransfers) newTransfers++;
+                    //if (incTransfers) newTransfers++;
+                    
+                    int newSections = e.waitingEdge ? now.sections : (now.sections + 1);
 
                     if ((newValue < v.value) 
                         || ((newValue == v.value) && (newTransfers < v.transfers)) 
                         || ((newValue == v.value) && (newTransfers == v.transfers) && (v.parent.pathStart.time.CompareTo(v.pathStart.time) == 1))
+                        || ((newValue == v.value) && (newTransfers == v.transfers) && (v.parent.pathStart.time.CompareTo(v.pathStart.time) == 0) && (v.sections > newSections))
                         )
-                            updateVertex(v, e, newValue, newTransfers, inScope, now.pathStart);
+                            //updateVertex(v, e, newValue, newTransfers, inScope, now.pathStart, newSections);
+                            updateVertex(v, e, newValue, 0, inScope, now.pathStart, newSections);
                 }
             }
             else
@@ -206,6 +211,7 @@ public class Dijkstra {
         start.parent = null;
         start.value = 0;
         start.pathStart = start;
+        start.sections = 0;
         //start.lastWaiting = new Edge(start.name, start, start, start.time, start.time);
         //start.lastWaiting.setThisWaiting();
     }
@@ -221,6 +227,7 @@ public class Dijkstra {
             v.toParent = null;
             v.pathStart = null;
             v.lastWaiting = null;
+            v.sections = int.MaxValue;
         }
         pathShowing.flush();
     }

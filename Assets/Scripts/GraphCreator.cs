@@ -13,7 +13,9 @@ public class GraphCreator{
 
     public int loaded = 0;
 
-    private int minsToLoad = 120;
+    private int minsToLoad = 119;
+    private int maxLoads = 12;
+    private int nowLoads = 0;
     private Time lastlyLoaded;
 
     public GraphCreator(string path, string stopsFile, string linesFile)
@@ -165,7 +167,10 @@ public class GraphCreator{
      */
     public bool needToLoad(Time t)
     {
-        return t.addToTime(graph.longestEdge).CompareTo(lastlyLoaded) == 1;
+        int finMins = lastlyLoaded.toMinutes();
+        if (t.CompareTo(lastlyLoaded) == 1) finMins += Time.minsInDay;
+        return t.toMinutes() + graph.longestEdge >= finMins;
+            //t.addToTime(graph.longestEdge).CompareTo(lastlyLoaded) == 1;
     }
 
 
@@ -178,6 +183,9 @@ public class GraphCreator{
 
     public void makeGraph(Time fromTime)
     {
+        nowLoads++;
+        if (nowLoads > maxLoads) return;
+
         int i = 0;
         while (i < lines.Length)
         {

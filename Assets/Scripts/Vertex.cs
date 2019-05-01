@@ -12,6 +12,7 @@ public class Vertex
     internal HashSet<Edge> alternate; //for dijkstra's purpose
     internal Vertex pathStart; //for dijkstra's purpose
     internal Edge lastWaiting; //for dijkstra's purpose
+    internal int sections; //for dijkstra's purpose
 
 
     public Vertex(string n, Time t)
@@ -27,6 +28,7 @@ public class Vertex
         alternate = new HashSet<Edge>();
         pathStart = null;
         lastWaiting = null;
+        sections = int.MaxValue;
     }
 
 

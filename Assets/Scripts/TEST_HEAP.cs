@@ -7,7 +7,18 @@ public class TEST_HEAP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Debug.Log(Time.differenceBetweenTimesMinCloser(new Time(22,0), new Time(2,0)));
+        //Debug.Log(Time.differenceBetweenTimesMinCloser(new Time(22,0), new Time(2,0)));
+
+        /*
+        List<int> path = new List<int> { 1,2,3,4,5 };
+        foreach (int a in path)
+            Debug.Log(a);
+        path.Reverse();
+        foreach (int a in path)
+            Debug.Log(a);*/
+
+        //Debug.Log("1 comb".Remove("1 comb".Length - 5));
+        //Debug.Log("fds1s comb".Remove("fds1s comb".Length - 5));
 
         /*
         Time t1 = new Time(0, 5);

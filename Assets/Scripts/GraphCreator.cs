@@ -41,7 +41,7 @@ public class GraphCreator{
 
     private Vertex findVertex(string name, Time time)
     {
-        HashSet<Vertex> list = graph.allStops[name];
+        List<Vertex> list = graph.allStops[name];
         foreach (Vertex v in graph.allStops[name]) if (time.isThis(v.time)) return v;
         throw new Exception("No such vertex: " + name);
     }
@@ -139,9 +139,9 @@ public class GraphCreator{
         int all = graph.allStops.Count;
         Time endTime = Time.addToTime(fromTime, minsToLoad);
 
-        foreach (KeyValuePair<string, HashSet<Vertex>> pair in graph.allStops)
+        foreach (KeyValuePair<string, List<Vertex>> pair in graph.allStops)
         { 
-            List<Vertex> list = new List<Vertex>(pair.Value);
+            List<Vertex> list = pair.Value;
 
             loaded = (int)(50 + ((100 * (float)tillNow / all) / 2));
             tillNow++;

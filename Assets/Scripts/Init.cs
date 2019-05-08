@@ -45,7 +45,6 @@ public class Init : MonoBehaviour
         //gc.makeGraph();
 
 
-        pathMaker = new PathMaker(graph);
         pathShowing = gameObject.GetComponent<PathShowing>();
         dbc = gameObject.GetComponent<DataBaseChange>();
         dbc.stopsFile = stopsFile;
@@ -84,6 +83,7 @@ public class Init : MonoBehaviour
         gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
         gc.makeGraph(time);
         graph = gc.getGraph();
+        pathMaker = new PathMaker(graph);
         dijkstra = new Dijkstra(graph, pathMaker, gc);
 
         pathShowing.nextSearch();

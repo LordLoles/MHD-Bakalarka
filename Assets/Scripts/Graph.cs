@@ -5,10 +5,10 @@ public class Graph
     internal List<Vertex> verteces; //set
     internal List<Edge> edges;
 
-    internal SortedDictionary<string, HashSet<Vertex>> allStops;
+    internal SortedDictionary<string, List<Vertex>> allStops;
     internal Dictionary<Vertex, List<Edge>> allEdges;
-    internal Dictionary<Vertex, List<Vertex>> neighbors;
-    internal Dictionary<Vertex, List<Edge>> toThisVertex;
+    internal Dictionary<Vertex, HashSet<Vertex>> neighbors;
+    internal Dictionary<Vertex, HashSet<Edge>> toThisVertex;
 
     internal int longestEdge;
 
@@ -17,10 +17,10 @@ public class Graph
     {
         verteces = new List<Vertex>();
         edges = new List<Edge>();
-        allStops = new SortedDictionary<string, HashSet<Vertex>>();
+        allStops = new SortedDictionary<string, List<Vertex>>();
         allEdges = new Dictionary<Vertex, List<Edge>>();
-        neighbors = new Dictionary<Vertex, List<Vertex>>();
-        toThisVertex = new Dictionary<Vertex, List<Edge>>();
+        neighbors = new Dictionary<Vertex, HashSet<Vertex>>();
+        toThisVertex = new Dictionary<Vertex, HashSet<Edge>>();
         longestEdge = -1;
     }
 
@@ -42,7 +42,7 @@ public class Graph
     internal void addVertex(Vertex v)
     {
         verteces.Add(v);
-        if (!allStops.ContainsKey(v.name)) allStops.Add(v.name, new HashSet<Vertex>());
+        if (!allStops.ContainsKey(v.name)) allStops.Add(v.name, new List<Vertex>());
         allStops[v.name].Add(v);
     }
 
@@ -56,8 +56,8 @@ public class Graph
         Vertex v = e.fromV;
         Vertex to = e.toV;
         if (!allEdges.ContainsKey(v)) allEdges.Add(v, new List<Edge>());
-        if (!neighbors.ContainsKey(v)) neighbors.Add(v, new List<Vertex>());
-        if (!toThisVertex.ContainsKey(to)) toThisVertex.Add(to, new List<Edge>());
+        if (!neighbors.ContainsKey(v)) neighbors.Add(v, new HashSet<Vertex>());
+        if (!toThisVertex.ContainsKey(to)) toThisVertex.Add(to, new HashSet<Edge>());
         allEdges[v].Add(e);
         neighbors[v].Add(to);
         toThisVertex[to].Add(e);
@@ -104,7 +104,7 @@ public class Graph
         return list;
         */
         if (!neighbors.ContainsKey(from)) return new List<Vertex>();
-        return neighbors[from];
+        return new List<Vertex>(neighbors[from]);
     }
 
 
@@ -114,8 +114,44 @@ public class Graph
     public List<Edge> getEdgesToVertex(Vertex to)
     {
         if (!toThisVertex.ContainsKey(to)) return new List<Edge>();
-        return toThisVertex[to];
+        return new List<Edge>(toThisVertex[to]);
     }
 
 
+    /*
+     * Returns the edge with the same name as given edge 
+     * starting in the vertex, that the given edge ends - succesor
+     */
+    public Edge getSuccesor(Edge e)
+    {
+        string name = e.name;
+        foreach (Edge next in getIncidentEdges(e.toV))
+            if (next.name.Equals(name)) return next;
+        return null;
+    }
+
+
+    /*
+     * Returns the edge with the same name as given edge 
+     * ending in the vertex, that the given edge starts - predecessor
+     */
+    public Edge getPredecessor(Edge e)
+    {
+        string name = e.name;
+        foreach (Edge pred in getEdgesToVertex(e.toV))
+            if (pred.name.Equals(name)) return pred;
+        return null;
+    }
+
+
+    /*
+     * Returns the edge with the same name as given name
+     * ending in the vertex, that is neighbor to given Vertex - predecessor
+     */
+    public Edge getPredecessor(string name, Vertex v)
+    {
+        foreach (Edge pred in getEdgesToVertex(v))
+            if (pred.name.Equals(name)) return pred;
+        return null;
+    }
 }

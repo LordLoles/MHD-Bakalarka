@@ -6,13 +6,15 @@ public class Vertex
     internal Time time;
     
     internal int value; //for dijkstra's purpose
-    internal int transfers; //for dijkstra's purpose
     internal Vertex parent; //for dijkstra's purpose
     internal Edge toParent; //for dijkstra's purpose
     internal HashSet<Edge> alternate; //for dijkstra's purpose
     internal Vertex pathStart; //for dijkstra's purpose
     internal Edge lastWaiting; //for dijkstra's purpose
+    internal int transfers; //for dijkstra's purpose
     internal int sections; //for dijkstra's purpose
+    internal Vertex linkStarting; //for dijkstra's purpose
+    internal Edge toLinkStarting; //for dijkstra's purpose
 
 
     public Vertex(string n, Time t)
@@ -22,13 +24,15 @@ public class Vertex
         //loaded = false;
 
         value = int.MaxValue;
-        transfers = 0;
         parent = null;
         toParent = null;
         alternate = new HashSet<Edge>();
         pathStart = null;
         lastWaiting = null;
         sections = int.MaxValue;
+        transfers = int.MaxValue;
+        linkStarting = null;
+        toLinkStarting = null;
     }
 
 

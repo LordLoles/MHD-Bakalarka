@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +7,44 @@ public class TEST_HEAP : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        
+        /*
+        Time t1 = new Time(22,14);
+        Time t2 = new Time(2,55);
+        Time t3 = new Time(10,0);
+        Debug.Log(t1.subtractFromTime(60) + " = 21:14");
+        Debug.Log(t1.subtractFromTime(59) + " = 21:15");
+        Debug.Log(t1.subtractFromTime(61) + " = 21:13");
+        Debug.Log(t2.subtractFromTime(5) + " = 2:50");
+        Debug.Log(t2.subtractFromTime(300) + " = 21:55");
+        Debug.Log(t3.subtractFromTime(59) + " = 9:1");
+        Debug.Log(new Time(16,10).subtractFromTime(75) + " = 14:55");*/
+
+
         //Debug.Log(Time.differenceBetweenTimesMinCloser(new Time(22,0), new Time(2,0)));
+
+        /*
+        int minsToLoad = 75;
+        int maxLoads = (int)Math.Floor((Time.minsInDay - 1) * 1.0 / minsToLoad);
+        Debug.Log(maxLoads);
+
+        minsToLoad = 15;
+        maxLoads = (int)Math.Floor((Time.minsInDay - 1) * 1.0 / minsToLoad);
+        Debug.Log(maxLoads);
+
+        minsToLoad = 20;
+        maxLoads = (int)Math.Floor((Time.minsInDay - 1) * 1.0 / minsToLoad);
+        Debug.Log(maxLoads);
+
+        minsToLoad = 25;
+        maxLoads = (int)Math.Floor((Time.minsInDay - 1) * 1.0 / minsToLoad);
+        Debug.Log(maxLoads);*/
+
+        /*
+        Dictionary<Vertex, bool> visited = new Dictionary<Vertex, bool>();
+        Vertex v = new Vertex("a", new Time(2, 0));
+        visited.Add(v, true);
+        visited.Add(v, false);*/
 
         /*
         List<int> path = new List<int> { 1,2,3,4,5 };

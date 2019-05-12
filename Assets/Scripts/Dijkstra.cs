@@ -59,25 +59,20 @@ public class Dijkstra {
         {
             Vertex now = inScope.PopMin();
 
-            List<Vertex> neighbors = graph.getNeighbors(now);
             List<Edge> incidentEdges = graph.getIncidentEdges(now);
 
             if (now.name.Equals(start.name) && now != start)
-            {
                 updateVertexNoAdd(now, now.lastWaiting, now.value, now, 0, 0);
-            }
 
             if (!now.name.Equals(fin))
             {
-                for (int i = 0; i < neighbors.Count; i++)
+                for (int i = 0; i < incidentEdges.Count; i++)
                 {
-                    Vertex v = neighbors[i];
                     Edge e = incidentEdges[i];
+                    Vertex v = e.toV;
 
-                    while (gc.needToLoad(v.time))
-                    {
-                        gc.nextLoad();
-                    }
+                    while (gc.needToLoad(v.time)) gc.nextLoad();
+
                     if (e.waitingEdge) e.toV.lastWaiting = e;
                     if (v.isThis(start)) break;
                     if (visited.ContainsKey(v)) continue;
@@ -167,6 +162,7 @@ public class Dijkstra {
 
     private void completeLink(Edge e, Vertex linkStart, MinHeap<Vertex> inScope)
     {
+        if (e.linkScanDone && e.toV.linkStarting == e.fromV.linkStarting) return; //uz je spracovana linka s tymito hodnotami
         e.toV.toLinkStarting = e;
         e.toV.linkStarting = linkStart;
         e.linkScanDone = true;

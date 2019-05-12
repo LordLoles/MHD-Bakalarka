@@ -81,7 +81,11 @@ public class Init : MonoBehaviour
         }*/
 
         gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
-        gc.makeGraph(time);
+
+        gc.makeGraphOneLoadSooner(time);
+        gc.nextLoad();
+        //gc.makeGraph(time);
+
         graph = gc.getGraph();
         pathMaker = new PathMaker(graph);
         dijkstra = new Dijkstra(graph, pathMaker, gc);

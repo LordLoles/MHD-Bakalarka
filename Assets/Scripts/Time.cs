@@ -53,6 +53,27 @@ public class Time {
         return addToTime(this, plus);
     }
 
+
+    /*
+     * IN: time and amounth of minutes to subtract
+     * RET: time decreased by that amounth of minutes
+     */
+    public static Time subtractFromTime(Time time, int minus)
+    {
+        return addToTime(time, minsInDay - minus);
+    }
+
+
+    /*
+     * IN: amounth of minutes to subtract
+     * RET: this time decreased by that amounth of minutes
+     */
+    public Time subtractFromTime(int minus)
+    {
+        return subtractFromTime(this, minus);
+    }
+
+
     /*
      * IN: two times t1, t2
      * RET: new time with value t2 - t1

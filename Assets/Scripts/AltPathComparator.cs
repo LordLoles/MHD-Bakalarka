@@ -12,7 +12,7 @@ public class AltPathComparator : IComparer<List<Edge>>
 
         ret = vx.value.CompareTo(vy.value);
         if (ret != 0) return ret;
-
+        
         ret = findFirstLinkVertex(x).time.CompareTo(findFirstLinkVertex(y).time) * (-1);
         if (ret != 0) return ret;
 

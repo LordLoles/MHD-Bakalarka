@@ -13,8 +13,9 @@ public class Vertex
     internal Edge lastWaiting; //for dijkstra's purpose
     internal int transfers; //for dijkstra's purpose
     internal int sections; //for dijkstra's purpose
-    internal Vertex linkStarting; //for dijkstra's purpose
-    internal Edge toLinkStarting; //for dijkstra's purpose
+
+    internal Vertex linkStarting; //for dijkstra's transfer's purpose
+    internal Edge toLinkStarting; //for dijkstra's transfer's purpose
 
 
     public Vertex(string n, Time t)

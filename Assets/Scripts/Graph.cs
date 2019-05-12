@@ -150,8 +150,9 @@ public class Graph
      */
     public Edge getPredecessor(string name, Vertex v)
     {
+        Edge e = null;
         foreach (Edge pred in getEdgesToVertex(v))
-            if (pred.name.Equals(name)) return pred;
-        return null;
+            if (pred.name.Equals(name)) e = pred;
+        return e;
     }
 }

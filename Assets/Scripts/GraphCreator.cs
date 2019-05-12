@@ -12,9 +12,9 @@ public class GraphCreator{
     private string[] lines;
 
     public int loaded = 0;
-
-    private int minsToLoad = 119;
-    private int maxLoads = 12;
+    
+    private int minsToLoad = 25;
+    private int maxLoads;
     private int nowLoads = 0;
     private Time lastlyLoaded;
 
@@ -23,6 +23,7 @@ public class GraphCreator{
         stops = System.IO.File.ReadAllLines(path + stopsFile + ".txt");
         lines = System.IO.File.ReadAllLines(path + linesFile + ".txt");
 
+        maxLoads = (int)Math.Floor((Time.minsInDay - 1) * 1.0 / minsToLoad);
         this.graph = new Graph();
     }
 
@@ -178,6 +179,12 @@ public class GraphCreator{
     {
         //Debug.Log("Next Load");
         makeGraph(lastlyLoaded);
+    }
+
+
+    public void makeGraphOneLoadSooner(Time fromTime)
+    {
+        makeGraph(fromTime.subtractFromTime(minsToLoad));
     }
 
 

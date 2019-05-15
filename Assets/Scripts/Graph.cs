@@ -8,7 +8,7 @@ public class Graph
     internal SortedDictionary<string, List<Vertex>> allStops;
     internal Dictionary<Vertex, List<Edge>> allEdges;
     internal Dictionary<Vertex, HashSet<Vertex>> neighbors;
-    internal Dictionary<Vertex, HashSet<Edge>> toThisVertex;
+    internal Dictionary<KeyValuePair<Vertex, int>, Edge> toThisVertex;
 
     internal int longestEdge;
 
@@ -20,7 +20,7 @@ public class Graph
         allStops = new SortedDictionary<string, List<Vertex>>();
         allEdges = new Dictionary<Vertex, List<Edge>>();
         neighbors = new Dictionary<Vertex, HashSet<Vertex>>();
-        toThisVertex = new Dictionary<Vertex, HashSet<Edge>>();
+        toThisVertex = new Dictionary<KeyValuePair<Vertex, int>, Edge> ();
         longestEdge = -1;
     }
 
@@ -57,10 +57,10 @@ public class Graph
         Vertex to = e.toV;
         if (!allEdges.ContainsKey(v)) allEdges.Add(v, new List<Edge>());
         if (!neighbors.ContainsKey(v)) neighbors.Add(v, new HashSet<Vertex>());
-        if (!toThisVertex.ContainsKey(to)) toThisVertex.Add(to, new HashSet<Edge>());
+        KeyValuePair<Vertex, int> p = pair(to, e.linkID);
+        if (!toThisVertex.ContainsKey(p)) toThisVertex.Add(p, e);
         allEdges[v].Add(e);
         neighbors[v].Add(to);
-        toThisVertex[to].Add(e);
         if (e.travellTime > longestEdge) longestEdge = e.travellTime;
     }
 
@@ -80,6 +80,12 @@ public class Graph
             if (!(time.CompareTo(v.time) == 1)) return v;
         }
         throw new System.Exception("No vertex after that time");
+    }
+
+
+    private KeyValuePair<Vertex, int> pair(Vertex v, int id)
+    {
+        return new KeyValuePair<Vertex, int>(v, id);
     }
 
 
@@ -109,25 +115,12 @@ public class Graph
 
 
     /*
-     * Returns list of edges from embedded vertex.
-     */
-    public List<Edge> getEdgesToVertex(Vertex to)
-    {
-        if (!toThisVertex.ContainsKey(to)) return new List<Edge>();
-        return new List<Edge>(toThisVertex[to]);
-    }
-
-
-    /*
      * Returns the edge with the same name as given edge 
      * starting in the vertex, that the given edge ends - succesor
      */
     public Edge getSuccesor(Edge e)
     {
-        string name = e.name;
-        foreach (Edge next in getIncidentEdges(e.toV))
-            if (next.name.Equals(name)) return next;
-        return null;
+        return e.successor;
     }
 
 
@@ -137,10 +130,7 @@ public class Graph
      */
     public Edge getPredecessor(Edge e)
     {
-        string name = e.name;
-        foreach (Edge pred in getEdgesToVertex(e.toV))
-            if (pred.name.Equals(name)) return pred;
-        return null;
+        return e.predecessor;
     }
 
 
@@ -148,11 +138,8 @@ public class Graph
      * Returns the edge with the same name as given name
      * ending in the vertex, that is neighbor to given Vertex - predecessor
      */
-    public Edge getPredecessor(string name, Vertex v)
+    public Edge getPredecessor(int id, Vertex v)
     {
-        Edge e = null;
-        foreach (Edge pred in getEdgesToVertex(v))
-            if (pred.name.Equals(name)) e = pred;
-        return e;
+        return toThisVertex[pair(v, id)];
     }
 }

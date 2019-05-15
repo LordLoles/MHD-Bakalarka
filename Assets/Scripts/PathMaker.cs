@@ -39,7 +39,7 @@ public class PathMaker {
                 Vertex now = v;
                 while (true)
                 {
-                    predecessor = graph.getPredecessor(linkName, now);
+                    predecessor = graph.getPredecessor(v.toParent.linkID, now);
                     if (predecessor == null || predecessor.toV.isThis(v.parent)) break;
                     path.Add(predecessor);
                     now = predecessor.fromV;

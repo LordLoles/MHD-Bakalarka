@@ -18,6 +18,9 @@ public class GraphCreator{
     private int nowLoads = 0;
     private Time lastlyLoaded;
 
+    private int linkIDNow = 0;
+
+
     public GraphCreator(string path, string stopsFile, string linesFile)
     {
         stops = System.IO.File.ReadAllLines(path + stopsFile + ".txt");
@@ -102,12 +105,8 @@ public class GraphCreator{
 
             if (!origin.isBetween(fromTime, endTime)) continue;
 
-            /*//for debug ->
-            if (graph.edges.Count > 2000)
-            {
-                existVertex(distAndStops[0].Split(' '), 1, origin);
-            }
-            // <- for debug*/
+            Edge previous = null;
+            linkIDNow++;
 
             for (int j = 0; j < distAndStops.Length - 1; j++)
             {
@@ -126,8 +125,14 @@ public class GraphCreator{
                 graph.addVertex(fromV);
                 graph.addVertex(toV);
                 */
-                
-                graph.addEdge(new Edge(name, fromV, toV, fromT, toT));
+
+                Edge e = new Edge(name, fromV, toV, fromT, toT);
+
+                e.linkID = linkIDNow;
+                e.predecessor = previous;
+                if (previous != null) previous.successor = e;
+
+                graph.addEdge(e);
                 //fromV.loaded = true;
             }
         }
@@ -143,6 +148,8 @@ public class GraphCreator{
         foreach (KeyValuePair<string, List<Vertex>> pair in graph.allStops)
         { 
             List<Vertex> list = pair.Value;
+            Edge previous = null;
+            linkIDNow++;
 
             loaded = (int)(50 + ((100 * (float)tillNow / all) / 2));
             tillNow++;
@@ -156,7 +163,10 @@ public class GraphCreator{
                 if (!fromV.time.isBetween(fromTime, endTime)) continue;
 
                 Edge e = new Edge(pair.Key, fromV, toV, fromV.time, toV.time);
+                e.linkID = linkIDNow;
                 e.setThisWaiting();
+                e.predecessor = previous;
+                if (previous != null) previous.successor = e;
                 graph.addEdge(e);
             }
         }

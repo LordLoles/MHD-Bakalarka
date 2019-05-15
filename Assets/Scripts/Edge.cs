@@ -7,6 +7,9 @@
     internal Time toT;
     internal int travellTime; //minutes
     internal bool waitingEdge; //determines whether is this edge from vertex to the same named vertex (waiting on stop)
+    internal Edge predecessor;
+    internal Edge successor;
+    internal int linkID;
 
     internal bool linkScanDone; //for dijkstra's purpose
 
@@ -21,6 +24,9 @@
         travellTime = Time.differenceBetweenTimesMin(this.fromT, this.toT);
         waitingEdge = false;
         linkScanDone = false;
+        predecessor = null;
+        successor = null;
+        linkID = 0;
     }
 
 
@@ -34,12 +40,15 @@
      * Returns null, if given edges are not incident.
      * Else returns edge with name of the second given 
      * edge connecting the starting vertex of first edge 
-     * with the ending vertex of the second edge.
+     * with the ending vertex of the second edge and 
+     * the same link ID as the first.
      */
     public static Edge combineIncidentEdges(Edge e, Edge f)
     {
         if (!e.toV.isThis(f.fromV)) return null;
-        return new Edge(f.name + " comb", e.fromV, f.toV, e.fromT, f.toT);
+        Edge comb = new Edge(f.name + " comb", e.fromV, f.toV, e.fromT, f.toT);
+        comb.linkID = e.linkID;
+        return comb;
     }
 
 

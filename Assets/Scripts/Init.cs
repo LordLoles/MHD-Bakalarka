@@ -12,7 +12,7 @@ public class Init : MonoBehaviour
     private Graph graph;
     private Dijkstra dijkstra;
     private GraphCreator gc;
-    private Thread thread;
+    //private Thread thread;
     private PathMaker pathMaker;
     private PathShowing pathShowing;
     private DataBaseChange dbc;
@@ -22,6 +22,7 @@ public class Init : MonoBehaviour
     public string linesFile;
     public string city;
     public Text nacitavam;
+    public Text chybaTxt;
 
 
     void Start()
@@ -44,13 +45,15 @@ public class Init : MonoBehaviour
 
         //gc.makeGraph();
 
-
         pathShowing = gameObject.GetComponent<PathShowing>();
+
         dbc = gameObject.GetComponent<DataBaseChange>();
         dbc.stopsFile = stopsFile;
         dbc.cityName.text = city;
         dbc.inputField.gameObject.SetActive(false);
 
+        ErrorHandler.chybaTxt = chybaTxt;
+        ErrorHandler.hide();
     }
 
     /*
@@ -101,7 +104,11 @@ public class Init : MonoBehaviour
             gc.nextLoad();
             if (i == tries)
             {
-                throw new Exception("No stop with that name!");
+                if (!graph.allStops.ContainsKey(start))
+                    ErrorHandler.printErrorMsg("Nenašla sa počiatočná zástavka.\n Možný preklep, prípadne skúste zadať neskorší počiatočný čas.");
+
+                if (!graph.allStops.ContainsKey(fin))
+                    ErrorHandler.printErrorMsg("Nenašla sa konečná zástavka.\n Možný preklep, prípadne skúste zadať neskorší počiatočný čas.");
             }
         }
 
@@ -109,7 +116,7 @@ public class Init : MonoBehaviour
         dijkstra.shortestPathsAmount(time, start, fin, amount);
     }
 
-
+    /*
     [SecurityPermissionAttribute(SecurityAction.Demand, ControlThread = true)]
     public void OnApplicationQuit()
     {
@@ -118,7 +125,7 @@ public class Init : MonoBehaviour
             thread.Abort();
         }
         catch (Exception e) { }
-    }
+    }*/
 
 
 }

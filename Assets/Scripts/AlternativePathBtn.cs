@@ -8,6 +8,7 @@ public class AlternativePathBtn : MonoBehaviour {
 
     public void OnClick()
     {
+        ErrorHandler.hide();
         soh = GetComponent<StopObjectHolder>();
         soh.panelManager.pathShowing.showAlternativePath(soh.zastavka);
     }

@@ -6,17 +6,18 @@ public class AltPathComparator : IComparer<List<Edge>>
 {
     public int Compare(List<Edge> x, List<Edge> y)
     {
-        Vertex vx = getPreLast(x);
-        Vertex vy = getPreLast(y);
         int ret;
-
-        ret = vx.value.CompareTo(vy.value);
-        if (ret != 0) return ret;
         
+        ret = getLast(x).value.CompareTo(getLast(y).value);
+        if (ret != 0) return ret;
+
+        ret = getTransfers(x).CompareTo(getTransfers(y));
+        if (ret != 0) return ret;
+
         ret = findFirstLinkVertex(x).time.CompareTo(findFirstLinkVertex(y).time) * (-1);
         if (ret != 0) return ret;
 
-        ret = vx.sections.CompareTo(vy.sections);
+        ret = getPreLast(x).sections.CompareTo(getPreLast(y).sections);
         return ret;
     }
 
@@ -24,6 +25,25 @@ public class AltPathComparator : IComparer<List<Edge>>
     private Vertex getPreLast(List<Edge> path)
     {
         return path[path.Count - 1].fromV;
+    }
+
+    private Vertex getLast(List<Edge> path)
+    {
+        Edge e = path[path.Count - 1];
+        if (e.waitingEdge) return e.fromV;
+        return e.toV;
+    }
+
+
+    private int getTransfers(List<Edge> path)
+    {
+        Edge e = path[path.Count - 1];
+        Vertex v = e.fromV;
+        int trans = v.transfers;
+
+        if ((!e.waitingEdge) && (path.Count >= 2) && (path[path.Count - 2].linkID != e.linkID)) trans++;
+
+        return trans;
     }
 
 

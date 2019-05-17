@@ -13,7 +13,7 @@ public class GraphCreator{
 
     public int loaded = 0;
     
-    private int minsToLoad = 25;
+    private int minsToLoad = 35;
     private int maxLoads;
     private int nowLoads = 0;
     private Time lastlyLoaded;
@@ -131,6 +131,7 @@ public class GraphCreator{
                 e.linkID = linkIDNow;
                 e.predecessor = previous;
                 if (previous != null) previous.successor = e;
+                previous = e;
 
                 graph.addEdge(e);
                 //fromV.loaded = true;
@@ -167,6 +168,8 @@ public class GraphCreator{
                 e.setThisWaiting();
                 e.predecessor = previous;
                 if (previous != null) previous.successor = e;
+                previous = e;
+
                 graph.addEdge(e);
             }
         }

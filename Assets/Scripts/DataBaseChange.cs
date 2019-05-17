@@ -17,11 +17,12 @@ public class DataBaseChange : MonoBehaviour {
 
     public void OnClick()
     {
+        ErrorHandler.hide();
         state.OnClick(this);
     }
 
 
-    private void changeDatabaze()
+    private void changeDatabase()
     {
         Init init = GameObject.FindGameObjectWithTag("Init").GetComponent<Init>();
         init.city = cityName.text;
@@ -58,7 +59,7 @@ public class DataBaseChange : MonoBehaviour {
                 dbc.inputField.gameObject.SetActive(false);
                 dbc.buttonText.text = "Zmeň";
                 dbc.cityName.text = dbc.inputText.text;
-                dbc.changeDatabaze();
+                dbc.changeDatabase();
                 dbc.state = new NotDisplayedField();
             }
             catch (Exception) { }

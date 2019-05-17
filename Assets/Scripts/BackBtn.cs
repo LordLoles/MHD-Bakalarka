@@ -18,6 +18,7 @@ public class BackBtn : MonoBehaviour {
 
     public void OnClick()
     {
+        ErrorHandler.hide();
         pathShowing.redoLastState();
     }
 

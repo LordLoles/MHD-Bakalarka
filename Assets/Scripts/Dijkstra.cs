@@ -59,6 +59,12 @@ public class Dijkstra {
         {
             Vertex now = inScope.PopMin();
 
+
+            if (now.name.Equals("Pri Habanskom mlyne") && now.time.isThis(new Time(12, 26)))
+            {
+                Debug.Log("a");
+            }
+
             List<Edge> incidentEdges = graph.getIncidentEdges(now);
 
             if (now.name.Equals(start.name) && now != start)
@@ -70,6 +76,16 @@ public class Dijkstra {
                 {
                     Edge e = incidentEdges[i];
                     Vertex v = e.toV;
+                    
+                    if (v.name.Equals("Patronka") && v.time.isThis(new Time(12, 28)) && now.name.Equals("Pri Habanskom mlyne"))
+                    {
+                        Debug.Log("a");
+                    }
+                    if (v.name.Equals("Zoo") && now.time.isThis(new Time(12, 25)))
+                    {
+                        var g = graph.getNeighbors(v);
+                        Debug.Log("a1");
+                    }
 
                     while (gc.needToLoad(v.time)) gc.nextLoad();
 
@@ -81,8 +97,7 @@ public class Dijkstra {
 
                     int newValue = now.value + e.travellTime;
 
-                    bool incTransfers = ((now.toParent == null) || (!now.toParent.name.Equals(e.name)))
-                        && (!e.waitingEdge);
+                    bool incTransfers = (!e.waitingEdge) && ((now.toParent == null) || (!(now.toParent.linkID == e.linkID)));
 
                     int newTransfers = now.transfers;
                     if (incTransfers) newTransfers++;
@@ -96,14 +111,14 @@ public class Dijkstra {
                         )
                             updateVertex(v, e, newValue, inScope, now.pathStart, newSections, newTransfers);
 
-                    if (!e.waitingEdge) completeLink(e, now, inScope);
+                    if (!e.waitingEdge) completeLink(e, now, inScope, fin, newTransfers);
 
                 }
             }
             else
             {
                 amountNow--;
-                if (amountNow == 0) return;
+                if (amountNow <= 0) return;
             }
             visited.Add(now, true);
         }
@@ -112,7 +127,7 @@ public class Dijkstra {
 
     private void printPathsForStop(string stop, int amount)
     {
-        if (amount == 0) throw new System.Exception("This is how I print 0 stops!");
+        if (amount <= 0) ErrorHandler.printErrorMsg("Zlý počet zástavok určených na výpis!\n Musí byť väčší ako 0");
 
         int already = 0;
         List<Vertex> targets = graph.allStops[stop];
@@ -129,7 +144,7 @@ public class Dijkstra {
             }
         }
 
-        if (already == 0) throw new System.Exception("No path to this stop was found.");
+        if (already == 0) ErrorHandler.printErrorMsg("Nebola nájdená žiadna cesta!\n Skúste zmeniť parametre vyhľadávania");
     }
 
 
@@ -160,23 +175,30 @@ public class Dijkstra {
     }
 
 
-    private void completeLink(Edge e, Vertex linkStart, MinHeap<Vertex> inScope)
+    private void completeLink(Edge e, Vertex linkStart, MinHeap<Vertex> inScope, string fin, int linkTrans)
     {
         if (e.linkScanDone && e.toV.linkStarting == e.fromV.linkStarting) return; //uz je spracovana linka s tymito hodnotami
         e.toV.toLinkStarting = e;
         e.toV.linkStarting = linkStart;
         e.linkScanDone = true;
 
-        completeLink2(graph.getSuccesor(e), linkStart, 2, e, inScope);
+        completeLink2(graph.getSuccesor(e), linkStart, 2, e, inScope, fin, linkTrans);
     }
 
 
-    private void completeLink2(Edge e, Vertex linkStart, int pathLength, Edge prevComb, MinHeap<Vertex> inScope)
+    private void completeLink2(Edge e, Vertex linkStart, int pathLength, Edge prevComb, MinHeap<Vertex> inScope, string fin, int linkTrans)
     {
-        if (e == null) return;
+        if (e == null || e.fromV.name.Equals(fin)) return;
 
         Vertex now = e.toV;
         Vertex from = e.fromV;
+
+        if (now.name.Equals("Patronka") && now.time.isThis(new Time(12, 28)) && from.name.Equals("Pri Habanskom mlyne"))
+        {
+            Debug.Log("a");
+        }
+
+        now.addAlternatePath(e);
 
         int newValue = Time.differenceBetweenTimesMin(linkStart.time, e.toT) + linkStart.value;
         int newSections = linkStart.sections + pathLength;
@@ -184,10 +206,11 @@ public class Dijkstra {
         Edge fromStartToThis = Edge.combineIncidentEdges(prevComb, e);
 
         if ((newValue < now.value)
-            || ((newValue == now.value) && (now.parent.pathStart.time.CompareTo(now.pathStart.time) == 1))
-            || ((newValue == now.value) && (now.parent.pathStart.time.CompareTo(now.pathStart.time) == 0) && (now.sections > newSections)))
+            || ((newValue == now.value) && (now.transfers > linkTrans))
+            || ((newValue == now.value) && (now.transfers == linkTrans) && (now.parent.pathStart.time.CompareTo(now.pathStart.time) == 1))
+            || ((newValue == now.value) && (now.transfers == linkTrans) && (now.parent.pathStart.time.CompareTo(now.pathStart.time) == 0) && (now.sections > newSections)))
         {
-            updateVertex(now, fromStartToThis, newValue, inScope, linkStart.pathStart, newSections, linkStart.transfers);
+            updateVertex(now, fromStartToThis, newValue, inScope, linkStart.pathStart, newSections, linkTrans);
             
             now.linkStarting = linkStart;
             now.toLinkStarting = fromStartToThis;
@@ -198,7 +221,7 @@ public class Dijkstra {
 
         Edge next = graph.getSuccesor(e);
 
-        completeLink2(next, linkStart, pathLength + 1, fromStartToThis, inScope);
+        completeLink2(next, linkStart, pathLength + 1, fromStartToThis, inScope, fin, linkTrans);
     }
 
 

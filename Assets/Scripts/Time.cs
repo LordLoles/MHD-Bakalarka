@@ -11,7 +11,7 @@ public class Time {
     {
         if (hour >= 24 || min >= 60)
         {
-            throw new System.Exception("Bad time format: " + hour + ":" + min);
+            ErrorHandler.printErrorMsg("Zlý formát času: " + hour + ":" + min + "\n Vyhľadáva sa od momentálneho času");
         }
         this.hour = hour;
         this.min = min;

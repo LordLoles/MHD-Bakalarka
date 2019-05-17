@@ -79,7 +79,8 @@ public class Graph
         {
             if (!(time.CompareTo(v.time) == 1)) return v;
         }
-        throw new System.Exception("No vertex after that time");
+        ErrorHandler.printErrorMsg("Nenašla sa zástavka, z ktorej by vyhľadávanie začalo.\n Skúste vložiť neskorší počiatočný čas.");
+        return null;
     }
 
 
@@ -140,6 +141,9 @@ public class Graph
      */
     public Edge getPredecessor(int id, Vertex v)
     {
-        return toThisVertex[pair(v, id)];
+        var key = pair(v, id);
+        if (toThisVertex.ContainsKey(key))
+            return toThisVertex[key];
+        return null;
     }
 }

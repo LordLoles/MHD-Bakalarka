@@ -96,7 +96,7 @@ public class PathShowing : MonoBehaviour
 
     public void showAlternativePath(Vertex v)
     {
-        Debug.Log("show alternative to " + v.ToString());
+        Debug.Log("Alternativne trasy pre: " + v.ToString());
         memorizeThis();
         flush();
 

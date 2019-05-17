@@ -14,6 +14,7 @@ public class SearchButtonOnClick : MonoBehaviour
 
     public void OnClick()
     {
+        ErrorHandler.hide();
         GameObject init = GameObject.FindGameObjectWithTag("Init");
         Init initScript = init.GetComponent<Init>();
         initScript.startSearching(start.text, fin.text, getTime(), getAmount());

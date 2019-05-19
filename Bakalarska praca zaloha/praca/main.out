@@ -24,16 +24,15 @@
 \BOOKMARK [0][-]{chapter.3}{Softv\351r}{}% 24
 \BOOKMARK [1][-]{section.3.1}{Z\341kladn\375 popis aplik\341cie}{chapter.3}% 25
 \BOOKMARK [1][-]{section.3.2}{Vyhlad\341vanie}{chapter.3}% 26
-\BOOKMARK [1][-]{section.3.3}{D\341tov\351 s\372bory}{chapter.3}% 27
-\BOOKMARK [0][-]{chapter.4}{Implement\341cia}{}% 28
-\BOOKMARK [1][-]{section.4.1}{Prv\351 my\235lienky}{chapter.4}% 29
-\BOOKMARK [1][-]{section.4.2}{Zaciatocn\341 implement\341cia}{chapter.4}% 30
-\BOOKMARK [1][-]{section.4.3}{Vylep\235enie reprezent\341cie \372dajov}{chapter.4}% 31
-\BOOKMARK [1][-]{section.4.4}{Implement\341cia vyhlad\341vacieho algoritmu a v\375pis v\375sledku}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.5}{Krit\351ria vyhlad\341vania Dijkstrovho algoritmu}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.5.1}{Cas pr\355chodu do po\236adovanej zast\341vky}{section.4.5}% 34
-\BOOKMARK [2][-]{subsection.4.5.2}{R\341tanie poctu prestupov}{section.4.5}% 35
-\BOOKMARK [2][-]{subsection.4.5.3}{Zistovanie zac\355naj\372cej zast\341vky}{section.4.5}% 36
-\BOOKMARK [1][-]{section.4.6}{Neefekt\355vnost vytv\341rania objektov}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.7}{Vyhlad\341vanie alternat\355vnych ciest}{chapter.4}% 38
-\BOOKMARK [0][-]{chapter*.14}{Z\341ver}{}% 39
+\BOOKMARK [1][-]{section.3.3}{Chybov\351 hl\341senia}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.4}{D\341tov\351 s\372bory}{chapter.3}% 28
+\BOOKMARK [0][-]{chapter.4}{Implement\341cia}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Prv\351 my\235lienky}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Zaciatocn\341 implement\341cia}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.3}{Vylep\235enie reprezent\341cie \372dajov}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.4}{Implement\341cia vyhlad\341vacieho algoritmu a v\375pis v\375sledku}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.5}{Krit\351ria vyhlad\341vania Dijkstrovho algoritmu}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.6}{Neefekt\355vnost vytv\341rania objektov}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.7}{Postupn\351 vytv\341ranie grafu}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.8}{Vyhlad\341vanie alternat\355vnych ciest}{chapter.4}% 37
+\BOOKMARK [0][-]{chapter*.18}{Z\341ver}{}% 38

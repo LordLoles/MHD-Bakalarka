@@ -11,7 +11,7 @@ public class Time {
     {
         if (hour >= 24 || min >= 60)
         {
-            ErrorHandler.printErrorMsg("Zlý formát času: " + hour + ":" + min + "\n Vyhľadáva sa od momentálneho času");
+            throw new Exception("Zlý formát času: " + hour + ":" + min + "\n Vyhľadáva sa od momentálneho času");
         }
         this.hour = hour;
         this.min = min;

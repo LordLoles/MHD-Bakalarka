@@ -28,8 +28,9 @@ public class SearchButtonOnClick : MonoBehaviour
             string[] input = time.text.Split(':');
             return new Time(Int32.Parse(input[0]), Int32.Parse(input[1]));
         }
-        catch(Exception)
+        catch(Exception e)
         {
+            if (time.text != "") ErrorHandler.printErrorMsgNoThrow("Zlý formát času!\n Vyhľadáva sa od momentálneho času");
             return new Time(DateTime.Now.Hour, DateTime.Now.Minute);
         }
     }
@@ -43,6 +44,7 @@ public class SearchButtonOnClick : MonoBehaviour
         }
         catch (Exception)
         {
+            if (amount.text != "") ErrorHandler.printErrorMsgNoThrow("Zlý počet zastávok určených na výpis!\n Vyhľadávajú sa 3 výsledky");
             return 3;
         }
     }

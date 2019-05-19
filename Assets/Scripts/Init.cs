@@ -83,6 +83,8 @@ public class Init : MonoBehaviour
             Debug.Log("mam " + gc.loaded + "%");
         }*/
 
+        long t1 = (long)(DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+
         gc = new GraphCreator(Application.dataPath + "/Data/" + city + "/", stopsFile, linesFile);
 
         gc.makeGraphOneLoadSooner(time);
@@ -105,15 +107,18 @@ public class Init : MonoBehaviour
             if (i == tries)
             {
                 if (!graph.allStops.ContainsKey(start))
-                    ErrorHandler.printErrorMsg("Nenašla sa počiatočná zástavka.\n Možný preklep, prípadne skúste zadať neskorší počiatočný čas.");
+                    ErrorHandler.printErrorMsg("Nenašla sa počiatočná zastávka.\n Skontrulujte preklepy.");
 
                 if (!graph.allStops.ContainsKey(fin))
-                    ErrorHandler.printErrorMsg("Nenašla sa konečná zástavka.\n Možný preklep, prípadne skúste zadať neskorší počiatočný čas.");
+                    ErrorHandler.printErrorMsg("Nenašla sa kocová zastávka.\n Skontrulujte preklepy.");
             }
         }
 
         Debug.Log("spustam dijkstru z " + start + " do " + fin);
         dijkstra.shortestPathsAmount(time, start, fin, amount);
+        
+        long t2 = (long)(System.DateTime.Now - new System.DateTime(1970, 1, 1)).TotalMilliseconds;
+        Debug.Log("Cas behu: " + (t2 - t1).ToString());
     }
 
     /*

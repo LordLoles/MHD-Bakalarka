@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.12.4)  24 APR 2019 17:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2019.2.17)  19 MAY 2019 20:26
 entering extended mode
 **./main.tex
 (main.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\book.cls"
+("D:\MiKTex 2.9\tex\latex\base\book.cls"
 Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\bk12.clo"
+("D:\MiKTex 2.9\tex\latex\base\bk12.clo"
 File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,21 +22,21 @@ File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+("D:\MiKTex 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("D:\MiKTex 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("D:\MiKTex 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count88
@@ -52,20 +52,20 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("D:\MiKTex 2.9\tex\latex\geometry\geometry.cfg"))
+("D:\MiKTex 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks16
 \inpenc@posthook=\toks17
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+("D:\MiKTex 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("D:\MiKTex 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -306,7 +306,7 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("D:\MiKTex 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -347,7 +347,7 @@ File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("D:\MiKTex 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -371,34 +371,34 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+("D:\MiKTex 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+("D:\MiKTex 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("D:\MiKTex 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("D:\MiKTex 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("D:\MiKTex 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+("D:\MiKTex 2.9\tex\latex\graphics-cfg\graphics.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+("D:\MiKTex 2.9\tex\latex\graphics-def\pdftex.def"
 File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
@@ -406,18 +406,18 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+("D:\MiKTex 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("D:\MiKTex 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -456,24 +456,24 @@ Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
 Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
 Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("D:\MiKTex 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("D:\MiKTex 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen113
 \Hy@linkcounter=\count92
 \Hy@pagecounter=\count93
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("D:\MiKTex 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count94
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("D:\MiKTex 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `breaklinks' set `true' on input line 4374.
@@ -506,32 +506,32 @@ LaTeX Info: Redefining \pageref on input line 6432.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("D:\MiKTex 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
 \Fld@listcount=\count100
 \c@bookmark@seq@number=\count101
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("D:\MiKTex 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip43
 )
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("D:\MiKTex 2.9\tex\generic\babel\babel.sty"
 Package: babel 2017/05/19 3.10 The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+("D:\MiKTex 2.9\tex\latex\arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\babel-slovak\slovak.ldf"
+("D:\MiKTex 2.9\tex\latex\babel-slovak\slovak.ldf"
 Language: slovak 2008/07/06 v3.1a Slovak support from the babel system
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+("D:\MiKTex 2.9\tex\generic\babel\babel.def"
 File: babel.def 2017/05/19 3.10 Babel common definitions
 \babel@savecnt=\count102
 \U@D=\dimen117
@@ -542,7 +542,7 @@ Package babel Info: Making ' an active character on input line 129.
 \cs@wordlen=\count103
 Package babel Info: Making - an active character on input line 294.
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+("D:\MiKTex 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count104
 \float@exts=\toks18
@@ -550,35 +550,35 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks19
 \@floatcapt=\box27
 )
-(C:\Users\alojz\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\newfloat.sty
-Package: newfloat 2015/09/17 v1.1-109 Defining new floating environments (AR)
+("D:\MiKTex 2.9\tex\latex\caption\newfloat.sty"
+Package: newfloat 2018/03/04 v1.1a Defining new floating environments (AR)
 )
 Package newfloat Info: New float `algorithm' with options `name={Algoritmus}' o
 n input line 13.
 \c@algorithm=\count105
 Package newfloat Info: float type `algorithm'=4 on input line 13.
 
-(C:\Users\alojz\AppData\Roaming\MiKTeX\2.9\tex\latex\chngcntr\chngcntr.sty
+("D:\MiKTex 2.9\tex\latex\chngcntr\chngcntr.sty"
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("D:\MiKTex 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2016/11/05 v2.16a AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("D:\MiKTex 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("D:\MiKTex 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen118
 ))
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("D:\MiKTex 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen119
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("D:\MiKTex 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count106
@@ -619,7 +619,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
 )
-(C:\Users\alojz\AppData\Roaming\MiKTeX\2.9\tex\latex\cmap\cmap.sty
+("D:\MiKTex 2.9\tex\latex\cmap\cmap.sty"
 Package: cmap 2008/03/06 v1.0h CMap support: searchable PDF
 
 
@@ -677,7 +677,7 @@ LaTeX Font Info:    ... okay on input line 41.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\alojz\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("D:\MiKTex 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
 \scratchdimen=\dimen127
@@ -690,10 +690,10 @@ LaTeX Font Info:    ... okay on input line 41.
 \MPnumerator=\count122
 \makeMPintoPDFobject=\count123
 \everyMPtoPDFconversion=\toks26
-) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+) ("D:\MiKTex 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+("D:\MiKTex 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -706,10 +706,10 @@ G,.JBIG2,.JB2,.eps]
 \AtBeginShipoutBox=\box31
 Package hyperref Info: Link coloring OFF on input line 41.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+("D:\MiKTex 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("D:\MiKTex 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count124
@@ -717,17 +717,16 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 41.
 LaTeX Info: Redefining \pageref on input line 41.
 LaTeX Info: Redefining \nameref on input line 41.
-
-(main.out) (main.out)
+ (main.out) (main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 <<t1.cmap>> [1
 
 
-{C:/Users/alojz/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]<<ot1.cmap>>
-<<oml.cmap>><<oms.cmap>><<omx.cmap>>
-[2] <images/zadanie.pdf, id=176, 597.23125pt x 845.1575pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]<<ot1.cmap>><<oml.cmap>><<
+oms.cmap>><<omx.cmap>> [2]
+<images/zadanie.pdf, id=172, 597.23125pt x 845.1575pt>
 File: images/zadanie.pdf Graphic file (type pdf)
 
 <use images/zadanie.pdf>
@@ -956,7 +955,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
-<./images/BFS_priklad.png, id=388, 337.26pt x 199.34476pt>
+<./images/BFS_priklad.png, id=387, 337.26pt x 199.34476pt>
 File: ./images/BFS_priklad.png Graphic file (type png)
 
 <use ./images/BFS_priklad.png>
@@ -980,7 +979,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-<./images/DFS_priklad.png, id=394, 337.26pt x 199.34476pt>
+<./images/DFS_priklad.png, id=393, 337.26pt x 199.34476pt>
 File: ./images/DFS_priklad.png Graphic file (type png)
 
 <use ./images/DFS_priklad.png>
@@ -1038,7 +1037,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<./images/Alg_Dijkstra.png, id=408, 672.111pt x 362.5545pt>
+<./images/Alg_Dijkstra.png, id=407, 672.111pt x 362.5545pt>
 File: ./images/Alg_Dijkstra.png Graphic file (type png)
 
 <use ./images/Alg_Dijkstra.png>
@@ -1058,7 +1057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
                                                   \fi \fi 
 l.67 
       <./images/Alg_Dijkstra.png>]
-<./images/dijkstra_priklad.png, id=417, 284.262pt x 193.9245pt>
+<./images/dijkstra_priklad.png, id=416, 284.262pt x 193.9245pt>
 File: ./images/dijkstra_priklad.png Graphic file (type png)
 
 <use ./images/dijkstra_priklad.png>
@@ -1120,7 +1119,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-[13] <./images/Alg_Bellman-Ford.png, id=437, 460.119pt x 188.50426pt>
+[13] <./images/Alg_Bellman-Ford.png, id=436, 460.119pt x 188.50426pt>
 File: ./images/Alg_Bellman-Ford.png Graphic file (type png)
 
 <use ./images/Alg_Bellman-Ford.png>
@@ -1131,7 +1130,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--111
 
  []
 
-<./images/bellman-ford_priklad.png, id=439, 248.127pt x 252.945pt>
+<./images/bellman-ford_priklad.png, id=438, 248.127pt x 252.945pt>
 File: ./images/bellman-ford_priklad.png Graphic file (type png)
 
 <use ./images/bellman-ford_priklad.png>
@@ -1181,7 +1180,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
-<./images/Alg_Floyd-Warshall.png, id=456, 567.3195pt x 361.95226pt>
+<./images/Alg_Floyd-Warshall.png, id=455, 567.3195pt x 361.95226pt>
 File: ./images/Alg_Floyd-Warshall.png Graphic file (type png)
 
 <use ./images/Alg_Floyd-Warshall.png>
@@ -1193,7 +1192,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
-<./images/floyd-washall_priklad.png, id=463, 248.127pt x 252.945pt>
+<./images/floyd-washall_priklad.png, id=462, 248.127pt x 252.945pt>
 File: ./images/floyd-washall_priklad.png Graphic file (type png)
 
 <use ./images/floyd-washall_priklad.png>
@@ -1257,7 +1256,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 248--249
 
  []
 
-[20] <./images/3_AStar-Dijkstra.png, id=491, 958.782pt x 395.076pt>
+[20] <./images/3_AStar-Dijkstra.png, id=490, 958.782pt x 395.076pt>
 File: ./images/3_AStar-Dijkstra.png Graphic file (type png)
 
 <use ./images/3_AStar-Dijkstra.png>
@@ -1294,7 +1293,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--268
 
  []
 
-<./images/3_obojstranne.png, id=498, 834.11626pt x 419.31656pt>
+<./images/3_obojstranne.png, id=497, 834.11626pt x 419.31656pt>
 File: ./images/3_obojstranne.png Graphic file (type png)
 
 <use ./images/3_obojstranne.png>
@@ -1365,7 +1364,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-<./images/ukazka_programu1.png, id=537, 479.99326pt x 541.42274pt>
+<./images/ukazka_programu1.png, id=536, 479.99326pt x 541.42274pt>
 File: ./images/ukazka_programu1.png Graphic file (type png)
 
 <use ./images/ukazka_programu1.png>
@@ -1418,24 +1417,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-[26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.9
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.37 
-     ] <./images/ukazka_programu2.png, id=549, 481.19775pt x 536.0025pt>
+<./images/ukazka_programu2.png, id=544, 481.19775pt x 536.0025pt>
 File: ./images/ukazka_programu2.png Graphic file (type png)
 
 <use ./images/ukazka_programu2.png>
 Package pdftex.def Info: ./images/ukazka_programu2.png used on input line 39.
 (pdftex.def)             Requested size: 264.61333pt x 294.7532pt.
+ [26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+9}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.42 \end{figure}
+                 ]
 Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-<./images/ukazka_programu2-alt.png, id=550, 451.6875pt x 217.41225pt>
+<./images/ukazka_programu2-alt.png, id=549, 451.6875pt x 217.41225pt>
 File: ./images/ukazka_programu2-alt.png Graphic file (type png)
 
 <use ./images/ukazka_programu2-alt.png>
@@ -1460,7 +1459,20 @@ l.56
                                                   \fi \fi 
 l.56 
       <./images/ukazka_programu2.png> <./images/ukazka_programu2-alt.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+<./images/ukazka_programu-chyba.png, id=557, 475.7775pt x 338.01282pt>
+File: ./images/ukazka_programu-chyba.png Graphic file (type png)
+
+<use ./images/ukazka_programu-chyba.png>
+Package pdftex.def Info: ./images/ukazka_programu-chyba.png used on input line 
+58.
+(pdftex.def)             Requested size: 264.61333pt x 188.00162pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
@@ -1469,34 +1481,40 @@ File: ./images/Format_datoveho_suboru.png Graphic file (type png)
 
 <use ./images/Format_datoveho_suboru.png>
 Package pdftex.def Info: ./images/Format_datoveho_suboru.png used on input line
- 60.
+ 71.
 (pdftex.def)             Requested size: 441.01773pt x 164.40898pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
-
- []
-
-<./images/ukazka_programu3.png, id=560, 222.8325pt x 80.09924pt>
-File: ./images/ukazka_programu3.png Graphic file (type png)
-
-<use ./images/ukazka_programu3.png>
-Package pdftex.def Info: ./images/ukazka_programu3.png used on input line 68.
-(pdftex.def)             Requested size: 222.83195pt x 80.09903pt.
-) [28pdfTeX warning (ext4): destination with the same identifier (name{figure.3
-.12}) has been already used, duplicate ignored
+ [28pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.215 
-       <./images/Format_datoveho_suboru.png>] (implementacia.tex [29pdfTeX warn
-ing (ext4): destination with the same identifier (name{figure.3.13}) has been a
-lready used, duplicate ignored
+l.75 
+      <./images/ukazka_programu-chyba.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+<./images/ukazka_programu3.png, id=565, 222.8325pt x 80.09924pt>
+File: ./images/ukazka_programu3.png Graphic file (type png)
+
+<use ./images/ukazka_programu3.png>
+Package pdftex.def Info: ./images/ukazka_programu3.png used on input line 79.
+(pdftex.def)             Requested size: 222.83195pt x 80.09903pt.
+) (implementacia.tex [29pdfTeX warning (ext4): destination with the same identi
+fier (name{figure.3.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.1 \chapter
-            [Implement√°cia]{Implement√°cia softv√©ru} <./images/ukazka_program
-u3.png>]
+            [Implement√°cia]{Implement√°cia softv√©ru}pdfTeX warning (ext4): de
+stination with the same identifier (name{figure.3.14}) has been already used, d
+uplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \chapter
+            [Implement√°cia]{Implement√°cia softv√©ru} <./images/Format_datoveh
+o_suboru.png> <./images/ukazka_programu3.png>]
 Kapitola 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -1586,14 +1604,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
-<./images/test2_priklad1.png, id=588, 416.15475pt x 192.72pt>
+<./images/test2_priklad1.png, id=589, 416.15475pt x 192.72pt>
 File: ./images/test2_priklad1.png Graphic file (type png)
 
 <use ./images/test2_priklad1.png>
 Package pdftex.def Info: ./images/test2_priklad1.png used on input line 45.
 (pdftex.def)             Requested size: 441.01773pt x 204.24692pt.
  [33pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-14}) has been already used, duplicate ignored
+15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -1603,7 +1621,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
 
-<./images/1_Vertex.png, id=595, 463.13025pt x 282.45525pt>
+<./images/1_Vertex.png, id=596, 463.13025pt x 282.45525pt>
 File: ./images/1_Vertex.png Graphic file (type png)
 
 <use ./images/1_Vertex.png>
@@ -1614,26 +1632,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 
  []
 
-<./images/1_Edge.png, id=596, 685.96275pt x 406.51875pt>
+<./images/1_Edge.png, id=597, 685.96275pt x 406.51875pt>
 File: ./images/1_Edge.png Graphic file (type png)
 
 <use ./images/1_Edge.png>
 Package pdftex.def Info: ./images/1_Edge.png used on input line 61.
 (pdftex.def)             Requested size: 308.71106pt x 182.95035pt.
  [34pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-15}) has been already used, duplicate ignored
+16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.65 
      pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.16}) has been already used, duplicate ignored
+.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.65 
       <./images/test2_priklad1.png> <./images/1_Vertex.png>]
-<./images/1_Graph.png, id=603, 346.896pt x 251.7405pt>
+<./images/1_Graph.png, id=604, 346.896pt x 251.7405pt>
 File: ./images/1_Graph.png Graphic file (type png)
 
 <use ./images/1_Graph.png>
@@ -1655,30 +1673,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
  []
 
 [35pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-7}) has been already used, duplicate ignored
+8}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.80 
      pdfTeX warning (ext4): destination with the same identifier (name{figure.4
-.18}) has been already used, duplicate ignored
+.19}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.80 
       <./images/1_Edge.png> <./images/1_Graph.png>]
-<./images/2_Vertex.png, id=611, 454.0965pt x 335.45325pt>
+<./images/2_Vertex.png, id=612, 573.64313pt x 645.91313pt>
 File: ./images/2_Vertex.png Graphic file (type png)
 
 <use ./images/2_Vertex.png>
 Package pdftex.def Info: ./images/2_Vertex.png used on input line 82.
-(pdftex.def)             Requested size: 308.71106pt x 228.04887pt.
+(pdftex.def)             Requested size: 308.71106pt x 347.6052pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+0}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.88 
+      <./images/2_Vertex.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
@@ -1693,23 +1717,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{figure.4.1
-9}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.95 
-      <./images/2_Vertex.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-<./images/3_DijkstrovAlg.png, id=620, 759.43726pt x 967.2135pt>
+<./images/3_DijkstrovAlg.png, id=621, 1049.42062pt x 1119.43219pt>
 File: ./images/3_DijkstrovAlg.png Graphic file (type png)
 
 <use ./images/3_DijkstrovAlg.png>
 Package pdftex.def Info: ./images/3_DijkstrovAlg.png used on input line 99.
-(pdftex.def)             Requested size: 308.71106pt x 393.1804pt.
+(pdftex.def)             Requested size: 441.01773pt x 470.43163pt.
  [37]
 Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
@@ -1720,19 +1738,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
+[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+1}) has been already used, duplicate ignored
 
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.107 
+       <./images/3_DijkstrovAlg.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 108--109
 
  []
 
-[38pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
-0}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.109 
-       <./images/3_DijkstrovAlg.png>]
-<./images/3_PathShowing.png, id=633, 545.6385pt x 208.98074pt>
+<./images/3_PathShowing.png, id=634, 545.6385pt x 208.98074pt>
 File: ./images/3_PathShowing.png Graphic file (type png)
 
 <use ./images/3_PathShowing.png>
@@ -1749,25 +1766,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-<./images/3_DijkstrasCmp.png, id=635, 411.03563pt x 250.68657pt>
+<./images/3_DijkstrasCmp.png, id=636, 554.82281pt x 373.395pt>
 File: ./images/3_DijkstrasCmp.png Graphic file (type png)
 
 <use ./images/3_DijkstrasCmp.png>
 Package pdftex.def Info: ./images/3_DijkstrasCmp.png used on input line 125.
-(pdftex.def)             Requested size: 308.71106pt x 188.27838pt.
+(pdftex.def)             Requested size: 308.71106pt x 207.76085pt.
  [39pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-21}) has been already used, duplicate ignored
+22}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.129 
        <./images/3_PathShowing.png>]
-
-Package hyperref Warning: Composite letter `\textasciicaron+C'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 131.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
@@ -1778,40 +1789,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--136
  []
 
 
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 137.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
-
- []
-
-[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
-2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.144 
-       <./images/3_DijkstrasCmp.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
-Overfull \hbox (2.50287pt too wide) in paragraph at lines 147--148
-[]\T1/cmr/m/n/12 Naozaj, ta-k˝mto spÙ-so-bom do-siah-neme spr·vne hod-noty po-£
-tu pre-stu-pov pre v≤etky
  []
 
 
@@ -1819,55 +1803,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
+[40pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+3}) has been already used, duplicate ignored
 
-Package hyperref Warning: Composite letter `\textasciicaron+t'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 149.
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.148 
+       <./images/3_DijkstrasCmp.png>]
+<./images/3_transJeTazke.png, id=652, 252.945pt x 422.32782pt>
+File: ./images/3_transJeTazke.png Graphic file (type png)
 
-
-Package hyperref Warning: Composite letter `\textasciicaron+c'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 149.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
-
- []
-
-[41]
-
-Package hyperref Warning: Composite letter `\textasciicaron+t'
-(hyperref)                not defined in PD1 encoding,
-(hyperref)                removing `\textasciicaron' on input line 158.
-
+<use ./images/3_transJeTazke.png>
+Package pdftex.def Info: ./images/3_transJeTazke.png used on input line 155.
+(pdftex.def)             Requested size: 176.40439pt x 294.53838pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 160--161
 
  []
 
-<./images/4_Graph.png, id=654, 491.436pt x 351.714pt>
-File: ./images/4_Graph.png Graphic file (type png)
+[41pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+4}) has been already used, duplicate ignored
 
-<use ./images/4_Graph.png>
-Package pdftex.def Info: ./images/4_Graph.png used on input line 163.
-(pdftex.def)             Requested size: 441.01773pt x 315.64343pt.
- [42]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.161 
+       <./images/3_transJeTazke.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
 
-Package hyperref Warning: Composite letter `\textasciicaron+l'
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 168--169
+
+ []
+
+[42]
+
+Package hyperref Warning: Composite letter `\textasciicaron+t'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textasciicaron' on input line 171.
 
@@ -1876,76 +1858,103 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
-<./images/atl_trasy_priklad.png, id=659, 284.262pt x 193.9245pt>
-File: ./images/atl_trasy_priklad.png Graphic file (type png)
+<./images/4_Graph.png, id=665, 551.05875pt x 408.77719pt>
+File: ./images/4_Graph.png Graphic file (type png)
 
-<use ./images/atl_trasy_priklad.png>
-Package pdftex.def Info: ./images/atl_trasy_priklad.png used on input line 176.
-
-(pdftex.def)             Requested size: 284.26129pt x 193.92401pt.
- [43pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-23}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.180 
-       <./images/4_Graph.png>]
+<use ./images/4_Graph.png>
+Package pdftex.def Info: ./images/4_Graph.png used on input line 176.
+(pdftex.def)             Requested size: 441.01773pt x 327.15941pt.
+ [43]
 Underfull \hbox (badness 10000) in paragraph at lines 181--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 186--187
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
-
- []
-
-<./images/alt_trasy_cas_zloz_obr.png, id=666, 363.759pt x 362.5545pt>
-File: ./images/alt_trasy_cas_zloz_obr.png Graphic file (type png)
-
-<use ./images/alt_trasy_cas_zloz_obr.png>
-Package pdftex.def Info: ./images/alt_trasy_cas_zloz_obr.png used on input line
- 188.
-(pdftex.def)             Requested size: 363.75812pt x 362.55362pt.
- [44pdfTeX warning (ext4): destination with the same identifier (name{figure.4.
-24}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.192 
-       <./images/atl_trasy_priklad.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 193--194
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-[45pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+[44pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.196 
-       <./images/alt_trasy_cas_zloz_obr.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+l.187 
+       <./images/4_Graph.png>]
+
+Package hyperref Warning: Composite letter `\textasciicaron+l'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 189.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
-) (zaver.tex [46]) [47
+<./images/atl_trasy_priklad.png, id=675, 284.262pt x 193.9245pt>
+File: ./images/atl_trasy_priklad.png Graphic file (type png)
+
+<use ./images/atl_trasy_priklad.png>
+Package pdftex.def Info: ./images/atl_trasy_priklad.png used on input line 194.
+
+(pdftex.def)             Requested size: 284.26129pt x 193.92401pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+[45pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.202 
+       <./images/atl_trasy_priklad.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+
+ []
+
+<./images/alt_trasy_cas_zloz_obr.png, id=683, 363.759pt x 362.5545pt>
+File: ./images/alt_trasy_cas_zloz_obr.png Graphic file (type png)
+
+<use ./images/alt_trasy_cas_zloz_obr.png>
+Package pdftex.def Info: ./images/alt_trasy_cas_zloz_obr.png used on input line
+ 206.
+(pdftex.def)             Requested size: 363.75812pt x 362.55362pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--212
+
+ []
+
+[46pdfTeX warning (ext4): destination with the same identifier (name{figure.4.2
+7}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.212 
+       <./images/alt_trasy_cas_zloz_obr.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+ []
+
+) (zaver.tex [47]) [48
 
 ] (main.bbl
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 35.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
+ ("D:\MiKTex 2.9\tex\latex\base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [48
+)
+[49
 
 
 
@@ -1955,49 +1964,48 @@ Underfull \hbox (badness 1515) in paragraph at lines 103--107
 /it/12 on-line]. Ga-me-Dev Web-
  []
 
-[49])
+[50])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 266.
- [50]
+ [51]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 266.
  (main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 266.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 266.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D76993811CBAD069AF7CB1332918F952;2957.
+(rerunfilecheck)             Checksum: E7609B366FB6EEE47400EC59B09FEBCD;2830.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 266.
  ) 
 Here is how much of TeX's memory you used:
- 8019 strings out of 493323
- 114254 string characters out of 3139066
- 219272 words of memory out of 3000000
- 11170 multiletter control sequences out of 15000+200000
+ 8033 strings out of 493323
+ 112744 string characters out of 3145100
+ 219408 words of memory out of 3000000
+ 11176 multiletter control sequences out of 15000+200000
  19819 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,8n,31p,2675b,463s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ectt1200.pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
-ec\dpi600\ecrm1000.pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
-\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts
-\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\alojz\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\alojz\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\alojz\
+ <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
+ectt1200.pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\ecrm1000.pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour
+\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts
+\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Loles\AppData\Local\MiKTeX
+\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\Loles\AppData\Lo
+cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Loles\
 AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsl1200.pk> <C:\Us
-ers\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.
-pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
-\ecbx1728.pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
-\ec\dpi600\ecbx1200.pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
-r\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\alojz\AppData\Local\MiKTeX\2.9\font
-s\pk\ljfour\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\alojz\AppData\Local\MiKTe
-X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (60 pages, 1084001 bytes).
+ers\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.
+pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600
+\ecbx1728.pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\ecbx1200.pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\fonts\pk\ljfou
+r\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\Loles\AppData\Local\MiKTeX\2.9\font
+s\pk\ljfour\jknappen\ec\dpi600\eccc2074.pk> <C:\Users\Loles\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1440.pk><D:/MiKTex 2.9/fonts/type1
+/public/amsfonts/cm/cmex10.pfb><D:/MiKTex 2.9/fonts/type1/public/amsfonts/cm/cm
+mi12.pfb><D:/MiKTex 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/MiKTex 2.9
+/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/MiKTex 2.9/fonts/type1/public/ams
+fonts/cm/cmr8.pfb><D:/MiKTex 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/
+MiKTex 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (61 pages, 1191692 bytes).
 PDF statistics:
- 1362 PDF objects out of 1440 (max. 8388607)
- 171 named destinations out of 1000 (max. 500000)
- 468 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1379 PDF objects out of 1440 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
+ 470 words of extra memory for PDF output out of 10000 (max. 10000000)
 

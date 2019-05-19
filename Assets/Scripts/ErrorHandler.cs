@@ -15,9 +15,13 @@ public class ErrorHandler : MonoBehaviour
 
     public static void printErrorMsg(string msg)
     {
-        chybaTxt.text = msg;
-        chybaTxt.enabled = true;
+        printErrorMsgNoThrow(msg);
         throw new System.Exception(msg);
     }
-
+    
+    public static void printErrorMsgNoThrow(string msg)
+    {
+        chybaTxt.text = msg;
+        chybaTxt.enabled = true;
+    }
 }

@@ -30,16 +30,19 @@
 \contentsline {chapter}{\numberline {3}Softv\IeC {\'e}r}{25}{chapter.3}
 \contentsline {section}{\numberline {3.1}Z\IeC {\'a}kladn\IeC {\'y} popis aplik\IeC {\'a}cie}{25}{section.3.1}
 \contentsline {section}{\numberline {3.2}Vyh\IeC {\v l}ad\IeC {\'a}vanie}{26}{section.3.2}
-\contentsline {section}{\numberline {3.3}D\IeC {\'a}tov\IeC {\'e} s\IeC {\'u}bory}{28}{section.3.3}
+\contentsline {section}{\numberline {3.3}Chybov\IeC {\'e} hl\IeC {\'a}senia}{28}{section.3.3}
+\contentsline {section}{\numberline {3.4}D\IeC {\'a}tov\IeC {\'e} s\IeC {\'u}bory}{28}{section.3.4}
 \contentsline {chapter}{\numberline {4}Implement\IeC {\'a}cia}{30}{chapter.4}
 \contentsline {section}{\numberline {4.1}Prv\IeC {\'e} my\IeC {\v s}lienky}{30}{section.4.1}
 \contentsline {section}{\numberline {4.2}Za\IeC {\v c}iato\IeC {\v c}n\IeC {\'a} implement\IeC {\'a}cia}{33}{section.4.2}
 \contentsline {section}{\numberline {4.3}Vylep\IeC {\v s}enie reprezent\IeC {\'a}cie \IeC {\'u}dajov}{36}{section.4.3}
 \contentsline {section}{\numberline {4.4}Implement\IeC {\'a}cia vyh\IeC {\v l}ad\IeC {\'a}vacieho algoritmu a v\IeC {\'y}pis v\IeC {\'y}sledku}{37}{section.4.4}
 \contentsline {section}{\numberline {4.5}Krit\IeC {\'e}ria vyh\IeC {\v l}ad\IeC {\'a}vania Dijkstrovho algoritmu}{39}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}\IeC {\v C}as pr\IeC {\'\i }chodu do po\IeC {\v z}adovanej zast\IeC {\'a}vky}{40}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}R\IeC {\'a}tanie po\IeC {\v c}tu prestupov}{40}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Zis\IeC {\v t}ovanie za\IeC {\v c}\IeC {\'\i }naj\IeC {\'u}cej zast\IeC {\'a}vky}{41}{subsection.4.5.3}
-\contentsline {section}{\numberline {4.6}Neefekt\IeC {\'\i }vnos\IeC {\v t} vytv\IeC {\'a}rania objektov}{42}{section.4.6}
-\contentsline {section}{\numberline {4.7}Vyh\IeC {\v l}ad\IeC {\'a}vanie alternat\IeC {\'\i }vnych ciest}{43}{section.4.7}
-\contentsline {chapter}{Z\IeC {\'a}ver}{47}{chapter*.14}
+\contentsline {subsubsection}{\IeC {\v C}as pr\IeC {\'\i }chodu do po\IeC {\v z}adovanej zast\IeC {\'a}vky}{40}{section*.14}
+\contentsline {subsubsection}{Zis\IeC {\v t}ovanie za\IeC {\v c}\IeC {\'\i }naj\IeC {\'u}cej zast\IeC {\'a}vky}{40}{section*.15}
+\contentsline {subsubsection}{Po\IeC {\v c}\IeC {\'\i }tanie prejden\IeC {\'y}ch \IeC {\'u}sekov}{41}{section*.16}
+\contentsline {subsubsection}{R\IeC {\'a}tanie po\IeC {\v c}tu prestupov}{41}{section*.17}
+\contentsline {section}{\numberline {4.6}Neefekt\IeC {\'\i }vnos\IeC {\v t} vytv\IeC {\'a}rania objektov}{43}{section.4.6}
+\contentsline {section}{\numberline {4.7}Postupn\IeC {\'e} vytv\IeC {\'a}ranie grafu}{44}{section.4.7}
+\contentsline {section}{\numberline {4.8}Vyh\IeC {\v l}ad\IeC {\'a}vanie alternat\IeC {\'\i }vnych ciest}{45}{section.4.8}
+\contentsline {chapter}{Z\IeC {\'a}ver}{48}{chapter*.18}

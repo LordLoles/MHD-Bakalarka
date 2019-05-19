@@ -107,7 +107,8 @@ public class Dijkstra {
                     if ((newValue < v.value)
                         || ((newValue == v.value) && (v.transfers > newTransfers))
                         || ((newValue == v.value) && (v.transfers == newTransfers) && (v.parent.pathStart.time.CompareTo(v.pathStart.time) == 1))
-                        || ((newValue == v.value) && (v.transfers == newTransfers) && (v.parent.pathStart.time.CompareTo(v.pathStart.time) == 0) && (v.sections > newSections))
+                        || ((newValue == v.value) && (v.transfers == newTransfers) && (v.parent.pathStart.time.CompareTo(v.pathStart.time) == 0) 
+                            && (v.sections > newSections))
                         )
                             updateVertex(v, e, newValue, inScope, now.pathStart, newSections, newTransfers);
 

@@ -1,7 +1,4 @@
-all: main.pdf
-
-main.pdf: main.tex *.tex *.bib images/*
-	pdflatex main
-	bibtex main
-	pdflatex main
-	pdflatex main
+pdflatex main.tex
+bibtex main.aux
+pdflatex main.tex
+pdflatex main.tex

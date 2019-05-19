@@ -62,7 +62,10 @@ public class DataBaseChange : MonoBehaviour {
                 dbc.changeDatabase();
                 dbc.state = new NotDisplayedField();
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+                ErrorHandler.printErrorMsg("Súbory s dátami neboli nájdené!\n Skontrolujte preklepy.");
+            }
         }
     }
 
